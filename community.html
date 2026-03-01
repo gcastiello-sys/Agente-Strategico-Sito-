@@ -760,6 +760,39 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .tsc-note{font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2px;margin-top:12px;text-align:center}
 
 
+
+/* LUXURY HERO BUTTON */
+.btn-hero-primary{
+  display:inline-flex;align-items:center;gap:16px;
+  font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--black);text-decoration:none;
+  background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);
+  padding:20px 48px;
+  position:relative;overflow:hidden;
+  transition:all 0.35s;
+  border:none;cursor:pointer;
+  box-shadow:0 8px 32px rgba(201,168,76,0.25),0 2px 8px rgba(0,0,0,0.3);
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));
+}
+.btn-hero-primary::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,transparent 50%);
+  opacity:0;transition:opacity 0.3s;
+}
+.btn-hero-primary:hover::before{opacity:1}
+.btn-hero-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 48px rgba(201,168,76,0.4),0 4px 16px rgba(0,0,0,0.4);
+  background:linear-gradient(135deg,#EDD17A 0%,#D4AE52 40%,#B8923A 100%);
+}
+.btn-arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;background:rgba(0,0,0,0.15);
+  border-radius:50%;font-size:14px;transition:transform 0.3s;
+  flex-shrink:0;
+}
+.btn-hero-primary:hover .btn-arrow{transform:translateX(4px)}
+
 </style>
 </head>
 <body>
@@ -800,8 +833,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       <h1 class="hero-h1">Smetti di lavorare<br>da solo. Inizia a<br>crescere <em>insieme.</em></h1>
       <p class="hero-sub">Ogni settimana centinaia di agenti italiani affrontano le stesse sfide che stai affrontando tu. La differenza tra chi si blocca e chi scala non è il talento — è il <strong>sistema, l'ecosistema e le persone intorno a te.</strong></p>
       <div class="hero-ctas">
-        <a href="#" class="btn btn-gold btn-lg">Manda la tua candidatura →</a>
-        <a href="#" class="btn btn-outline-w btn-lg">Parla col Team</a>
+        <a href="#" class="btn-hero-primary">Manda la tua candidatura <span class="btn-arrow">→</span></a>
       </div>
       <div class="hero-fomo"><span class="fomo-dot"></span>Accesso su candidatura · Posti limitati per ciclo</div>
     </div>
@@ -855,25 +887,6 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
         <p class="p-desc">Hai provato ad assumere. Non funziona. Nessuno lavora come lavori tu. Non sai come fare il salto da agente a leader — perché nessuno te lo ha mai insegnato.</p>
         <div class="p-hook">L'ecosistema ti guida nel salto →</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- MOTTO -->
-<section class="motto">
-  <div class="motto-bg"></div>
-  <div class="motto-overlay"></div>
-  <div class="motto-inner container">
-    <div>
-      <div class="tag" style="color:rgba(201,168,76,0.6)">La filosofia</div>
-      <div class="motto-quote">"Qui non si<br>aggiunge<br><em>motivazione.</em><br>Si costruisce<br>performance."</div>
-    </div>
-    <div class="motto-steps">
-      <div class="motto-step"><span class="step-n">1</span><span class="step-t">Decisione</span></div>
-      <div class="motto-step"><span class="step-n">2</span><span class="step-t">Metodo</span></div>
-      <div class="motto-step"><span class="step-n">3</span><span class="step-t">Ritmo</span></div>
-      <div class="motto-step"><span class="step-n">4</span><span class="step-t">Misura</span></div>
-      <div class="motto-step"><span class="step-n">5</span><span class="step-t">Risultati</span></div>
     </div>
   </div>
 </section>
@@ -959,6 +972,20 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     </ul>
   </div>
 </section>
+
+<!-- RITMO CTA -->
+<div style="background:var(--gray-100);padding:0 var(--pad) 80px">
+  <div style="max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:40px 48px;background:var(--black);flex-wrap:wrap">
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:10px">Accesso su candidatura</div>
+      <div style="font-family:var(--font-serif);font-size:28px;font-weight:600;color:var(--white);line-height:1.1">Pronto a entrare nell'ecosistema?</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.35);margin-top:8px;font-weight:300">L'accesso richiede selezione. Ogni ciclo accetta un numero limitato di agenti.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap">
+      <a href="#" class="btn-hero-primary">Candidati ora <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</div>
 
 <!-- TORRE DELLA CRESCITA -->
 <section class="torre-section">
