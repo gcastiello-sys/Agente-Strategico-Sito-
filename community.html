@@ -270,9 +270,88 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.15);text-transform:uppercase;letter-spacing:1px}
 
-/* DUBAI TOWER */
-.dubai-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:16px}
-.dubai-building{display:flex;flex-direction:column;align-items:center;gap:0;position:relative;padding-bottom:16px}
+/* 6 CHIAVI */
+.chiavi-section{background:var(--black);padding:96px var(--pad)}
+.chiavi-head{text-align:center;margin-bottom:64px}
+.chiavi-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--white);letter-spacing:-0.5px}
+.chiavi-h2 em{font-style:italic;color:var(--gold)}
+.chiavi-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.75;max-width:520px;margin:16px auto 0}
+.chiavi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.04)}
+.c-card{background:var(--black);padding:44px 36px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(255,255,255,0.06);transition:all 0.25s;position:relative;overflow:hidden}
+.c-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.c-card:hover::after{transform:scaleX(1)}
+.c-card:hover{background:rgba(201,168,76,0.05);border-color:rgba(201,168,76,0.2)}
+.c-icon{font-size:32px;margin-bottom:4px}
+.c-program{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:4px}
+.c-title{font-family:var(--font-serif);font-size:26px;font-weight:600;color:var(--white);line-height:1.1}
+.c-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300}
+
+/* TESTIMONIANZE */
+.testi{background:var(--gray-100);padding:96px var(--pad)}
+.testi-head{margin-bottom:52px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.testi-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.testi-h2 em{font-style:italic;color:var(--gold)}
+.rating-block{text-align:right}
+.stars{font-size:16px;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
+.rating-n{font-family:var(--font-serif);font-size:44px;font-weight:600;color:var(--black);line-height:1}
+.rating-l{font-size:10px;color:var(--gray-500);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200)}
+.t-card{background:var(--white);padding:36px 28px;display:flex;flex-direction:column;gap:16px}
+.q-mark{font-family:var(--font-serif);font-size:64px;color:var(--gold);line-height:0.7;opacity:0.25}
+.q-text{font-family:var(--font-serif);font-size:16px;color:var(--gray-700);line-height:1.75;flex:1}
+.q-text strong{color:var(--black);font-weight:600}
+.q-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--gray-200);padding-top:16px}
+.q-avatar{width:42px;height:42px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:15px;font-weight:600;flex-shrink:0}
+.q-name{font-size:14px;font-weight:600;color:var(--black)}
+.q-role{font-size:12px;color:var(--gray-500)}
+
+/* TEAM */
+.team-section{background:var(--white);padding:96px var(--pad)}
+.team-head{text-align:center;margin-bottom:64px}
+.team-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.team-h2 em{font-style:italic;color:var(--gold)}
+.team-sub{font-size:17px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:560px;margin:16px auto 0}
+.team-founders{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.coach-card{background:var(--gray-100);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all 0.3s}
+.coach-card:hover{background:var(--black)}
+.coach-card:hover .coach-name{color:var(--white)}
+.coach-card:hover .coach-role{color:rgba(255,255,255,0.45)}
+.coach-photo{width:100%;aspect-ratio:4/3;background:var(--gray-200);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.coach-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%);transition:all 0.4s}
+.coach-card:hover .coach-photo img{filter:grayscale(0%) brightness(0.8)}
+.coach-initials{font-family:var(--font-serif);font-size:48px;font-weight:300;color:var(--gray-500)}
+.coach-info{padding:24px 28px;border-top:1px solid rgba(0,0,0,0.06);transition:border-color 0.3s}
+.coach-card:hover .coach-info{border-color:rgba(255,255,255,0.06)}
+.coach-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.coach-name{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--black);line-height:1.2;margin-bottom:4px;transition:color 0.3s}
+.coach-role{font-size:13px;color:var(--gray-500);font-weight:300;transition:color 0.3s}
+/* founder card bigger */
+.coach-card-founder .coach-photo{aspect-ratio:16/9}
+.coach-card-founder .coach-name{font-size:26px}
+
+/* FOMO */
+.fomo-section{background:var(--black);padding:140px var(--pad);position:relative;overflow:hidden}
+.fomo-section::before{content:'';position:absolute;bottom:-400px;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none}
+.fomo-section::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)}
+.fomo-inner{max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.fomo-h2{font-family:var(--font-serif);font-size:clamp(48px,6vw,90px);font-weight:400;line-height:0.92;color:var(--white);letter-spacing:-3px;margin-bottom:32px}
+.fomo-h2 em{font-style:italic;color:var(--gold)}
+.fomo-copy{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.85;margin-bottom:52px}
+.fomo-copy strong{color:rgba(255,255,255,0.8);font-weight:500}
+.fomo-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.fomo-note{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2.5px}
+.fomo-badges{display:flex;gap:40px;justify-content:center;margin-top:60px;flex-wrap:wrap}
+.f-badge{font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1.5px;display:flex;align-items:center;gap:10px}
+.f-badge::before{content:'';width:20px;height:1px;background:rgba(201,168,76,0.4)}
+
+/* FOOTER */
+footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-logo img{height:28px;opacity:0.7}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.28);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.15);text-transform:uppercase;letter-spacing:1px}
 
 /* SPIRE */
 .dubai-spire{display:flex;flex-direction:column;align-items:center;margin-bottom:4px;position:relative}
@@ -351,6 +430,335 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .test-title em{font-style:italic;color:var(--gold)}
 .test-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.6;font-weight:300}
 .test-note{font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1.5px;margin-top:14px}
+
+
+/* BUILDING COLUMN */
+.torre-building-col{display:flex;flex-direction:column;align-items:center;position:relative}
+
+/* SPIRE */
+.torre-spire-wrap{display:flex;flex-direction:column;align-items:center;position:relative;z-index:5}
+.ts-glow{width:100px;height:6px;background:radial-gradient(ellipse,rgba(201,168,76,0.7) 0%,transparent 70%);filter:blur(4px);margin-bottom:2px}
+.ts-rod{width:3px;height:80px;background:linear-gradient(to bottom,#FFE87A 0%,#C9A84C 40%,rgba(201,168,76,0.2) 100%);box-shadow:0 0 10px rgba(201,168,76,0.5)}
+.ts-tip{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:16px solid #C9A84C;margin-bottom:-3px;order:-1;filter:drop-shadow(0 -4px 8px rgba(201,168,76,0.8))}
+
+/* BUILDING WRAPPER */
+.torre-building-wrap{width:100%;display:flex;flex-direction:column;align-items:center;flex:1}
+
+/* FLOORS */
+.tb-floor{position:relative;cursor:pointer;transition:all 0.25s;margin-bottom:3px}
+.tb-f5{width:36%}
+.tb-f4{width:52%}
+.tb-f3{width:68%}
+.tb-f2{width:84%}
+.tb-f1{width:100%}
+
+/* TOP GOLD LINE */
+.tb-top-line{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,rgba(80,60,10,0.3) 0%,rgba(201,168,76,0.8) 20%,#E8D470 50%,rgba(201,168,76,0.8) 80%,rgba(80,60,10,0.3) 100%);z-index:4;transition:all 0.3s;box-shadow:0 -1px 8px rgba(201,168,76,0.3)}
+.tb-floor.tb-active .tb-top-line,
+.tb-floor:hover .tb-top-line{background:linear-gradient(90deg,rgba(201,168,76,0.5) 0%,#FFE87A 50%,rgba(201,168,76,0.5) 100%);box-shadow:0 -2px 20px rgba(201,168,76,0.7),0 2px 12px rgba(201,168,76,0.3)}
+
+/* FRONT FACE */
+.tb-front{background:linear-gradient(180deg,#0f0d05 0%,#09080200 50%,#060500 100%);border-left:1px solid rgba(201,168,76,0.12);border-right:1px solid rgba(201,168,76,0.12);border-bottom:1px solid rgba(201,168,76,0.06);position:relative;overflow:hidden;transition:all 0.3s;padding-top:4px}
+.tb-f5 .tb-front{min-height:110px}
+.tb-f4 .tb-front{min-height:100px}
+.tb-f3 .tb-front{min-height:95px}
+.tb-f2 .tb-front{min-height:90px}
+.tb-f1 .tb-front{min-height:85px}
+.tb-floor.tb-active .tb-front{background:linear-gradient(180deg,#1a1408 0%,#100e04 50%,#080600 100%);border-color:rgba(201,168,76,0.3);box-shadow:inset 0 0 40px rgba(201,168,76,0.07),0 4px 20px rgba(201,168,76,0.1)}
+.tb-floor:hover .tb-front{background:linear-gradient(180deg,#141005 0%,#0c0a03 50%,#070600 100%);border-color:rgba(201,168,76,0.2)}
+
+/* Glass sheen overlay */
+.tb-glass-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.01) 40%,transparent 60%,rgba(0,0,0,0.15) 100%);pointer-events:none;z-index:1}
+
+/* WINDOW GRIDS — CSS only, no HTML elements */
+.tb-win-grid{position:absolute;inset:8px 10px;z-index:2;display:grid;gap:4px}
+.wg-5{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr)}
+.wg-4{grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(4,1fr)}
+.wg-3{grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(4,1fr)}
+.wg-2{grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(4,1fr)}
+.wg-1{grid-template-columns:repeat(14,1fr);grid-template-rows:repeat(4,1fr)}
+
+/* Generate window cells using ::before with repeating gradient */
+.tb-win-grid::before{content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0px,transparent 10px,rgba(201,168,76,0.06) 10px,rgba(201,168,76,0.06) 11px),
+    repeating-linear-gradient(0deg,transparent 0px,transparent 14px,rgba(201,168,76,0.05) 14px,rgba(201,168,76,0.05) 15px);
+}
+/* Lit windows — random scatter via multiple box shadows on pseudo */
+.tb-win-grid::after{content:'';position:absolute;
+  width:9px;height:13px;
+  background:rgba(201,168,76,0.22);
+  border:1px solid rgba(201,168,76,0.4);
+  box-shadow:
+    22px 0 0 rgba(201,168,76,0.15),
+    55px 0 0 rgba(201,168,76,0.2),
+    88px 0 0 rgba(201,168,76,0.1),
+    110px 0 0 rgba(201,168,76,0.18),
+    33px 18px 0 rgba(201,168,76,0.12),
+    66px 18px 0 rgba(201,168,76,0.2),
+    99px 18px 0 rgba(201,168,76,0.14),
+    11px 36px 0 rgba(201,168,76,0.18),
+    44px 36px 0 rgba(201,168,76,0.1),
+    77px 36px 0 rgba(201,168,76,0.2),
+    110px 36px 0 rgba(201,168,76,0.15),
+    22px 54px 0 rgba(201,168,76,0.12),
+    55px 54px 0 rgba(201,168,76,0.18),
+    88px 54px 0 rgba(201,168,76,0.2);
+  top:6px;left:8px;
+  filter:blur(0.3px);
+  pointer-events:none;
+  z-index:3
+}
+.tb-floor.tb-active .tb-win-grid::after{
+  background:rgba(201,168,76,0.32);
+  box-shadow:
+    22px 0 0 rgba(201,168,76,0.25),
+    55px 0 0 rgba(201,168,76,0.3),
+    88px 0 0 rgba(201,168,76,0.2),
+    110px 0 0 rgba(201,168,76,0.28),
+    33px 18px 0 rgba(201,168,76,0.22),
+    66px 18px 0 rgba(201,168,76,0.3),
+    99px 18px 0 rgba(201,168,76,0.24),
+    11px 36px 0 rgba(201,168,76,0.28),
+    44px 36px 0 rgba(201,168,76,0.2),
+    77px 36px 0 rgba(201,168,76,0.3),
+    110px 36px 0 rgba(201,168,76,0.25),
+    22px 54px 0 rgba(201,168,76,0.22),
+    55px 54px 0 rgba(201,168,76,0.28),
+    88px 54px 0 rgba(201,168,76,0.3)
+}
+
+/* INFO BAR inside floor */
+.tb-info-bar{position:absolute;bottom:0;left:0;right:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 100%);gap:2px}
+.tib-name{font-size:9px;font-weight:700;letter-spacing:2.5px;color:rgba(201,168,76,0.6);text-transform:uppercase;transition:color 0.3s}
+.tib-range{font-family:var(--font-serif);font-size:15px;font-weight:600;color:rgba(255,255,255,0.55);transition:color 0.3s}
+.tb-floor.tb-active .tib-name{color:var(--gold)}
+.tb-floor.tb-active .tib-range{color:rgba(255,255,255,0.95)}
+
+/* CROWN LIGHTS */
+.tb-crown{position:absolute;top:8px;right:8px;display:flex;gap:5px;z-index:6}
+.tb-crown i{display:block;width:5px;height:5px;background:var(--gold);border-radius:50%;animation:crownblink 2s infinite;box-shadow:0 0 8px rgba(201,168,76,0.9)}
+.tb-crown i:nth-child(2){animation-delay:.6s}
+.tb-crown i:nth-child(3){animation-delay:1.2s}
+@keyframes crownblink{0%,100%{opacity:1;box-shadow:0 0 8px rgba(201,168,76,0.9)}50%{opacity:0.2;box-shadow:none}}
+
+/* SIDE FACES */
+.tb-side{position:absolute;top:4px;bottom:0;width:16px;z-index:0;transition:background 0.3s}
+.tb-side-l{left:-16px;background:linear-gradient(to right,rgba(201,168,76,0.04),rgba(201,168,76,0.12));border-left:1px solid rgba(201,168,76,0.15);border-top:none}
+.tb-side-r{right:-16px;background:linear-gradient(to left,rgba(0,0,0,0.5),rgba(201,168,76,0.04));border-right:1px solid rgba(201,168,76,0.08)}
+.tb-floor.tb-active .tb-side-l{background:linear-gradient(to right,rgba(201,168,76,0.08),rgba(201,168,76,0.2))}
+
+/* PODIUM & GLOW */
+.tb-podium{width:100%;height:14px;background:linear-gradient(to bottom,rgba(201,168,76,0.35),rgba(201,168,76,0.06));border-top:2px solid rgba(201,168,76,0.6);margin-top:0}
+.tb-ground-glow{width:70%;height:24px;background:radial-gradient(ellipse,rgba(201,168,76,0.3) 0%,transparent 70%);filter:blur(10px);margin-top:-4px}
+
+/* RIGHT COLUMN */
+.torre-cards-col{display:flex;flex-direction:column;gap:20px}
+
+/* INFO CARD */
+.torre-info-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);padding:36px;position:relative;overflow:hidden;flex:1}
+.torre-info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5),transparent)}
+.tic-inner{flex-direction:column;gap:10px}
+.tic-tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6)}
+.tic-name{font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--white);line-height:1.0;margin-top:6px}
+.tic-range{font-family:var(--font-serif);font-size:22px;color:var(--gold);font-weight:500;margin-top:4px}
+.tic-desc{font-size:15px;color:rgba(255,255,255,0.38);line-height:1.75;font-weight:300;margin-top:10px}
+.tic-sei{font-size:10px;font-weight:700;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2.5px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.05)}
+.tic-traits{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tic-traits span{font-size:11px;color:rgba(201,168,76,0.65);border:1px solid rgba(201,168,76,0.2);padding:5px 14px;background:rgba(201,168,76,0.04);letter-spacing:0.5px}
+
+/* CTA CARD */
+.torre-cta-card{background:linear-gradient(135deg,rgba(201,168,76,0.1) 0%,rgba(201,168,76,0.03) 100%);border:1px solid rgba(201,168,76,0.28);padding:36px;text-align:center;position:relative;overflow:hidden}
+.tcc-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.tcc-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.55);margin-bottom:14px}
+.tcc-title{font-family:var(--font-serif);font-size:32px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:12px}
+.tcc-title em{font-style:italic;color:var(--gold)}
+.tcc-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.65;font-weight:300}
+.tcc-note{font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2px;margin-top:14px}
+
+
+/* BUILDING COL */
+.torre-building-col{display:flex;flex-direction:column;align-items:center;position:relative}
+
+/* SPIRE */
+.torre-spire-wrap{display:flex;flex-direction:column;align-items:center;z-index:5;margin-bottom:0}
+.ts-tip{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:14px solid #C9A84C;filter:drop-shadow(0 -3px 10px rgba(201,168,76,0.9))}
+.ts-rod{width:3px;height:72px;background:linear-gradient(to bottom,#E8D470 0%,#C9A84C 50%,rgba(201,168,76,0.15) 100%);box-shadow:0 0 8px rgba(201,168,76,0.4)}
+.ts-glow{width:80px;height:6px;background:radial-gradient(ellipse,rgba(201,168,76,0.5) 0%,transparent 70%);filter:blur(4px)}
+
+/* BUILDING WRAP */
+.torre-building-wrap{width:100%;display:flex;flex-direction:column;align-items:center}
+
+/* FLOORS */
+.tb-floor{position:relative;cursor:pointer;transition:all 0.25s;margin-bottom:3px}
+.tb-f5{width:34%}
+.tb-f4{width:50%}
+.tb-f3{width:66%}
+.tb-f2{width:82%}
+.tb-f1{width:100%}
+
+/* TOP GOLD LINE */
+.tb-top-line{position:absolute;top:0;left:0;right:0;height:4px;z-index:4;background:linear-gradient(90deg,rgba(80,60,10,0.2) 0%,rgba(201,168,76,0.7) 25%,#E8D470 50%,rgba(201,168,76,0.7) 75%,rgba(80,60,10,0.2) 100%);box-shadow:0 -1px 6px rgba(201,168,76,0.25);transition:all 0.3s}
+.tb-floor.tb-active .tb-top-line{background:linear-gradient(90deg,rgba(201,168,76,0.4) 0%,#FFE87A 50%,rgba(201,168,76,0.4) 100%);box-shadow:0 -2px 16px rgba(201,168,76,0.7),0 1px 10px rgba(201,168,76,0.25)}
+.tb-floor:hover .tb-top-line{box-shadow:0 -2px 12px rgba(201,168,76,0.5)}
+
+/* FRONT FACE */
+.tb-front{background:linear-gradient(180deg,#0f0d05 0%,#09080200 50%,#060500 100%);border-left:1px solid rgba(201,168,76,0.1);border-right:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.05);position:relative;overflow:hidden;transition:all 0.3s;padding-top:4px;min-height:88px}
+.tb-floor.tb-active .tb-front{background:linear-gradient(180deg,#1a1408 0%,#0e0b04 60%,#070500 100%);border-color:rgba(201,168,76,0.28);box-shadow:inset 0 0 30px rgba(201,168,76,0.06),0 0 20px rgba(201,168,76,0.08)}
+.tb-floor:hover:not(.tb-active) .tb-front{background:linear-gradient(180deg,#131007 0%,#0c0a03 60%,#060500 100%);border-color:rgba(201,168,76,0.18)}
+
+/* Glass sheen */
+.tb-glass-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.035) 0%,transparent 45%,rgba(0,0,0,0.12) 100%);pointer-events:none;z-index:1}
+
+/* Window grid — CSS only */
+.tb-win-grid{position:absolute;top:8px;left:8px;right:8px;bottom:28px;z-index:2;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0px,transparent 11px,rgba(201,168,76,0.07) 11px,rgba(201,168,76,0.07) 12px),
+    repeating-linear-gradient(0deg,transparent 0px,transparent 15px,rgba(201,168,76,0.05) 15px,rgba(201,168,76,0.05) 16px)}
+.tb-win-grid::after{content:'';position:absolute;
+  width:8px;height:12px;top:4px;left:6px;
+  background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.35);
+  box-shadow:
+    24px 0 rgba(201,168,76,0.12),48px 0 rgba(201,168,76,0.18),72px 0 rgba(201,168,76,0.1),96px 0 rgba(201,168,76,0.15),120px 0 rgba(201,168,76,0.08),
+    12px 19px rgba(201,168,76,0.15),36px 19px rgba(201,168,76,0.1),60px 19px rgba(201,168,76,0.2),84px 19px rgba(201,168,76,0.12),108px 19px rgba(201,168,76,0.16),
+    0px 38px rgba(201,168,76,0.1),24px 38px rgba(201,168,76,0.18),48px 38px rgba(201,168,76,0.08),72px 38px rgba(201,168,76,0.15),96px 38px rgba(201,168,76,0.12),
+    18px 57px rgba(201,168,76,0.14),42px 57px rgba(201,168,76,0.09),66px 57px rgba(201,168,76,0.18),90px 57px rgba(201,168,76,0.11)}
+.tb-floor.tb-active .tb-win-grid::after{
+  background:rgba(201,168,76,0.32);border-color:rgba(201,168,76,0.55);
+  box-shadow:
+    24px 0 rgba(201,168,76,0.22),48px 0 rgba(201,168,76,0.3),72px 0 rgba(201,168,76,0.2),96px 0 rgba(201,168,76,0.25),120px 0 rgba(201,168,76,0.18),
+    12px 19px rgba(201,168,76,0.25),36px 19px rgba(201,168,76,0.2),60px 19px rgba(201,168,76,0.32),84px 19px rgba(201,168,76,0.22),108px 19px rgba(201,168,76,0.28),
+    0px 38px rgba(201,168,76,0.2),24px 38px rgba(201,168,76,0.3),48px 38px rgba(201,168,76,0.18),72px 38px rgba(201,168,76,0.26),96px 38px rgba(201,168,76,0.22),
+    18px 57px rgba(201,168,76,0.24),42px 57px rgba(201,168,76,0.18),66px 57px rgba(201,168,76,0.3),90px 57px rgba(201,168,76,0.2)}
+
+/* INFO BAR */
+.tb-info-bar{position:absolute;bottom:0;left:0;right:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 8px 8px;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 80%,transparent 100%);gap:1px}
+.tib-name{font-size:8px;font-weight:700;letter-spacing:2.5px;color:rgba(201,168,76,0.55);text-transform:uppercase;transition:color 0.3s}
+.tib-range{font-family:var(--font-serif);font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);transition:color 0.3s;line-height:1}
+.tb-floor.tb-active .tib-name{color:var(--gold)}
+.tb-floor.tb-active .tib-range{color:rgba(255,255,255,0.95)}
+
+/* CROWN */
+.tb-crown{position:absolute;top:6px;right:7px;display:flex;gap:4px;z-index:6}
+.tb-crown i{display:block;width:4px;height:4px;background:var(--gold);border-radius:50%;box-shadow:0 0 6px rgba(201,168,76,0.9);animation:crownb 2s infinite}
+.tb-crown i:nth-child(2){animation-delay:.6s}
+.tb-crown i:nth-child(3){animation-delay:1.2s}
+@keyframes crownb{0%,100%{opacity:1;box-shadow:0 0 6px rgba(201,168,76,0.9)}50%{opacity:0.2;box-shadow:none}}
+
+/* SIDES */
+.tb-side{position:absolute;top:4px;bottom:0;width:14px;z-index:0}
+.tb-side-l{left:-14px;background:linear-gradient(to right,rgba(0,0,0,0.2),rgba(201,168,76,0.1));border-left:1px solid rgba(201,168,76,0.12)}
+.tb-side-r{right:-14px;background:linear-gradient(to left,rgba(0,0,0,0.5),rgba(201,168,76,0.03));border-right:1px solid rgba(201,168,76,0.06)}
+
+/* PODIUM */
+.tb-podium{width:100%;height:12px;background:linear-gradient(to bottom,rgba(201,168,76,0.4),rgba(201,168,76,0.06));border-top:2px solid rgba(201,168,76,0.55)}
+.tb-ground-glow{width:65%;height:18px;background:radial-gradient(ellipse,rgba(201,168,76,0.28) 0%,transparent 70%);filter:blur(8px);margin-top:-3px}
+
+/* RIGHT COL */
+.torre-right-col{display:flex;flex-direction:column}
+
+/* UNIFIED CARD */
+.torre-info-panel{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:0;height:100%}
+.tip-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5),transparent)}
+.tip-inner{flex-direction:column;gap:10px;flex:1}
+.tip-tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6)}
+.tip-name{font-family:var(--font-serif);font-size:42px;font-weight:600;color:var(--white);line-height:1.0;margin-top:6px}
+.tip-range{font-family:var(--font-serif);font-size:22px;color:var(--gold);font-weight:500;margin-top:4px}
+.tip-desc{font-size:15px;color:rgba(255,255,255,0.38);line-height:1.75;font-weight:300;margin-top:10px}
+.tip-traits{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tip-traits span{font-size:11px;color:rgba(201,168,76,0.65);border:1px solid rgba(201,168,76,0.2);padding:5px 14px;background:rgba(201,168,76,0.04);letter-spacing:0.5px}
+
+/* DIVIDER */
+.tip-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.07),transparent);margin:28px 0}
+
+/* CTA block inside card */
+.tip-cta{text-align:center}
+.tip-cta-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.55);margin-bottom:12px}
+.tip-cta-title{font-family:var(--font-serif);font-size:30px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:10px}
+.tip-cta-title em{font-style:italic;color:var(--gold)}
+.tip-cta-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.6;font-weight:300}
+.tip-cta-note{font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2px;margin-top:12px}
+
+
+/* ===== TORRE DUBAI ===== */
+.torre-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+
+/* BUILDING COL */
+.torre-building-col{display:flex;flex-direction:column;align-items:center;position:relative;padding:40px 32px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.05);border-right:none}
+
+/* SPIRE */
+.torre-spire-wrap{display:flex;flex-direction:column;align-items:center;z-index:5}
+.ts-tip{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:14px solid #C9A84C;filter:drop-shadow(0 -3px 10px rgba(201,168,76,0.9))}
+.ts-rod{width:3px;height:64px;background:linear-gradient(to bottom,#E8D470 0%,#C9A84C 50%,rgba(201,168,76,0.15) 100%);box-shadow:0 0 8px rgba(201,168,76,0.4)}
+.ts-glow{width:70px;height:5px;background:radial-gradient(ellipse,rgba(201,168,76,0.5) 0%,transparent 70%);filter:blur(4px)}
+
+/* BUILDING */
+.torre-building-wrap{width:100%;display:flex;flex-direction:column;align-items:center;flex:1}
+
+/* FLOORS */
+.tb-floor{position:relative;cursor:pointer;transition:all 0.25s;margin-bottom:3px}
+.tb-f5{width:34%}.tb-f4{width:50%}.tb-f3{width:66%}.tb-f2{width:82%}.tb-f1{width:100%}
+
+/* TOP LINE */
+.tb-top-line{position:absolute;top:0;left:0;right:0;height:4px;z-index:4;background:linear-gradient(90deg,rgba(80,60,10,0.2),rgba(201,168,76,0.7) 25%,#E8D470 50%,rgba(201,168,76,0.7) 75%,rgba(80,60,10,0.2));box-shadow:0 -1px 6px rgba(201,168,76,0.25);transition:all 0.3s}
+.tb-floor.tb-active .tb-top-line{background:linear-gradient(90deg,rgba(201,168,76,0.4),#FFE87A 50%,rgba(201,168,76,0.4));box-shadow:0 -2px 18px rgba(201,168,76,0.75),0 1px 10px rgba(201,168,76,0.25)}
+.tb-floor:hover .tb-top-line{box-shadow:0 -2px 12px rgba(201,168,76,0.5)}
+
+/* FRONT */
+.tb-front{background:linear-gradient(180deg,#0f0d05,#080600);border-left:1px solid rgba(201,168,76,0.1);border-right:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.05);position:relative;overflow:hidden;transition:all 0.3s;padding-top:4px;min-height:86px}
+.tb-floor.tb-active .tb-front{background:linear-gradient(180deg,#1a1408,#0a0700);border-color:rgba(201,168,76,0.3);box-shadow:inset 0 0 30px rgba(201,168,76,0.07),0 0 18px rgba(201,168,76,0.08)}
+.tb-floor:hover:not(.tb-active) .tb-front{background:linear-gradient(180deg,#131007,#070600);border-color:rgba(201,168,76,0.18)}
+
+/* Glass overlay */
+.tb-glass-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.035) 0%,transparent 45%,rgba(0,0,0,0.12) 100%);pointer-events:none;z-index:1}
+
+/* Windows */
+.tb-win-grid{position:absolute;top:8px;left:8px;right:8px;bottom:28px;z-index:2;
+  background-image:repeating-linear-gradient(90deg,transparent 0px,transparent 11px,rgba(201,168,76,0.07) 11px,rgba(201,168,76,0.07) 12px),repeating-linear-gradient(0deg,transparent 0px,transparent 15px,rgba(201,168,76,0.05) 15px,rgba(201,168,76,0.05) 16px)}
+.tb-win-grid::after{content:'';position:absolute;width:8px;height:12px;top:4px;left:6px;
+  background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.35);
+  box-shadow:24px 0 rgba(201,168,76,0.12),48px 0 rgba(201,168,76,0.18),72px 0 rgba(201,168,76,0.1),96px 0 rgba(201,168,76,0.15),120px 0 rgba(201,168,76,0.08),12px 19px rgba(201,168,76,0.15),36px 19px rgba(201,168,76,0.1),60px 19px rgba(201,168,76,0.2),84px 19px rgba(201,168,76,0.12),108px 19px rgba(201,168,76,0.16),0px 38px rgba(201,168,76,0.1),24px 38px rgba(201,168,76,0.18),48px 38px rgba(201,168,76,0.08),72px 38px rgba(201,168,76,0.15),96px 38px rgba(201,168,76,0.12),18px 57px rgba(201,168,76,0.14),42px 57px rgba(201,168,76,0.09),66px 57px rgba(201,168,76,0.18),90px 57px rgba(201,168,76,0.11)}
+.tb-floor.tb-active .tb-win-grid::after{background:rgba(201,168,76,0.3);border-color:rgba(201,168,76,0.55);
+  box-shadow:24px 0 rgba(201,168,76,0.22),48px 0 rgba(201,168,76,0.3),72px 0 rgba(201,168,76,0.2),96px 0 rgba(201,168,76,0.25),120px 0 rgba(201,168,76,0.18),12px 19px rgba(201,168,76,0.25),36px 19px rgba(201,168,76,0.2),60px 19px rgba(201,168,76,0.32),84px 19px rgba(201,168,76,0.22),108px 19px rgba(201,168,76,0.28),0px 38px rgba(201,168,76,0.2),24px 38px rgba(201,168,76,0.3),48px 38px rgba(201,168,76,0.18),72px 38px rgba(201,168,76,0.26),96px 38px rgba(201,168,76,0.22),18px 57px rgba(201,168,76,0.24),42px 57px rgba(201,168,76,0.18),66px 57px rgba(201,168,76,0.3),90px 57px rgba(201,168,76,0.2)}
+
+/* Info bar */
+.tb-info-bar{position:absolute;bottom:0;left:0;right:0;z-index:5;display:flex;flex-direction:column;align-items:center;padding:6px 8px 8px;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);gap:1px}
+.tib-name{font-size:8px;font-weight:700;letter-spacing:2.5px;color:rgba(201,168,76,0.55);text-transform:uppercase;transition:color 0.3s}
+.tib-range{font-family:var(--font-serif);font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);transition:color 0.3s;line-height:1}
+.tb-floor.tb-active .tib-name{color:var(--gold)}
+.tb-floor.tb-active .tib-range{color:rgba(255,255,255,0.95)}
+
+/* Crown */
+.tb-crown{position:absolute;top:6px;right:7px;display:flex;gap:4px;z-index:6}
+.tb-crown i{display:block;width:4px;height:4px;background:var(--gold);border-radius:50%;box-shadow:0 0 6px rgba(201,168,76,0.9);animation:crownb 2s infinite}
+.tb-crown i:nth-child(2){animation-delay:.6s}.tb-crown i:nth-child(3){animation-delay:1.2s}
+@keyframes crownb{0%,100%{opacity:1;box-shadow:0 0 6px rgba(201,168,76,0.9)}50%{opacity:0.2;box-shadow:none}}
+
+/* Sides */
+.tb-side{position:absolute;top:4px;bottom:0;width:14px;z-index:0}
+.tb-side-l{left:-14px;background:linear-gradient(to right,rgba(0,0,0,0.2),rgba(201,168,76,0.1));border-left:1px solid rgba(201,168,76,0.12)}
+.tb-side-r{right:-14px;background:linear-gradient(to left,rgba(0,0,0,0.5),rgba(201,168,76,0.03));border-right:1px solid rgba(201,168,76,0.06)}
+
+/* Podium */
+.tb-podium{width:100%;height:12px;background:linear-gradient(to bottom,rgba(201,168,76,0.4),rgba(201,168,76,0.06));border-top:2px solid rgba(201,168,76,0.55)}
+.tb-ground-glow{width:65%;height:18px;background:radial-gradient(ellipse,rgba(201,168,76,0.28) 0%,transparent 70%);filter:blur(8px);margin-top:-3px}
+
+/* RIGHT COL */
+.torre-right-col{display:flex}
+.torre-single-card{flex:1;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);padding:48px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:0}
+.tsc-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5),transparent)}
+.tsc-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.55);margin-bottom:14px}
+.tsc-title{font-family:var(--font-serif);font-size:38px;font-weight:600;color:var(--white);line-height:1.05;margin-bottom:14px}
+.tsc-title em{font-style:italic;color:var(--gold)}
+.tsc-desc{font-size:15px;color:rgba(255,255,255,0.38);line-height:1.75;font-weight:300}
+.tsc-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.07),transparent);margin:28px 0}
+.tsc-steps{display:flex;flex-direction:column;gap:16px}
+.tsc-step{display:flex;align-items:flex-start;gap:16px}
+.tsc-n{font-family:var(--font-serif);font-size:24px;font-weight:600;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:28px}
+.tsc-t{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.6;font-weight:300;padding-top:4px}
+.tsc-btn{width:100%;justify-content:center;margin-top:0}
+.tsc-note{font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2px;margin-top:12px;text-align:center}
+
 
 </style>
 </head>
@@ -558,180 +966,90 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     <div class="torre-head">
       <div class="tag tag-center">Il tuo percorso a livelli</div>
       <h2 class="torre-h2">Ogni agente sa <em>a che piano è.</em><br>E sa dove deve arrivare.</h2>
-      <p class="torre-sub-text">La Torre della Crescita è la tua mappa. Cinque livelli, ognuno con target di fatturato. Non si salta — si scala piano per piano.</p>
+      <p class="torre-sub-text">Cinque livelli, ognuno con target di fatturato. Clicca il tuo piano per scoprire dove sei.</p>
     </div>
 
-    <div class="dubai-wrapper">
-      <!-- BUILDING -->
-      <div class="dubai-building">
+    <div class="torre-layout">
 
-        <!-- SPIRE -->
-        <div class="dubai-spire">
-          <div class="spire-needle"></div>
-          <div class="spire-glow"></div>
+      <!-- LEFT: BUILDING -->
+      <div class="torre-building-col">
+        <div class="torre-spire-wrap">
+          <div class="ts-tip"></div>
+          <div class="ts-rod"></div>
+          <div class="ts-glow"></div>
         </div>
-
-        <!-- FLOOR 5: SKYLINE -->
-        <div class="dubai-floor floor-skyline active-floor" data-floor="5" onclick="selectFloor(5)">
-          <div class="floor-face floor-face-front">
-            <div class="floor-glass-grid grid-sm"></div>
-            <div class="floor-label-inside">
-              <span class="fl-name">SKYLINE</span>
-              <span class="fl-range">€800k – €1M+</span>
+        <div class="torre-building-wrap">
+          <div class="tb-floor tb-f5 tb-active" data-f="5" onclick="selFloor(5)">
+            <div class="tb-top-line"></div>
+            <div class="tb-front">
+              <div class="tb-glass-overlay"></div>
+              <div class="tb-win-grid"></div>
+              <div class="tb-info-bar"><span class="tib-name">SKYLINE</span><span class="tib-range">€800k – €1M+</span></div>
+              <div class="tb-crown"><i></i><i></i><i></i></div>
             </div>
-            <div class="floor-crown">
-              <div class="crown-light"></div>
-              <div class="crown-light"></div>
-              <div class="crown-light"></div>
-            </div>
+            <div class="tb-side tb-side-l"></div><div class="tb-side tb-side-r"></div>
           </div>
-          <div class="floor-face floor-face-left-s"></div>
-          <div class="floor-face floor-face-right-s"></div>
-          <div class="floor-edge-top-s"></div>
-        </div>
-
-        <!-- FLOOR 4: VETTA -->
-        <div class="dubai-floor floor-vetta" data-floor="4" onclick="selectFloor(4)">
-          <div class="floor-face floor-face-front">
-            <div class="floor-glass-grid grid-md"></div>
-            <div class="floor-label-inside">
-              <span class="fl-name">VETTA</span>
-              <span class="fl-range">€300k – €800k</span>
+          <div class="tb-floor tb-f4" data-f="4" onclick="selFloor(4)">
+            <div class="tb-top-line"></div>
+            <div class="tb-front">
+              <div class="tb-glass-overlay"></div><div class="tb-win-grid"></div>
+              <div class="tb-info-bar"><span class="tib-name">VETTA</span><span class="tib-range">€300k – €800k</span></div>
             </div>
+            <div class="tb-side tb-side-l"></div><div class="tb-side tb-side-r"></div>
           </div>
-          <div class="floor-face floor-face-left-m"></div>
-          <div class="floor-face floor-face-right-m"></div>
-          <div class="floor-edge-top-m"></div>
-        </div>
-
-        <!-- FLOOR 3: CUORE -->
-        <div class="dubai-floor floor-cuore" data-floor="3" onclick="selectFloor(3)">
-          <div class="floor-face floor-face-front">
-            <div class="floor-glass-grid grid-lg"></div>
-            <div class="floor-label-inside">
-              <span class="fl-name">CUORE</span>
-              <span class="fl-range">€150k – €300k</span>
+          <div class="tb-floor tb-f3" data-f="3" onclick="selFloor(3)">
+            <div class="tb-top-line"></div>
+            <div class="tb-front">
+              <div class="tb-glass-overlay"></div><div class="tb-win-grid"></div>
+              <div class="tb-info-bar"><span class="tib-name">CUORE DELL'EDIFICIO</span><span class="tib-range">€150k – €300k</span></div>
             </div>
+            <div class="tb-side tb-side-l"></div><div class="tb-side tb-side-r"></div>
           </div>
-          <div class="floor-face floor-face-left-l"></div>
-          <div class="floor-face floor-face-right-l"></div>
-          <div class="floor-edge-top-l"></div>
-        </div>
-
-        <!-- FLOOR 2: PRIMO PIANO -->
-        <div class="dubai-floor floor-primo" data-floor="2" onclick="selectFloor(2)">
-          <div class="floor-face floor-face-front">
-            <div class="floor-glass-grid grid-xl"></div>
-            <div class="floor-label-inside">
-              <span class="fl-name">PRIMO PIANO</span>
-              <span class="fl-range">€50k – €150k</span>
+          <div class="tb-floor tb-f2" data-f="2" onclick="selFloor(2)">
+            <div class="tb-top-line"></div>
+            <div class="tb-front">
+              <div class="tb-glass-overlay"></div><div class="tb-win-grid"></div>
+              <div class="tb-info-bar"><span class="tib-name">PRIMO PIANO</span><span class="tib-range">€50k – €150k</span></div>
             </div>
+            <div class="tb-side tb-side-l"></div><div class="tb-side tb-side-r"></div>
           </div>
-          <div class="floor-face floor-face-left-xl"></div>
-          <div class="floor-face floor-face-right-xl"></div>
-          <div class="floor-edge-top-xl"></div>
-        </div>
-
-        <!-- FLOOR 1: FONDAMENTA -->
-        <div class="dubai-floor floor-fondamenta" data-floor="1" onclick="selectFloor(1)">
-          <div class="floor-face floor-face-front">
-            <div class="floor-glass-grid grid-xxl"></div>
-            <div class="floor-label-inside">
-              <span class="fl-name">FONDAMENTA</span>
-              <span class="fl-range">€0 – €50k</span>
+          <div class="tb-floor tb-f1" data-f="1" onclick="selFloor(1)">
+            <div class="tb-top-line"></div>
+            <div class="tb-front">
+              <div class="tb-glass-overlay"></div><div class="tb-win-grid"></div>
+              <div class="tb-info-bar"><span class="tib-name">FONDAMENTA</span><span class="tib-range">€0 – €50k</span></div>
             </div>
+            <div class="tb-side tb-side-l"></div><div class="tb-side tb-side-r"></div>
           </div>
-          <div class="floor-face floor-face-left-xxl"></div>
-          <div class="floor-face floor-face-right-xxl"></div>
-          <div class="floor-edge-top-xxl"></div>
+          <div class="tb-podium"></div>
         </div>
+        <div class="tb-ground-glow"></div>
+      </div>
 
-        <!-- BASE -->
-        <div class="dubai-base">
-          <div class="base-glow"></div>
+      <!-- RIGHT: SINGLE CARD — same height as building -->
+      <div class="torre-right-col">
+        <div class="torre-single-card">
+          <div class="tsc-top-bar"></div>
+
+          <div class="tsc-eyebrow">Non sai a che piano sei?</div>
+          <div class="tsc-title">Scopri il tuo livello<br>nella <em>Torre Strategica.</em></div>
+          <p class="tsc-desc">Rispondi a 5 domande. Ti diciamo esattamente a che piano sei — e cosa fare per salire al prossimo.</p>
+
+          <div class="tsc-divider"></div>
+
+          <div class="tsc-steps">
+            <div class="tsc-step"><span class="tsc-n">01</span><span class="tsc-t">Rispondi a 5 domande sul tuo fatturato e sul tuo metodo attuale.</span></div>
+            <div class="tsc-step"><span class="tsc-n">02</span><span class="tsc-t">Scopri a che piano sei nella Torre della Crescita.</span></div>
+            <div class="tsc-step"><span class="tsc-n">03</span><span class="tsc-t">Ricevi le azioni prioritarie per salire al piano successivo.</span></div>
+          </div>
+
+          <div class="tsc-divider"></div>
+
+          <a href="#" class="btn btn-gold btn-lg tsc-btn">Fai il test gratuito →</a>
+          <div class="tsc-note">Gratuito · 2 minuti · Risultato immediato</div>
         </div>
       </div>
 
-      <!-- INFO PANEL -->
-      <div class="dubai-info">
-        <div class="floor-info-panel" id="floor-info">
-
-          <div class="fi-panel" id="fi-5" style="display:flex">
-            <div class="fi-badge">Piano 5</div>
-            <div class="fi-name">Skyline</div>
-            <div class="fi-range">€800k – €1M+</div>
-            <p class="fi-desc">Hai costruito qualcosa che funziona senza di te. L'eccellenza è il tuo standard. Il tuo nome è il mercato.</p>
-            <div class="fi-sei-qui">Sei qui?</div>
-            <div class="fi-traits">
-              <span>Team consolidato</span>
-              <span>Business scalabile</span>
-              <span>Brand dominante</span>
-            </div>
-          </div>
-
-          <div class="fi-panel" id="fi-4" style="display:none">
-            <div class="fi-badge">Piano 4</div>
-            <div class="fi-name">Vetta</div>
-            <div class="fi-range">€300k – €800k</div>
-            <p class="fi-desc">Guidi un'organizzazione. Brand riconosciuto nel tuo territorio. Il team lavora mentre tu strategeggi.</p>
-            <div class="fi-sei-qui">Sei qui?</div>
-            <div class="fi-traits">
-              <span>Leadership attiva</span>
-              <span>Mercato dominato</span>
-              <span>Deleghi con sistema</span>
-            </div>
-          </div>
-
-          <div class="fi-panel" id="fi-3" style="display:none">
-            <div class="fi-badge">Piano 3</div>
-            <div class="fi-name">Cuore dell'Edificio</div>
-            <div class="fi-range">€150k – €300k</div>
-            <p class="fi-desc">Scala il team. Deleghi, sistemi, leadership operativa. Stai facendo il salto da agente a imprenditore.</p>
-            <div class="fi-sei-qui">Sei qui?</div>
-            <div class="fi-traits">
-              <span>Primi collaboratori</span>
-              <span>Sistemi operativi</span>
-              <span>Pipeline strutturata</span>
-            </div>
-          </div>
-
-          <div class="fi-panel" id="fi-2" style="display:none">
-            <div class="fi-badge">Piano 2</div>
-            <div class="fi-name">Primo Piano</div>
-            <div class="fi-range">€50k – €150k</div>
-            <p class="fi-desc">Consolidi il metodo. La pipeline diventa prevedibile. Il caos si trasforma in sistema che si ripete.</p>
-            <div class="fi-sei-qui">Sei qui?</div>
-            <div class="fi-traits">
-              <span>Metodo consolidato</span>
-              <span>Risultati costanti</span>
-              <span>Crescita misurabile</span>
-            </div>
-          </div>
-
-          <div class="fi-panel" id="fi-1" style="display:none">
-            <div class="fi-badge">Piano 1</div>
-            <div class="fi-name">Fondamenta</div>
-            <div class="fi-range">€0 – €50k</div>
-            <p class="fi-desc">Costruisci le basi. Sistema, routine, prime acquisizioni costanti. Da qui parte tutto — e parte bene.</p>
-            <div class="fi-sei-qui">Sei qui?</div>
-            <div class="fi-traits">
-              <span>Prime acquisizioni</span>
-              <span>Routine operative</span>
-              <span>Sistema in costruzione</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- CTA TEST -->
-        <div class="torre-test-cta">
-          <div class="test-eyebrow">Non sai a che piano sei?</div>
-          <div class="test-title">Scopri il tuo livello<br>nella <em>Torre Strategica.</em></div>
-          <p class="test-desc">Rispondi a 5 domande. Ti diciamo esattamente a che piano sei — e cosa fare per salire al prossimo.</p>
-          <a href="#" class="btn btn-gold btn-lg" style="margin-top:24px;">Fai il test gratuito →</a>
-          <div class="test-note">Gratuito · 2 minuti · Risultato immediato</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -982,18 +1300,17 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 </footer>
 
 
-<script>
-function selectFloor(n) {
-  // remove active from all floors
-  document.querySelectorAll('.dubai-floor').forEach(f => f.classList.remove('active-floor'));
-  // add active to clicked
-  document.querySelector('[data-floor="'+n+'"]').classList.add('active-floor');
-  // hide all panels
-  document.querySelectorAll('.fi-panel').forEach(p => p.style.display = 'none');
-  // show selected panel
-  document.getElementById('fi-'+n).style.display = 'flex';
-}
-</script>
 
+
+
+
+
+<script>
+function selFloor(n) {
+  document.querySelectorAll('.tb-floor').forEach(f => f.classList.remove('tb-active'));
+  document.querySelector('[data-f="'+n+'"]').classList.add('tb-active');
+}
+document.addEventListener('DOMContentLoaded', function(){ selFloor(5); });
+</script>
 </body>
 </html>
