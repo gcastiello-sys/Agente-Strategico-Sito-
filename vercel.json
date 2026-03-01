@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/community", "dest": "/community.html" },
+    { "src": "/community.html", "dest": "/community.html" },
+    { "src": "/eventi", "dest": "/eventi.html" },
+    { "src": "/eventi.html", "dest": "/eventi.html" },
+    { "src": "/corso-aula", "dest": "/corso-aula.html" },
+    { "src": "/corso-aula.html", "dest": "/corso-aula.html" }
+  ]
+}
