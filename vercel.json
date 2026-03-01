@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/community", "dest": "/community.html" },
+    { "src": "/community.html", "dest": "/community.html" }
+  ]
+}
