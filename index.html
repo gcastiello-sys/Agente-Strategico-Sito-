@@ -59,20 +59,27 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .nav-ghost:hover { color: var(--black); }
 
 .hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; background: var(--black); }
-.hero-bg { position: absolute; inset: 0; background-image: url('601 (1).jpg'); background-size: cover; background-position: center 20%; filter: brightness(0.35); background-color: #1a1a1a; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.05) 30%, rgba(10,10,10,0.65) 65%, rgba(10,10,10,0.95) 100%); }
-.hero-content { position: relative; z-index: 2; width: 100%; padding: 80px var(--pad) 72px; max-width: var(--max-w); margin: 0 auto; }
+.hero-bg-left { position: absolute; inset: 0; right: 50%; background-image: url('617.jpg'); background-size: cover; background-position: center 10%; filter: brightness(0.38); background-color: #1a1a1a; }
+.hero-bg-right { position: absolute; inset: 0; left: 50%; background-color: #1a1a1a; overflow: hidden; } .hero-bg-right::after { content:''; position: absolute; inset: 0; background-image: url('583 (2).jpg'); background-size: cover; background-position: center 10%; filter: brightness(0.38); transform: scaleX(-1); }
+.hero-bg-center { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.55) 35%, rgba(10,10,10,0.75) 50%, rgba(10,10,10,0.55) 65%, rgba(10,10,10,0.15) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.05) 25%, rgba(10,10,10,0.5) 65%, rgba(10,10,10,0.95) 100%); }
+.hero-divider { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent 0%, rgba(201,168,76,0.4) 30%, rgba(201,168,76,0.4) 70%, transparent 100%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; width: 100%; padding: 80px var(--pad) 72px; max-width: var(--max-w); margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .hero-tag { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
 .hero-tag::before { content:''; width:32px; height:1.5px; background:var(--gold); }
-.hero-h1 { font-family: var(--font-serif); font-size: clamp(48px, 6vw, 88px); font-weight: 500; line-height: 0.93; color: var(--white); letter-spacing: -2px; margin-bottom: 32px; max-width: 860px; }
+.hero-tag::after { content:''; width:32px; height:1.5px; background:var(--gold); }
+.hero-h1 { font-family: var(--font-serif); font-size: clamp(48px, 6vw, 88px); font-weight: 500; line-height: 0.93; color: var(--white); letter-spacing: -2px; margin-bottom: 32px; max-width: 760px; text-align: center; }
 .hero-h1 em { font-style: italic; color: var(--gold); }
-.hero-sub { font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 500px; margin-bottom: 44px; }
+.hero-sub { font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 500px; margin-bottom: 44px; text-align: center; }
 .hero-sub strong { color: var(--white); font-weight: 500; }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
-.hero-fomo { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.45); }
+.hero-fomo { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.45); justify-content: center; }
 .fomo-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 8px var(--gold); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
 .hero-fomo strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+.hero-name-left, .hero-name-right { position: absolute; bottom: 180px; font-family: var(--font-serif); font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.35); letter-spacing: 2px; text-transform: uppercase; z-index: 3; }
+.hero-name-left { left: var(--pad); }
+.hero-name-right { right: var(--pad); text-align: right; }
 
 .stats-bar { background: var(--black); border-top: 1px solid rgba(255,255,255,0.05); }
 .stats-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border-left: 1px solid rgba(255,255,255,0.05); }
@@ -214,8 +221,13 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
 </nav>
 
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-left"></div>
+  <div class="hero-bg-right"></div>
+  <div class="hero-bg-center"></div>
   <div class="hero-overlay"></div>
+  <div class="hero-divider"></div>
+  <div class="hero-name-left">Vincenzo Romano</div>
+  <div class="hero-name-right">Giuseppe</div>
   <div class="hero-content">
     <div class="hero-tag">Ecosistema Community-First · Agenti Immobiliari Italiani</div>
     <h1 class="hero-h1">
