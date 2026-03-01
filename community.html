@@ -5,158 +5,303 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Community — Agente Strategico</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black:      #0A0A0A;
-  --gray-900:   #1A1A1A;
-  --gray-700:   #444444;
-  --gray-500:   #777777;
-  --gray-200:   #E8E8E8;
-  --gray-100:   #F4F4F4;
-  --white:      #FFFFFF;
-  --gold:       #C9A84C;
+  --black: #0A0A0A;
+  --navy: #0D1117;
+  --gray-900: #1A1A1A;
+  --gray-700: #444;
+  --gray-500: #777;
+  --gray-200: #E8E8E8;
+  --gray-100: #F4F4F4;
+  --white: #FFF;
+  --gold: #C9A84C;
   --gold-light: #E2C46A;
+  --gold-pale: rgba(201,168,76,0.12);
   --font-serif: 'Cormorant Garamond', serif;
-  --font-sans:  'Inter', sans-serif;
-  --max-w:      1200px;
-  --pad:        clamp(24px, 5vw, 80px);
+  --font-sans: 'Inter', sans-serif;
+  --max-w: 1200px;
+  --pad: clamp(24px, 5vw, 80px);
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); color: var(--gray-700); background: var(--white); overflow-x: hidden; font-size: 16px; line-height: 1.6; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);overflow-x:hidden;font-size:16px;line-height:1.6}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+.tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.tag::before{content:'';width:32px;height:1.5px;background:var(--gold)}
+.tag-center{justify-content:center}
+.tag-center::after{content:'';width:32px;height:1.5px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s;padding:14px 28px;text-transform:uppercase}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,76,0.35)}
+.btn-outline-w{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.4)}
+.btn-outline-w:hover{background:var(--white);color:var(--black)}
+.btn-outline{background:transparent;color:var(--black);border:1.5px solid var(--black)}
+.btn-outline:hover{background:var(--black);color:var(--white)}
+.btn-lg{padding:18px 44px;font-size:14px}
 
-.ann-bar { background: var(--black); color: rgba(255,255,255,0.7); text-align: center; padding: 11px var(--pad); font-size: 13px; }
-.ann-bar strong { color: var(--gold); }
-.ann-bar a { color: var(--gold); text-decoration: none; font-weight: 600; margin-left: 8px; }
-.navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(12px); height: 72px; display: flex; align-items: center; }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
-.nav-logo img { height: 36px; display: block; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: 12px; font-weight: 500; color: var(--gray-700); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
-.nav-links a:hover { color: var(--black); }
-.nav-links a.active { color: var(--black); border-bottom: 1.5px solid var(--gold); padding-bottom: 2px; }
-.nav-actions { display: flex; gap: 12px; align-items: center; }
-.nav-ghost { font-size: 12px; font-weight: 500; color: var(--gray-700); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; }
-.nav-ghost:hover { color: var(--black); }
-.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.5px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; padding: 14px 28px; text-transform: uppercase; }
-.btn-gold { background: var(--gold); color: var(--black); }
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-.btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--black); }
-.btn-outline:hover { background: var(--black); color: var(--white); }
-.btn-outline-w { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); }
-.btn-outline-w:hover { background: var(--white); color: var(--black); }
-.btn-lg { padding: 18px 40px; font-size: 14px; }
-.tag { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-.tag::before { content:''; width:32px; height:1.5px; background:var(--gold); }
-.tag-center { justify-content: center; }
-.tag-center::after { content:''; width:32px; height:1.5px; background:var(--gold); }
+/* ANN BAR */
+.ann-bar{background:var(--black);color:rgba(255,255,255,0.65);text-align:center;padding:11px var(--pad);font-size:13px}
+.ann-bar strong{color:var(--gold)}
+.ann-bar a{color:var(--gold);text-decoration:none;font-weight:600;margin-left:8px}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--gray-200);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+.nav-logo img{height:36px;display:block}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--black)}
+.nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.nav-ghost{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:0.5px;text-transform:uppercase}
+.nav-ghost:hover{color:var(--black)}
 
 /* HERO */
-.hero { background: var(--black); padding: 120px var(--pad) 100px; position: relative; overflow: hidden; }
-.hero::before { content:''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%); pointer-events: none; }
-.hero-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.hero-h1 { font-family: var(--font-serif); font-size: clamp(48px, 5.5vw, 78px); font-weight: 500; line-height: 0.95; color: var(--white); letter-spacing: -2px; margin-bottom: 28px; }
-.hero-h1 em { font-style: italic; color: var(--gold); }
-.hero-sub { font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 40px; max-width: 460px; }
-.hero-sub strong { color: rgba(255,255,255,0.85); font-weight: 500; }
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
-.hero-fomo { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 1.5px; }
-.fomo-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 8px var(--gold); animation: pulse 2s infinite; flex-shrink: 0; }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
-.hero-right { display: flex; flex-direction: column; gap: 2px; }
-.stat-row { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 24px 28px; display: flex; align-items: center; gap: 20px; }
-.stat-row + .stat-row { border-top: none; }
-.stat-num { font-family: var(--font-serif); font-size: 40px; font-weight: 600; color: var(--gold); line-height: 1; min-width: 80px; }
-.stat-text strong { color: rgba(255,255,255,0.8); font-weight: 500; display: block; margin-bottom: 2px; font-size: 14px; }
-.stat-text span { font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 300; }
+.hero{background:var(--black);padding:120px var(--pad) 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)}
+.hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-h1{font-family:var(--font-serif);font-size:clamp(48px,5.5vw,80px);font-weight:500;line-height:0.95;color:var(--white);letter-spacing:-2px;margin-bottom:28px}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:40px;max-width:460px}
+.hero-sub strong{color:rgba(255,255,255,0.85);font-weight:500}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.hero-fomo{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.28);text-transform:uppercase;letter-spacing:1.5px}
+.fomo-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 10px var(--gold);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.6)}}
+.hero-stats{display:flex;flex-direction:column;gap:2px}
+.stat-row{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:22px 28px;display:flex;align-items:center;gap:20px;transition:background 0.2s}
+.stat-row+.stat-row{border-top:none}
+.stat-row:hover{background:rgba(201,168,76,0.05)}
+.stat-num{font-family:var(--font-serif);font-size:38px;font-weight:600;color:var(--gold);line-height:1;min-width:80px}
+.stat-text strong{color:rgba(255,255,255,0.8);font-weight:500;display:block;margin-bottom:2px;font-size:14px}
+.stat-text span{font-size:12px;color:rgba(255,255,255,0.3);font-weight:300}
 
 /* PROBLEMI */
-.problemi { background: var(--black); padding: 96px var(--pad); border-top: 1px solid rgba(255,255,255,0.05); }
-.problemi-inner { max-width: var(--max-w); margin: 0 auto; }
-.problemi-head { margin-bottom: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; }
-.problemi-h2 { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 56px); font-weight: 600; line-height: 1.0; color: var(--white); letter-spacing: -0.5px; }
-.problemi-h2 em { font-style: italic; color: var(--gold); }
-.problemi-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.75; }
-.p-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid rgba(255,255,255,0.06); }
-.p-card { padding: 44px 32px; border-right: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; gap: 14px; }
-.p-card:last-child { border-right: none; }
-.p-num { font-family: var(--font-serif); font-size: 72px; font-weight: 400; color: var(--gold); line-height: 1; opacity: 0.12; }
-.p-title { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--white); line-height: 1.2; }
-.p-desc { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; font-weight: 300; flex: 1; }
-.p-hook { font-size: 11px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+.problemi{background:var(--black);padding:96px var(--pad);border-top:1px solid rgba(255,255,255,0.04)}
+.problemi-head{margin-bottom:56px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.problemi-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.0;color:var(--white);letter-spacing:-0.5px}
+.problemi-h2 em{font-style:italic;color:var(--gold)}
+.problemi-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,0.35);line-height:1.75}
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,0.06)}
+.p-card{padding:44px 32px;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:14px;transition:background 0.2s}
+.p-card:last-child{border-right:none}
+.p-card:hover{background:rgba(201,168,76,0.03)}
+.p-num{font-family:var(--font-serif);font-size:72px;font-weight:400;color:var(--gold);line-height:1;opacity:0.12}
+.p-title{font-family:var(--font-serif);font-size:24px;font-weight:600;color:var(--white);line-height:1.2}
+.p-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;flex:1}
+.p-hook{font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06)}
 
-/* SOLUZIONE */
-.soluzione { background: var(--white); padding: 96px var(--pad); }
-.sol-inner { max-width: var(--max-w); margin: 0 auto; }
-.sol-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 64px; }
-.sol-h2 { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 56px); font-weight: 600; line-height: 1.0; color: var(--black); letter-spacing: -0.5px; }
-.sol-h2 em { font-style: italic; color: var(--gold); }
-.sol-sub { font-size: 16px; font-weight: 300; color: var(--gray-500); line-height: 1.75; }
-.ritmo { list-style: none; }
-.ritmo-item { display: grid; grid-template-columns: 56px 1fr; gap: 28px; padding: 32px 0; border-bottom: 1px solid var(--gray-200); align-items: start; }
-.ritmo-item:first-child { border-top: 1px solid var(--gray-200); }
-.r-badge { width: 56px; height: 56px; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 22px; font-weight: 600; flex-shrink: 0; }
-.r-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-.r-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
-.r-desc { font-size: 14px; color: var(--gray-500); line-height: 1.7; font-weight: 300; }
-.sol-cta { margin-top: 48px; }
+/* MOTTO */
+.motto{position:relative;padding:120px var(--pad);overflow:hidden;background:var(--navy)}
+.motto-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#0d1117 40%,#1a1a2e 100%);z-index:0}
+.motto-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,0.04) 0%,transparent 70%);z-index:1}
+.motto-inner{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.motto-quote{font-family:var(--font-serif);font-size:clamp(40px,5vw,72px);font-weight:300;color:var(--white);line-height:1.1;letter-spacing:-1px}
+.motto-quote em{font-style:italic;color:var(--gold);font-weight:400}
+.motto-steps{display:flex;flex-direction:column;gap:0}
+.motto-step{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.motto-step:last-child{border-bottom:none}
+.step-n{font-family:var(--font-serif);font-size:13px;color:var(--gold);font-weight:600;min-width:24px;opacity:0.7}
+.step-t{font-family:var(--font-serif);font-size:22px;font-weight:500;color:var(--white);letter-spacing:0.5px}
+
+/* ECOSISTEMA */
+.ecosistema{background:var(--white);padding:96px var(--pad)}
+.eco-head{text-align:center;margin-bottom:64px}
+.eco-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.eco-h2 em{font-style:italic;color:var(--gold)}
+.eco-sub{font-size:17px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:560px;margin:16px auto 0}
+.eco-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--gray-200)}
+.eco-card{background:var(--white);padding:40px 28px;display:flex;flex-direction:column;gap:14px;transition:all 0.25s;cursor:default;position:relative;overflow:hidden}
+.eco-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.eco-card:hover::before{transform:scaleX(1)}
+.eco-card:hover{background:var(--black)}
+.eco-card:hover .eco-title{color:var(--white)}
+.eco-card:hover .eco-sub-text{color:rgba(255,255,255,0.4)}
+.eco-card:hover .eco-icon{color:var(--gold)}
+.eco-icon{font-size:28px;margin-bottom:4px;transition:color 0.25s}
+.eco-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.eco-title{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--black);line-height:1.2;transition:color 0.25s}
+.eco-sub-text{font-size:13px;color:var(--gray-500);line-height:1.6;font-weight:300;transition:color 0.25s}
+
+/* RITMO */
+.ritmo-section{background:var(--gray-100);padding:96px var(--pad)}
+.ritmo-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+.ritmo-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.ritmo-h2 em{font-style:italic;color:var(--gold)}
+.ritmo-sub{font-size:16px;font-weight:300;color:var(--gray-500);line-height:1.75}
+.ritmo-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.ritmo-item{display:grid;grid-template-columns:64px 1fr;gap:24px;background:var(--white);padding:32px;align-items:start;transition:all 0.2s}
+.ritmo-item:hover{background:var(--black)}
+.ritmo-item:hover .r-title{color:var(--white)}
+.ritmo-item:hover .r-desc{color:rgba(255,255,255,0.4)}
+.ritmo-item:hover .r-label{color:var(--gold)}
+.r-badge{width:64px;height:64px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:24px;font-weight:600;flex-shrink:0;transition:background 0.2s}
+.ritmo-item:hover .r-badge{background:var(--gold);color:var(--black)}
+.r-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;transition:color 0.2s}
+.r-title{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--black);margin-bottom:8px;line-height:1.2;transition:color 0.2s}
+.r-desc{font-size:14px;color:var(--gray-500);line-height:1.7;font-weight:300;transition:color 0.2s}
+
+/* VETTA - TORRE */
+.torre-section{background:var(--black);padding:96px var(--pad);position:relative;overflow:hidden}
+.torre-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(201,168,76,0.08) 0%,transparent 60%);pointer-events:none}
+.torre-head{text-align:center;margin-bottom:72px;position:relative;z-index:2}
+.torre-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--white);letter-spacing:-0.5px}
+.torre-h2 em{font-style:italic;color:var(--gold)}
+.torre-sub-text{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.75;max-width:560px;margin:16px auto 0}
+.torre-wrapper{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.torre-building{display:flex;flex-direction:column;align-items:center;gap:0;position:relative}
+.torre-floor{display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:all 0.3s}
+.torre-floor-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);transition:all 0.3s;position:relative;overflow:hidden}
+.torre-floor-inner::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
+.torre-floor:hover .torre-floor-inner::before{opacity:1}
+.torre-floor:hover .torre-floor-inner{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.05)}
+/* Floor widths — pyramid shape */
+.floor-5{width:100%}
+.floor-4{width:88%}
+.floor-3{width:75%}
+.floor-2{width:62%}
+.floor-1{width:50%}
+.floor-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.floor-name{font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--white)}
+.floor-range{font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px}
+/* Glow effect on top floor */
+.floor-top .torre-floor-inner{background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.05));border-color:rgba(201,168,76,0.5);box-shadow:0 0 40px rgba(201,168,76,0.15),inset 0 0 40px rgba(201,168,76,0.05)}
+.floor-top .floor-name{color:var(--gold)}
+/* Building graphic */
+.building-graphic{position:relative;width:100%;max-width:380px;margin:0 auto}
+.building-svg{width:100%;filter:drop-shadow(0 0 40px rgba(201,168,76,0.15))}
+.torre-levels{display:flex;flex-direction:column;gap:16px;justify-content:flex-end}
+.t-level{padding:24px 28px;border:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden;transition:all 0.25s}
+.t-level::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);opacity:0}
+.t-level:hover{border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.04)}
+.t-level:hover::before{opacity:1}
+.t-level-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;opacity:0.7}
+.t-level-name{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--white);margin-bottom:4px}
+.t-level-range{font-size:13px;color:var(--gold);font-weight:500;margin-bottom:8px}
+.t-level-desc{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;font-weight:300}
+/* Top level special */
+.t-level-top{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.03));border-color:rgba(201,168,76,0.3)}
+.t-level-top::before{opacity:1}
+.t-level-top .t-level-name{color:var(--gold)}
+
+/* VETTA FRAMEWORK */
+.vetta-section{background:var(--white);padding:96px var(--pad)}
+.vetta-head{text-align:center;margin-bottom:64px}
+.vetta-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.vetta-h2 em{font-style:italic;color:var(--gold)}
+.vetta-sub{font-size:17px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:520px;margin:16px auto 0}
+.vetta-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.vetta-steps::before{content:'';position:absolute;top:48px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0.3;z-index:0}
+.v-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 20px;position:relative;z-index:1}
+.v-letter{width:96px;height:96px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:48px;font-weight:600;margin:0 auto 20px;border:1px solid rgba(201,168,76,0.2);position:relative;transition:all 0.3s}
+.v-letter::after{content:'';position:absolute;inset:-4px;border:1px solid rgba(201,168,76,0.1);transition:opacity 0.3s}
+.v-step:hover .v-letter{background:var(--gold);color:var(--black);box-shadow:0 16px 48px rgba(201,168,76,0.3)}
+.v-step-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.v-step-title{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--black);margin-bottom:10px}
+.v-step-desc{font-size:13px;color:var(--gray-500);line-height:1.6;font-weight:300}
+
+/* 6 CHIAVI */
+.chiavi-section{background:var(--black);padding:96px var(--pad)}
+.chiavi-head{text-align:center;margin-bottom:64px}
+.chiavi-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--white);letter-spacing:-0.5px}
+.chiavi-h2 em{font-style:italic;color:var(--gold)}
+.chiavi-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.75;max-width:520px;margin:16px auto 0}
+.chiavi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.04)}
+.c-card{background:var(--black);padding:44px 36px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(255,255,255,0.06);transition:all 0.25s;position:relative;overflow:hidden}
+.c-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.c-card:hover::after{transform:scaleX(1)}
+.c-card:hover{background:rgba(201,168,76,0.05);border-color:rgba(201,168,76,0.2)}
+.c-icon{font-size:32px;margin-bottom:4px}
+.c-program{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:4px}
+.c-title{font-family:var(--font-serif);font-size:26px;font-weight:600;color:var(--white);line-height:1.1}
+.c-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300}
 
 /* TESTIMONIANZE */
-.testi { background: var(--gray-100); padding: 96px var(--pad); }
-.testi-inner { max-width: var(--max-w); margin: 0 auto; }
-.testi-head { margin-bottom: 52px; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-.testi-h2 { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 56px); font-weight: 600; line-height: 1.0; color: var(--black); letter-spacing: -0.5px; }
-.testi-h2 em { font-style: italic; color: var(--gold); }
-.rating-block { text-align: right; }
-.stars { font-size: 16px; color: var(--gold); letter-spacing: 2px; margin-bottom: 4px; }
-.rating-n { font-family: var(--font-serif); font-size: 44px; font-weight: 600; color: var(--black); line-height: 1; }
-.rating-l { font-size: 10px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
-.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--gray-200); }
-.t-card { background: var(--white); padding: 36px 28px; display: flex; flex-direction: column; gap: 16px; }
-.q-mark { font-family: var(--font-serif); font-size: 64px; color: var(--gold); line-height: 0.7; opacity: 0.3; }
-.q-text { font-family: var(--font-serif); font-size: 16px; color: var(--gray-700); line-height: 1.75; flex: 1; }
-.q-text strong { color: var(--black); font-weight: 600; }
-.q-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--gray-200); padding-top: 16px; }
-.q-avatar { width: 40px; height: 40px; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 15px; font-weight: 600; flex-shrink: 0; }
-.q-name { font-size: 14px; font-weight: 600; color: var(--black); }
-.q-role { font-size: 12px; color: var(--gray-500); }
+.testi{background:var(--gray-100);padding:96px var(--pad)}
+.testi-head{margin-bottom:52px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.testi-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.testi-h2 em{font-style:italic;color:var(--gold)}
+.rating-block{text-align:right}
+.stars{font-size:16px;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
+.rating-n{font-family:var(--font-serif);font-size:44px;font-weight:600;color:var(--black);line-height:1}
+.rating-l{font-size:10px;color:var(--gray-500);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200)}
+.t-card{background:var(--white);padding:36px 28px;display:flex;flex-direction:column;gap:16px}
+.q-mark{font-family:var(--font-serif);font-size:64px;color:var(--gold);line-height:0.7;opacity:0.25}
+.q-text{font-family:var(--font-serif);font-size:16px;color:var(--gray-700);line-height:1.75;flex:1}
+.q-text strong{color:var(--black);font-weight:600}
+.q-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--gray-200);padding-top:16px}
+.q-avatar{width:42px;height:42px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:15px;font-weight:600;flex-shrink:0}
+.q-name{font-size:14px;font-weight:600;color:var(--black)}
+.q-role{font-size:12px;color:var(--gray-500)}
+
+/* TEAM */
+.team-section{background:var(--white);padding:96px var(--pad)}
+.team-head{text-align:center;margin-bottom:64px}
+.team-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
+.team-h2 em{font-style:italic;color:var(--gold)}
+.team-sub{font-size:17px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:560px;margin:16px auto 0}
+.team-founders{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.coach-card{background:var(--gray-100);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all 0.3s}
+.coach-card:hover{background:var(--black)}
+.coach-card:hover .coach-name{color:var(--white)}
+.coach-card:hover .coach-role{color:rgba(255,255,255,0.45)}
+.coach-photo{width:100%;aspect-ratio:4/3;background:var(--gray-200);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.coach-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%);transition:all 0.4s}
+.coach-card:hover .coach-photo img{filter:grayscale(0%) brightness(0.8)}
+.coach-initials{font-family:var(--font-serif);font-size:48px;font-weight:300;color:var(--gray-500)}
+.coach-info{padding:24px 28px;border-top:1px solid rgba(0,0,0,0.06);transition:border-color 0.3s}
+.coach-card:hover .coach-info{border-color:rgba(255,255,255,0.06)}
+.coach-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.coach-name{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--black);line-height:1.2;margin-bottom:4px;transition:color 0.3s}
+.coach-role{font-size:13px;color:var(--gray-500);font-weight:300;transition:color 0.3s}
+/* founder card bigger */
+.coach-card-founder .coach-photo{aspect-ratio:16/9}
+.coach-card-founder .coach-name{font-size:26px}
 
 /* FOMO */
-.fomo-section { background: var(--black); padding: 120px var(--pad); position: relative; overflow: hidden; }
-.fomo-section::before { content:''; position: absolute; bottom: -300px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events: none; }
-.fomo-inner { max-width: 680px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
-.fomo-h2 { font-family: var(--font-serif); font-size: clamp(44px, 5.5vw, 80px); font-weight: 500; line-height: 0.95; color: var(--white); letter-spacing: -2px; margin-bottom: 28px; }
-.fomo-h2 em { font-style: italic; color: var(--gold); }
-.fomo-copy { font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.8; margin-bottom: 48px; }
-.fomo-copy strong { color: rgba(255,255,255,0.8); font-weight: 500; }
-.fomo-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-.fomo-note { font-size: 11px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 2px; }
-.fomo-badges { display: flex; gap: 32px; justify-content: center; margin-top: 56px; flex-wrap: wrap; }
-.f-badge { font-size: 11px; color: rgba(255,255,255,0.25); text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; }
-.f-badge::before { content:''; width:16px; height:1px; background: rgba(201,168,76,0.4); }
+.fomo-section{background:var(--black);padding:140px var(--pad);position:relative;overflow:hidden}
+.fomo-section::before{content:'';position:absolute;bottom:-400px;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none}
+.fomo-section::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)}
+.fomo-inner{max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.fomo-h2{font-family:var(--font-serif);font-size:clamp(48px,6vw,90px);font-weight:400;line-height:0.92;color:var(--white);letter-spacing:-3px;margin-bottom:32px}
+.fomo-h2 em{font-style:italic;color:var(--gold)}
+.fomo-copy{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.85;margin-bottom:52px}
+.fomo-copy strong{color:rgba(255,255,255,0.8);font-weight:500}
+.fomo-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.fomo-note{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:2.5px}
+.fomo-badges{display:flex;gap:40px;justify-content:center;margin-top:60px;flex-wrap:wrap}
+.f-badge{font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1.5px;display:flex;align-items:center;gap:10px}
+.f-badge::before{content:'';width:20px;height:1px;background:rgba(201,168,76,0.4)}
 
-footer { background: var(--black); padding: 48px var(--pad); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-logo img { height: 30px; opacity: 0.75; }
-.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-.footer-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--gold); }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); text-transform: uppercase; letter-spacing: 1px; }
+/* FOOTER */
+footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-logo img{height:28px;opacity:0.7}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.28);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.15);text-transform:uppercase;letter-spacing:1px}
 </style>
 </head>
 <body>
 
+<!-- ANN BAR -->
 <div class="ann-bar">
   Candidature per il nuovo ciclo aperte — posti limitati.
   <strong>L'accesso richiede selezione.</strong>
   <a href="#">Scopri come candidarti →</a>
 </div>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">AS</span>Agente Strategico</span>
     </a>
     <ul class="nav-links">
       <li><a href="#">Ecosistema</a></li>
@@ -174,37 +319,29 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner container">
     <div>
       <div class="tag">La Community degli Agenti Immobiliari Italiani</div>
-      <h1 class="hero-h1">
-        Smetti di lavorare<br>da solo. Inizia a<br>crescere <em>insieme.</em>
-      </h1>
-      <p class="hero-sub">
-        Ogni settimana centinaia di agenti italiani affrontano le stesse sfide che stai affrontando tu. La differenza tra chi si blocca e chi scala non è il talento —
-        è il <strong>sistema, l'ecosistema e le persone intorno a te.</strong>
-      </p>
+      <h1 class="hero-h1">Smetti di lavorare<br>da solo. Inizia a<br>crescere <em>insieme.</em></h1>
+      <p class="hero-sub">Ogni settimana centinaia di agenti italiani affrontano le stesse sfide che stai affrontando tu. La differenza tra chi si blocca e chi scala non è il talento — è il <strong>sistema, l'ecosistema e le persone intorno a te.</strong></p>
       <div class="hero-ctas">
-        <a href="#" class="btn btn-gold btn-lg">Candidati per entrare →</a>
+        <a href="#" class="btn btn-gold btn-lg">Manda la tua candidatura →</a>
         <a href="#" class="btn btn-outline-w btn-lg">Parla col Team</a>
       </div>
-      <div class="hero-fomo">
-        <span class="fomo-dot"></span>
-        Accesso su candidatura · Posti limitati per ciclo
-      </div>
+      <div class="hero-fomo"><span class="fomo-dot"></span>Accesso su candidatura · Posti limitati per ciclo</div>
     </div>
-    <div class="hero-right">
+    <div class="hero-stats">
       <div class="stat-row">
-        <div class="stat-num">200+</div>
+        <div class="stat-num">380+</div>
         <div class="stat-text"><strong>Agenti nell'ecosistema</strong><span>Professionisti selezionati, non iscritti casuali.</span></div>
       </div>
       <div class="stat-row">
-        <div class="stat-num">4×</div>
-        <div class="stat-text"><strong>Live ogni mese</strong><span>Training operativi, hot seat e sprint di gruppo.</span></div>
+        <div class="stat-num">12</div>
+        <div class="stat-text"><strong>Live ogni mese</strong><span>Call operative, academy e sessioni di gruppo.</span></div>
       </div>
       <div class="stat-row">
-        <div class="stat-num">90</div>
-        <div class="stat-text"><strong>Giorni per vedere risultati</strong><span>Il primo sprint inizia dal giorno uno.</span></div>
+        <div class="stat-num">4</div>
+        <div class="stat-text"><strong>Masterclass all'anno</strong><span>Intensivi dal vivo su metodo, marketing e AI.</span></div>
       </div>
       <div class="stat-row">
         <div class="stat-num">4.9</div>
@@ -215,8 +352,8 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
 </section>
 
 <!-- PROBLEMI -->
-<section class="problemi">
-  <div class="problemi-inner">
+<section class="problemi container" style="max-width:100%;padding-left:var(--pad);padding-right:var(--pad)">
+  <div style="max-width:var(--max-w);margin:0 auto">
     <div class="problemi-head">
       <div>
         <div class="tag">Il problema reale</div>
@@ -240,66 +377,383 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
       <div class="p-card">
         <div class="p-num">03</div>
         <div class="p-title">Costruire un team è un altro mestiere</div>
-        <p class="p-desc">Hai provato ad assumere. Non funziona. Nessuno lavora come lavori tu. E non sai come fare il salto da agente a leader — perché nessuno te lo ha mai insegnato.</p>
+        <p class="p-desc">Hai provato ad assumere. Non funziona. Nessuno lavora come lavori tu. Non sai come fare il salto da agente a leader — perché nessuno te lo ha mai insegnato.</p>
         <div class="p-hook">L'ecosistema ti guida nel salto →</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUZIONE -->
-<section class="soluzione">
-  <div class="sol-inner">
-    <div class="sol-head">
+<!-- MOTTO -->
+<section class="motto">
+  <div class="motto-bg"></div>
+  <div class="motto-overlay"></div>
+  <div class="motto-inner container">
+    <div>
+      <div class="tag" style="color:rgba(201,168,76,0.6)">La filosofia</div>
+      <div class="motto-quote">"Qui non si<br>aggiunge<br><em>motivazione.</em><br>Si costruisce<br>performance."</div>
+    </div>
+    <div class="motto-steps">
+      <div class="motto-step"><span class="step-n">1</span><span class="step-t">Decisione</span></div>
+      <div class="motto-step"><span class="step-n">2</span><span class="step-t">Metodo</span></div>
+      <div class="motto-step"><span class="step-n">3</span><span class="step-t">Ritmo</span></div>
+      <div class="motto-step"><span class="step-n">4</span><span class="step-t">Misura</span></div>
+      <div class="motto-step"><span class="step-n">5</span><span class="step-t">Risultati</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSISTEMA -->
+<section class="ecosistema">
+  <div style="max-width:var(--max-w);margin:0 auto">
+    <div class="eco-head">
+      <div class="tag tag-center">Come è strutturato</div>
+      <h2 class="eco-h2">Non un corso.<br>Un <em>ecosistema completo.</em></h2>
+      <p class="eco-sub">Cinque componenti che lavorano insieme. Ogni pezzo rafforza gli altri. Nessuno lavora da solo — neanche il tuo percorso di crescita.</p>
+    </div>
+    <div class="eco-grid">
+      <div class="eco-card">
+        <div class="eco-icon">◎</div>
+        <div class="eco-label">Cuore pulsante</div>
+        <div class="eco-title">Community</div>
+        <div class="eco-sub-text">380+ agenti selezionati. Chat, bacheca, guide operative. Strategie reali condivise ogni giorno — non solo ispirazione.</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">◈</div>
+        <div class="eco-label">Formazione strutturata</div>
+        <div class="eco-title">Academy</div>
+        <div class="eco-sub-text">Una sessione ogni settimana. Temi operativi pronti per essere applicati il lunedì mattina. Libreria replay sempre disponibile.</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">◇</div>
+        <div class="eco-label">Accelerazione</div>
+        <div class="eco-title">Coaching</div>
+        <div class="eco-sub-text">Hot seat con i coach fondatori. Il tuo caso, analizzato dal vivo. Esci con un piano d'azione — non con un consiglio generico.</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">◈</div>
+        <div class="eco-label">Intensivi dal vivo</div>
+        <div class="eco-title">Corsi in Aula</div>
+        <div class="eco-sub-text">Metodo V.E.T.T.A., marketing e AI applicata. In aula si lavora — e si costruiscono le relazioni che durano anni.</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">◉</div>
+        <div class="eco-label">Network e visione</div>
+        <div class="eco-title">Eventi</div>
+        <div class="eco-sub-text">Meet Up nazionali, Pit Stop, sessioni dal vivo. Dove la community si vede, si stringe la mano e cresce insieme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RITMO SETTIMANALE -->
+<section class="ritmo-section">
+  <div style="max-width:var(--max-w);margin:0 auto">
+    <div class="ritmo-head">
       <div>
         <div class="tag">Come cambia dentro l'ecosistema</div>
-        <h2 class="sol-h2">Non ti diamo un corso.<br>Ti diamo un <em>ecosistema<br>che funziona.</em></h2>
+        <h2 class="ritmo-h2">Non ti diamo un corso.<br>Ti diamo un <em>ecosistema<br>che funziona.</em></h2>
       </div>
-      <p class="sol-sub">Ogni settimana esci con azioni concrete, numeri da misurare e un gruppo che ti tiene responsabile. Non motivazione — risultati.</p>
+      <p class="ritmo-sub">Ogni settimana esci con azioni concrete, numeri da misurare e un gruppo che ti tiene responsabile. Non motivazione — risultati.</p>
     </div>
-    <ul class="ritmo">
+    <ul class="ritmo-list">
       <li class="ritmo-item">
-        <div class="r-badge">L</div>
-        <div>
-          <div class="r-label">Ogni settimana</div>
-          <div class="r-title">Live Training operativo</div>
-          <p class="r-desc">Ogni settimana un tema concreto — acquisizione, trattativa, team, digitale. Non teoria: playbook da applicare il lunedì mattina. Ogni sessione è registrata e disponibile in libreria.</p>
-        </div>
+        <div class="r-badge">C</div>
+        <div><div class="r-label">2 volte a settimana</div><div class="r-title">Call One-to-Many</div><p class="r-desc">Sessioni operative di gruppo. Temi pratici, domande reali, risposte immediate dai coach. Non aspetti il prossimo corso — hai supporto ogni settimana.</p></div>
       </li>
       <li class="ritmo-item">
-        <div class="r-badge">Q</div>
-        <div>
-          <div class="r-label">Hot Seat</div>
-          <div class="r-title">Il tuo caso, analizzato dal vivo</div>
-          <p class="r-desc">Porti il tuo problema specifico. I coach lo analizzano davanti a tutti. Esci con un piano d'azione, non con un consiglio generico. Il tuo caso diventa valore per tutta la community.</p>
-        </div>
+        <div class="r-badge">A</div>
+        <div><div class="r-label">1 volta a settimana</div><div class="r-title">Academy</div><p class="r-desc">Formazione strutturata sul metodo. Ogni sessione copre una delle 6 Chiavi della Trasformazione. Registrata, disponibile, applicabile da subito.</p></div>
+      </li>
+      <li class="ritmo-item">
+        <div class="r-badge">M</div>
+        <div><div class="r-label">4 volte all'anno</div><div class="r-title">Mastermind</div><p class="r-desc">Confronto avanzato tra agenti selezionati. Si portano numeri, strategie e sfide reali. Si esce con visione più ampia e connessioni più forti.</p></div>
+      </li>
+      <li class="ritmo-item">
+        <div class="r-badge">K</div>
+        <div><div class="r-label">4 volte all'anno</div><div class="r-title">Masterclass</div><p class="r-desc">Intensivi tematici con esperti del settore. Marketing, AI, leadership, finanza immobiliare. Ogni Masterclass è un salto di livello concentrato in una giornata.</p></div>
       </li>
       <li class="ritmo-item">
         <div class="r-badge">S</div>
-        <div>
-          <div class="r-label">Ogni trimestre</div>
-          <div class="r-title">Sprint 90 giorni con accountability</div>
-          <p class="r-desc">Obiettivi chiari, KPI condivisi, gruppo che ti tiene responsabile. Il collettivo ti tira avanti anche quando la motivazione cala. I risultati si misurano, non si raccontano.</p>
-        </div>
+        <div><div class="r-label">Ogni trimestre</div><div class="r-title">Sprint 90 giorni</div><p class="r-desc">Obiettivi chiari, KPI condivisi, gruppo che ti tiene responsabile. Il collettivo ti tira avanti anche quando la motivazione cala. I risultati si misurano, non si raccontano.</p></div>
       </li>
       <li class="ritmo-item">
         <div class="r-badge">R</div>
-        <div>
-          <div class="r-label">Sempre disponibile</div>
-          <div class="r-title">Libreria replay + Playbook operativi</div>
-          <p class="r-desc">Ogni sessione registrata, ogni strumento scaricabile. Non perdi niente e accedi a tutto l'archivio dal primo giorno. Non si impara una volta — si consulta ogni volta che serve.</p>
-        </div>
+        <div><div class="r-label">Sempre disponibile</div><div class="r-title">Libreria Replay + Playbook</div><p class="r-desc">Ogni sessione registrata, ogni strumento scaricabile. Non perdi niente e accedi a tutto l'archivio dal primo giorno.</p></div>
       </li>
     </ul>
-    <div class="sol-cta">
-      <a href="#" class="btn btn-gold btn-lg">Candidati per entrare →</a>
+  </div>
+</section>
+
+<!-- TORRE DELLA CRESCITA -->
+<section class="torre-section">
+  <div style="max-width:var(--max-w);margin:0 auto;position:relative;z-index:2">
+    <div class="torre-head">
+      <div class="tag tag-center">Il tuo percorso a livelli</div>
+      <h2 class="torre-h2">Ogni agente sa <em>a che piano è.</em><br>E sa dove deve arrivare.</h2>
+      <p class="torre-sub-text">La Torre della Crescita è la tua mappa. Cinque livelli, ognuno con target di fatturato e obiettivi specifici. Non si salta — si scala piano per piano.</p>
+    </div>
+    <div class="torre-wrapper">
+      <!-- BUILDING GRAPHIC -->
+      <div class="building-graphic">
+        <svg class="building-svg" viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#8B6914" stop-opacity="0.4"/>
+            </linearGradient>
+            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#E2C46A" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.8"/>
+            </linearGradient>
+            <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="white" stop-opacity="0"/>
+              <stop offset="50%" stop-color="white" stop-opacity="0.04"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="softglow">
+              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- GROUND GLOW -->
+          <ellipse cx="200" cy="510" rx="160" ry="12" fill="url(#goldGrad)" opacity="0.15"/>
+
+          <!-- FLOOR 1 - FONDAMENTA (widest, bottom) -->
+          <rect x="20" y="440" width="360" height="72" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
+          <rect x="20" y="440" width="360" height="72" fill="url(#glassGrad)" opacity="0.3"/>
+          <!-- windows row -->
+          <rect x="36" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="62" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="88" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="114" y="454" width="18" height="28" fill="rgba(201,168,76,0.06)"/>
+          <rect x="114" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="248" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="274" y="454" width="18" height="28" fill="rgba(201,168,76,0.06)"/>
+          <rect x="274" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="300" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="326" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <text x="200" y="481" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'Cormorant Garamond',serif" font-size="11" letter-spacing="3">FONDAMENTA</text>
+          <text x="200" y="499" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€0 – €50k</text>
+          <!-- floor separator line gold -->
+          <line x1="20" y1="440" x2="380" y2="440" stroke="url(#goldGrad)" stroke-width="1"/>
+
+          <!-- FLOOR 2 - PRIMO PIANO -->
+          <rect x="44" y="358" width="312" height="80" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
+          <rect x="44" y="358" width="312" height="80" fill="url(#glassGrad)" opacity="0.25"/>
+          <!-- window grid -->
+          <rect x="60" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="82" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="104" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="126" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="260" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="282" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="304" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <rect x="60" y="398" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <rect x="82" y="398" width="14" height="20" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <rect x="282" y="398" width="14" height="20" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <rect x="304" y="398" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <text x="200" y="394" text-anchor="middle" fill="rgba(201,168,76,0.45)" font-family="'Cormorant Garamond',serif" font-size="10" letter-spacing="2">PRIMO PIANO</text>
+          <text x="200" y="410" text-anchor="middle" fill="rgba(255,255,255,0.18)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€50k – €150k</text>
+          <line x1="44" y1="358" x2="356" y2="358" stroke="url(#goldGrad)" stroke-width="1"/>
+
+          <!-- FLOOR 3 - CUORE -->
+          <rect x="76" y="276" width="248" height="80" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
+          <rect x="76" y="276" width="248" height="80" fill="url(#glassGrad)" opacity="0.2"/>
+          <rect x="92" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="112" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="132" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="260" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="280" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="300" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="92" y="314" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
+          <rect x="280" y="314" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
+          <text x="200" y="312" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'Cormorant Garamond',serif" font-size="10" letter-spacing="2">CUORE DELL'EDIFICIO</text>
+          <text x="200" y="328" text-anchor="middle" fill="rgba(255,255,255,0.18)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€150k – €300k</text>
+          <line x1="76" y1="276" x2="324" y2="276" stroke="url(#goldGrad)" stroke-width="1"/>
+
+          <!-- FLOOR 4 - VETTA -->
+          <rect x="116" y="194" width="168" height="80" fill="#131008" stroke="url(#goldGrad)" stroke-width="1"/>
+          <rect x="116" y="194" width="168" height="80" fill="url(#glassGrad)" opacity="0.15"/>
+          <rect x="130" y="206" width="10" height="16" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+          <rect x="148" y="206" width="10" height="16" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
+          <rect x="240" y="206" width="10" height="16" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
+          <rect x="258" y="206" width="10" height="16" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+          <rect x="130" y="230" width="10" height="16" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="258" y="230" width="10" height="16" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <text x="200" y="232" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'Cormorant Garamond',serif" font-size="11" letter-spacing="2">VETTA</text>
+          <text x="200" y="250" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€300k – €800k</text>
+          <line x1="116" y1="194" x2="284" y2="194" stroke="url(#goldGrad)" stroke-width="1.5"/>
+
+          <!-- FLOOR 5 - SKYLINE (top, glowing) -->
+          <rect x="152" y="90" width="96" height="102" fill="#0f0c02" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <!-- glass panels -->
+          <rect x="152" y="90" width="96" height="102" fill="url(#glassGrad)" opacity="0.4"/>
+          <rect x="162" y="100" width="8" height="14" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="0.5"/>
+          <rect x="176" y="100" width="8" height="14" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+          <rect x="216" y="100" width="8" height="14" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+          <rect x="230" y="100" width="8" height="14" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="0.5"/>
+          <rect x="162" y="122" width="8" height="14" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.35)" stroke-width="0.5"/>
+          <rect x="176" y="122" width="8" height="14" fill="rgba(201,168,76,0.22)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+          <rect x="216" y="122" width="8" height="14" fill="rgba(201,168,76,0.22)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+          <rect x="230" y="122" width="8" height="14" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.35)" stroke-width="0.5"/>
+          <rect x="162" y="144" width="8" height="14" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
+          <rect x="230" y="144" width="8" height="14" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
+          <text x="200" y="170" text-anchor="middle" fill="rgba(201,168,76,0.9)" font-family="'Cormorant Garamond',serif" font-size="12" letter-spacing="3" filter="url(#glow)">SKYLINE</text>
+          <text x="200" y="184" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€800k – €1M+</text>
+
+          <!-- SPIRE -->
+          <line x1="200" y1="10" x2="200" y2="90" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <polygon points="200,2 196,18 204,18" fill="url(#goldGrad)" filter="url(#glow)"/>
+          <!-- spire glow -->
+          <ellipse cx="200" cy="10" rx="12" ry="4" fill="rgba(201,168,76,0.3)" filter="url(#softglow)"/>
+
+          <!-- TOP GLOW AMBIENT -->
+          <ellipse cx="200" cy="90" rx="60" ry="8" fill="rgba(201,168,76,0.12)" filter="url(#softglow)"/>
+
+          <!-- SHIMMER OVERLAY -->
+          <rect x="152" y="90" width="96" height="102" fill="url(#shimmer)"/>
+          <rect x="116" y="194" width="168" height="80" fill="url(#shimmer)"/>
+        </svg>
+      </div>
+
+      <!-- LEVEL CARDS -->
+      <div class="torre-levels">
+        <div class="t-level t-level-top">
+          <div class="t-level-tag">Piano 5 · L'eccellenza</div>
+          <div class="t-level-name">Skyline</div>
+          <div class="t-level-range">€800k – €1M+</div>
+          <div class="t-level-desc">Hai costruito qualcosa che funziona senza di te. L'eccellenza diventa lo standard. Il tuo nome è il mercato.</div>
+        </div>
+        <div class="t-level">
+          <div class="t-level-tag">Piano 4 · Leadership</div>
+          <div class="t-level-name">Vetta</div>
+          <div class="t-level-range">€300k – €800k</div>
+          <div class="t-level-desc">Guidi un'organizzazione. Brand riconosciuto, mercato dominato. Il team lavora mentre tu strategeggi.</div>
+        </div>
+        <div class="t-level">
+          <div class="t-level-tag">Piano 3 · Team</div>
+          <div class="t-level-name">Cuore dell'Edificio</div>
+          <div class="t-level-range">€150k – €300k</div>
+          <div class="t-level-desc">Scala il team. Deleghi, sistemi, leadership operativa. Da agente a imprenditore.</div>
+        </div>
+        <div class="t-level">
+          <div class="t-level-tag">Piano 2 · Sistema</div>
+          <div class="t-level-name">Primo Piano</div>
+          <div class="t-level-range">€50k – €150k</div>
+          <div class="t-level-desc">Consolidi il metodo. Pipeline prevedibile, primi collaboratori. Il caos si trasforma in sistema.</div>
+        </div>
+        <div class="t-level">
+          <div class="t-level-tag">Piano 1 · Fondamenta</div>
+          <div class="t-level-name">Fondamenta</div>
+          <div class="t-level-range">€0 – €50k</div>
+          <div class="t-level-desc">Costruisci le basi. Sistema, routine, prime acquisizioni costanti. Da qui parte tutto.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V.E.T.T.A. -->
+<section class="vetta-section">
+  <div style="max-width:var(--max-w);margin:0 auto">
+    <div class="vetta-head">
+      <div class="tag tag-center">Il metodo operativo</div>
+      <h2 class="vetta-h2">Un sistema replicabile.<br>Non un'opinione — <em>un metodo.</em></h2>
+      <p class="vetta-sub">V.E.T.T.A. è il sistema operativo che guida ogni agente dentro l'ecosistema. Cinque fasi, in ordine. Piano dopo piano.</p>
+    </div>
+    <div class="vetta-steps">
+      <div class="v-step">
+        <div class="v-letter">V</div>
+        <div class="v-step-label">Fase 1</div>
+        <div class="v-step-title">Valuta</div>
+        <p class="v-step-desc">Analizza dove sei oggi. Fatturato, pipeline, team. Senza dati non si parte — si improvvisa.</p>
+      </div>
+      <div class="v-step">
+        <div class="v-letter">E</div>
+        <div class="v-step-label">Fase 2</div>
+        <div class="v-step-title">Esegui</div>
+        <p class="v-step-desc">Metti in campo le strategie testate. Acquisizione, marketing, trattativa — con un playbook, non con l'istinto.</p>
+      </div>
+      <div class="v-step">
+        <div class="v-letter">T</div>
+        <div class="v-step-label">Fase 3</div>
+        <div class="v-step-title">Traccia</div>
+        <p class="v-step-desc">Misura ogni azione. KPI settimanali. Sai sempre dove sei e dove devi andare.</p>
+      </div>
+      <div class="v-step">
+        <div class="v-letter">T</div>
+        <div class="v-step-label">Fase 4</div>
+        <div class="v-step-title">Trasforma</div>
+        <p class="v-step-desc">Ottimizza ciò che funziona. Elimina ciò che non funziona. La trasformazione è un processo continuo.</p>
+      </div>
+      <div class="v-step">
+        <div class="v-letter">A</div>
+        <div class="v-step-label">Fase 5</div>
+        <div class="v-step-title">Ascendi</div>
+        <p class="v-step-desc">Scala il tuo livello nella Torre. Piano dopo piano. Con un sistema — non con la fortuna.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 CHIAVI -->
+<section class="chiavi-section">
+  <div style="max-width:var(--max-w);margin:0 auto">
+    <div class="chiavi-head">
+      <div class="tag tag-center">Su cosa lavoriamo</div>
+      <h2 class="chiavi-h2">Sei aree.<br><em>Tutte necessarie.</em><br>Nessuna opzionale.</h2>
+      <p class="chiavi-sub">Ogni agente che entra nell'ecosistema lavora su tutte e sei le chiavi. Perché la crescita vera è integrata, non settoriale.</p>
+    </div>
+    <div class="chiavi-grid">
+      <div class="c-card">
+        <div class="c-icon">🎯</div>
+        <div class="c-program">Club degli Acquisitori</div>
+        <div class="c-title">Acquisizione</div>
+        <p class="c-desc">Come trovare clienti in modo sistematico, non casuale. Strategie testate per riempire la pipeline ogni mese.</p>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">🤝</div>
+        <div class="c-program">Missione Incarichi a Valanga</div>
+        <div class="c-title">Vendita</div>
+        <p class="c-desc">Come chiudere più trattative con meno attrito. Script, gestione delle obiezioni, posizionamento nel mercato.</p>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">📡</div>
+        <div class="c-program">Magnete di Incarichi</div>
+        <div class="c-title">Marketing</div>
+        <p class="c-desc">Come diventare il punto di riferimento nel tuo territorio. Brand personale, contenuti, presenza digitale che genera incarichi.</p>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">⚡</div>
+        <div class="c-program">Livello 10X</div>
+        <div class="c-title">Produttività</div>
+        <p class="c-desc">Come fare di più in meno tempo. Priorità, sistemi, routine operative da professionista dominante.</p>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">🏔️</div>
+        <div class="c-program">Alta Quota</div>
+        <div class="c-title">Benessere</div>
+        <p class="c-desc">Come sostenere la performance nel tempo. Energia, focus, equilibrio tra vita e lavoro senza rinunciare ai risultati.</p>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">💎</div>
+        <div class="c-program">Libertà Finanziaria</div>
+        <div class="c-title">Finanziario</div>
+        <p class="c-desc">Come gestire quello che guadagni. Investimento, protezione patrimoniale, libertà economica — non solo fatturato.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIANZE -->
 <section class="testi">
-  <div class="testi-inner">
+  <div style="max-width:var(--max-w);margin:0 auto">
     <div class="testi-head">
       <div>
         <div class="tag">Chi ha già scalato</div>
@@ -319,34 +773,145 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
       </div>
       <div class="t-card">
         <div class="q-mark">"</div>
-        <p class="q-text">Posso garantire che mi ha cambiato il modo di essere e il modo di lavorare. La differenza di far parte di una community è <strong>quel senso di appartenenza a un gruppo</strong> che ti aiuta sia dal punto di vista lavorativo che umano.</p>
+        <p class="q-text">Posso garantire che mi ha cambiato il modo di essere e il modo di lavorare. <strong>Quel senso di appartenenza a un gruppo che ti aiuta sia dal punto di vista lavorativo che umano</strong> non ha prezzo.</p>
         <div class="q-author"><div class="q-avatar">GV</div><div><div class="q-name">Giuseppe Vaglica</div><div class="q-role">Agente Immobiliare</div></div></div>
       </div>
       <div class="t-card">
         <div class="q-mark">"</div>
-        <p class="q-text">Questa rete ti permette di non sentirti mai solo grazie al supporto dei colleghi. <strong>Essere parte di questa community significa far parte di una famiglia professionale</strong> che ispira e sostiene ogni giorno.</p>
+        <p class="q-text">Questa rete ti permette di non sentirti mai solo. <strong>Essere parte di questa community significa far parte di una famiglia professionale</strong> che ispira e sostiene ogni giorno.</p>
         <div class="q-author"><div class="q-avatar">FG</div><div><div class="q-name">Francesco Gori</div><div class="q-role">Agente Immobiliare</div></div></div>
       </div>
       <div class="t-card">
         <div class="q-mark">"</div>
-        <p class="q-text">In Agente Strategico ho trovato argomenti approfonditi e senza eguali e soprattutto <strong>un ambiente per poter crescere veramente sia come professionista che come persona.</strong> È il tassello che ci mancava.</p>
+        <p class="q-text">In Agente Strategico ho trovato argomenti approfonditi e senza eguali. <strong>Un ambiente per poter crescere veramente sia come professionista che come persona.</strong> È il tassello che ci mancava.</p>
         <div class="q-author"><div class="q-avatar">GF</div><div><div class="q-name">Guglielmo Francini</div><div class="q-role">Broker Immobiliare</div></div></div>
       </div>
       <div class="t-card">
         <div class="q-mark">"</div>
-        <p class="q-text">Non si tratta solo di imparare nozioni, ma di entrare a far parte di un sistema. Grazie alla <strong>condivisione costante ho acquisito una visione più ampia del mercato</strong> e strumenti concreti per affrontare le sfide.</p>
+        <p class="q-text">Non si tratta solo di imparare nozioni. <strong>Grazie alla condivisione costante ho acquisito una visione più ampia del mercato</strong> e strumenti concreti per affrontare le sfide giornaliere.</p>
         <div class="q-author"><div class="q-avatar">PT</div><div><div class="q-name">Piero Teresi</div><div class="q-role">Agente Immobiliare</div></div></div>
       </div>
       <div class="t-card">
         <div class="q-mark">"</div>
-        <p class="q-text">Quando Vincenzo Romano mi ha parlato di questa community, non avrei mai pensato avesse così tanti contenuti. <strong>È un game changer nella nostra attività.</strong> Consiglio caldamente a tutti di partecipare.</p>
+        <p class="q-text">Non avrei mai pensato avesse così tanti contenuti. <strong>È un game changer nella nostra attività.</strong> Quando Vincenzo Romano me ne ha parlato, non immaginavo quanto avrebbe cambiato il mio modo di lavorare.</p>
         <div class="q-author"><div class="q-avatar">GI</div><div><div class="q-name">Giuseppe Iannò</div><div class="q-role">Agente Immobiliare</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOMO CTA -->
+<!-- TEAM -->
+<section class="team-section">
+  <div style="max-width:var(--max-w);margin:0 auto">
+    <div class="team-head">
+      <div class="tag tag-center">Chi ti accompagna nella scalata</div>
+      <h2 class="team-h2">Non una voce.<br>Un <em>team completo.</em></h2>
+      <p class="team-sub">Undici professionisti con esperienze reali nel settore immobiliare, nel marketing e nell'AI. Ognuno con un ruolo preciso nell'ecosistema. Tutti dentro con te, ogni settimana.</p>
+    </div>
+    <!-- FOUNDERS ROW -->
+    <div class="team-founders">
+      <div class="coach-card coach-card-founder">
+        <div class="coach-photo">
+          <img src="601 (1).jpg" alt="Vincenzo Romano" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="coach-initials" style="display:none">VR</div>
+        </div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach Principale & Fondatore</div>
+          <div class="coach-name">Vincenzo Romano</div>
+          <div class="coach-role">Fondatore di Agente Strategico. Oltre 20 anni nel settore immobiliare. Crea i sistemi che trasformano agenti in leader di mercato.</div>
+        </div>
+      </div>
+      <div class="coach-card coach-card-founder">
+        <div class="coach-photo">
+          <img src="583 (2).jpg" alt="Giuseppe Castiello" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="coach-initials" style="display:none">GC</div>
+        </div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach Principale & Fondatore</div>
+          <div class="coach-name">Giuseppe Castiello</div>
+          <div class="coach-role">Co-fondatore e stratega dell'ecosistema. Guida i programmi di crescita e l'architettura del metodo V.E.T.T.A.</div>
+        </div>
+      </div>
+    </div>
+    <!-- TEAM GRID -->
+    <div class="team-grid">
+      <div class="coach-card">
+        <div class="coach-photo"><img src="2324 (1).jpg" alt="Antonella Sorrentino" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="coach-initials" style="display:none">AS</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach Marketing & Direttore Didattica</div>
+          <div class="coach-name">Antonella Sorrentino</div>
+          <div class="coach-role">Strategia di marketing e formazione. Guida la didattica dell'Academy.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">CL</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">CEO</div>
+          <div class="coach-name">Carmine Lamberti</div>
+          <div class="coach-role">CEO di Agente Strategico. Guida le operazioni e la crescita dell'organizzazione.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">LS</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach & Trainer</div>
+          <div class="coach-name">Luca Salomone</div>
+          <div class="coach-role">Marketing Automation. Trasforma i processi in sistemi automatizzati ad alta performance.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">ND</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach & Trainer</div>
+          <div class="coach-name">Nicola Della Rocca</div>
+          <div class="coach-role">Specialista in acquisizione e tecniche di vendita avanzate nel settore immobiliare.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">SC</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach & Trainer</div>
+          <div class="coach-name">Simone Campisano</div>
+          <div class="coach-role">Performance coach. Guida gli agenti nello sviluppo del mindset e delle competenze operative.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">FI</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach & Trainer</div>
+          <div class="coach-name">Francesco Iacomelli</div>
+          <div class="coach-role">Esperto di leadership e gestione del team per agenzie in crescita.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">FS</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Coach & Trainer</div>
+          <div class="coach-name">Filomena Sibona</div>
+          <div class="coach-role">Coaching su benessere, performance sostenibile e crescita personale integrata.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">LD</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Communication & Partner Management</div>
+          <div class="coach-name">Laura D'Amore</div>
+          <div class="coach-role">Gestisce le relazioni con i partner e la comunicazione strategica dell'ecosistema.</div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo"><div class="coach-initials">VG</div></div>
+        <div class="coach-info">
+          <div class="coach-tag">Social Media Marketing</div>
+          <div class="coach-name">Valentina Gallo</div>
+          <div class="coach-role">Crea e gestisce la presenza digitale di Agente Strategico su tutti i canali social.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOMO FINALE -->
 <section class="fomo-section">
   <div class="fomo-inner">
     <div class="tag tag-center">Accesso su candidatura</div>
@@ -357,12 +922,12 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
       Prima di entrare, parliamo. Valutiamo insieme se questo è il momento giusto per te e per l'ecosistema.
     </p>
     <div class="fomo-ctas">
-      <a href="#" class="btn btn-gold btn-lg">Candidati Ora →</a>
+      <a href="#" class="btn btn-gold btn-lg">Manda la tua candidatura →</a>
       <a href="#" class="btn btn-outline-w btn-lg">Parla col Team</a>
     </div>
     <div class="fomo-note">Accesso limitato · Richiede selezione · Posti esauribili per ciclo</div>
     <div class="fomo-badges">
-      <span class="f-badge">Community selezionata</span>
+      <span class="f-badge">380+ agenti selezionati</span>
       <span class="f-badge">Accesso su candidatura</span>
       <span class="f-badge">Risultati misurabili</span>
     </div>
@@ -370,9 +935,8 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
 </section>
 
 <footer>
-  <a href="index.html" class="footer-logo">
-    <img src="Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+  <a href="index.html">
+    <img src="Logo_02.png" alt="Agente Strategico" style="height:28px;opacity:0.7" onerror="this.style.display='none'">
   </a>
   <div class="footer-links">
     <a href="#">Privacy</a>
@@ -380,7 +944,7 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
     <a href="#">Contatti</a>
     <a href="#">Sitemap</a>
   </div>
-  <div class="footer-copy">© 2025 Agente Strategico</div>
+  <div class="footer-copy">© 2025 Agente Strategico S.R.L.</div>
 </footer>
 
 </body>
