@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agente Strategico — L'Ecosistema per Agenti Immobiliari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:      #0A0A0A;
+  --gray-900:   #1A1A1A;
+  --gray-700:   #444444;
+  --gray-500:   #777777;
+  --gray-200:   #E8E8E8;
+  --gray-100:   #F4F4F4;
+  --white:      #FFFFFF;
+  --gold:       #C9A84C;
+  --gold-light: #E2C46A;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans:  'Inter', sans-serif;
+  --max-w:      1200px;
+  --pad:        clamp(24px, 5vw, 80px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); color: var(--gray-700); background: var(--white); overflow-x: hidden; font-size: 16px; line-height: 1.6; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+.tag { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.tag::before { content:''; width:32px; height:1.5px; background:var(--gold); }
+h2.serif { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 58px); font-weight: 600; line-height: 1.0; color: var(--black); letter-spacing: -0.5px; }
+h2.serif em { font-style: italic; color: var(--gold); }
+.sub { font-size: 17px; font-weight: 300; color: var(--gray-500); line-height: 1.75; max-width: 520px; margin-top: 16px; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.5px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; padding: 14px 28px; text-transform: uppercase; }
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.btn-black { background: var(--black); color: var(--white); }
+.btn-black:hover { background: #222; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--black); }
+.btn-outline:hover { background: var(--black); color: var(--white); }
+.btn-outline-w { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); }
+.btn-outline-w:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.btn-lg { padding: 18px 40px; font-size: 14px; }
+
+.ann-bar { background: var(--black); color: rgba(255,255,255,0.7); text-align: center; padding: 11px var(--pad); font-size: 13px; }
+.ann-bar strong { color: var(--gold); font-weight: 600; }
+.ann-bar a { color: var(--gold); text-decoration: none; font-weight: 600; margin-left: 8px; }
+
+.navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(12px); height: 72px; display: flex; align-items: center; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+.nav-logo img { height: 36px; display: block; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--gray-700); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-actions { display: flex; gap: 12px; align-items: center; }
+.nav-ghost { font-size: 12px; font-weight: 500; color: var(--gray-700); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+.nav-ghost:hover { color: var(--black); }
+
+.hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; background: var(--black); }
+.hero-bg { position: absolute; inset: 0; background-image: url('601 (1).jpg'); background-size: cover; background-position: center 20%; filter: brightness(0.35); background-color: #1a1a1a; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.05) 30%, rgba(10,10,10,0.65) 65%, rgba(10,10,10,0.95) 100%); }
+.hero-content { position: relative; z-index: 2; width: 100%; padding: 80px var(--pad) 72px; max-width: var(--max-w); margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.hero-tag::before { content:''; width:32px; height:1.5px; background:var(--gold); }
+.hero-h1 { font-family: var(--font-serif); font-size: clamp(48px, 6vw, 88px); font-weight: 500; line-height: 0.93; color: var(--white); letter-spacing: -2px; margin-bottom: 32px; max-width: 860px; }
+.hero-h1 em { font-style: italic; color: var(--gold); }
+.hero-sub { font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 500px; margin-bottom: 44px; }
+.hero-sub strong { color: var(--white); font-weight: 500; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+.hero-fomo { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.45); }
+.fomo-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 8px var(--gold); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
+.hero-fomo strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+
+.stats-bar { background: var(--black); border-top: 1px solid rgba(255,255,255,0.05); }
+.stats-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border-left: 1px solid rgba(255,255,255,0.05); }
+.stat-item { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,0.05); }
+.stat-n { font-family: var(--font-serif); font-size: 50px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.stat-l { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1.5px; }
+
+.partner-bar { background: var(--gray-100); border-bottom: 1px solid var(--gray-200); padding: 28px var(--pad); }
+.partner-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.partner-label { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-500); }
+.partner-logos { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+.p-logo { font-size: 13px; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; }
+
+.router { padding: 96px var(--pad); background: var(--white); }
+.router-head { max-width: var(--max-w); margin: 0 auto 52px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.router-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--gray-200); }
+.r-card { padding: 40px 28px; text-decoration: none; border-right: 1px solid var(--gray-200); display: flex; flex-direction: column; gap: 12px; transition: all 0.25s; position: relative; overflow: hidden; background: var(--white); }
+.r-card:last-child { border-right: none; }
+.r-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.r-card:hover { background: var(--gray-100); }
+.r-card:hover::after { transform: scaleX(1); }
+.r-card:hover .r-arrow { transform: translateX(6px); color: var(--gold); }
+.r-num { font-family: var(--font-serif); font-size: 56px; font-weight: 400; color: var(--gray-200); line-height: 1; }
+.r-profile { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+.r-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--black); line-height: 1.2; }
+.r-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; font-weight: 300; flex: 1; }
+.r-arrow { font-size: 18px; color: var(--gray-200); transition: all 0.2s; align-self: flex-start; margin-top: 8px; }
+
+.vetta { background: var(--black); padding: 96px var(--pad); }
+.vetta-inner { max-width: var(--max-w); margin: 0 auto; }
+.vetta-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 56px; }
+.vetta .tag::before { background: var(--gold); }
+.vetta h2.serif { color: var(--white); }
+.vetta .sub { color: rgba(255,255,255,0.45); }
+.vetta-steps { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid rgba(255,255,255,0.07); }
+.v-step { padding: 36px 24px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; gap: 10px; transition: background 0.2s; }
+.v-step:last-child { border-right: none; }
+.v-step:hover { background: rgba(201,168,76,0.05); }
+.v-letter { font-family: var(--font-serif); font-size: 64px; font-weight: 400; color: var(--gold); line-height: 1; opacity: 0.22; }
+.v-name { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--white); }
+.v-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.5; font-weight: 300; }
+
+.inside { position: relative; overflow: hidden; background: var(--gray-100); min-height: 600px; display: flex; align-items: center; }
+.inside-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 46%; background-image: url('642 (1).jpg'); background-size: cover; background-position: center; filter: brightness(0.55) grayscale(0.1); background-color: #2a2a2a; }
+.inside-fade { position: absolute; right: 0; top: 0; bottom: 0; width: 46%; background: linear-gradient(to right, var(--gray-100) 0%, rgba(244,244,244,0) 25%); }
+.inside-content { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; padding: 96px var(--pad); width: 60%; }
+.rhythm { list-style: none; margin-top: 32px; }
+.ritem { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
+.ritem:last-child { border-bottom: none; }
+.r-icon { width: 42px; height: 42px; flex-shrink: 0; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 18px; font-weight: 600; }
+.r-title2 { font-size: 12px; font-weight: 600; color: var(--black); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+.r-desc2 { font-size: 13px; color: var(--gray-500); font-weight: 300; line-height: 1.5; }
+
+.team { padding: 96px var(--pad); background: var(--white); }
+.team-inner { max-width: var(--max-w); margin: 0 auto; }
+.team-head { margin-bottom: 52px; }
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--gray-200); }
+.t-card { background: var(--white); overflow: hidden; }
+.t-photo { width: 100%; aspect-ratio: 3/4; background-size: cover; background-position: center top; transition: transform 0.4s; overflow: hidden; background-color: #1a1a1a; }
+.t-card:hover .t-photo { transform: scale(1.03); }
+.t-info { padding: 28px 24px; }
+.t-name { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.t-role { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.t-bio { font-size: 13px; color: var(--gray-500); font-weight: 300; line-height: 1.65; }
+
+.testi { padding: 96px var(--pad); background: var(--gray-100); }
+.testi-inner { max-width: var(--max-w); margin: 0 auto; }
+.testi-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; flex-wrap: wrap; gap: 20px; }
+.rating-block { text-align: right; }
+.stars { font-size: 18px; color: var(--gold); letter-spacing: 2px; margin-bottom: 4px; }
+.rating-n { font-family: var(--font-serif); font-size: 44px; font-weight: 600; color: var(--black); line-height: 1; }
+.rating-l { font-size: 10px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--gray-200); }
+.t-quote-card { background: var(--white); padding: 40px 32px; display: flex; flex-direction: column; gap: 20px; }
+.q-mark { font-family: var(--font-serif); font-size: 72px; color: var(--gold); line-height: 0.7; font-weight: 400; opacity: 0.35; }
+.q-text { font-family: var(--font-serif); font-size: 17px; color: var(--gray-700); line-height: 1.75; font-weight: 400; flex: 1; }
+.q-text strong { color: var(--black); font-weight: 600; }
+.q-result { display: inline-flex; align-items: center; background: var(--black); color: var(--gold); padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; align-self: flex-start; }
+.q-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--gray-200); padding-top: 20px; }
+.q-avatar { width: 44px; height: 44px; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 16px; font-weight: 600; flex-shrink: 0; }
+.q-name { font-size: 14px; font-weight: 600; color: var(--black); }
+.q-role { font-size: 12px; color: var(--gray-500); }
+
+.eventi { position: relative; overflow: hidden; background: var(--black); padding: 96px var(--pad); }
+.eventi-bg { position: absolute; inset: 0; background-image: url('557 (2).jpg'); background-size: cover; background-position: center; opacity: 0.15; filter: grayscale(0.4); }
+.eventi-inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; }
+.eventi-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+.eventi h2.serif { color: var(--white); }
+.eventi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.e-card { background: rgba(10,10,10,0.75); padding: 36px 28px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; border-left: 2px solid transparent; transition: all 0.25s; backdrop-filter: blur(8px); }
+.e-card:hover { border-left-color: var(--gold); background: rgba(201,168,76,0.06); }
+.e-card:hover .e-arrow { color: var(--gold); transform: translateX(4px); }
+.e-type { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+.e-title { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--white); line-height: 1.2; }
+.e-info { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: auto; }
+.e-arrow { font-size: 20px; color: rgba(255,255,255,0.15); transition: all 0.2s; align-self: flex-start; margin-top: 8px; }
+
+.final-cta { padding: 120px var(--pad); background: var(--white); text-align: center; border-top: 1px solid var(--gray-200); }
+.final-cta .tag { justify-content: center; }
+.final-cta h2.serif { margin: 0 auto; max-width: 640px; text-align: center; }
+.final-cta .sub { max-width: 500px; margin: 16px auto 48px; text-align: center; }
+.cta-group { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-note { margin-top: 24px; font-size: 11px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 2px; }
+
+footer { background: var(--black); padding: 48px var(--pad); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer-logo img { height: 30px; opacity: 0.75; }
+.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); text-transform: uppercase; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati.
+  <strong>L'accesso richiede selezione.</strong>
+  <a href="#">Scopri come candidarti →</a>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="nav-logo-fallback" style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Ecosistema</a></li>
+      <li><a href="#">Community</a></li>
+      <li><a href="#">Eventi</a></li>
+      <li><a href="#">Chi Siamo</a></li>
+      <li><a href="#">Risorse</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-ghost">Parla col Team</a>
+      <a href="#" class="btn btn-gold" style="padding:10px 22px;font-size:12px;">Candidati Ora →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Ecosistema Community-First · Agenti Immobiliari Italiani</div>
+    <h1 class="hero-h1">
+      Non è un metodo.<br>
+      È il percorso verso<br>
+      la <em>vetta.</em>
+    </h1>
+    <p class="hero-sub">Community, coaching, eventi e strumenti — un ecosistema strutturato per agenti che vogliono scalare in modo <strong>sistematico, non casuale.</strong></p>
+    <div class="hero-ctas">
+      <a href="#" class="btn btn-gold btn-lg">Candidati Ora →</a>
+      <a href="#" class="btn btn-outline-w btn-lg">Parla col Team</a>
+    </div>
+    <div class="hero-fomo">
+      <span class="fomo-dot"></span>
+      <span>L'accesso richiede candidatura e selezione. <strong>I posti sono limitati.</strong></span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-n">[N°]+</div><div class="stat-l">Agenti nell'Ecosistema</div></div>
+    <div class="stat-item"><div class="stat-n">[N°]</div><div class="stat-l">Eventi in Presenza / Anno</div></div>
+    <div class="stat-item"><div class="stat-n">[N°]</div><div class="stat-l">Città Raggiunte</div></div>
+    <div class="stat-item"><div class="stat-n">[N°]+</div><div class="stat-l">Anni di Attività</div></div>
+  </div>
+</div>
+
+<div class="partner-bar">
+  <div class="partner-inner">
+    <span class="partner-label">Partner & Sponsor</span>
+    <div class="partner-logos">
+      <span class="p-logo">Weunit</span>
+      <span class="p-logo">Advertoo</span>
+      <span class="p-logo">RealSmart</span>
+      <span class="p-logo">Euromq.it</span>
+      <span class="p-logo">Docudrop</span>
+    </div>
+  </div>
+</div>
+
+<section class="router">
+  <div class="router-head">
+    <div>
+      <div class="tag">Il Tuo Percorso</div>
+      <h2 class="serif">Dove ti trovi<br><em>oggi?</em></h2>
+    </div>
+    <p class="sub">L'ecosistema è costruito per ogni fase della tua carriera. Scegli il tuo profilo e scopri il percorso che ti aspetta.</p>
+  </div>
+  <div class="router-grid">
+    <a href="#" class="r-card">
+      <div class="r-num">01</div>
+      <div class="r-profile">Agente Junior</div>
+      <div class="r-title">Stai costruendo le fondamenta</div>
+      <p class="r-desc">Hai bisogno di un sistema, non di intuito. Torre Strategica ti dà il metodo dal giorno uno.</p>
+      <span class="r-arrow">→</span>
+    </a>
+    <a href="#" class="r-card">
+      <div class="r-num">02</div>
+      <div class="r-profile">Agente Senior</div>
+      <div class="r-title">Vuoi scalare senza lavorare di più</div>
+      <p class="r-desc">Il problema non è la produzione — è il sistema. Costruiamo pipeline e posizionamento che lavorano per te.</p>
+      <span class="r-arrow">→</span>
+    </a>
+    <a href="#" class="r-card">
+      <div class="r-num">03</div>
+      <div class="r-profile">Team Leader</div>
+      <div class="r-title">Stai costruendo qualcosa di più grande</div>
+      <p class="r-desc">Struttura, KPI, recruiting, cultura. L'ecosistema ti affianca nella transizione da produttore a leader.</p>
+      <span class="r-arrow">→</span>
+    </a>
+    <a href="#" class="r-card">
+      <div class="r-num">04</div>
+      <div class="r-profile">Broker / Owner</div>
+      <div class="r-title">La strategia è il tuo prodotto</div>
+      <p class="r-desc">Crescita, retention, brand. Accesso a partnership, sponsor e strumenti per chi opera a livello di agenzia.</p>
+      <span class="r-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="vetta">
+  <div class="vetta-inner">
+    <div class="vetta-head">
+      <div>
+        <div class="tag">Il Framework Proprietario</div>
+        <h2 class="serif">Il Metodo<br><em>V.E.T.T.A.</em></h2>
+      </div>
+      <div>
+        <p class="sub">Non è una checklist. È un sistema ciclico — ripetibile, misurabile, scalabile — che ti porta dalla valutazione alla vetta.</p>
+        <a href="#" class="btn btn-gold" style="margin-top:28px;">Scopri l'Ecosistema →</a>
+      </div>
+    </div>
+    <div class="vetta-steps">
+      <div class="v-step"><div class="v-letter">V</div><div class="v-name">Valuta</div><p class="v-desc">Analizza la tua posizione attuale senza filtri. Dati reali, zero alibi.</p></div>
+      <div class="v-step"><div class="v-letter">E</div><div class="v-name">Esegui</div><p class="v-desc">Piano d'azione 90 giorni con sprint settimanali e obiettivi chiari.</p></div>
+      <div class="v-step"><div class="v-letter">T</div><div class="v-name">Traccia</div><p class="v-desc">KPI chiari, dashboard e accountability reale con la community.</p></div>
+      <div class="v-step"><div class="v-letter">T</div><div class="v-name">Trasforma</div><p class="v-desc">Consolida il sistema, ottimizza i processi, elimina le inefficienze.</p></div>
+      <div class="v-step"><div class="v-letter">A</div><div class="v-name">Ascendi</div><p class="v-desc">Scala verso il livello successivo. Il ciclo riparte, più in alto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="inside-photo"></div>
+  <div class="inside-fade"></div>
+  <div class="inside-content">
+    <div class="tag">Dentro l'Ecosistema</div>
+    <h2 class="serif">Ogni settimana esci<br>con azioni e <em>numeri.</em></h2>
+    <ul class="rhythm">
+      <li class="ritem">
+        <div class="r-icon">L</div>
+        <div><div class="r-title2">Live Training Settimanale</div><p class="r-desc2">Sessioni operative con coach e ospiti top. Non teoria — playbook pronti da applicare il giorno dopo.</p></div>
+      </li>
+      <li class="ritem">
+        <div class="r-icon">Q</div>
+        <div><div class="r-title2">Q&A / Hot Seat</div><p class="r-desc2">Il tuo caso specifico, analizzato dal vivo. Feedback diretto, senza filtri.</p></div>
+      </li>
+      <li class="ritem">
+        <div class="r-icon">S</div>
+        <div><div class="r-title2">Sprint Mensile</div><p class="r-desc2">Challenge, obiettivi condivisi e accountability di gruppo. Il collettivo ti tira avanti.</p></div>
+      </li>
+      <li class="ritem">
+        <div class="r-icon">R</div>
+        <div><div class="r-title2">Libreria Replay + Playbook</div><p class="r-desc2">Accesso all'archivio completo. Ogni sessione, ogni risorsa, ogni strumento operativo.</p></div>
+      </li>
+    </ul>
+    <a href="#" class="btn btn-black" style="margin-top:36px;">Candidati Ora →</a>
+  </div>
+</section>
+
+<section class="team">
+  <div class="team-inner">
+    <div class="team-head">
+      <div class="tag">I Fondatori</div>
+      <h2 class="serif">Il team dietro<br><em>l'ecosistema.</em></h2>
+    </div>
+    <div class="team-grid">
+      <div class="t-card">
+        <div class="t-photo" style="background-image:url('601 (1).jpg');background-position:center 15%;"></div>
+        <div class="t-info">
+          <div class="t-name">Vincenzo Romano</div>
+          <div class="t-role">Founder & CEO</div>
+          <p class="t-bio">Il motore commerciale e strategico dell'ecosistema. Sul palco e fuori, porta la visione che ha costruito Agente Strategico.</p>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-photo" style="background-image:url('583.jpg');background-position:center 15%;"></div>
+        <div class="t-info">
+          <div class="t-name">Giuseppe</div>
+          <div class="t-role">Co-Founder</div>
+          <p class="t-bio">Founder con una visione chiara sul percorso di crescita degli agenti immobiliari italiani e sull'ecosistema.</p>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-photo" style="background-image:url('2324 (1).jpg');background-position:center 10%;"></div>
+        <div class="t-info">
+          <div class="t-name">Antonella</div>
+          <div class="t-role">Co-Founder · Responsabile Didattica & Coach</div>
+          <p class="t-bio">Guida la struttura formativa dell'ecosistema. Ogni percorso di apprendimento porta la sua firma metodologica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="testi-inner">
+    <div class="testi-head">
+      <div>
+        <div class="tag">Chi ha già scalato</div>
+        <h2 class="serif">Risultati reali.<br><em>Persone reali.</em></h2>
+      </div>
+      <div class="rating-block">
+        <div class="stars">★★★★★</div>
+        <div class="rating-n">4.9</div>
+        <div class="rating-l">Recensioni verificate</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="t-quote-card">
+        <div class="q-mark">"</div>
+        <p class="q-text">Prima improvvisavo ogni settimana. Ora ho un piano 90 giorni e so esattamente <strong>cosa fare il lunedì mattina.</strong> La community mi ha dato accountability reale.</p>
+        <div class="q-result">↑ +[N°] incarichi in 90 giorni</div>
+        <div class="q-author"><div class="q-avatar">ML</div><div><div class="q-name">Marco L.</div><div class="q-role">Agente Senior · Milano</div></div></div>
+      </div>
+      <div class="t-quote-card">
+        <div class="q-mark">"</div>
+        <p class="q-text">Stavo costruendo un team senza avere gli strumenti da leader. L'ecosistema mi ha dato <strong>struttura, KPI e un confronto vero</strong> con altri team leader italiani.</p>
+        <div class="q-result">↑ Team da 3 a [N°] agenti</div>
+        <div class="q-author"><div class="q-avatar">SR</div><div><div class="q-name">Sara R.</div><div class="q-role">Team Leader · Roma</div></div></div>
+      </div>
+      <div class="t-quote-card">
+        <div class="q-mark">"</div>
+        <p class="q-text">Non è un corso. È una community che ti <strong>sfida ogni settimana.</strong> Ho smesso di cercare scuse e ho iniziato a misurare tutto. Cambia prospettiva.</p>
+        <div class="q-result">↑ Pipeline strutturata in 60 giorni</div>
+        <div class="q-author"><div class="q-avatar">FP</div><div><div class="q-name">Francesco P.</div><div class="q-role">Agente Junior · Napoli</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="eventi">
+  <div class="eventi-bg"></div>
+  <div class="eventi-inner">
+    <div class="eventi-head">
+      <div>
+        <div class="tag">Prossimi Appuntamenti</div>
+        <h2 class="serif">Eventi in<br><em>presenza.</em></h2>
+      </div>
+      <a href="#" class="btn btn-gold">Vedi Calendario →</a>
+    </div>
+    <div class="eventi-grid">
+      <a href="#" class="e-card">
+        <div class="e-type">Workshop · In Presenza</div>
+        <div class="e-title">Torre Strategica Live Day</div>
+        <div class="e-info">[Città] · [Data] · [N°] posti</div>
+        <span class="e-arrow">→</span>
+      </a>
+      <a href="#" class="e-card">
+        <div class="e-type">Bootcamp · Online</div>
+        <div class="e-title">Sprint 90 Giorni</div>
+        <div class="e-info">Online · [Data] · Posti limitati</div>
+        <span class="e-arrow">→</span>
+      </a>
+      <a href="#" class="e-card">
+        <div class="e-type">Masterclass · In Presenza</div>
+        <div class="e-title">V.E.T.T.A. Masterclass</div>
+        <div class="e-info">[Città] · [Data] · [N°] posti</div>
+        <span class="e-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="tag">Accesso su Candidatura</div>
+  <h2 class="serif">Sei pronto<br>a <em>scalare?</em></h2>
+  <p class="sub">L'ecosistema Agente Strategico non è per tutti — è per chi è determinato a costruire qualcosa di solido. La candidatura è il primo passo.</p>
+  <div class="cta-group">
+    <a href="#" class="btn btn-gold btn-lg">Candidati Ora →</a>
+    <a href="#" class="btn btn-outline btn-lg">Parla col Team</a>
+  </div>
+  <div class="cta-note">Accesso limitato · Richiede selezione · Posti esauribili</div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">
+  <img src="Logo_02.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+</a>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Cookie</a>
+    <a href="#">Contatti</a>
+    <a href="#">Sitemap</a>
+  </div>
+  <div class="footer-copy">© 2025 Agente Strategico</div>
+</footer>
+
+</body>
+</html>
