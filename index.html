@@ -59,10 +59,10 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .nav-ghost:hover { color: var(--black); }
 
 .hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; background: var(--black); }
-.hero-bg-left { position: absolute; inset: 0; right: 30%; background-image: url('617 (2).jpg'); background-size: cover; background-position: center 10%; filter: brightness(0.42); background-color: #1a1a1a; }
-.hero-bg-right { position: absolute; inset: 0; left: 30%; background-color: #1a1a1a; overflow: hidden; }
-.hero-bg-right::after { content:''; position: absolute; inset: 0; background-image: url('583 (2).jpg'); background-size: cover; background-position: center 10%; filter: brightness(0.42); transform: scaleX(-1); }
-.hero-bg-center { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 25%, rgba(10,10,10,0.6) 45%, rgba(10,10,10,0.6) 55%, rgba(10,10,10,0) 75%, rgba(10,10,10,0.3) 100%); }
+.hero-bg-left { position: absolute; top: 0; left: 0; bottom: 0; width: 60%; background-image: url('617 (2).jpg'); background-size: cover; background-position: 70% 10%; filter: brightness(0.45); background-color: #1a1a1a; }
+.hero-bg-right { position: absolute; top: 0; right: 0; bottom: 0; width: 60%; background-color: #1a1a1a; overflow: hidden; }
+.hero-bg-right::after { content:''; position: absolute; inset: 0; background-image: url('583 (2).jpg'); background-size: cover; background-position: 30% 10%; filter: brightness(0.45); transform: scaleX(-1); }
+.hero-bg-center { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0) 20%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.7) 60%, rgba(10,10,10,0) 80%, rgba(10,10,10,0.5) 100%); }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0) 20%, rgba(10,10,10,0.5) 65%, rgba(10,10,10,0.97) 100%); }
 .hero-divider { display: none; }
 .hero-content { position: relative; z-index: 2; width: 100%; padding: 80px var(--pad) 72px; max-width: var(--max-w); margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
