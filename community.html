@@ -285,6 +285,89 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .footer-links a{font-size:11px;color:rgba(255,255,255,0.28);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s}
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.15);text-transform:uppercase;letter-spacing:1px}
+
+/* DUBAI TOWER */
+.dubai-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:16px}
+.dubai-building{display:flex;flex-direction:column;align-items:center;gap:0;position:relative;padding-bottom:16px}
+
+/* SPIRE */
+.dubai-spire{display:flex;flex-direction:column;align-items:center;margin-bottom:4px;position:relative}
+.spire-needle{width:2px;height:80px;background:linear-gradient(to bottom,rgba(201,168,76,0.9),rgba(201,168,76,0.2));position:relative}
+.spire-needle::before{content:'▲';position:absolute;top:-12px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:10px;filter:drop-shadow(0 0 6px rgba(201,168,76,0.8))}
+.spire-glow{width:60px;height:4px;background:radial-gradient(ellipse,rgba(201,168,76,0.5),transparent);margin-top:-2px}
+
+/* FLOORS */
+.dubai-floor{width:100%;cursor:pointer;position:relative;transition:all 0.3s;margin-bottom:3px}
+.dubai-floor:hover .floor-face-front,.dubai-floor.active-floor .floor-face-front{border-color:rgba(201,168,76,0.6);box-shadow:0 0 30px rgba(201,168,76,0.15),inset 0 0 20px rgba(201,168,76,0.05)}
+
+/* FLOOR WIDTHS */
+.floor-skyline{width:38%}
+.floor-vetta{width:54%}
+.floor-cuore{width:70%}
+.floor-primo{width:84%}
+.floor-fondamenta{width:100%}
+
+/* FLOOR FACES - 3D effect */
+.floor-face-front{background:linear-gradient(160deg,#14120a 0%,#0e0d08 60%,#0a0900 100%);border:1px solid rgba(201,168,76,0.2);position:relative;overflow:hidden;transition:all 0.3s;padding:14px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+
+/* Side faces for 3D illusion */
+.floor-face-left-s,.floor-face-left-m,.floor-face-left-l,.floor-face-left-xl,.floor-face-left-xxl{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(to right,rgba(201,168,76,0.08),transparent);width:8px;border-left:1px solid rgba(201,168,76,0.15)}
+.floor-face-right-s,.floor-face-right-m,.floor-face-right-l,.floor-face-right-xl,.floor-face-right-xxl{position:absolute;right:0;top:0;bottom:0;background:linear-gradient(to left,rgba(201,168,76,0.05),transparent);width:8px;border-right:1px solid rgba(201,168,76,0.12)}
+.floor-edge-top-s,.floor-edge-top-m,.floor-edge-top-l,.floor-edge-top-xl,.floor-edge-top-xxl{height:4px;background:linear-gradient(to right,rgba(201,168,76,0.6),rgba(201,168,76,0.2),rgba(201,168,76,0.6));width:100%;margin-bottom:-3px;position:relative;z-index:2;box-shadow:0 -2px 8px rgba(201,168,76,0.2)}
+
+/* GLASS GRID */
+.floor-glass-grid{position:absolute;inset:0;pointer-events:none}
+.grid-sm{background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.06) 0px,rgba(201,168,76,0.06) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(0deg,rgba(201,168,76,0.04) 0px,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 16px)}
+.grid-md{background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.05) 0px,rgba(201,168,76,0.05) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(0deg,rgba(201,168,76,0.04) 0px,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 18px)}
+.grid-lg{background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.05) 0px,rgba(201,168,76,0.05) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(0deg,rgba(201,168,76,0.03) 0px,rgba(201,168,76,0.03) 1px,transparent 1px,transparent 20px)}
+.grid-xl{background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.04) 0px,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 24px),repeating-linear-gradient(0deg,rgba(201,168,76,0.03) 0px,rgba(201,168,76,0.03) 1px,transparent 1px,transparent 22px)}
+.grid-xxl{background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.04) 0px,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 26px),repeating-linear-gradient(0deg,rgba(201,168,76,0.03) 0px,rgba(201,168,76,0.03) 1px,transparent 1px,transparent 24px)}
+
+/* FLOOR HEIGHTS */
+.floor-skyline .floor-face-front{min-height:90px}
+.floor-vetta .floor-face-front{min-height:80px}
+.floor-cuore .floor-face-front{min-height:78px}
+.floor-primo .floor-face-front{min-height:76px}
+.floor-fondamenta .floor-face-front{min-height:72px}
+
+/* LABELS INSIDE FLOOR */
+.floor-label-inside{position:relative;z-index:2;text-align:center}
+.fl-name{display:block;font-size:10px;font-weight:700;letter-spacing:3px;color:rgba(201,168,76,0.7);text-transform:uppercase;margin-bottom:3px}
+.fl-range{display:block;font-family:var(--font-serif);font-size:16px;font-weight:600;color:rgba(255,255,255,0.85)}
+.dubai-floor.active-floor .fl-name{color:var(--gold)}
+.dubai-floor.active-floor .fl-range{color:var(--white)}
+
+/* CROWN on skyline */
+.floor-crown{position:absolute;top:6px;right:10px;display:flex;gap:4px;z-index:3}
+.crown-light{width:4px;height:4px;background:var(--gold);border-radius:50%;animation:blink 2s infinite}
+.crown-light:nth-child(2){animation-delay:0.4s}
+.crown-light:nth-child(3){animation-delay:0.8s}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px var(--gold)}50%{opacity:0.3;box-shadow:none}}
+
+/* BASE */
+.dubai-base{width:100%;height:16px;background:linear-gradient(to bottom,rgba(201,168,76,0.15),transparent);position:relative}
+.base-glow{position:absolute;bottom:0;left:10%;right:10%;height:8px;background:radial-gradient(ellipse,rgba(201,168,76,0.3),transparent);filter:blur(6px)}
+
+/* INFO PANEL */
+.dubai-info{display:flex;flex-direction:column;gap:24px;padding-top:80px}
+.floor-info-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:32px;min-height:280px}
+.fi-panel{flex-direction:column;gap:10px}
+.fi-badge{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);opacity:0.7}
+.fi-name{font-family:var(--font-serif);font-size:32px;font-weight:600;color:var(--white);line-height:1.1}
+.fi-range{font-family:var(--font-serif);font-size:18px;color:var(--gold);font-weight:500}
+.fi-desc{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;font-weight:300;margin-top:4px}
+.fi-sei-qui{font-size:13px;font-weight:600;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:2px;margin-top:8px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06)}
+.fi-traits{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.fi-traits span{font-size:11px;color:rgba(201,168,76,0.6);border:1px solid rgba(201,168,76,0.2);padding:4px 10px;letter-spacing:0.5px}
+
+/* TEST CTA */
+.torre-test-cta{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));border:1px solid rgba(201,168,76,0.25);padding:36px;text-align:center}
+.test-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:12px}
+.test-title{font-family:var(--font-serif);font-size:28px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:12px}
+.test-title em{font-style:italic;color:var(--gold)}
+.test-desc{font-size:14px;color:rgba(255,255,255,0.35);line-height:1.6;font-weight:300}
+.test-note{font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1.5px;margin-top:14px}
+
 </style>
 </head>
 <body>
@@ -491,168 +574,178 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     <div class="torre-head">
       <div class="tag tag-center">Il tuo percorso a livelli</div>
       <h2 class="torre-h2">Ogni agente sa <em>a che piano è.</em><br>E sa dove deve arrivare.</h2>
-      <p class="torre-sub-text">La Torre della Crescita è la tua mappa. Cinque livelli, ognuno con target di fatturato e obiettivi specifici. Non si salta — si scala piano per piano.</p>
+      <p class="torre-sub-text">La Torre della Crescita è la tua mappa. Cinque livelli, ognuno con target di fatturato. Non si salta — si scala piano per piano.</p>
     </div>
-    <div class="torre-wrapper">
-      <!-- BUILDING GRAPHIC -->
-      <div class="building-graphic">
-        <svg class="building-svg" viewBox="0 0 400 540" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#8B6914" stop-opacity="0.4"/>
-            </linearGradient>
-            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#E2C46A" stop-opacity="0.15"/>
-              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.8"/>
-            </linearGradient>
-            <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="white" stop-opacity="0"/>
-              <stop offset="50%" stop-color="white" stop-opacity="0.04"/>
-              <stop offset="100%" stop-color="white" stop-opacity="0"/>
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="softglow">
-              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
 
-          <!-- GROUND GLOW -->
-          <ellipse cx="200" cy="510" rx="160" ry="12" fill="url(#goldGrad)" opacity="0.15"/>
+    <div class="dubai-wrapper">
+      <!-- BUILDING -->
+      <div class="dubai-building">
 
-          <!-- FLOOR 1 - FONDAMENTA (widest, bottom) -->
-          <rect x="20" y="440" width="360" height="72" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
-          <rect x="20" y="440" width="360" height="72" fill="url(#glassGrad)" opacity="0.3"/>
-          <!-- windows row -->
-          <rect x="36" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="62" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="88" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="114" y="454" width="18" height="28" fill="rgba(201,168,76,0.06)"/>
-          <rect x="114" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="248" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="274" y="454" width="18" height="28" fill="rgba(201,168,76,0.06)"/>
-          <rect x="274" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="300" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="326" y="454" width="18" height="28" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <text x="200" y="481" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'Cormorant Garamond',serif" font-size="11" letter-spacing="3">FONDAMENTA</text>
-          <text x="200" y="499" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€0 – €50k</text>
-          <!-- floor separator line gold -->
-          <line x1="20" y1="440" x2="380" y2="440" stroke="url(#goldGrad)" stroke-width="1"/>
+        <!-- SPIRE -->
+        <div class="dubai-spire">
+          <div class="spire-needle"></div>
+          <div class="spire-glow"></div>
+        </div>
 
-          <!-- FLOOR 2 - PRIMO PIANO -->
-          <rect x="44" y="358" width="312" height="80" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
-          <rect x="44" y="358" width="312" height="80" fill="url(#glassGrad)" opacity="0.25"/>
-          <!-- window grid -->
-          <rect x="60" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="82" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="104" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="126" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="260" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="282" y="370" width="14" height="20" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="304" y="370" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <rect x="60" y="398" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
-          <rect x="82" y="398" width="14" height="20" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
-          <rect x="282" y="398" width="14" height="20" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
-          <rect x="304" y="398" width="14" height="20" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
-          <text x="200" y="394" text-anchor="middle" fill="rgba(201,168,76,0.45)" font-family="'Cormorant Garamond',serif" font-size="10" letter-spacing="2">PRIMO PIANO</text>
-          <text x="200" y="410" text-anchor="middle" fill="rgba(255,255,255,0.18)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€50k – €150k</text>
-          <line x1="44" y1="358" x2="356" y2="358" stroke="url(#goldGrad)" stroke-width="1"/>
+        <!-- FLOOR 5: SKYLINE -->
+        <div class="dubai-floor floor-skyline active-floor" data-floor="5" onclick="selectFloor(5)">
+          <div class="floor-face floor-face-front">
+            <div class="floor-glass-grid grid-sm"></div>
+            <div class="floor-label-inside">
+              <span class="fl-name">SKYLINE</span>
+              <span class="fl-range">€800k – €1M+</span>
+            </div>
+            <div class="floor-crown">
+              <div class="crown-light"></div>
+              <div class="crown-light"></div>
+              <div class="crown-light"></div>
+            </div>
+          </div>
+          <div class="floor-face floor-face-left-s"></div>
+          <div class="floor-face floor-face-right-s"></div>
+          <div class="floor-edge-top-s"></div>
+        </div>
 
-          <!-- FLOOR 3 - CUORE -->
-          <rect x="76" y="276" width="248" height="80" fill="#111318" stroke="url(#goldGrad)" stroke-width="0.8"/>
-          <rect x="76" y="276" width="248" height="80" fill="url(#glassGrad)" opacity="0.2"/>
-          <rect x="92" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="112" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="132" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="260" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="280" y="288" width="12" height="18" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="300" y="288" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="92" y="314" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
-          <rect x="280" y="314" width="12" height="18" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
-          <text x="200" y="312" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'Cormorant Garamond',serif" font-size="10" letter-spacing="2">CUORE DELL'EDIFICIO</text>
-          <text x="200" y="328" text-anchor="middle" fill="rgba(255,255,255,0.18)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€150k – €300k</text>
-          <line x1="76" y1="276" x2="324" y2="276" stroke="url(#goldGrad)" stroke-width="1"/>
+        <!-- FLOOR 4: VETTA -->
+        <div class="dubai-floor floor-vetta" data-floor="4" onclick="selectFloor(4)">
+          <div class="floor-face floor-face-front">
+            <div class="floor-glass-grid grid-md"></div>
+            <div class="floor-label-inside">
+              <span class="fl-name">VETTA</span>
+              <span class="fl-range">€300k – €800k</span>
+            </div>
+          </div>
+          <div class="floor-face floor-face-left-m"></div>
+          <div class="floor-face floor-face-right-m"></div>
+          <div class="floor-edge-top-m"></div>
+        </div>
 
-          <!-- FLOOR 4 - VETTA -->
-          <rect x="116" y="194" width="168" height="80" fill="#131008" stroke="url(#goldGrad)" stroke-width="1"/>
-          <rect x="116" y="194" width="168" height="80" fill="url(#glassGrad)" opacity="0.15"/>
-          <rect x="130" y="206" width="10" height="16" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
-          <rect x="148" y="206" width="10" height="16" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
-          <rect x="240" y="206" width="10" height="16" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
-          <rect x="258" y="206" width="10" height="16" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
-          <rect x="130" y="230" width="10" height="16" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <rect x="258" y="230" width="10" height="16" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
-          <text x="200" y="232" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'Cormorant Garamond',serif" font-size="11" letter-spacing="2">VETTA</text>
-          <text x="200" y="250" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€300k – €800k</text>
-          <line x1="116" y1="194" x2="284" y2="194" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <!-- FLOOR 3: CUORE -->
+        <div class="dubai-floor floor-cuore" data-floor="3" onclick="selectFloor(3)">
+          <div class="floor-face floor-face-front">
+            <div class="floor-glass-grid grid-lg"></div>
+            <div class="floor-label-inside">
+              <span class="fl-name">CUORE</span>
+              <span class="fl-range">€150k – €300k</span>
+            </div>
+          </div>
+          <div class="floor-face floor-face-left-l"></div>
+          <div class="floor-face floor-face-right-l"></div>
+          <div class="floor-edge-top-l"></div>
+        </div>
 
-          <!-- FLOOR 5 - SKYLINE (top, glowing) -->
-          <rect x="152" y="90" width="96" height="102" fill="#0f0c02" stroke="url(#goldGrad)" stroke-width="1.5"/>
-          <!-- glass panels -->
-          <rect x="152" y="90" width="96" height="102" fill="url(#glassGrad)" opacity="0.4"/>
-          <rect x="162" y="100" width="8" height="14" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="0.5"/>
-          <rect x="176" y="100" width="8" height="14" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
-          <rect x="216" y="100" width="8" height="14" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
-          <rect x="230" y="100" width="8" height="14" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="0.5"/>
-          <rect x="162" y="122" width="8" height="14" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.35)" stroke-width="0.5"/>
-          <rect x="176" y="122" width="8" height="14" fill="rgba(201,168,76,0.22)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
-          <rect x="216" y="122" width="8" height="14" fill="rgba(201,168,76,0.22)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
-          <rect x="230" y="122" width="8" height="14" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.35)" stroke-width="0.5"/>
-          <rect x="162" y="144" width="8" height="14" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
-          <rect x="230" y="144" width="8" height="14" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
-          <text x="200" y="170" text-anchor="middle" fill="rgba(201,168,76,0.9)" font-family="'Cormorant Garamond',serif" font-size="12" letter-spacing="3" filter="url(#glow)">SKYLINE</text>
-          <text x="200" y="184" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">€800k – €1M+</text>
+        <!-- FLOOR 2: PRIMO PIANO -->
+        <div class="dubai-floor floor-primo" data-floor="2" onclick="selectFloor(2)">
+          <div class="floor-face floor-face-front">
+            <div class="floor-glass-grid grid-xl"></div>
+            <div class="floor-label-inside">
+              <span class="fl-name">PRIMO PIANO</span>
+              <span class="fl-range">€50k – €150k</span>
+            </div>
+          </div>
+          <div class="floor-face floor-face-left-xl"></div>
+          <div class="floor-face floor-face-right-xl"></div>
+          <div class="floor-edge-top-xl"></div>
+        </div>
 
-          <!-- SPIRE -->
-          <line x1="200" y1="10" x2="200" y2="90" stroke="url(#goldGrad)" stroke-width="1.5"/>
-          <polygon points="200,2 196,18 204,18" fill="url(#goldGrad)" filter="url(#glow)"/>
-          <!-- spire glow -->
-          <ellipse cx="200" cy="10" rx="12" ry="4" fill="rgba(201,168,76,0.3)" filter="url(#softglow)"/>
+        <!-- FLOOR 1: FONDAMENTA -->
+        <div class="dubai-floor floor-fondamenta" data-floor="1" onclick="selectFloor(1)">
+          <div class="floor-face floor-face-front">
+            <div class="floor-glass-grid grid-xxl"></div>
+            <div class="floor-label-inside">
+              <span class="fl-name">FONDAMENTA</span>
+              <span class="fl-range">€0 – €50k</span>
+            </div>
+          </div>
+          <div class="floor-face floor-face-left-xxl"></div>
+          <div class="floor-face floor-face-right-xxl"></div>
+          <div class="floor-edge-top-xxl"></div>
+        </div>
 
-          <!-- TOP GLOW AMBIENT -->
-          <ellipse cx="200" cy="90" rx="60" ry="8" fill="rgba(201,168,76,0.12)" filter="url(#softglow)"/>
-
-          <!-- SHIMMER OVERLAY -->
-          <rect x="152" y="90" width="96" height="102" fill="url(#shimmer)"/>
-          <rect x="116" y="194" width="168" height="80" fill="url(#shimmer)"/>
-        </svg>
+        <!-- BASE -->
+        <div class="dubai-base">
+          <div class="base-glow"></div>
+        </div>
       </div>
 
-      <!-- LEVEL CARDS -->
-      <div class="torre-levels">
-        <div class="t-level t-level-top">
-          <div class="t-level-tag">Piano 5 · L'eccellenza</div>
-          <div class="t-level-name">Skyline</div>
-          <div class="t-level-range">€800k – €1M+</div>
-          <div class="t-level-desc">Hai costruito qualcosa che funziona senza di te. L'eccellenza diventa lo standard. Il tuo nome è il mercato.</div>
+      <!-- INFO PANEL -->
+      <div class="dubai-info">
+        <div class="floor-info-panel" id="floor-info">
+
+          <div class="fi-panel" id="fi-5" style="display:flex">
+            <div class="fi-badge">Piano 5</div>
+            <div class="fi-name">Skyline</div>
+            <div class="fi-range">€800k – €1M+</div>
+            <p class="fi-desc">Hai costruito qualcosa che funziona senza di te. L'eccellenza è il tuo standard. Il tuo nome è il mercato.</p>
+            <div class="fi-sei-qui">Sei qui?</div>
+            <div class="fi-traits">
+              <span>Team consolidato</span>
+              <span>Business scalabile</span>
+              <span>Brand dominante</span>
+            </div>
+          </div>
+
+          <div class="fi-panel" id="fi-4" style="display:none">
+            <div class="fi-badge">Piano 4</div>
+            <div class="fi-name">Vetta</div>
+            <div class="fi-range">€300k – €800k</div>
+            <p class="fi-desc">Guidi un'organizzazione. Brand riconosciuto nel tuo territorio. Il team lavora mentre tu strategeggi.</p>
+            <div class="fi-sei-qui">Sei qui?</div>
+            <div class="fi-traits">
+              <span>Leadership attiva</span>
+              <span>Mercato dominato</span>
+              <span>Deleghi con sistema</span>
+            </div>
+          </div>
+
+          <div class="fi-panel" id="fi-3" style="display:none">
+            <div class="fi-badge">Piano 3</div>
+            <div class="fi-name">Cuore dell'Edificio</div>
+            <div class="fi-range">€150k – €300k</div>
+            <p class="fi-desc">Scala il team. Deleghi, sistemi, leadership operativa. Stai facendo il salto da agente a imprenditore.</p>
+            <div class="fi-sei-qui">Sei qui?</div>
+            <div class="fi-traits">
+              <span>Primi collaboratori</span>
+              <span>Sistemi operativi</span>
+              <span>Pipeline strutturata</span>
+            </div>
+          </div>
+
+          <div class="fi-panel" id="fi-2" style="display:none">
+            <div class="fi-badge">Piano 2</div>
+            <div class="fi-name">Primo Piano</div>
+            <div class="fi-range">€50k – €150k</div>
+            <p class="fi-desc">Consolidi il metodo. La pipeline diventa prevedibile. Il caos si trasforma in sistema che si ripete.</p>
+            <div class="fi-sei-qui">Sei qui?</div>
+            <div class="fi-traits">
+              <span>Metodo consolidato</span>
+              <span>Risultati costanti</span>
+              <span>Crescita misurabile</span>
+            </div>
+          </div>
+
+          <div class="fi-panel" id="fi-1" style="display:none">
+            <div class="fi-badge">Piano 1</div>
+            <div class="fi-name">Fondamenta</div>
+            <div class="fi-range">€0 – €50k</div>
+            <p class="fi-desc">Costruisci le basi. Sistema, routine, prime acquisizioni costanti. Da qui parte tutto — e parte bene.</p>
+            <div class="fi-sei-qui">Sei qui?</div>
+            <div class="fi-traits">
+              <span>Prime acquisizioni</span>
+              <span>Routine operative</span>
+              <span>Sistema in costruzione</span>
+            </div>
+          </div>
+
         </div>
-        <div class="t-level">
-          <div class="t-level-tag">Piano 4 · Leadership</div>
-          <div class="t-level-name">Vetta</div>
-          <div class="t-level-range">€300k – €800k</div>
-          <div class="t-level-desc">Guidi un'organizzazione. Brand riconosciuto, mercato dominato. Il team lavora mentre tu strategeggi.</div>
-        </div>
-        <div class="t-level">
-          <div class="t-level-tag">Piano 3 · Team</div>
-          <div class="t-level-name">Cuore dell'Edificio</div>
-          <div class="t-level-range">€150k – €300k</div>
-          <div class="t-level-desc">Scala il team. Deleghi, sistemi, leadership operativa. Da agente a imprenditore.</div>
-        </div>
-        <div class="t-level">
-          <div class="t-level-tag">Piano 2 · Sistema</div>
-          <div class="t-level-name">Primo Piano</div>
-          <div class="t-level-range">€50k – €150k</div>
-          <div class="t-level-desc">Consolidi il metodo. Pipeline prevedibile, primi collaboratori. Il caos si trasforma in sistema.</div>
-        </div>
-        <div class="t-level">
-          <div class="t-level-tag">Piano 1 · Fondamenta</div>
-          <div class="t-level-name">Fondamenta</div>
-          <div class="t-level-range">€0 – €50k</div>
-          <div class="t-level-desc">Costruisci le basi. Sistema, routine, prime acquisizioni costanti. Da qui parte tutto.</div>
+
+        <!-- CTA TEST -->
+        <div class="torre-test-cta">
+          <div class="test-eyebrow">Non sai a che piano sei?</div>
+          <div class="test-title">Scopri il tuo livello<br>nella <em>Torre Strategica.</em></div>
+          <p class="test-desc">Rispondi a 5 domande. Ti diciamo esattamente a che piano sei — e cosa fare per salire al prossimo.</p>
+          <a href="#" class="btn btn-gold btn-lg" style="margin-top:24px;">Fai il test gratuito →</a>
+          <div class="test-note">Gratuito · 2 minuti · Risultato immediato</div>
         </div>
       </div>
     </div>
@@ -946,6 +1039,20 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
   </div>
   <div class="footer-copy">© 2025 Agente Strategico S.R.L.</div>
 </footer>
+
+
+<script>
+function selectFloor(n) {
+  // remove active from all floors
+  document.querySelectorAll('.dubai-floor').forEach(f => f.classList.remove('active-floor'));
+  // add active to clicked
+  document.querySelector('[data-floor="'+n+'"]').classList.add('active-floor');
+  // hide all panels
+  document.querySelectorAll('.fi-panel').forEach(p => p.style.display = 'none');
+  // show selected panel
+  document.getElementById('fi-'+n).style.display = 'flex';
+}
+</script>
 
 </body>
 </html>
