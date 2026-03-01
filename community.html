@@ -187,22 +187,6 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .t-level-top::before{opacity:1}
 .t-level-top .t-level-name{color:var(--gold)}
 
-/* VETTA FRAMEWORK */
-.vetta-section{background:var(--white);padding:96px var(--pad)}
-.vetta-head{text-align:center;margin-bottom:64px}
-.vetta-h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;line-height:1.0;color:var(--black);letter-spacing:-0.5px}
-.vetta-h2 em{font-style:italic;color:var(--gold)}
-.vetta-sub{font-size:17px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:520px;margin:16px auto 0}
-.vetta-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.vetta-steps::before{content:'';position:absolute;top:48px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0.3;z-index:0}
-.v-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 20px;position:relative;z-index:1}
-.v-letter{width:96px;height:96px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:48px;font-weight:600;margin:0 auto 20px;border:1px solid rgba(201,168,76,0.2);position:relative;transition:all 0.3s}
-.v-letter::after{content:'';position:absolute;inset:-4px;border:1px solid rgba(201,168,76,0.1);transition:opacity 0.3s}
-.v-step:hover .v-letter{background:var(--gold);color:var(--black);box-shadow:0 16px 48px rgba(201,168,76,0.3)}
-.v-step-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.v-step-title{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--black);margin-bottom:10px}
-.v-step-desc{font-size:13px;color:var(--gray-500);line-height:1.6;font-weight:300}
-
 /* 6 CHIAVI */
 .chiavi-section{background:var(--black);padding:96px var(--pad)}
 .chiavi-head{text-align:center;margin-bottom:64px}
@@ -752,49 +736,6 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
   </div>
 </section>
 
-<!-- V.E.T.T.A. -->
-<section class="vetta-section">
-  <div style="max-width:var(--max-w);margin:0 auto">
-    <div class="vetta-head">
-      <div class="tag tag-center">Il metodo operativo</div>
-      <h2 class="vetta-h2">Un sistema replicabile.<br>Non un'opinione — <em>un metodo.</em></h2>
-      <p class="vetta-sub">V.E.T.T.A. è il sistema operativo che guida ogni agente dentro l'ecosistema. Cinque fasi, in ordine. Piano dopo piano.</p>
-    </div>
-    <div class="vetta-steps">
-      <div class="v-step">
-        <div class="v-letter">V</div>
-        <div class="v-step-label">Fase 1</div>
-        <div class="v-step-title">Valuta</div>
-        <p class="v-step-desc">Analizza dove sei oggi. Fatturato, pipeline, team. Senza dati non si parte — si improvvisa.</p>
-      </div>
-      <div class="v-step">
-        <div class="v-letter">E</div>
-        <div class="v-step-label">Fase 2</div>
-        <div class="v-step-title">Esegui</div>
-        <p class="v-step-desc">Metti in campo le strategie testate. Acquisizione, marketing, trattativa — con un playbook, non con l'istinto.</p>
-      </div>
-      <div class="v-step">
-        <div class="v-letter">T</div>
-        <div class="v-step-label">Fase 3</div>
-        <div class="v-step-title">Traccia</div>
-        <p class="v-step-desc">Misura ogni azione. KPI settimanali. Sai sempre dove sei e dove devi andare.</p>
-      </div>
-      <div class="v-step">
-        <div class="v-letter">T</div>
-        <div class="v-step-label">Fase 4</div>
-        <div class="v-step-title">Trasforma</div>
-        <p class="v-step-desc">Ottimizza ciò che funziona. Elimina ciò che non funziona. La trasformazione è un processo continuo.</p>
-      </div>
-      <div class="v-step">
-        <div class="v-letter">A</div>
-        <div class="v-step-label">Fase 5</div>
-        <div class="v-step-title">Ascendi</div>
-        <p class="v-step-desc">Scala il tuo livello nella Torre. Piano dopo piano. Con un sistema — non con la fortuna.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 6 CHIAVI -->
 <section class="chiavi-section">
   <div style="max-width:var(--max-w);margin:0 auto">
@@ -805,37 +746,37 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     </div>
     <div class="chiavi-grid">
       <div class="c-card">
-        <div class="c-icon">🎯</div>
+        
         <div class="c-program">Club degli Acquisitori</div>
         <div class="c-title">Acquisizione</div>
         <p class="c-desc">Come trovare clienti in modo sistematico, non casuale. Strategie testate per riempire la pipeline ogni mese.</p>
       </div>
       <div class="c-card">
-        <div class="c-icon">🤝</div>
+        
         <div class="c-program">Missione Incarichi a Valanga</div>
         <div class="c-title">Vendita</div>
         <p class="c-desc">Come chiudere più trattative con meno attrito. Script, gestione delle obiezioni, posizionamento nel mercato.</p>
       </div>
       <div class="c-card">
-        <div class="c-icon">📡</div>
+        
         <div class="c-program">Magnete di Incarichi</div>
         <div class="c-title">Marketing</div>
         <p class="c-desc">Come diventare il punto di riferimento nel tuo territorio. Brand personale, contenuti, presenza digitale che genera incarichi.</p>
       </div>
       <div class="c-card">
-        <div class="c-icon">⚡</div>
+        
         <div class="c-program">Livello 10X</div>
         <div class="c-title">Produttività</div>
         <p class="c-desc">Come fare di più in meno tempo. Priorità, sistemi, routine operative da professionista dominante.</p>
       </div>
       <div class="c-card">
-        <div class="c-icon">🏔️</div>
+        
         <div class="c-program">Alta Quota</div>
         <div class="c-title">Benessere</div>
         <p class="c-desc">Come sostenere la performance nel tempo. Energia, focus, equilibrio tra vita e lavoro senza rinunciare ai risultati.</p>
       </div>
       <div class="c-card">
-        <div class="c-icon">💎</div>
+        
         <div class="c-program">Libertà Finanziaria</div>
         <div class="c-title">Finanziario</div>
         <p class="c-desc">Come gestire quello che guadagni. Investimento, protezione patrimoniale, libertà economica — non solo fatturato.</p>
