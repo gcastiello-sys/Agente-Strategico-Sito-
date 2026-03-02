@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Siamo — Agente Strategico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#0A0A0A;--gray-900:#1A1A1A;--gray-700:#444;--gray-500:#777;
+  --gray-200:#E8E8E8;--gray-100:#F4F4F4;--white:#FFF;
+  --gold:#C9A84C;--gold-light:#E2C46A;
+  --font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;
+  --max-w:1200px;--pad:clamp(24px,5vw,80px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);overflow-x:hidden;}
+
+/* UTILS */
+.tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.tag::before{content:'';width:32px;height:1.5px;background:var(--gold);}
+.tag-center{justify-content:center;}
+.tag-center::before,.tag-center::after{content:'';width:32px;height:1.5px;background:var(--gold);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;padding:14px 28px;text-transform:uppercase;}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-luxury{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 44px;position:relative;overflow:hidden;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
+.btn-luxury:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}
+.btn-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:13px;transition:transform 0.3s;}
+.btn-luxury:hover .btn-arrow{transform:translateX(4px);}
+
+/* ANN BAR */
+.ann-bar{background:var(--black);color:rgba(255,255,255,0.7);text-align:center;padding:11px var(--pad);font-size:13px;}
+.ann-bar strong{color:var(--gold);}
+.ann-bar a{color:var(--gold);text-decoration:none;font-weight:600;margin-left:8px;}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--gray-200);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--black);}
+.nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--gold);padding-bottom:2px;}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.nav-ghost{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav-ghost:hover{color:var(--black);}
+
+/* PAGE HERO */
+.page-hero{background:var(--black);padding:100px var(--pad) 80px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent);}
+.page-hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(52px,6vw,96px);font-weight:500;color:var(--white);line-height:0.9;letter-spacing:-2px;margin-top:16px;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero-right{padding-bottom:8px;}
+.page-hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.75;margin-bottom:32px;}
+.page-hero-sub strong{color:rgba(255,255,255,0.75);font-weight:500;}
+.hero-stats-row{display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.07);}
+.hs-item{}
+.hs-num{font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--gold);line-height:1;}
+.hs-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-top:4px;}
+
+/* MANIFESTO */
+.manifesto{background:var(--white);padding:96px var(--pad);}
+.manifesto-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;}
+.manifesto-text{}
+.manifesto-quote{font-family:var(--font-serif);font-size:clamp(28px,3vw,44px);font-weight:500;color:var(--black);line-height:1.15;margin-bottom:32px;position:relative;padding-left:28px;}
+.manifesto-quote::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);}
+.manifesto-quote em{font-style:italic;color:var(--gold);}
+.manifesto-body{font-size:16px;color:var(--gray-500);line-height:1.8;font-weight:300;}
+.manifesto-body p+p{margin-top:16px;}
+.manifesto-values{display:flex;flex-direction:column;gap:0;border:1px solid var(--gray-200);}
+.mv-item{padding:28px 32px;border-bottom:1px solid var(--gray-200);display:flex;gap:20px;align-items:flex-start;transition:background 0.2s;}
+.mv-item:last-child{border-bottom:none;}
+.mv-item:hover{background:var(--gray-100);}
+.mv-num{font-family:var(--font-serif);font-size:36px;font-weight:400;color:var(--gray-200);line-height:1;flex-shrink:0;width:48px;}
+.mv-content{}
+.mv-title{font-size:14px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
+.mv-desc{font-size:13px;color:var(--gray-500);line-height:1.6;font-weight:300;}
+
+/* FONDATORI */
+.fondatori{background:var(--black);padding:96px var(--pad);}
+.fondatori-inner{max-width:var(--max-w);margin:0 auto;}
+.fondatori-head{text-align:center;margin-bottom:64px;}
+.fondatori-head h2{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;color:var(--white);line-height:1;}
+.fondatori-head h2 em{font-style:italic;color:var(--gold);}
+.fondatori-head p{font-size:16px;color:rgba(255,255,255,0.35);font-weight:300;max-width:520px;margin:16px auto 0;line-height:1.7;}
+
+/* FEATURED FOUNDERS ROW */
+.founders-featured{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.04);margin-bottom:2px;}
+.founders-secondary{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(255,255,255,0.04);}
+.founder-card{background:#0d0d0d;overflow:hidden;text-decoration:none;display:block;position:relative;transition:background 0.3s;}
+.founder-card:hover{background:#111;}
+.founder-card:hover .fc-photo{transform:scale(1.03);}
+.founder-card:hover .fc-arrow{color:var(--gold);transform:translateX(4px);}
+.fc-photo-wrap{overflow:hidden;aspect-ratio:3/4;background:#1a1a1a;position:relative;}
+.fc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.5s;}
+.fc-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.2) 50%,transparent 100%);}
+.fc-badge{position:absolute;top:16px;left:16px;background:var(--gold);color:var(--black);font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;}
+.fc-info{padding:28px 24px;}
+.fc-role{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:6px;}
+.fc-name{font-family:var(--font-serif);font-size:26px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:8px;}
+.fc-spec{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.5;font-weight:300;margin-bottom:16px;}
+.fc-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:rgba(201,168,76,0.6);text-transform:uppercase;letter-spacing:1.5px;text-decoration:none;transition:color 0.2s;}
+.fc-arrow{font-size:14px;transition:all 0.2s;}
+.founder-card:hover .fc-link{color:var(--gold);}
+
+/* ANTONELLA — responsabile */
+.antonella-section{background:var(--gray-100);padding:80px var(--pad);}
+.antonella-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center;}
+.ant-photo{aspect-ratio:3/4;background-size:cover;background-position:center top;background-color:#1a1a1a;background-image:url('antonellasorrentinocoach.jpg');}
+.ant-content{}
+.ant-role{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.ant-name{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;color:var(--black);line-height:0.95;margin-bottom:24px;}
+.ant-name em{font-style:italic;color:var(--gold);}
+.ant-desc{font-size:16px;color:var(--gray-500);line-height:1.8;font-weight:300;margin-bottom:32px;}
+.ant-pillars{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--gold);padding-left:24px;margin-bottom:36px;}
+.ant-pillar{padding:10px 0;border-bottom:1px solid var(--gray-200);}
+.ant-pillar:last-child{border-bottom:none;}
+.ant-pillar-title{font-size:13px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:1px;}
+
+/* COACH GRID */
+.coach-hub{background:var(--white);padding:96px var(--pad);}
+.coach-hub-inner{max-width:var(--max-w);margin:0 auto;}
+.coach-hub-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px;}
+.coach-hub-head h2{font-family:var(--font-serif);font-size:clamp(32px,3.5vw,48px);font-weight:600;color:var(--black);line-height:1;}
+.coach-hub-head h2 em{font-style:italic;color:var(--gold);}
+.coach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--gray-200);}
+.coach-card{background:var(--white);overflow:hidden;text-decoration:none;display:block;transition:background 0.2s;position:relative;}
+.coach-card:hover{background:var(--gray-100);}
+.coach-card:hover .cc-photo{transform:scale(1.04);}
+.coach-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.coach-card:hover::after{transform:scaleX(1);}
+.cc-photo-wrap{overflow:hidden;aspect-ratio:1/1;background:#1a1a1a;}
+.cc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.4s;}
+.cc-info{padding:20px 20px 24px;}
+.cc-name{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--black);margin-bottom:4px;}
+.cc-spec{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:8px;}
+.cc-desc{font-size:12px;color:var(--gray-500);line-height:1.55;font-weight:300;}
+.cc-cta{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:1px;margin-top:12px;transition:color 0.2s;}
+.coach-card:hover .cc-cta{color:var(--gold);}
+
+/* FINAL CTA */
+.final-cta{background:var(--black);padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent);}
+.final-cta-title{font-family:var(--font-serif);font-size:clamp(36px,4vw,60px);font-weight:600;color:var(--white);line-height:1.0;margin-bottom:20px;}
+.final-cta-title em{font-style:italic;color:var(--gold);}
+.final-cta-sub{font-size:16px;color:rgba(255,255,255,0.35);font-weight:300;max-width:480px;margin:0 auto 48px;line-height:1.7;}
+.cta-note{margin-top:24px;font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:2px;}
+
+/* FOOTER */
+footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,0.05);}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati.
+  <strong>L'accesso richiede selezione.</strong>
+  <a href="#">Scopri come candidarti →</a>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black)"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="eventi.html">Eventi</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Risorse</a></li>
+      <li><a href="chi-siamo.html" class="active">Chi Siamo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-ghost">Parla col Team</a>
+      <a href="#" class="btn btn-gold" style="padding:10px 22px;font-size:12px;">Candidati Ora →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="tag">La nostra storia</div>
+      <h1>Non siamo<br>un'azienda.<br>Siamo un <em>ecosistema.</em></h1>
+    </div>
+    <div class="page-hero-right">
+      <p class="page-hero-sub">Agente Strategico nasce da una convinzione semplice: <strong>gli agenti immobiliari italiani meritano un sistema che funziona.</strong> Non corsi. Non motivazione. Un percorso strutturato, con persone reali al fianco.</p>
+      <div class="hero-stats-row">
+        <div class="hs-item"><div class="hs-num">5</div><div class="hs-label">Co-Fondatori</div></div>
+        <div class="hs-item"><div class="hs-num">380+</div><div class="hs-label">Agenti formati</div></div>
+        <div class="hs-item"><div class="hs-num">4.9</div><div class="hs-label">Valutazione media</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="manifesto-inner">
+    <div class="manifesto-text">
+      <div class="tag">Il nostro manifesto</div>
+      <blockquote class="manifesto-quote">
+        "Non è un metodo.<br>È il percorso verso<br><em>la vetta.</em>"
+      </blockquote>
+      <div class="manifesto-body">
+        <p>Agente Strategico nasce dalla frustrazione di chi ha visto troppi agenti capaci fermarsi — non per mancanza di talento, ma per mancanza di sistema.</p>
+        <p>Abbiamo costruito qualcosa di diverso: un ecosistema dove la crescita è strutturata, misurabile e collettiva. Dove non sei mai solo davanti a un problema che altri hanno già risolto.</p>
+        <p>Il nostro obiettivo non è formarti. È accompagnarti alla vetta — qualunque sia il tuo punto di partenza.</p>
+      </div>
+    </div>
+    <div class="manifesto-values">
+      <div class="mv-item">
+        <div class="mv-num">01</div>
+        <div class="mv-content">
+          <div class="mv-title">Community First</div>
+          <div class="mv-desc">Non siamo un guru con dei follower. Siamo un ecosistema dove il collettivo è più forte del singolo.</div>
+        </div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-num">02</div>
+        <div class="mv-content">
+          <div class="mv-title">Risultati Misurabili</div>
+          <div class="mv-desc">Niente motivazione fine a sé stessa. Ogni sessione produce azioni concrete, numeri e accountability.</div>
+        </div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-num">03</div>
+        <div class="mv-content">
+          <div class="mv-title">Selezione, non vendita</div>
+          <div class="mv-desc">L'accesso è su candidatura. La qualità dell'ecosistema dipende da chi lo compone.</div>
+        </div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-num">04</div>
+        <div class="mv-content">
+          <div class="mv-title">Percorso, non prodotto</div>
+          <div class="mv-desc">Non vendiamo corsi. Costruiamo percorsi di crescita a lungo termine con persone reali al fianco.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONDATORI -->
+<section class="fondatori">
+  <div class="fondatori-inner">
+    <div class="fondatori-head">
+      <div class="tag tag-center">Le persone dietro il progetto</div>
+      <h2>I Co-<em>Fondatori</em></h2>
+      <p>Cinque persone che hanno costruito Agente Strategico dal primo giorno — con visioni diverse e un obiettivo comune.</p>
+    </div>
+
+    <div class="founders-featured">
+
+      <a href="coach/vincenzo-romano.html" class="founder-card">
+        <div class="fc-photo-wrap">
+          <div class="fc-photo" style="background-image:url('Vincenzoromano.jpg')"></div>
+          <div class="fc-photo-overlay"></div>
+          <div class="fc-badge">Co-Fondatore</div>
+        </div>
+        <div class="fc-info">
+          <div class="fc-role">Founder & CEO</div>
+          <div class="fc-name">Vincenzo Romano</div>
+          <div class="fc-spec">Il motore commerciale e strategico dell'ecosistema. Porta la visione sul palco e nella direzione dell'azienda.</div>
+          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a href="coach/giuseppe-castiello.html" class="founder-card">
+        <div class="fc-photo-wrap">
+          <div class="fc-photo" style="background-image:url('giuseppecastiellopalco.jpg');background-position:center 15%"></div>
+          <div class="fc-photo-overlay"></div>
+          <div class="fc-badge">Co-Fondatore</div>
+        </div>
+        <div class="fc-info">
+          <div class="fc-role">Co-Founder</div>
+          <div class="fc-name">Giuseppe Castiello</div>
+          <div class="fc-spec">Visione chiara sul percorso di crescita degli agenti immobiliari italiani e sull'ecosistema che li accompagna.</div>
+          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a href="coach/carmine-lamberti.html" class="founder-card">
+        <div class="fc-photo-wrap">
+          <div class="fc-photo" style="background-image:url('carminelamberticoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo-overlay"></div>
+          <div class="fc-badge">Co-Fondatore</div>
+        </div>
+        <div class="fc-info">
+          <div class="fc-role">Co-Founder</div>
+          <div class="fc-name">Carmine Lamberti</div>
+          <div class="fc-spec">Co-fondatore con un ruolo chiave nella costruzione e nello sviluppo dell'ecosistema Agente Strategico.</div>
+          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="founders-secondary">
+
+      <a href="coach/nicola-della-rocca.html" class="founder-card">
+        <div class="fc-photo-wrap">
+          <div class="fc-photo" style="background-image:url('nicoladellaroccacoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo-overlay"></div>
+          <div class="fc-badge">Co-Fondatore</div>
+        </div>
+        <div class="fc-info">
+          <div class="fc-role">Co-Founder</div>
+          <div class="fc-name">Nicola Della Rocca</div>
+          <div class="fc-spec">Dal primo giorno nel progetto. Contributo fondamentale nella costruzione delle fondamenta di Agente Strategico.</div>
+          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a href="coach/luca-salomone.html" class="founder-card">
+        <div class="fc-photo-wrap">
+          <div class="fc-photo" style="background-image:url('lucasalomnecoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo-overlay"></div>
+          <div class="fc-badge">Co-Fondatore</div>
+        </div>
+        <div class="fc-info">
+          <div class="fc-role">Co-Founder</div>
+          <div class="fc-name">Luca Salomone</div>
+          <div class="fc-spec">Dal primo giorno nel progetto. Figura chiave nella crescita e nel posizionamento dell'ecosistema.</div>
+          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ANTONELLA -->
+<section class="antonella-section">
+  <div class="antonella-inner">
+    <div class="ant-photo"></div>
+    <div class="ant-content">
+      <div class="ant-role">Responsabile Didattica, Coaching & Comunicazione</div>
+      <h2 class="ant-name">Antonella<br><em>Sorrentino</em></h2>
+      <p class="ant-desc">Antonella guida la struttura formativa, il coaching e la comunicazione dell'ecosistema. Ogni percorso di apprendimento, ogni sessione di gruppo, ogni contenuto porta la sua firma metodologica. È il punto di riferimento per chi vuole crescere in modo strutturato e consapevole.</p>
+      <div class="ant-pillars">
+        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Didattica</div></div>
+        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Coaching</div></div>
+        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Comunicazione</div></div>
+      </div>
+      <a href="coach/antonella-sorrentino.html" class="btn-luxury">Parla con Antonella <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- COACH GRID -->
+<section class="coach-hub">
+  <div class="coach-hub-inner">
+    <div class="coach-hub-head">
+      <div>
+        <div class="tag">Il Team di Coach</div>
+        <h2>Chi ti <em>affianca</em></h2>
+      </div>
+      <p style="font-size:14px;color:var(--gray-500);max-width:320px;font-weight:300;line-height:1.6">Ogni coach ha una specializzazione precisa. Trovi il profilo giusto per dove sei e dove vuoi arrivare.</p>
+    </div>
+    <div class="coach-grid">
+
+      <a href="coach/antonella-sorrentino.html" class="coach-card">
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('antonellasorrentinocoach.jpg')"></div></div>
+        <div class="cc-info">
+          <div class="cc-name">Antonella Sorrentino</div>
+          <div class="cc-spec">Didattica & Coaching</div>
+          <div class="cc-desc">Responsabile della struttura formativa e del coaching dell'ecosistema.</div>
+          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
+        </div>
+      </a>
+
+      <!-- PLACEHOLDER COACH 2 -->
+      <a href="#" class="coach-card">
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background:#1a1a1a"></div></div>
+        <div class="cc-info">
+          <div class="cc-name">[Nome Coach]</div>
+          <div class="cc-spec">[Specializzazione]</div>
+          <div class="cc-desc">Descrizione breve del coach e della sua area di specializzazione nell'ecosistema.</div>
+          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
+        </div>
+      </a>
+
+      <!-- PLACEHOLDER COACH 3 -->
+      <a href="#" class="coach-card">
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background:#1a1a1a"></div></div>
+        <div class="cc-info">
+          <div class="cc-name">[Nome Coach]</div>
+          <div class="cc-spec">[Specializzazione]</div>
+          <div class="cc-desc">Descrizione breve del coach e della sua area di specializzazione nell'ecosistema.</div>
+          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
+        </div>
+      </a>
+
+      <!-- PLACEHOLDER COACH 4 -->
+      <a href="#" class="coach-card">
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background:#1a1a1a"></div></div>
+        <div class="cc-info">
+          <div class="cc-name">[Nome Coach]</div>
+          <div class="cc-spec">[Specializzazione]</div>
+          <div class="cc-desc">Descrizione breve del coach e della sua area di specializzazione nell'ecosistema.</div>
+          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="tag tag-center" style="justify-content:center;margin-bottom:16px">Inizia il tuo percorso</div>
+  <div class="final-cta-title">Parla con uno di noi.<br>È <em>gratuito.</em></div>
+  <p class="final-cta-sub">Ogni percorso inizia con una call di 30 minuti. Valutiamo insieme dove sei, dove vuoi arrivare e se questo è il momento giusto.</p>
+  <a href="#" class="btn-luxury">Prenota la tua call gratuita <span class="btn-arrow">→</span></a>
+  <div class="cta-note">30 minuti · Gratuito · Senza impegno</div>
+</section>
+
+<footer>
+  <a href="index.html">
+    <img src="Logo_02.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+  </a>
+  <div class="footer-links">
+    <a href="#">Privacy</a><a href="#">Cookie</a><a href="#">Contatti</a><a href="#">Sitemap</a>
+  </div>
+  <div class="footer-copy">© 2025 Agente Strategico</div>
+</footer>
+
+</body>
+</html>

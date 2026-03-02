@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincenzo Romano — Agente Strategico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#0A0A0A;--gray-900:#1A1A1A;--gray-700:#444;--gray-500:#777;
+  --gray-200:#E8E8E8;--gray-100:#F4F4F4;--white:#FFF;
+  --gold:#C9A84C;--gold-light:#E2C46A;
+  --font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;
+  --max-w:1200px;--pad:clamp(24px,5vw,80px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);overflow-x:hidden;}
+
+.tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.tag::before{content:'';width:32px;height:1.5px;background:var(--gold);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;padding:14px 28px;text-transform:uppercase;}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-luxury{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 44px;position:relative;overflow:hidden;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
+.btn-luxury:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}
+.btn-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:13px;transition:transform 0.3s;}
+.btn-luxury:hover .btn-arrow{transform:translateX(4px);}
+
+/* ANN BAR */
+.ann-bar{background:var(--black);color:rgba(255,255,255,0.7);text-align:center;padding:11px var(--pad);font-size:13px;}
+.ann-bar strong{color:var(--gold);}
+.ann-bar a{color:var(--gold);text-decoration:none;font-weight:600;margin-left:8px;}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--gray-200);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--black);}
+.nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--gold);padding-bottom:2px;}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.nav-ghost{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;}
+.nav-ghost:hover{color:var(--black);}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--gray-100);border-bottom:1px solid var(--gray-200);padding:14px var(--pad);}
+.breadcrumb-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-500);}
+.breadcrumb a{color:var(--gray-500);text-decoration:none;transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb-sep{color:var(--gray-200);}
+.breadcrumb-current{color:var(--black);font-weight:500;}
+
+/* COACH HERO */
+.coach-hero{background:var(--black);position:relative;overflow:hidden;}
+.coach-hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:420px 1fr;min-height:580px;}
+.ch-photo{position:relative;overflow:hidden;}
+.ch-photo-img{position:absolute;inset:0;background-image:url('../../Vincenzoromano.jpg');background-size:cover;background-position:center top;filter:brightness(0.75);}
+.ch-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,var(--black) 100%);}
+.ch-badge{position:absolute;top:32px;left:32px;background:var(--gold);color:var(--black);font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;}
+.ch-content{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;}
+.ch-role{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:16px;}
+.ch-name{font-family:var(--font-serif);font-size:clamp(48px,5vw,80px);font-weight:600;color:var(--white);line-height:0.9;letter-spacing:-1px;margin-bottom:24px;}
+.ch-name em{font-style:italic;color:var(--gold);}
+.ch-tagline{font-size:18px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.65;max-width:440px;margin-bottom:40px;font-style:italic;font-family:var(--font-serif);}
+.ch-stats{display:flex;gap:40px;padding:28px 0;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:40px;}
+.ch-stat{}
+.ch-stat-num{font-family:var(--font-serif);font-size:36px;font-weight:600;color:var(--gold);line-height:1;}
+.ch-stat-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-top:4px;}
+.ch-social{display:flex;gap:12px;margin-top:8px;}
+.ch-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:all 0.2s;}
+.ch-social a:hover{border-color:var(--gold);color:var(--gold);}
+
+/* BIO */
+.coach-bio{background:var(--white);padding:96px var(--pad);}
+.coach-bio-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:80px;}
+.bio-main{}
+.bio-title{font-family:var(--font-serif);font-size:clamp(28px,3vw,42px);font-weight:600;color:var(--black);line-height:1.1;margin-bottom:32px;}
+.bio-title em{font-style:italic;color:var(--gold);}
+.bio-text{font-size:16px;color:var(--gray-500);line-height:1.85;font-weight:300;}
+.bio-text p+p{margin-top:20px;}
+
+/* SPECIALIZZAZIONI */
+.bio-specializzazioni{margin-top:52px;}
+.bio-spec-title{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--black);margin-bottom:20px;}
+.bio-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gray-200);}
+.bs-item{background:var(--white);padding:24px 20px;}
+.bs-num{font-family:var(--font-serif);font-size:32px;color:var(--gray-200);line-height:1;margin-bottom:8px;}
+.bs-title{font-size:13px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.bs-desc{font-size:12px;color:var(--gray-500);line-height:1.5;font-weight:300;}
+
+/* SIDEBAR COACH */
+.bio-sidebar{}
+.sidebar-cta-card{background:var(--black);padding:36px;position:sticky;top:90px;}
+.scc-top{height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin-bottom:28px;}
+.scc-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-bottom:12px;}
+.scc-title{font-family:var(--font-serif);font-size:26px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:8px;}
+.scc-title em{font-style:italic;color:var(--gold);}
+.scc-desc{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.65;font-weight:300;margin-bottom:28px;}
+.scc-includes{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+.scc-include{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.4);}
+.scc-include::before{content:'✓';color:var(--gold);font-weight:700;font-size:12px;flex-shrink:0;}
+.scc-cta{width:100%;justify-content:center;font-size:12px;padding:16px 20px;}
+.scc-note{font-size:11px;color:rgba(255,255,255,0.18);text-align:center;margin-top:12px;line-height:1.5;}
+.sidebar-altri-coach{margin-top:16px;background:var(--gray-100);padding:24px;}
+.sac-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px;}
+.sac-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-200);text-decoration:none;transition:opacity 0.2s;}
+.sac-item:last-child{border-bottom:none;}
+.sac-item:hover{opacity:0.7;}
+.sac-photo{width:40px;height:40px;background-size:cover;background-position:center top;background-color:#1a1a1a;flex-shrink:0;}
+.sac-info{}
+.sac-name{font-size:13px;font-weight:600;color:var(--black);}
+.sac-role{font-size:11px;color:var(--gray-500);}
+
+/* COSA LAVORIAMO */
+.lavoriamo{background:var(--gray-100);padding:96px var(--pad);}
+.lavoriamo-inner{max-width:var(--max-w);margin:0 auto;}
+.lavoriamo-head{margin-bottom:52px;}
+.lavoriamo-head h2{font-family:var(--font-serif);font-size:clamp(32px,3.5vw,48px);font-weight:600;color:var(--black);line-height:1;margin-top:8px;}
+.lavoriamo-head h2 em{font-style:italic;color:var(--gold);}
+.lavoriamo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+.lav-item{background:var(--white);padding:36px 28px;}
+.lav-num{font-family:var(--font-serif);font-size:52px;font-weight:400;color:var(--gray-200);line-height:1;margin-bottom:16px;}
+.lav-title{font-size:14px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+.lav-desc{font-size:13px;color:var(--gray-500);line-height:1.65;font-weight:300;}
+
+/* TESTIMONIANZE */
+.coach-testi{background:var(--black);padding:96px var(--pad);}
+.coach-testi-inner{max-width:var(--max-w);margin:0 auto;}
+.testi-head{margin-bottom:48px;}
+.testi-head h2{font-family:var(--font-serif);font-size:clamp(28px,3vw,42px);font-weight:600;color:var(--white);margin-top:8px;}
+.testi-head h2 em{font-style:italic;color:var(--gold);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.04);}
+.tq{background:#0d0d0d;padding:32px 28px;}
+.tq-mark{font-family:var(--font-serif);font-size:52px;color:var(--gold);line-height:0.7;opacity:0.25;margin-bottom:16px;}
+.tq-text{font-family:var(--font-serif);font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:20px;}
+.tq-author{font-size:12px;color:rgba(255,255,255,0.3);}
+.tq-author strong{color:rgba(255,255,255,0.6);}
+
+/* CTA FINALE */
+.coach-final-cta{background:var(--white);padding:120px var(--pad);text-align:center;border-top:1px solid var(--gray-200);}
+.cfc-title{font-family:var(--font-serif);font-size:clamp(36px,4vw,60px);font-weight:600;color:var(--black);line-height:1.0;margin-bottom:16px;}
+.cfc-title em{font-style:italic;color:var(--gold);}
+.cfc-sub{font-size:16px;color:var(--gray-500);font-weight:300;max-width:480px;margin:0 auto 48px;line-height:1.7;}
+.cta-meta{margin-top:24px;font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:2px;}
+
+/* FOOTER */
+footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,0.05);}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati.
+  <strong>L'accesso richiede selezione.</strong>
+  <a href="#">Scopri come candidarti →</a>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <img src="../../Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black)"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../community.html">Community</a></li>
+      <li><a href="../../eventi.html">Eventi</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Risorse</a></li>
+      <li><a href="../../chi-siamo.html" class="active">Chi Siamo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-ghost">Parla col Team</a>
+      <a href="#" class="btn btn-gold" style="padding:10px 22px;font-size:12px;">Candidati Ora →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../../index.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="../../chi-siamo.html">Chi Siamo</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Vincenzo Romano</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="coach-hero">
+  <div class="coach-hero-inner">
+    <div class="ch-photo">
+      <div class="ch-photo-img"></div>
+      <div class="ch-photo-overlay"></div>
+      <div class="ch-badge">Co-Fondatore</div>
+    </div>
+    <div class="ch-content">
+      <div class="ch-role">Founder & CEO · Agente Strategico</div>
+      <h1 class="ch-name">Vincenzo<br><em>Romano</em></h1>
+      <p class="ch-tagline">"Il mio obiettivo è semplice: portarti al piano successivo della Torre. Qualunque sia il tuo punto di partenza."</p>
+      <div class="ch-stats">
+        <div class="ch-stat"><div class="ch-stat-num">380+</div><div class="ch-stat-label">Agenti formati</div></div>
+        <div class="ch-stat"><div class="ch-stat-num">5+</div><div class="ch-stat-label">Anni di attività</div></div>
+        <div class="ch-stat"><div class="ch-stat-num">4.9</div><div class="ch-stat-label">Valutazione</div></div>
+      </div>
+      <a href="#prenota" class="btn-luxury">Prenota la tua call gratuita <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- BIO + SIDEBAR -->
+<div class="coach-bio">
+  <div class="coach-bio-inner">
+    <div class="bio-main">
+      <div class="tag">La sua storia</div>
+      <h2 class="bio-title">Il motore commerciale<br>e strategico <em>dell'ecosistema.</em></h2>
+      <div class="bio-text">
+        <p>[Placeholder — inserire qui la bio completa di Vincenzo Romano. Descrizione del percorso, della visione, di cosa lo ha portato a fondare Agente Strategico.]</p>
+        <p>[Secondo paragrafo — approfondimento sul metodo, l'approccio al coaching, cosa distingue Vincenzo dagli altri formatori nel settore immobiliare italiano.]</p>
+        <p>[Terzo paragrafo — risultati concreti, storie di successo degli agenti che ha seguito, visione per il futuro dell'ecosistema.]</p>
+      </div>
+
+      <div class="bio-specializzazioni">
+        <div class="bio-spec-title">Aree di specializzazione</div>
+        <div class="bio-spec-grid">
+          <div class="bs-item">
+            <div class="bs-num">01</div>
+            <div class="bs-title">Strategia commerciale</div>
+            <div class="bs-desc">[Placeholder — descrizione area di lavoro con Vincenzo]</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">02</div>
+            <div class="bs-title">Acquisizione sistematica</div>
+            <div class="bs-desc">[Placeholder — descrizione area di lavoro con Vincenzo]</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">03</div>
+            <div class="bs-title">Leadership e team</div>
+            <div class="bs-desc">[Placeholder — descrizione area di lavoro con Vincenzo]</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">04</div>
+            <div class="bs-title">Scalabilità del business</div>
+            <div class="bs-desc">[Placeholder — descrizione area di lavoro con Vincenzo]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="bio-sidebar">
+      <div class="sidebar-cta-card" id="prenota">
+        <div class="scc-top"></div>
+        <div class="scc-eyebrow">Call gratuita · 30 minuti</div>
+        <div class="scc-title">Parla con<br><em>Vincenzo</em></div>
+        <p class="scc-desc">Una call di 30 minuti per capire dove sei, dove vuoi arrivare e se questo è il momento giusto per entrare nell'ecosistema.</p>
+        <div class="scc-includes">
+          <div class="scc-include">Check-up completo della tua situazione</div>
+          <div class="scc-include">Analisi dei gap prioritari</div>
+          <div class="scc-include">Indicazione del percorso più adatto</div>
+          <div class="scc-include">Zero pressione commerciale</div>
+        </div>
+        <a href="#" class="btn-luxury scc-cta">Prenota ora <span class="btn-arrow">→</span></a>
+        <div class="scc-note">Gratuita · Senza impegno · 30 minuti</div>
+      </div>
+
+      <div class="sidebar-altri-coach">
+        <div class="sac-title">Altri coach</div>
+        <a href="giuseppe-castiello.html" class="sac-item">
+          <div class="sac-photo" style="background-image:url('../../583 (2).jpg');background-position:center 15%"></div>
+          <div class="sac-info"><div class="sac-name">Giuseppe Castiello</div><div class="sac-role">Co-Fondatore</div></div>
+        </a>
+        <a href="antonella-sorrentino.html" class="sac-item">
+          <div class="sac-photo" style="background-image:url('../../2324 (1).jpg')"></div>
+          <div class="sac-info"><div class="sac-name">Antonella Sorrentino</div><div class="sac-role">Didattica & Coaching</div></div>
+        </a>
+        <a href="carmine-lamberti.html" class="sac-item">
+          <div class="sac-photo" style="background:#1a1a1a"></div>
+          <div class="sac-info"><div class="sac-name">Carmine Lamberti</div><div class="sac-role">Co-Fondatore</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COSA LAVORIAMO INSIEME -->
+<section class="lavoriamo">
+  <div class="lavoriamo-inner">
+    <div class="lavoriamo-head">
+      <div class="tag">Il lavoro insieme</div>
+      <h2>Cosa costruiamo<br><em>insieme</em></h2>
+    </div>
+    <div class="lavoriamo-grid">
+      <div class="lav-item">
+        <div class="lav-num">01</div>
+        <div class="lav-title">Sistema di acquisizione</div>
+        <div class="lav-desc">[Placeholder — descrivere cosa si lavora insieme su questo tema: struttura, metodo, risultati attesi dalla sessione con Vincenzo.]</div>
+      </div>
+      <div class="lav-item">
+        <div class="lav-num">02</div>
+        <div class="lav-title">Strategia di posizionamento</div>
+        <div class="lav-desc">[Placeholder — descrivere cosa si lavora insieme su questo tema: differenziazione, territorio, identità professionale.]</div>
+      </div>
+      <div class="lav-item">
+        <div class="lav-num">03</div>
+        <div class="lav-title">Piano di crescita 90 giorni</div>
+        <div class="lav-desc">[Placeholder — descrivere il piano d'azione, le metriche, il ritmo di lavoro con Vincenzo nel trimestre.]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIANZE -->
+<section class="coach-testi">
+  <div class="coach-testi-inner">
+    <div class="testi-head">
+      <div class="tag">Chi ha lavorato con lui</div>
+      <h2>Cosa dicono <em>gli agenti</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tq">
+        <div class="tq-mark">"</div>
+        <p class="tq-text">[Placeholder testimonianza — inserire citazione reale di un agente che ha lavorato con Vincenzo.]</p>
+        <div class="tq-author"><strong>[Nome Agente]</strong> · [Ruolo], [Città]</div>
+      </div>
+      <div class="tq">
+        <div class="tq-mark">"</div>
+        <p class="tq-text">[Placeholder testimonianza — inserire citazione reale di un agente che ha lavorato con Vincenzo.]</p>
+        <div class="tq-author"><strong>[Nome Agente]</strong> · [Ruolo], [Città]</div>
+      </div>
+      <div class="tq">
+        <div class="tq-mark">"</div>
+        <p class="tq-text">[Placeholder testimonianza — inserire citazione reale di un agente che ha lavorato con Vincenzo.]</p>
+        <div class="tq-author"><strong>[Nome Agente]</strong> · [Ruolo], [Città]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="coach-final-cta">
+  <div class="tag" style="justify-content:center;margin-bottom:16px;display:flex">Prenota ora</div>
+  <div class="cfc-title">30 minuti con Vincenzo.<br><em>Gratuiti.</em></div>
+  <p class="cfc-sub">Una conversazione reale per capire se questo è il momento giusto e quale percorso fa per te. Zero pressione, zero vendita.</p>
+  <a href="#prenota" class="btn-luxury">Prenota la tua call <span class="btn-arrow">→</span></a>
+  <div class="cta-meta">Gratuita · 30 minuti · Senza impegno</div>
+</section>
+
+<footer>
+  <a href="../../index.html">
+    <img src="../../Logo_02.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+  </a>
+  <div class="footer-links">
+    <a href="#">Privacy</a><a href="#">Cookie</a><a href="#">Contatti</a><a href="#">Sitemap</a>
+  </div>
+  <div class="footer-copy">© 2025 Agente Strategico</div>
+</footer>
+
+</body>
+</html>
