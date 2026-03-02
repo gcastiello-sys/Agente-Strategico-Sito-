@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Casi Studio — Agente Strategico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#0A0A0A;--gray-900:#1A1A1A;--gray-700:#444;--gray-500:#777;
+  --gray-200:#E8E8E8;--gray-100:#F4F4F4;--white:#FFF;
+  --gold:#C9A84C;--gold-light:#E2C46A;
+  --font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;
+  --max-w:1200px;--pad:clamp(24px,5vw,80px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);overflow-x:hidden;}
+
+.tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.tag::before{content:'';width:32px;height:1.5px;background:var(--gold);}
+
+.btn-luxury{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 44px;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
+.btn-luxury:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}
+.btn-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:13px;transition:transform 0.3s;}
+.btn-luxury:hover .btn-arrow{transform:translateX(4px);}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:12px;letter-spacing:0.5px;text-decoration:none;padding:10px 22px;text-transform:uppercase;background:var(--gold);color:var(--black);transition:all 0.2s;}
+.btn-gold:hover{background:var(--gold-light);}
+
+/* ANN BAR */
+.ann-bar{background:var(--black);color:rgba(255,255,255,0.7);text-align:center;padding:11px var(--pad);font-size:13px;}
+.ann-bar strong{color:var(--gold);}
+.ann-bar a{color:var(--gold);text-decoration:none;font-weight:600;margin-left:8px;}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--gray-200);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--black);}
+.nav-links a.active{border-bottom:1.5px solid var(--gold);padding-bottom:2px;}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.nav-ghost{font-size:12px;font-weight:500;color:var(--gray-700);text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;}
+.nav-ghost:hover{color:var(--black);}
+
+/* PAGE HERO */
+.page-hero{background:var(--black);padding:96px var(--pad) 72px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent);}
+.page-hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(48px,6vw,88px);font-weight:500;color:var(--white);line-height:0.9;letter-spacing:-2px;margin-top:16px;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:32px;}
+.page-hero-sub strong{color:rgba(255,255,255,0.7);font-weight:500;}
+.hero-nums{display:flex;gap:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);}
+.hn-num{font-family:var(--font-serif);font-size:36px;font-weight:600;color:var(--gold);line-height:1;}
+.hn-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-top:4px;}
+
+/* FILTER BAR */
+.filter-bar{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:72px;z-index:90;}
+.filter-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;gap:0;overflow-x:auto;}
+.filter-btn{padding:18px 24px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.filter-btn:hover{color:var(--black);}
+.filter-btn.active{color:var(--black);border-bottom-color:var(--gold);}
+
+/* FEATURED CASE STUDY */
+.featured{background:var(--gray-100);padding:80px var(--pad);}
+.featured-inner{max-width:var(--max-w);margin:0 auto;}
+.featured-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
+.featured-label::before{content:'';width:32px;height:1.5px;background:var(--gold);}
+.featured-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);overflow:hidden;text-decoration:none;transition:box-shadow 0.3s;}
+.featured-card:hover{box-shadow:0 24px 64px rgba(0,0,0,0.1);}
+.fc-image{aspect-ratio:4/3;background-size:cover;background-position:center;background-color:#1a1a1a;position:relative;overflow:hidden;}
+.fc-image-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.3) 0%,transparent 60%);}
+.fc-result-badge{position:absolute;bottom:24px;left:24px;background:var(--gold);color:var(--black);font-size:12px;font-weight:700;letter-spacing:1px;padding:8px 16px;text-transform:uppercase;}
+.fc-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;}
+.fc-cat{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.fc-title{font-family:var(--font-serif);font-size:clamp(28px,3vw,42px);font-weight:600;color:var(--black);line-height:1.1;margin-bottom:20px;}
+.fc-title em{font-style:italic;color:var(--gold);}
+.fc-excerpt{font-size:15px;color:var(--gray-500);line-height:1.75;font-weight:300;margin-bottom:32px;}
+.fc-author{display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid var(--gray-200);}
+.fc-author-photo{width:44px;height:44px;border-radius:50%;background-size:cover;background-position:center top;background-color:#1a1a1a;flex-shrink:0;}
+.fc-author-name{font-size:13px;font-weight:600;color:var(--black);}
+.fc-author-role{font-size:11px;color:var(--gray-500);}
+.fc-read{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-top:20px;text-decoration:none;transition:gap 0.2s;}
+.featured-card:hover .fc-read{gap:12px;}
+
+/* GRID */
+.blog-grid-section{background:var(--white);padding:80px var(--pad);}
+.blog-grid-inner{max-width:var(--max-w);margin:0 auto;}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;}
+.section-header h2{font-family:var(--font-serif);font-size:clamp(28px,3vw,40px);font-weight:600;color:var(--black);line-height:1;}
+.section-header h2 em{font-style:italic;color:var(--gold);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+.blog-card{background:var(--white);overflow:hidden;text-decoration:none;display:block;transition:background 0.2s;position:relative;}
+.blog-card:hover{background:var(--gray-100);}
+.blog-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.blog-card:hover::after{transform:scaleX(1);}
+.bc-image{aspect-ratio:3/2;background-size:cover;background-position:center;background-color:#1a1a1a;position:relative;overflow:hidden;}
+.bc-image-inner{width:100%;height:100%;background-size:cover;background-position:center;transition:transform 0.4s;}
+.blog-card:hover .bc-image-inner{transform:scale(1.04);}
+.bc-cat{position:absolute;top:16px;left:16px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;}
+.bc-cat-casostudio{background:var(--gold);color:var(--black);}
+.bc-cat-visione{background:var(--black);color:var(--gold);}
+.bc-cat-mercato{background:var(--white);color:var(--black);}
+.bc-result{position:absolute;bottom:16px;right:16px;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);color:var(--gold);font-size:11px;font-weight:700;padding:6px 12px;letter-spacing:1px;}
+.bc-info{padding:28px 24px;}
+.bc-title{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--black);line-height:1.2;margin-bottom:10px;}
+.bc-excerpt{font-size:13px;color:var(--gray-500);line-height:1.6;font-weight:300;margin-bottom:20px;}
+.bc-footer{display:flex;align-items:center;justify-content:space-between;}
+.bc-author{display:flex;align-items:center;gap:10px;}
+.bc-author-photo{width:32px;height:32px;border-radius:50%;background-size:cover;background-position:center top;background-color:#ddd;flex-shrink:0;}
+.bc-author-name{font-size:12px;font-weight:600;color:var(--black);}
+.bc-date{font-size:11px;color:var(--gray-500);}
+.bc-arrow{font-size:16px;color:var(--gray-200);transition:color 0.2s;}
+.blog-card:hover .bc-arrow{color:var(--gold);}
+
+/* NEWSLETTER STRIP */
+.newsletter{background:var(--black);padding:80px var(--pad);}
+.newsletter-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.nl-text h2{font-family:var(--font-serif);font-size:clamp(32px,3.5vw,48px);font-weight:600;color:var(--white);line-height:1.0;margin-bottom:16px;}
+.nl-text h2 em{font-style:italic;color:var(--gold);}
+.nl-text p{font-size:15px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;}
+.nl-note{font-size:11px;color:rgba(255,255,255,0.18);margin-top:12px;text-transform:uppercase;letter-spacing:1.5px;}
+
+/* FINAL CTA */
+.final-cta{background:var(--gray-100);padding:120px var(--pad);text-align:center;}
+.final-cta-title{font-family:var(--font-serif);font-size:clamp(36px,4vw,58px);font-weight:600;color:var(--black);line-height:1.0;margin-bottom:16px;}
+.final-cta-title em{font-style:italic;color:var(--gold);}
+.final-cta-sub{font-size:16px;color:var(--gray-500);font-weight:300;max-width:480px;margin:0 auto 48px;line-height:1.7;}
+
+/* FOOTER */
+footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,0.05);}
+.footer-links{display:flex;gap:28px;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature aperte — posti limitati. <strong>L'accesso richiede selezione.</strong>
+  <a href="#">Candidati ora →</a>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Logo_02.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--black)"><span style="width:36px;height:36px;background:var(--black);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="eventi.html">Eventi</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="#">Risorse</a></li>
+      <li><a href="chi-siamo.html">Chi Siamo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-ghost">Parla col Team</a>
+      <a href="#" class="btn-gold">Candidati Ora →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="tag">Casi Studio & Visione</div>
+      <h1>Storie <em>reali.</em><br>Risultati<br>misurabili.</h1>
+    </div>
+    <div>
+      <p class="page-hero-sub">Non teoria. Non motivazione. <strong>Agenti reali che hanno cambiato il loro business</strong> usando il metodo V.E.T.T.A. e l'ecosistema Agente Strategico.</p>
+      <div class="hero-nums">
+        <div><div class="hn-num">5+</div><div class="hn-label">Casi Studio</div></div>
+        <div><div class="hn-num">380+</div><div class="hn-label">Agenti formati</div></div>
+        <div><div class="hn-num">4.9</div><div class="hn-label">Valutazione media</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterPosts('tutti')">Tutti</button>
+    <button class="filter-btn" onclick="filterPosts('caso-studio')">Casi Studio</button>
+    <button class="filter-btn" onclick="filterPosts('visione')">Visione</button>
+    <button class="filter-btn" onclick="filterPosts('mercato')">Mercato</button>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section class="featured">
+  <div class="featured-inner">
+    <div class="featured-label">Caso Studio in evidenza</div>
+    <a href="blog/caso-studio-01.html" class="featured-card">
+      <div class="fc-image" style="background-image:url('[FOTO-AGENTE-1].jpg')">
+        <div class="fc-image-overlay"></div>
+        <div class="fc-result-badge">+12 mandati in 60 giorni</div>
+      </div>
+      <div class="fc-content">
+        <div class="fc-cat">Caso Studio · Acquisizione</div>
+        <h2 class="fc-title">Da 3 a <em>15 mandati</em> in 60 giorni:<br>la storia di [Nome Agente]</h2>
+        <p class="fc-excerpt">[Nome] era bloccato da mesi sugli stessi numeri. Tre mandati al mese, nessun sistema, tutto basato sulla fortuna e sul passaparola. Poi ha cambiato metodo — e tutto è cambiato.</p>
+        <div class="fc-author">
+          <div class="fc-author-photo" style="background-image:url('[FOTO-AGENTE-1].jpg')"></div>
+          <div>
+            <div class="fc-author-name">[Nome Agente]</div>
+            <div class="fc-author-role">Agente immobiliare · [Città]</div>
+          </div>
+        </div>
+        <div class="fc-read">Leggi il caso studio <span>→</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid-section">
+  <div class="blog-grid-inner">
+    <div class="section-header">
+      <div>
+        <div class="tag" style="margin-bottom:12px">Tutti i casi studio</div>
+        <h2>Storie che <em>ispirano</em></h2>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- CARD 1 -->
+      <a href="blog/caso-studio-01.html" class="blog-card" data-cat="caso-studio">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('[FOTO-AGENTE-1].jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-casostudio">Caso Studio</div>
+          <div class="bc-result">+12 mandati in 60gg</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Da 3 a 15 mandati in 60 giorni</div>
+          <div class="bc-excerpt">[Nome] ha trasformato il suo business partendo da zero con il metodo V.E.T.T.A. Ecco come.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('[FOTO-AGENTE-1].jpg')"></div>
+              <div><div class="bc-author-name">[Nome Agente]</div><div class="bc-date">[Città] · [Mese Anno]</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="blog/caso-studio-02.html" class="blog-card" data-cat="caso-studio">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('[FOTO-AGENTE-2].jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-casostudio">Caso Studio</div>
+          <div class="bc-result">Prima agenzia in 90 giorni</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Da agente a team leader in 90 giorni</div>
+          <div class="bc-excerpt">Il percorso di [Nome] dal lavoro in solitaria alla gestione di un team di 4 persone.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('[FOTO-AGENTE-2].jpg')"></div>
+              <div><div class="bc-author-name">[Nome Agente]</div><div class="bc-date">[Città] · [Mese Anno]</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="blog/caso-studio-03.html" class="blog-card" data-cat="caso-studio">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('[FOTO-AGENTE-3].jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-casostudio">Caso Studio</div>
+          <div class="bc-result">+180% fatturato in 6 mesi</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Fatturato triplicato in 6 mesi</div>
+          <div class="bc-excerpt">[Nome] aveva un problema di acquisizione sistematica. In 6 mesi ha costruito un sistema che lavora per lui.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('[FOTO-AGENTE-3].jpg')"></div>
+              <div><div class="bc-author-name">[Nome Agente]</div><div class="bc-date">[Città] · [Mese Anno]</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 4 -->
+      <a href="blog/caso-studio-04.html" class="blog-card" data-cat="caso-studio">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('[FOTO-AGENTE-4].jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-casostudio">Caso Studio</div>
+          <div class="bc-result">0 → sistema in 45 giorni</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Da zero sistema a pipeline piena</div>
+          <div class="bc-excerpt">Junior con 1 anno di esperienza. Nessun sistema. In 45 giorni ha costruito una pipeline che produce ogni settimana.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('[FOTO-AGENTE-4].jpg')"></div>
+              <div><div class="bc-author-name">[Nome Agente]</div><div class="bc-date">[Città] · [Mese Anno]</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 5 -->
+      <a href="blog/caso-studio-05.html" class="blog-card" data-cat="caso-studio">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('[FOTO-AGENTE-5].jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-casostudio">Caso Studio</div>
+          <div class="bc-result">Record personale in 30 giorni</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Il miglior mese della sua carriera</div>
+          <div class="bc-excerpt">[Nome], 8 anni di esperienza, stava vivendo un plateau. Un mese dentro l'ecosistema ha cambiato tutto.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('[FOTO-AGENTE-5].jpg')"></div>
+              <div><div class="bc-author-name">[Nome Agente]</div><div class="bc-date">[Città] · [Mese Anno]</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD VISIONE -->
+      <a href="blog/visione-01.html" class="blog-card" data-cat="visione">
+        <div class="bc-image">
+          <div class="bc-image-inner" style="background-image:url('giuseppecastiellopalco.jpg');background-color:#1a1a1a"></div>
+          <div class="bc-cat bc-cat-visione">Visione</div>
+        </div>
+        <div class="bc-info">
+          <div class="bc-title">Perché il mercato immobiliare italiano ha bisogno di un ecosistema</div>
+          <div class="bc-excerpt">La riflessione di Giuseppe Castiello su dove sta andando la formazione nel real estate e cosa mancava prima di Agente Strategico.</div>
+          <div class="bc-footer">
+            <div class="bc-author">
+              <div class="bc-author-photo" style="background-image:url('giuseppecastiellopalco.jpg')"></div>
+              <div><div class="bc-author-name">Giuseppe Castiello</div><div class="bc-date">Co-Fondatore · Feb 2025</div></div>
+            </div>
+            <div class="bc-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <div class="nl-text">
+      <div class="tag" style="margin-bottom:16px">Resta aggiornato</div>
+      <h2>Un caso studio<br>al mese. <em>Gratis.</em></h2>
+      <p>Ogni mese un caso studio reale — agente, risultato, metodo. Niente spam, niente teoria. Solo storie che funzionano.</p>
+      <div class="nl-note">Solo casi studio reali · Zero spam</div>
+    </div>
+    <div>
+      <a href="#" class="btn-luxury">Candidati e accedi alla community <span class="btn-arrow">→</span></a>
+      <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;line-height:1.5">Il modo migliore per restare aggiornato è entrare nell'ecosistema. La candidatura è gratuita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="tag" style="justify-content:center;display:flex;margin-bottom:16px">Il tuo caso studio inizia qui</div>
+  <div class="final-cta-title">Il prossimo risultato<br>potrebbe essere <em>il tuo.</em></div>
+  <p class="final-cta-sub">Ogni storia che hai letto è iniziata con una call di 30 minuti. Gratuita. Senza impegno.</p>
+  <a href="#" class="btn-luxury">Prenota la tua call gratuita <span class="btn-arrow">→</span></a>
+  <div style="margin-top:20px;font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:2px">30 minuti · Gratuito · Senza impegno</div>
+</section>
+
+<footer>
+  <a href="index.html">
+    <img src="Logo_02.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+  </a>
+  <div class="footer-links">
+    <a href="#">Privacy</a><a href="#">Cookie</a><a href="#">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2025 Agente Strategico</div>
+</footer>
+
+<script>
+function filterPosts(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (cat === 'tutti' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  // Fix grid gaps after filtering
+  const grid = document.getElementById('blog-grid');
+  grid.style.background = cat === 'tutti' ? 'var(--gray-200)' : 'transparent';
+}
+</script>
+</body>
+</html>
