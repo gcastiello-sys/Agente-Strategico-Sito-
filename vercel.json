@@ -1,9 +1,4 @@
 {
-  "redirects": [
-    { "source": "/blog", "destination": "/blog.html", "permanent": false },
-    { "source": "/community", "destination": "/community.html", "permanent": false },
-    { "source": "/eventi", "destination": "/eventi.html", "permanent": false },
-    { "source": "/chi-siamo", "destination": "/chi-siamo.html", "permanent": false },
-    { "source": "/corso-aula", "destination": "/corso-aula.html", "permanent": false }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
