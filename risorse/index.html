@@ -72,6 +72,32 @@ footer{background:#060606;padding:60px 32px 36px}
 .btn-luxury:hover{{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}}
 .btn-luxury .btn-arrow{{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:14px;transition:transform 0.3s;}}
 .btn-luxury:hover .btn-arrow{{transform:translateX(4px)}}
+
+/* CARD RISORSE ELEGANTI */
+.resource-card,.risorsa-card,.r-card,.card{
+  background:#111 !important;
+  border:1px solid rgba(201,168,76,0.15) !important;
+  border-top:3px solid var(--gold) !important;
+  transition:all 0.3s !important;
+  position:relative;
+  overflow:hidden;
+}
+.resource-card::before,.risorsa-card::before,.r-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent);
+}
+.resource-card:hover,.risorsa-card:hover,.r-card:hover{
+  border-color:rgba(201,168,76,0.4) !important;
+  border-top-color:var(--gold-light) !important;
+  box-shadow:0 8px 32px rgba(201,168,76,0.1) !important;
+  transform:translateY(-2px);
+}
+.resource-card h3,.risorsa-card h3,.card h3{color:var(--white) !important;}
+.resource-card p,.risorsa-card p,.card p{color:rgba(255,255,255,0.45) !important;}
+.resource-grid,.risorse-grid,.cards-grid{
+  background:var(--black) !important;
+  padding:80px var(--pad) !important;
+}
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -80,7 +106,7 @@ footer{background:#060606;padding:60px 32px 36px}
 <nav class="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/logooro.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="/logooronero.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
     </a>
     <ul class="nav-links">
