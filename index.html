@@ -126,7 +126,7 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .eco-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; background: var(--gray-200); }
 .eco-card { background: var(--white); padding: 36px 24px; display: flex; flex-direction: column; gap: 12px; border-top: 3px solid transparent; transition: all 0.35s; cursor: default; position: relative; overflow: hidden; }
 .eco-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:0; background:linear-gradient(to top,rgba(201,168,76,0.08),transparent); transition: height 0.35s; }
-.eco-card:hover { border-top-color: var(--gold); background: var(--gray-100); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.eco-card:hover { border-top-color: var(--gold); background: var(--gray-100); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.08); color: var(--black); }
 .eco-card:hover::after { height: 100%; }
 .eco-card:hover .eco-letter { background: var(--gold); color: var(--black); }
 .eco-card:hover .eco-title { color: var(--black); }
@@ -136,6 +136,10 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .eco-highlight .eco-title { color: var(--white); }
 .eco-highlight .eco-desc { color: rgba(255,255,255,0.5); }
 .eco-highlight:hover { background: #111 !important; transform: translateY(-3px); box-shadow: 0 8px 32px rgba(201,168,76,0.15); }
+.eco-highlight .eco-title { color: var(--white) !important; }
+.eco-highlight .eco-desc { color: rgba(255,255,255,0.5) !important; }
+.eco-highlight:hover .eco-title { color: var(--white) !important; }
+.eco-highlight:hover .eco-desc { color: rgba(255,255,255,0.5) !important; }
 .eco-badge { width: 40px; height: 40px; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 18px; font-weight: 600; flex-shrink: 0; }
 .eco-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
 .eco-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--black); line-height: 1.2; }
