@@ -805,3 +805,21 @@
   .pc-photo-wrap { height: 170px !important; }
   .pc-photo { height: 170px !important; }
 }
+
+/* ANN BAR FIXED MOBILE */
+@media (max-width: 768px) {
+  .ann-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10000 !important;
+    font-size: 11px !important;
+    padding: 8px 16px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  .navbar {
+    top: 38px !important;
+  }
+}
