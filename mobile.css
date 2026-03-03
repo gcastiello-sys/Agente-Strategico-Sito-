@@ -457,3 +457,163 @@ cat > mobile.css << 'CSSEOF'
   h1, h2, h3, p, li { word-break: break-word !important; overflow-wrap: break-word !important; }
   section { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important; }
 }
+
+/* ══════════════════════════════════════════
+   MOBILE ALIGNMENT FIX UNIVERSALE
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* RESET UNIVERSALE PADDING/MARGIN */
+  * { box-sizing: border-box !important; }
+  
+  /* TUTTI I SECTION centrati e padding uniforme */
+  section, .section, [class*="-section"], [class*="-hub"], [class*="-inner"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* TUTTI I GRID → colonna singola */
+  [class*="-grid"], [class*="-inner"], [class*="-head"] {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* TUTTI I FLEX → colonna centrata */
+  [class*="-ctas"], [class*="-actions"], [class*="-badges"], [class*="-stats"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  /* TUTTI I BOTTONI → full width centrati */
+  .btn, .btn-gold, .btn-luxury, .btn-hero-primary, .btn-outline,
+  [class*="btn"], [class*="-cta"] a {
+    width: 100% !important;
+    max-width: 340px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    clip-path: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+  }
+
+  /* TESTI centrati nelle sezioni hero e cta */
+  .page-hero, .page-hero-inner, .r-hero, .fomo-section,
+  .eventi-bottom-cta, .eventi-bottom-cta-inner, .r-cta,
+  .final-cta {
+    text-align: center !important;
+  }
+
+  /* TAG e EYEBROW sempre centrati */
+  .tag, .r-eyebrow, [class*="-eyebrow"], [class*="-type"] {
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* CARD GRID → colonna singola con larghezza piena */
+  .corso-card, .online-item, .r-card, .c-card,
+  .person-card, .t-card, .eco-card, .pb-card,
+  .router-card, .target-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ONLINE ITEMS — fix affiancati */
+  .online-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 20px !important;
+  }
+  .online-right {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* NAZIONALE CARD — fix immagine + content */
+  .nazionale-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .naz-content {
+    padding: 28px 20px !important;
+  }
+  .naz-details {
+    gap: 10px !important;
+  }
+  .naz-title {
+    font-size: clamp(24px,6vw,32px) !important;
+  }
+
+  /* COUNTDOWN BAR — fix affiancati */
+  .countdown-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 24px 20px !important;
+  }
+  .countdown-timer {
+    gap: 12px !important;
+  }
+  .countdown-bar .btn-luxury {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* FILTER BAR — fix overflow */
+  .filter-bar { overflow-x: auto !important; }
+  .filter-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 0 20px !important;
+    width: max-content !important;
+  }
+
+  /* STATS ROWS — fix affiancati */
+  .hero-stats-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+  .hs-item { text-align: center !important; }
+
+  /* RITMO HEAD — fix grid */
+  .ritmo-head {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 0 0 !important;
+  }
+
+  /* MANIFESTO VALUES */
+  .manifesto-values {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* FOOTER centrato */
+  footer, .footer-inner, .footer-col,
+  .footer-links, .footer-social {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* TIPOGRAFIA — scale mobile */
+  h1 { font-size: clamp(2rem,8vw,3rem) !important; }
+  h2 { font-size: clamp(1.6rem,6vw,2.2rem) !important; }
+  h3 { font-size: clamp(1.2rem,5vw,1.6rem) !important; }
+  p  { font-size: 15px !important; line-height: 1.7 !important; }
+}
