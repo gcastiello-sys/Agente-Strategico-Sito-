@@ -952,3 +952,40 @@
     padding-top: 64px !important;
   }
 }
+
+/* COMMUNITY OVERFLOW FIX */
+@media (max-width: 768px) {
+  /* Blocca scroll orizzontale globale */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Torre strategica — scala proporzionalmente */
+  .floor-5, .floor-4, .floor-3, .floor-2, .floor-1,
+  .floor-vetta, .floor-cuore, .floor-primo, .floor-fondamenta,
+  .tb-f5, .tb-f4, .tb-f3, .tb-f2, .tb-f1 {
+    max-width: 100% !important;
+  }
+
+  /* Tutti i container interni */
+  .torre-section, .torre-inner, .torre-wrap,
+  .tb-section, .tb-inner, .tb-wrap,
+  .ritmo-section, .chiavi-section, .testi,
+  .hero, .fomo-section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Griglia ritmo */
+  .ritmo-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Chiavi grid */
+  .chiavi-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
