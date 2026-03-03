@@ -823,3 +823,38 @@
     top: 38px !important;
   }
 }
+
+/* TEAM GRID MOBILE */
+@media (max-width: 768px) {
+  .team-section { padding: 48px 20px !important; }
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  .person-card:last-child:nth-child(odd) {
+    grid-column: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .pc-photo-wrap {
+    height: 320px !important;
+    aspect-ratio: unset !important;
+  }
+  .pc-photo {
+    width: 100% !important;
+    height: 320px !important;
+    background-size: cover !important;
+    background-position: center 15% !important;
+  }
+  .pc-badge {
+    top: 16px !important;
+    left: 16px !important;
+    font-size: 9px !important;
+    padding: 5px 12px !important;
+  }
+  .pc-info { padding: 20px 20px 24px !important; }
+  .pc-name { font-size: 22px !important; }
+  .pc-role { font-size: 10px !important; letter-spacing: 2px !important; }
+  .pc-spec { display: block !important; font-size: 13px !important; }
+  .pc-link { font-size: 11px !important; }
+}
