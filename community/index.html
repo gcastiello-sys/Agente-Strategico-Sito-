@@ -802,6 +802,36 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
   .nav-links,.nav-actions{display:none !important;}
 }
 
+
+/* ═══ MOBILE FIX DEFINITIVO ═══ */
+@media (max-width: 768px) {
+  /* Griglie → 1 colonna */
+  .soluzione-head, .motto-inner, .problemi-head,
+  .page-hero-inner, .manifesto-inner, .storia-inner,
+  .torre-teaser-inner, .r-intro-inner, .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .eco-grid, .p-grid, .chiavi-grid, .testi-grid,
+  .corsi-grid, .eventi-grid, .router-grid, .r-grid,
+  .problema-grid, .torre-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .team-grid, .team-founders, .team-grid-3, .team-grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .torre-wrapper {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    gap: 32px !important;
+  }
+  .nazionale-card {
+    grid-template-columns: 1fr !important;
+  }
+  /* Overflow testi */
+  * { box-sizing: border-box !important; }
+  img, video { max-width: 100% !important; }
+}
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
