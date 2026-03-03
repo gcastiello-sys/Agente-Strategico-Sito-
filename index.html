@@ -113,7 +113,7 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .problema-head h2.serif { color: var(--white); max-width: 640px; margin: 0 auto; }
 .problema-head .sub { margin: 16px auto 0; text-align: center; color: rgba(255,255,255,0.4); }
 .problema-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,0.04); }
-.pb-card { background: #0d0d0d; padding: 48px 36px; display: flex; flex-direction: column; gap: 20px; border-bottom: 2px solid transparent; transition: all 0.3s; color: rgba(255,255,255,0.85); }
+.pb-card { background: #0d0d0d; padding: 48px 36px; display: flex; flex-direction: column; gap: 20px; border-bottom: 2px solid transparent; transition: all 0.3s; color: rgba(255,255,255,0.92); }
 .pb-card:hover { border-bottom-color: var(--gold); background: #111; }
 .pb-num { font-family: var(--font-serif); font-size: 64px; font-weight: 400; color: var(--gold); line-height: 1; opacity: 0.6; }
 .pb-title { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: #ffffff; line-height: 1.2; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
@@ -179,11 +179,11 @@ h2.serif em { font-style: italic; color: var(--gold); }
 .tt-level { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.2s; cursor: default; }
 .tt-level:last-child { border-bottom: none; }
 .tt-level:hover { background: rgba(201,168,76,0.05); }
-.tt-level-name { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.tt-level-name { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.88); transition: color 0.2s; }
 .tt-level:hover .tt-level-name { color: var(--white); }
-.tt-level-range { font-size: 13px; color: rgba(201,168,76,0.5); font-weight: 500; transition: color 0.2s; }
+.tt-level-range { font-size: 13px; color: rgba(201,168,76,0.78); font-weight: 500; transition: color 0.2s; }
 .tt-level:hover .tt-level-range { color: var(--gold); }
-.tt-level-num { font-family: var(--font-serif); font-size: 11px; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+.tt-level-num { font-family: var(--font-serif); font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1px; }
 .tt-cta { margin-top: 32px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .tt-cta-link { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; transition: color 0.2s; }
 .tt-cta-link:hover { color: var(--gold); }
@@ -289,6 +289,15 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
   .hero-sub { color: rgba(255,255,255,0.92) !important; font-size: 19px !important; line-height: 1.7 !important; max-width: 600px !important; }
   .hero-fomo { color: rgba(255,255,255,0.85) !important; font-size: 13px !important; letter-spacing: 1px !important; }
   .fomo-dot { background: #C9A84C !important; width: 8px !important; height: 8px !important; }
+
+  /* GLOBAL READABILITY FIX */
+  .pb-card p, .pb-card div:not(.pb-num):not(.pb-title) { color: rgba(255,255,255,0.82) !important; }
+  .tt-level-num { color: rgba(255,255,255,0.55) !important; }
+  .tt-level-name { color: rgba(255,255,255,0.92) !important; }
+  .tt-level-range { color: rgba(201,168,76,0.75) !important; }
+  .tt-desc, .torre-desc, .torre-sub { color: rgba(255,255,255,0.82) !important; }
+  section[style*="background:#0"] p, 
+  section[style*="background: #0"] p { color: rgba(255,255,255,0.82) !important; }
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
