@@ -647,3 +647,50 @@
   section.hero { padding-top: 80px !important; padding-bottom: 48px !important; }
   .hero::before { display: none !important; }
 }
+
+/* ════ FIX FOTO MOBILE ════ */
+@media (max-width: 768px) {
+  .fc-photo-wrap {
+    width: 100% !important;
+    height: 300px !important;
+    aspect-ratio: unset !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  .fc-photo {
+    width: 100% !important;
+    height: 300px !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    filter: brightness(1.15) contrast(1.05) !important;
+  }
+  .fc-photo-overlay {
+    background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.1) 40%, transparent 100%) !important;
+  }
+  .cc-photo-wrap {
+    width: 72px !important;
+    height: 72px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: #1a1a1a !important;
+  }
+  .cc-photo {
+    width: 72px !important;
+    height: 72px !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    filter: brightness(1.15) contrast(1.05) !important;
+  }
+  .ant-photo {
+    width: 100% !important;
+    height: 280px !important;
+    aspect-ratio: unset !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    filter: brightness(1.1) !important;
+  }
+  .hero-bg-left {
+    filter: brightness(0.7) contrast(1.05) !important;
+  }
+}

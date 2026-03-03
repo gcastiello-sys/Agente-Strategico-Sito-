@@ -98,8 +98,8 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .founder-card:hover .fc-photo{transform:scale(1.03);}
 .founder-card:hover .fc-arrow{color:var(--gold);transform:translateX(4px);}
 .fc-photo-wrap{overflow:hidden;aspect-ratio:3/4;background:#1a1a1a;position:relative;}
-.fc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.5s;}
-.fc-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.2) 50%,transparent 100%);}
+.fc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.5s;filter:brightness(1.15) contrast(1.05);}
+.fc-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.6) 0%,rgba(10,10,10,0.1) 40%,transparent 100%);}
 .fc-badge{position:absolute;top:16px;left:16px;background:var(--gold);color:var(--black);font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;}
 .fc-info{padding:28px 24px;}
 .fc-role{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:6px;}
@@ -112,7 +112,7 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 /* ANTONELLA — responsabile */
 .antonella-section{background:var(--gray-100);padding:80px var(--pad);}
 .antonella-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center;}
-.ant-photo{aspect-ratio:3/4;background-size:cover;background-position:center top;background-color:#1a1a1a;background-image:url('antonellasorrentinocoach.jpg');}
+.ant-photo{aspect-ratio:3/4;background-size:cover;background-position:center top;background-color:#1a1a1a;background-image:url('/antonellasorrentinocoach.jpg');}
 .ant-content{}
 .ant-role{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 .ant-name{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);font-weight:600;color:var(--black);line-height:0.95;margin-bottom:24px;}
@@ -132,11 +132,11 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .coach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
 .coach-card{background:var(--white);overflow:hidden;text-decoration:none;display:block;transition:background 0.2s;position:relative;}
 .coach-card:hover{background:var(--gray-100);}
-.coach-card:hover .cc-photo{transform:scale(1.04);}
+.coach-card:hover .cc-photo{filter:brightness(1.15) contrast(1.05);transform:scale(1.04);}
 .coach-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .coach-card:hover::after{transform:scaleX(1);}
 .cc-photo-wrap{overflow:hidden;aspect-ratio:1/1;background:#1a1a1a;}
-.cc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.4s;}
+.cc-photo{filter:brightness(1.15) contrast(1.05);width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.4s;}
 .cc-info{padding:20px 20px 24px;}
 .cc-name{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--black);margin-bottom:4px;}
 .cc-spec{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:8px;}
@@ -275,7 +275,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <a href="/coach/vincenzo-romano.html" class="founder-card">
         <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('Vincenzoromano.jpg')"></div>
+          <div class="fc-photo" style="background-image:url('/Vincenzoromano.jpg')"></div>
           <div class="fc-photo-overlay"></div>
           <div class="fc-badge">Co-Fondatore</div>
         </div>
@@ -289,7 +289,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <a href="/coach/giuseppe-castiello.html" class="founder-card">
         <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('giuseppecastiellopalco.jpg');background-position:center 15%"></div>
+          <div class="fc-photo" style="background-image:url('/giuseppecastiellopalco.jpg');background-position:center 15%"></div>
           <div class="fc-photo-overlay"></div>
           <div class="fc-badge">Co-Fondatore</div>
         </div>
@@ -303,7 +303,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <a href="/coach/carmine-lamberti.html" class="founder-card">
         <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('carminelamberticoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo" style="background-image:url('/carminelamberticoach.jpg');background-size:cover;background-position:center top"></div>
           <div class="fc-photo-overlay"></div>
           <div class="fc-badge">Co-Fondatore</div>
         </div>
@@ -321,7 +321,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <a href="/coach/nicola-della-rocca.html" class="founder-card">
         <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('nicoladellaroccacoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo" style="background-image:url('/nicoladellaroccacoach.jpg');background-size:cover;background-position:center top"></div>
           <div class="fc-photo-overlay"></div>
           <div class="fc-badge">Co-Fondatore</div>
         </div>
@@ -335,7 +335,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <a href="/coach/luca-salomone.html" class="founder-card">
         <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('lucasalomnecoach.jpg');background-size:cover;background-position:center top"></div>
+          <div class="fc-photo" style="background-image:url('/lucasalomnecoach.jpg');background-size:cover;background-position:center top"></div>
           <div class="fc-photo-overlay"></div>
           <div class="fc-badge">Co-Fondatore</div>
         </div>
@@ -382,7 +382,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     <div class="coach-grid">
 
       <a href="/coach/antonella-sorrentino.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('antonellasorrentinocoach.jpg')"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/antonellasorrentinocoach.jpg')"></div></div>
         <div class="cc-info">
           <div class="cc-name">Antonella Sorrentino</div>
           <div class="cc-spec">Didattica & Coaching</div>
@@ -393,7 +393,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 
       <!-- PLACEHOLDER COACH 2 -->
       <a href="/coach/simone-campisano.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('simonecampisanocoach.jpg');background-size:cover;background-position:center top"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/simonecampisanocoach.jpg');background-size:cover;background-position:center top"></div></div>
         <div class="cc-info">
           <div class="cc-name">Simone Campisano</div>
           <div class="cc-spec">Metodo & Acquisizione</div>
@@ -403,7 +403,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       </a>
 
       <a href="/coach/filomena-sibona.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('filomenasibonacoach.jpg');background-size:cover;background-position:center top"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/filomenasibonacoach.jpg');background-size:cover;background-position:center top"></div></div>
         <div class="cc-info">
           <div class="cc-name">Filomena Sibona</div>
           <div class="cc-spec">Coaching & Crescita</div>
@@ -413,7 +413,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       </a>
 
       <a href="/coach/francesco-iacomelli.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('francescoiacomellicoach.jpg');background-size:cover;background-position:center top"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/francescoiacomellicoach.jpg');background-size:cover;background-position:center top"></div></div>
         <div class="cc-info">
           <div class="cc-name">Francesco Iacomelli</div>
           <div class="cc-spec">Vendita & Scalabilità</div>
@@ -423,7 +423,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       </a>
 
       <a href="/coach/laura-damore.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('lauradamore.jpg');background-size:cover;background-position:center top"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/lauradamore.jpg');background-size:cover;background-position:center top"></div></div>
         <div class="cc-info">
           <div class="cc-name">Laura D'Amore</div>
           <div class="cc-spec">Community Manager</div>
@@ -433,7 +433,7 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       </a>
 
       <a href="/coach/valentina-gallo.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('valentinagallo.jpg');background-size:cover;background-position:center top"></div></div>
+        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/valentinagallo.jpg');background-size:cover;background-position:center top"></div></div>
         <div class="cc-info">
           <div class="cc-name">Valentina Gallo</div>
           <div class="cc-spec">Social Media Manager</div>
