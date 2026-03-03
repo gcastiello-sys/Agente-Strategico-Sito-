@@ -188,7 +188,7 @@ footer{background:#060606;padding:60px 32px 36px}
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" style="display:none;">
+<div class="mobile-menu" id="mobileMenu" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0A;z-index:9998;padding-top:120px;flex-direction:column;align-items:flex-start;justify-content:center;">
   <div class="mm-inner">
     <ul class="mm-links">
       <li><a href="/">Home</a></li>
@@ -320,22 +320,30 @@ footer{background:#060606;padding:60px 32px 36px}
 </script>
   <script src="/mobile-nav.js"></script>
 
+
 <script>
 function toggleMenu(){
   var h=document.getElementById('hamburger');
   var m=document.getElementById('mobileMenu');
   if(!h||!m)return;
-  h.classList.toggle('open');
-  m.classList.toggle('open');
-  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+  var isOpen=m.style.display==='flex';
+  if(isOpen){
+    m.style.display='none';
+    h.classList.remove('open');
+    document.body.style.overflow='';
+  } else {
+    m.style.display='flex';
+    h.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
 }
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.mm-links a, .mm-cta').forEach(function(a){
+  document.querySelectorAll('.mm-links a,.mm-cta').forEach(function(a){
     a.addEventListener('click',function(){
       var h=document.getElementById('hamburger');
       var m=document.getElementById('mobileMenu');
       if(h)h.classList.remove('open');
-      if(m)m.classList.remove('open');
+      if(m)m.style.display='none';
       document.body.style.overflow='';
     });
   });
