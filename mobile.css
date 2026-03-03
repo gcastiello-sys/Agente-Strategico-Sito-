@@ -507,3 +507,143 @@
   .as-hamburger { display: none !important; }
   .as-mobile-nav { display: none !important; }
 }
+
+/* ════ FIX CHIRURGICI CHI SIAMO + RISORSE ════ */
+@media (max-width: 768px) {
+
+  /* PAGE HERO — forza colonna singola */
+  .page-hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    padding: 0 20px !important;
+  }
+  .page-hero-inner > div:first-child { width: 100% !important; }
+  .page-hero-right {
+    width: 100% !important;
+    display: block !important;
+  }
+  .page-hero h1 {
+    font-size: clamp(2rem,8vw,2.8rem) !important;
+    line-height: 1.0 !important;
+  }
+  .page-hero-sub {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+  }
+  .hero-stats-row {
+    display: grid !important;
+    grid-template-columns: repeat(3,1fr) !important;
+    gap: 16px !important;
+    padding-top: 24px !important;
+  }
+  .hs-item { text-align: center !important; }
+  .hs-num { font-size: 1.6rem !important; }
+  .hs-label { font-size: 9px !important; letter-spacing: 1px !important; }
+
+  /* MANIFESTO — forza colonna singola */
+  .manifesto-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .manifesto-text { width: 100% !important; }
+  .manifesto-quote {
+    font-size: clamp(1.3rem,5vw,1.8rem) !important;
+    padding-left: 20px !important;
+    border-left: 3px solid var(--gold) !important;
+  }
+  .manifesto-body { font-size: 0.9rem !important; line-height: 1.7 !important; }
+  .manifesto-values {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .mv-item {
+    padding: 20px 16px !important;
+    gap: 12px !important;
+  }
+  .mv-num { font-size: 24px !important; width: 32px !important; }
+  .mv-title { font-size: 14px !important; }
+  .mv-desc { font-size: 12px !important; }
+
+  /* FONDATORI — forza colonna singola */
+  .founders-featured {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    background: rgba(255,255,255,0.04) !important;
+  }
+  .founder-card { width: 100% !important; }
+  .fc-photo-wrap {
+    width: 100% !important;
+    height: 260px !important;
+  }
+  .fc-photo { height: 260px !important; }
+  .fc-info { padding: 20px 20px 24px !important; text-align: left !important; }
+  .fc-name { font-size: 1.3rem !important; }
+  .fc-spec { font-size: 12px !important; }
+  .founders-secondary {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  /* ANTONELLA — forza colonna singola */
+  .antonella-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .ant-photo {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    height: 280px !important;
+    object-fit: cover !important;
+  }
+  .ant-content { width: 100% !important; }
+  .ant-pillars {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    border-left: 2px solid var(--gold) !important;
+    padding-left: 16px !important;
+  }
+  .ant-pillar { padding: 0 !important; }
+
+  /* COACH GRID — forza colonna singola */
+  .coach-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+  .coach-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    align-items: center !important;
+    padding: 16px !important;
+  }
+  .cc-photo-wrap {
+    width: 72px !important;
+    height: 72px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
+  .cc-photo {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: cover !important;
+    object-position: top !important;
+  }
+  .cc-info { flex: 1 !important; text-align: left !important; }
+
+  /* RISORSE — fix spazio vuoto hero */
+  .hero.risorse-hero,
+  section.hero { padding-top: 80px !important; padding-bottom: 48px !important; }
+  .hero::before { display: none !important; }
+}
