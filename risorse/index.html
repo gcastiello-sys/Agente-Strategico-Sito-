@@ -113,6 +113,45 @@ footer{background:#060606;padding:60px 32px 36px}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px;}
 .nav-actions{display:flex;gap:12px;align-items:center;}
+
+/* RISORSE REDESIGN */
+.r-hero{background:var(--black);padding:100px var(--pad) 80px;text-align:center;position:relative;}
+.r-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none;}
+.r-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.06;max-width:760px;margin:0 auto 20px;color:var(--white);}
+.r-hero h1 em{font-style:italic;color:var(--gold);}
+.r-hero p{font-size:17px;color:rgba(255,255,255,0.4);max-width:520px;margin:0 auto;line-height:1.7;}
+
+.r-intro{background:var(--white);padding:64px var(--pad);}
+.r-intro-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.r-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:600;color:var(--black);line-height:1.05;}
+.r-intro h2 em{font-style:italic;color:var(--gold);}
+.r-intro p{font-size:15px;color:#424242;line-height:1.8;}
+.r-intro-stats{display:flex;gap:40px;}
+.r-stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--gold);line-height:1;}
+.r-stat-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#9E9E9E;margin-top:4px;}
+
+.r-grid-section{background:#F5F5F5;padding:80px var(--pad) 100px;}
+.r-grid-inner{max-width:var(--max-w);margin:0 auto;}
+.r-grid-head{text-align:center;margin-bottom:56px;}
+.r-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.r-eyebrow::before,.r-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--gold);opacity:0.5;}
+.r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,0.08);}
+.r-card{background:var(--black);padding:36px 28px;display:flex;flex-direction:column;gap:14px;transition:background 0.25s;position:relative;overflow:hidden;}
+.r-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s;}
+.r-card:hover{background:#111;}
+.r-card:hover::before{opacity:1;}
+.r-card-tag{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.6);}
+.r-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white);line-height:1.2;}
+.r-card p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.65;flex:1;}
+.r-btn{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,0.3);padding:10px 20px;transition:all 0.2s;align-self:flex-start;margin-top:4px;}
+.r-btn:hover{background:rgba(201,168,76,0.08);border-color:var(--gold);}
+.r-btn svg{width:14px;height:14px;}
+
+.r-cta{background:var(--black);padding:80px var(--pad);text-align:center;border-top:1px solid rgba(201,168,76,0.1);}
+.r-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:16px;}
+.r-cta h2 em{font-style:italic;color:var(--gold);}
+.r-cta p{font-size:15px;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto 36px;line-height:1.7;}
+
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -144,65 +183,86 @@ footer{background:#060606;padding:60px 32px 36px}
   </div>
 </nav>
 
-<section class="hero">
-  <div class="eyebrow">Risorse Gratuite</div>
-  <h1>Strumenti reali.<br/><em>Risultati concreti.</em></h1>
+<section class="r-hero">
+  <div class="r-eyebrow">Risorse Gratuite</div>
+  <h1>Strumenti reali.<br><em>Risultati concreti.</em></h1>
   <p>Ogni risorsa nasce dall'esperienza sul campo dei coach e della community. Scarica gratis, applica subito.</p>
 </section>
 
-<section class="section">
-  <div class="divider"></div>
-  <div class="grid">
-    <div class="card">
-      <span class="card-tag">AI &amp; Produttività</span>
-      <h3>100 Prompt AI per Agenti Immobiliari</h3>
-      <p>Prompt pronti all'uso per ChatGPT: annunci, follow-up, trattative, social, analisi di mercato. Copia, incolla, converti.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<section class="r-intro">
+  <div class="r-intro-inner">
+    <div>
+      <div class="r-eyebrow">Perché funzionano</div>
+      <h2>Non teoria.<br><em>Strumenti operativi.</em></h2>
     </div>
-    <div class="card">
-      <span class="card-tag">Strategia</span>
-      <h3>Business Plan Strategico</h3>
-      <p>Template per pianificare obiettivi, provvigioni, pipeline e attività mensili. Strutturato, editabile, immediato.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="card">
-      <span class="card-tag">Finanza</span>
-      <h3>File Cashflow</h3>
-      <p>Tieni sotto controllo entrate, uscite e margini. Smetti di lavorare senza sapere quanto guadagni davvero ogni mese.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="card">
-      <span class="card-tag">Vendita</span>
-      <h3>Script Book — Agenti Immobiliari</h3>
-      <p>Script per acquisizione, obiezioni, mandato, offerta e chiusura. Testati dalla community, affinati nel tempo.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="card">
-      <span class="card-tag">Social Media</span>
-      <h3>30 Video Ganci Virali</h3>
-      <p>Hook video pronti da girare. Ottimizzati per Reels e TikTok, progettati per fermare lo scroll e generare lead.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="card">
-      <span class="card-tag">Content</span>
-      <h3>Reel che Convertono</h3>
-      <p>Struttura, copy e CTA per creare Reel che non si fermano alle views. Trasforma i follower in appuntamenti.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="card">
-      <span class="card-tag">Email Marketing</span>
-      <h3>Email Marketing per Agenti</h3>
-      <p>Sequenze email per nurturare i contatti freddi e riattivare i clienti passati. Scritto per l'immobiliare italiano.</p>
-      <a href="LINK_GHL" class="btn-outline">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div>
+      <p>Ogni risorsa è nata da un bisogno reale della community. Testata, affinata, usata ogni settimana da agenti che lavorano sul campo.</p>
+      <div class="r-intro-stats">
+        <div><div class="r-stat-num">7</div><div class="r-stat-label">Risorse gratuite</div></div>
+        <div><div class="r-stat-num">380+</div><div class="r-stat-label">Agenti la usano</div></div>
+        <div><div class="r-stat-num">0€</div><div class="r-stat-label">Costo</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <div class="eyebrow">Vuoi andare oltre le risorse?</div>
-  <h2>Entra nell'ecosistema.<br/>Porta la tua carriera alla vetta.</h2>
-  <p>Le risorse aprono la porta. La community ti porta dall'altra parte.</p>
-  <a href="/candidatura/" class="btn-gold">Candidati ora</a>
+<section class="r-grid-section">
+  <div class="r-grid-inner">
+    <div class="r-grid-head">
+      <div class="r-eyebrow">Le risorse</div>
+    </div>
+    <div class="r-grid">
+      <div class="r-card">
+        <span class="r-card-tag">AI &amp; Produttività</span>
+        <h3>100 Prompt AI per Agenti Immobiliari</h3>
+        <p>Prompt pronti all'uso per ChatGPT: annunci, follow-up, trattative, social, analisi di mercato. Copia, incolla, converti.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Strategia</span>
+        <h3>Business Plan Strategico</h3>
+        <p>Template per pianificare obiettivi, provvigioni, pipeline e attività mensili. Strutturato, editabile, immediato.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Finanza</span>
+        <h3>File Cashflow</h3>
+        <p>Tieni sotto controllo entrate, uscite e margini. Smetti di lavorare senza sapere quanto guadagni davvero ogni mese.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Vendita</span>
+        <h3>Script Book — Agenti Immobiliari</h3>
+        <p>Script per acquisizione, obiezioni, mandato, offerta e chiusura. Testati dalla community, affinati nel tempo.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Social Media</span>
+        <h3>30 Video Ganci Virali</h3>
+        <p>Hook video pronti da girare. Ottimizzati per Reels e TikTok, progettati per fermare lo scroll e generare lead.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Content</span>
+        <h3>Reel che Convertono</h3>
+        <p>Struttura, copy e CTA per creare Reel che non si fermano alle views. Trasforma i follower in appuntamenti.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-card-tag">Email Marketing</span>
+        <h3>Email Marketing per Agenti</h3>
+        <p>Sequenze email per nurturare i contatti freddi e riattivare i clienti passati. Scritto per l'immobiliare italiano.</p>
+        <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="r-cta">
+  <div class="r-eyebrow">Vuoi andare oltre le risorse?</div>
+  <h2>Le risorse aprono la porta.<br><em>La community ti porta dall'altra parte.</em></h2>
+  <p>Accesso su candidatura. Posti limitati. Il prossimo ciclo è aperto.</p>
+  <a href="/candidatura/" class="btn-luxury">Candidati ora <span class="btn-arrow">→</span></a>
 </section>
 
 <footer>

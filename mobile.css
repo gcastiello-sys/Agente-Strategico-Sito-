@@ -870,3 +870,24 @@
     padding: 28px 20px !important;
   }
 }
+
+/* RISORSE MOBILE */
+@media (max-width: 768px) {
+  .r-hero { padding: 72px 20px 56px; }
+  .r-intro { padding: 48px 20px; }
+  .r-intro-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .r-intro-stats { gap: 24px; flex-wrap: wrap; }
+  .r-stat-num { font-size: 36px; }
+  .r-grid-section { padding: 56px 20px 72px; }
+  .r-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .r-card { padding: 28px 20px; }
+  .r-card h3 { font-size: 20px; }
+  .r-cta { padding: 56px 20px; }
+}
