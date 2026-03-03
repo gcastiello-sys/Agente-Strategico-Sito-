@@ -832,6 +832,22 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
   * { box-sizing: border-box !important; }
   img, video { max-width: 100% !important; }
 }
+
+.video-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+.v-card{background:var(--white);display:flex;flex-direction:column;}
+.v-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;}
+.v-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.v-placeholder{position:relative;padding-bottom:56.25%;height:0;background:#0A0A0A;display:flex;align-items:center;justify-content:center;cursor:default;}
+.v-placeholder-inner{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.v-ph-icon{width:48px;height:48px;border:2px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.v-ph-icon svg{width:18px;height:18px;fill:rgba(201,168,76,0.4);}
+.v-ph-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.4);}
+.v-info{padding:20px 20px 24px;}
+.v-name{font-family:var(--font-serif);font-size:17px;font-weight:600;color:var(--black);margin-bottom:4px;}
+.v-role{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+@media(max-width:768px){
+  .video-testi-grid{grid-template-columns:1fr !important;}
+}
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -1029,42 +1045,94 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
         <div class="rating-l">Recensioni verificate</div>
       </div>
     </div>
-    <div class="testi-grid">
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">Un aspetto che fa la differenza è la qualità dei relatori e dei coach. Ogni incontro per me è un'opportunità per apprendere da esperti <strong>appassionati nel condividere le loro conoscenze in modo pratico e applicabile.</strong></p>
-        <div class="q-author"><div class="q-avatar">GB</div><div><div class="q-name">Giovanni Bubacco</div><div class="q-role">Agente Immobiliare</div></div></div>
+    <div class="video-testi-grid">
+
+      <!-- VIDEO REALE 1 -->
+      <div class="v-card">
+        <div class="v-embed">
+          <iframe src="https://www.youtube.com/embed/PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u?list=PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="v-info">
+          <div class="v-name">Giovanni Bubacco</div>
+          <div class="v-role">Agente Immobiliare</div>
+        </div>
       </div>
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">Posso garantire che mi ha cambiato il modo di essere e il modo di lavorare. <strong>Quel senso di appartenenza a un gruppo che ti aiuta sia dal punto di vista lavorativo che umano</strong> non ha prezzo.</p>
-        <div class="q-author"><div class="q-avatar">GV</div><div><div class="q-name">Giuseppe Vaglica</div><div class="q-role">Agente Immobiliare</div></div></div>
+
+      <!-- PLACEHOLDER 2 -->
+      <div class="v-card">
+        <div class="v-placeholder">
+          <div class="v-placeholder-inner">
+            <div class="v-ph-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="v-ph-label">Prossimamente</div>
+          </div>
+        </div>
+        <div class="v-info">
+          <div class="v-name" style="color:rgba(0,0,0,0.2);">— — —</div>
+          <div class="v-role" style="color:rgba(201,168,76,0.3);">In arrivo</div>
+        </div>
       </div>
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">Questa rete ti permette di non sentirti mai solo. <strong>Essere parte di questa community significa far parte di una famiglia professionale</strong> che ispira e sostiene ogni giorno.</p>
-        <div class="q-author"><div class="q-avatar">FG</div><div><div class="q-name">Francesco Gori</div><div class="q-role">Agente Immobiliare</div></div></div>
+
+      <!-- PLACEHOLDER 3 -->
+      <div class="v-card">
+        <div class="v-placeholder">
+          <div class="v-placeholder-inner">
+            <div class="v-ph-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="v-ph-label">Prossimamente</div>
+          </div>
+        </div>
+        <div class="v-info">
+          <div class="v-name" style="color:rgba(0,0,0,0.2);">— — —</div>
+          <div class="v-role" style="color:rgba(201,168,76,0.3);">In arrivo</div>
+        </div>
       </div>
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">In Agente Strategico ho trovato argomenti approfonditi e senza eguali. <strong>Un ambiente per poter crescere veramente sia come professionista che come persona.</strong> È il tassello che ci mancava.</p>
-        <div class="q-author"><div class="q-avatar">GF</div><div><div class="q-name">Guglielmo Francini</div><div class="q-role">Broker Immobiliare</div></div></div>
+
+      <!-- PLACEHOLDER 4 -->
+      <div class="v-card">
+        <div class="v-placeholder">
+          <div class="v-placeholder-inner">
+            <div class="v-ph-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="v-ph-label">Prossimamente</div>
+          </div>
+        </div>
+        <div class="v-info">
+          <div class="v-name" style="color:rgba(0,0,0,0.2);">— — —</div>
+          <div class="v-role" style="color:rgba(201,168,76,0.3);">In arrivo</div>
+        </div>
       </div>
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">Non si tratta solo di imparare nozioni. <strong>Grazie alla condivisione costante ho acquisito una visione più ampia del mercato</strong> e strumenti concreti per affrontare le sfide giornaliere.</p>
-        <div class="q-author"><div class="q-avatar">PT</div><div><div class="q-name">Piero Teresi</div><div class="q-role">Agente Immobiliare</div></div></div>
+
+      <!-- PLACEHOLDER 5 -->
+      <div class="v-card">
+        <div class="v-placeholder">
+          <div class="v-placeholder-inner">
+            <div class="v-ph-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="v-ph-label">Prossimamente</div>
+          </div>
+        </div>
+        <div class="v-info">
+          <div class="v-name" style="color:rgba(0,0,0,0.2);">— — —</div>
+          <div class="v-role" style="color:rgba(201,168,76,0.3);">In arrivo</div>
+        </div>
       </div>
-      <div class="t-card">
-        <div class="q-mark">"</div>
-        <p class="q-text">Non avrei mai pensato avesse così tanti contenuti. <strong>È un game changer nella nostra attività.</strong> Quando Vincenzo Romano me ne ha parlato, non immaginavo quanto avrebbe cambiato il mio modo di lavorare.</p>
-        <div class="q-author"><div class="q-avatar">GI</div><div><div class="q-name">Giuseppe Iannò</div><div class="q-role">Agente Immobiliare</div></div></div>
+
+      <!-- PLACEHOLDER 6 -->
+      <div class="v-card">
+        <div class="v-placeholder">
+          <div class="v-placeholder-inner">
+            <div class="v-ph-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="v-ph-label">Prossimamente</div>
+          </div>
+        </div>
+        <div class="v-info">
+          <div class="v-name" style="color:rgba(0,0,0,0.2);">— — —</div>
+          <div class="v-role" style="color:rgba(201,168,76,0.3);">In arrivo</div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- TEAM TEASER -->
+<!-- TEAM<!-- TEAM TEASER -->
 <section style="background:var(--black);padding:80px var(--pad);border-top:1px solid rgba(255,255,255,0.05)">
   <div style="max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
     <div>
