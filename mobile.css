@@ -617,3 +617,11 @@ cat > mobile.css << 'CSSEOF'
   h3 { font-size: clamp(1.2rem,5vw,1.6rem) !important; }
   p  { font-size: 15px !important; line-height: 1.7 !important; }
 }
+
+/* ── HERO FOTO PIÙ LUMINOSA DA MOBILE ── */
+@media (max-width: 768px) {
+  .hero-bg-left {
+    filter: brightness(1.1) contrast(1.05) !important;
+    opacity: 0.45 !important;
+  }
+}
