@@ -743,3 +743,31 @@
   .team-group { margin-bottom: 40px !important; }
   .team-group-label { font-size: 9px !important; }
 }
+
+/* TEAM GRID FOTO MOBILE */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+    gap: 2px !important;
+  }
+  .pc-photo-wrap {
+    height: 220px !important;
+  }
+  .pc-photo {
+    height: 220px !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+  .pc-info {
+    padding: 12px 10px 14px !important;
+  }
+  .pc-name { font-size: 14px !important; }
+  .pc-spec { display: none !important; }
+  .pc-role { font-size: 8px !important; }
+  .pc-link { font-size: 9px !important; }
+  .pc-badge { font-size: 7px !important; padding: 3px 8px !important; top: 10px !important; left: 10px !important; }
+}
+@media (max-width: 480px) {
+  .pc-photo-wrap { height: 180px !important; }
+  .pc-photo { height: 180px !important; }
+}
