@@ -724,3 +724,22 @@
   .eco-title { font-size: 18px !important; }
   .eco-desc { font-size: 13px !important; }
 }
+
+/* ════ TEAM GRID MOBILE ════ */
+@media (max-width: 768px) {
+  .team-section { padding: 56px 20px !important; }
+  .team-head { margin-bottom: 40px !important; }
+  .team-grid, .team-grid-3, .team-grid-2 {
+    grid-template-columns: repeat(2,1fr) !important;
+    gap: 2px !important;
+  }
+  .pc-photo-wrap { aspect-ratio: 3/4 !important; }
+  .pc-info { padding: 14px 12px 16px !important; }
+  .pc-name { font-size: 15px !important; }
+  .pc-spec { display: none !important; }
+  .pc-role { font-size: 8px !important; }
+  .pc-link { font-size: 9px !important; }
+  .pc-badge { font-size: 7px !important; padding: 3px 8px !important; }
+  .team-group { margin-bottom: 40px !important; }
+  .team-group-label { font-size: 9px !important; }
+}

@@ -166,6 +166,39 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .nav-links a:hover{color:var(--gold);}
 .nav-links a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px;}
 .nav-actions{display:flex;gap:12px;align-items:center;}
+
+/* TEAM GRID UNIFICATA */
+.team-section{background:var(--black);padding:96px var(--pad);}
+.team-inner{max-width:var(--max-w);margin:0 auto;}
+.team-head{text-align:center;margin-bottom:64px;}
+.team-head h2{font-family:var(--font-serif);font-size:clamp(32px,3.5vw,52px);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:12px;}
+.team-head h2 em{font-style:italic;color:var(--gold);}
+.team-head p{font-size:14px;color:rgba(255,255,255,0.35);max-width:480px;margin:0 auto;}
+
+.team-group{margin-bottom:56px;}
+.team-group-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.12);}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);}
+.team-grid-3{grid-template-columns:repeat(3,1fr);}
+.team-grid-2{grid-template-columns:repeat(2,1fr);}
+
+.person-card{background:#0d0d0d;overflow:hidden;text-decoration:none;display:block;position:relative;transition:background 0.3s;}
+.person-card:hover{background:#121212;}
+.person-card:hover .pc-photo{transform:scale(1.03);filter:brightness(1.2) contrast(1.05);}
+.person-card:hover .pc-link{color:var(--gold);}
+.person-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.person-card:hover::after{transform:scaleX(1);}
+
+.pc-photo-wrap{overflow:hidden;aspect-ratio:3/4;background:#1a1a1a;position:relative;}
+.pc-photo{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 0.5s;filter:brightness(1.1) contrast(1.05);}
+.pc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.65) 0%,rgba(10,10,10,0.1) 40%,transparent 100%);}
+.pc-badge{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--black);font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;}
+
+.pc-info{padding:20px 18px 22px;}
+.pc-role{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:5px;}
+.pc-name{font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:6px;}
+.pc-spec{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.5;font-weight:300;margin-bottom:12px;}
+.pc-link{font-size:10px;font-weight:600;color:rgba(201,168,76,0.5);text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
+
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -263,186 +296,185 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 </section>
 
 <!-- FONDATORI -->
-<section class="fondatori">
-  <div class="fondatori-inner">
-    <div class="fondatori-head">
+<section class="team-section">
+  <div class="team-inner">
+    <div class="team-head">
       <div class="tag tag-center">Le persone dietro il progetto</div>
-      <h2>I Co-<em>Fondatori</em></h2>
-      <p>Cinque persone che hanno costruito Agente Strategico dal primo giorno — con visioni diverse e un obiettivo comune.</p>
+      <h2>Un ecosistema fatto<br><em>di persone reali.</em></h2>
+      <p>Fondatori, coach e responsabili che lavorano fianco a fianco ogni settimana.</p>
     </div>
 
-    <div class="founders-featured">
-
-      <a href="/coach/vincenzo-romano.html" class="founder-card">
-        <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('/Vincenzoromano.jpg')"></div>
-          <div class="fc-photo-overlay"></div>
-          <div class="fc-badge">Co-Fondatore</div>
-        </div>
-        <div class="fc-info">
-          <div class="fc-role">Founder & CEO</div>
-          <div class="fc-name">Vincenzo Romano</div>
-          <div class="fc-spec">Il motore commerciale e strategico dell'ecosistema. Porta la visione sul palco e nella direzione dell'azienda.</div>
-          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/giuseppe-castiello.html" class="founder-card">
-        <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('/giuseppecastiellopalco.jpg');background-position:center 15%"></div>
-          <div class="fc-photo-overlay"></div>
-          <div class="fc-badge">Co-Fondatore</div>
-        </div>
-        <div class="fc-info">
-          <div class="fc-role">Co-Founder</div>
-          <div class="fc-name">Giuseppe Castiello</div>
-          <div class="fc-spec">Visione chiara sul percorso di crescita degli agenti immobiliari italiani e sull'ecosistema che li accompagna.</div>
-          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/carmine-lamberti.html" class="founder-card">
-        <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('/carminelamberticoach.jpg');background-size:cover;background-position:center top"></div>
-          <div class="fc-photo-overlay"></div>
-          <div class="fc-badge">Co-Fondatore</div>
-        </div>
-        <div class="fc-info">
-          <div class="fc-role">Co-Founder</div>
-          <div class="fc-name">Carmine Lamberti</div>
-          <div class="fc-spec">Co-fondatore con un ruolo chiave nella costruzione e nello sviluppo dell'ecosistema Agente Strategico.</div>
-          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="founders-secondary">
-
-      <a href="/coach/nicola-della-rocca.html" class="founder-card">
-        <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('/nicoladellaroccacoach.jpg');background-size:cover;background-position:center top"></div>
-          <div class="fc-photo-overlay"></div>
-          <div class="fc-badge">Co-Fondatore</div>
-        </div>
-        <div class="fc-info">
-          <div class="fc-role">Co-Founder</div>
-          <div class="fc-name">Nicola Della Rocca</div>
-          <div class="fc-spec">Dal primo giorno nel progetto. Contributo fondamentale nella costruzione delle fondamenta di Agente Strategico.</div>
-          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/luca-salomone.html" class="founder-card">
-        <div class="fc-photo-wrap">
-          <div class="fc-photo" style="background-image:url('/lucasalomnecoach.jpg');background-size:cover;background-position:center top"></div>
-          <div class="fc-photo-overlay"></div>
-          <div class="fc-badge">Co-Fondatore</div>
-        </div>
-        <div class="fc-info">
-          <div class="fc-role">Co-Founder</div>
-          <div class="fc-name">Luca Salomone</div>
-          <div class="fc-spec">Dal primo giorno nel progetto. Figura chiave nella crescita e nel posizionamento dell'ecosistema.</div>
-          <div class="fc-link">Scopri di più <span class="fc-arrow">→</span></div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ANTONELLA -->
-<section class="antonella-section">
-  <div class="antonella-inner">
-    <div class="ant-photo"></div>
-    <div class="ant-content">
-      <div class="ant-role">Responsabile Didattica, Coaching & Comunicazione</div>
-      <h2 class="ant-name">Antonella<br><em>Sorrentino</em></h2>
-      <p class="ant-desc">Antonella guida la struttura formativa, il coaching e la comunicazione dell'ecosistema. Ogni percorso di apprendimento, ogni sessione di gruppo, ogni contenuto porta la sua firma metodologica. È il punto di riferimento per chi vuole crescere in modo strutturato e consapevole.</p>
-      <div class="ant-pillars">
-        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Didattica</div></div>
-        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Coaching</div></div>
-        <div class="ant-pillar"><div class="ant-pillar-title">Responsabile Comunicazione</div></div>
+    <!-- FONDATORI -->
+    <div class="team-group">
+      <div class="team-group-label">Fondatori</div>
+      <div class="team-grid team-grid-3">
+        <a href="/coach/vincenzo-romano.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/Vincenzoromano.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Fondatore</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Founder & CEO</div>
+            <div class="pc-name">Vincenzo Romano</div>
+            <div class="pc-spec">Il motore commerciale e strategico dell'ecosistema. Porta la visione sul palco e nella direzione dell'azienda.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/giuseppe-castiello.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/giuseppecastiellopalco.jpg');background-position:center 15%"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Fondatore</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Co-Founder</div>
+            <div class="pc-name">Giuseppe Castiello</div>
+            <div class="pc-spec">Visione chiara sul percorso di crescita degli agenti immobiliari italiani e sull'ecosistema che li accompagna.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/carmine-lamberti.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/carminelamberticoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Fondatore</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Co-Founder</div>
+            <div class="pc-name">Carmine Lamberti</div>
+            <div class="pc-spec">Co-fondatore con un ruolo chiave nella costruzione e nello sviluppo dell'ecosistema Agente Strategico.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
       </div>
-      <a href="/coach/antonella-sorrentino.html" class="btn-luxury">Parla con Antonella <span class="btn-arrow">→</span></a>
     </div>
-  </div>
-</section>
 
-<!-- COACH GRID -->
-<section class="coach-hub">
-  <div class="coach-hub-inner">
-    <div class="coach-hub-head">
-      <div>
-        <div class="tag">Il Team di Coach</div>
-        <h2>Chi ti <em>affianca</em></h2>
+    <!-- CO-FONDATORI + RESPONSABILE -->
+    <div class="team-group">
+      <div class="team-group-label">Co-Fondatori & Responsabili</div>
+      <div class="team-grid team-grid-3">
+        <a href="/coach/nicola-della-rocca.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/nicoladellaroccacoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Co-Fondatore</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Co-Founder</div>
+            <div class="pc-name">Nicola Della Rocca</div>
+            <div class="pc-spec">Dal primo giorno nel progetto. Contributo fondamentale nella costruzione delle fondamenta di Agente Strategico.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/luca-salomone.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/lucasalomnecoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Co-Fondatore</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Co-Founder</div>
+            <div class="pc-name">Luca Salomone</div>
+            <div class="pc-spec">Dal primo giorno nel progetto. Figura chiave nella crescita e nel posizionamento dell'ecosistema.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/antonella-sorrentino.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/antonellasorrentinocoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Responsabile</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Didattica & Comunicazione</div>
+            <div class="pc-name">Antonella Sorrentino</div>
+            <div class="pc-spec">Guida la struttura formativa, il coaching e la comunicazione dell'ecosistema.</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
       </div>
-      <p style="font-size:14px;color:var(--gray-500);max-width:320px;font-weight:300;line-height:1.6">Ogni coach ha una specializzazione precisa. Trovi il profilo giusto per dove sei e dove vuoi arrivare.</p>
     </div>
-    <div class="coach-grid">
 
-      <a href="/coach/antonella-sorrentino.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/antonellasorrentinocoach.jpg')"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Antonella Sorrentino</div>
-          <div class="cc-spec">Didattica & Coaching</div>
-          <div class="cc-desc">Responsabile della struttura formativa e del coaching dell'ecosistema.</div>
-          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER COACH 2 -->
-      <a href="/coach/simone-campisano.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/simonecampisanocoach.jpg');background-size:cover;background-position:center top"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Simone Campisano</div>
-          <div class="cc-spec">Metodo & Acquisizione</div>
-          <div class="cc-desc">Sistema operativo, pipeline e crescita strutturata per agenti che vogliono scalare.</div>
-          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/filomena-sibona.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/filomenasibonacoach.jpg');background-size:cover;background-position:center top"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Filomena Sibona</div>
-          <div class="cc-spec">Coaching & Crescita</div>
-          <div class="cc-desc">Coaching individuale per trasformare il potenziale in risultati concreti e misurabili.</div>
-          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/francesco-iacomelli.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/francescoiacomellicoach.jpg');background-size:cover;background-position:center top"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Francesco Iacomelli</div>
-          <div class="cc-spec">Vendita & Scalabilità</div>
-          <div class="cc-desc">Sistemi di vendita e strategie commerciali per agenti che vogliono crescere in modo prevedibile.</div>
-          <div class="cc-cta">Prenota call <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/laura-damore.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/lauradamore.jpg');background-size:cover;background-position:center top"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Laura D'Amore</div>
-          <div class="cc-spec">Community Manager</div>
-          <div class="cc-desc">Il cuore della community. Coordina i membri, gli eventi e le relazioni dentro l'ecosistema.</div>
-          <div class="cc-cta">Contatta <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
-      <a href="/coach/valentina-gallo.html" class="coach-card">
-        <div class="cc-photo-wrap"><div class="cc-photo" style="background-image:url('/valentinagallo.jpg');background-size:cover;background-position:center top"></div></div>
-        <div class="cc-info">
-          <div class="cc-name">Valentina Gallo</div>
-          <div class="cc-spec">Social Media Manager</div>
-          <div class="cc-desc">Comunicazione digitale e social strategy per raccontare Agente Strategico nel modo giusto.</div>
-          <div class="cc-cta">Contatta <span style="font-size:12px">→</span></div>
-        </div>
-      </a>
-
+    <!-- COACH -->
+    <div class="team-group">
+      <div class="team-group-label">Coach</div>
+      <div class="team-grid">
+        <a href="/coach/simone-campisano.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/simonecampisanocoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Simone Campisano</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/filomena-sibona.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/filomenasibonacoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Filomena Sibona</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/francesco-iacomelli.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/francescoiacomellicoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Francesco Iacomelli</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/laura-damore.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/lauradamore.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Laura D'Amore</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/valentina-gallo.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/valentinagallo.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Valentina Gallo</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+        <a href="/coach/simone-campisano.html" class="person-card">
+          <div class="pc-photo-wrap">
+            <div class="pc-photo" style="background-image:url('/simonecampisanocoach.jpg')"></div>
+            <div class="pc-overlay"></div>
+            <div class="pc-badge">Coach</div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-role">Coach</div>
+            <div class="pc-name">Simone Campisano</div>
+            <div class="pc-link">Scopri di più →</div>
+          </div>
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 
