@@ -10,12 +10,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between}
+
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white);text-decoration:none}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{color:#E5E5E5;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
+
+
+
 .btn-gold{background:var(--gold);color:var(--black);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:11px 26px;text-decoration:none;display:inline-block;transition:background .2s}
 .btn-gold:hover{background:var(--gold-light)}
 .hero{padding:148px 32px 72px;text-align:center;position:relative}
@@ -55,19 +55,19 @@ footer{background:#060606;padding:60px 32px 36px}
 @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){
   .hamburger{display:flex}
-  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--black);flex-direction:column;padding:28px 32px;gap:20px;border-bottom:1px solid rgba(201,168,76,.15)}
+  
   .nav-links.open{display:flex}
   .grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;gap:6px}
 }
-.navbar{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.98);border-bottom:1px solid rgba(201,168,76,0.15);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
-.nav-logo img{height:36px;display:block;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--white);}
-.nav-actions{display:flex;gap:12px;align-items:center;}
+
+
+
+
+
+
+
 .btn-luxury{{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 40px;position:relative;overflow:hidden;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}}
 .btn-luxury:hover{{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}}
 .btn-luxury .btn-arrow{{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:14px;transition:transform 0.3s;}}
@@ -98,16 +98,25 @@ footer{background:#060606;padding:60px 32px 36px}
   background:var(--black) !important;
   padding:80px var(--pad) !important;
 }
+.navbar{position:sticky;top:0;z-index:100;background:#FFFFFF;border-bottom:1px solid #E8E8E8;height:72px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:600;color:#1A1A1A;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px;}
+.nav-actions{display:flex;gap:12px;align-items:center;}
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/logooronero.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+      <img src="/logo.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:#1A1A1A;letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -117,7 +126,7 @@ footer{background:#060606;padding:60px 32px 36px}
       <li><a href="/chi-siamo/">Chi Siamo</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="/candidatura/" class="btn btn-luxury" style="padding:12px 28px;font-size:12px;clip-path:none;">Candidati Ora</a>
+      <a href="/candidatura/" class="btn btn-gold" style="padding:12px 24px;font-size:12px;letter-spacing:1.5px;">Candidati Ora →</a>
     </div>
   </div>
 </nav>
