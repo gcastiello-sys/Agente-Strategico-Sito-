@@ -361,7 +361,7 @@ cat > mobile.css << 'CSSEOF'
   .sto-num { font-size: 36px !important; }
 
   .team-section { padding: 48px 20px !important; }
-  .team-grid { grid-template-columns: 1fr 1fr !important; }
+  .team-grid { grid-template-columns: 1fr !important; }
   .pc-photo-wrap { height: 260px !important; }
   .pc-name { font-size: 18px !important; }
   .pc-info { padding: 16px !important; }
@@ -419,7 +419,7 @@ cat > mobile.css << 'CSSEOF'
 @media (min-width: 769px) and (max-width: 1024px) {
   .eco-grid { grid-template-columns: repeat(3,1fr) !important; }
   .problema-grid { grid-template-columns: repeat(2,1fr) !important; }
-  .team-grid { grid-template-columns: repeat(3,1fr) !important; }
+  .team-grid { grid-template-columns: 1fr !important; }
   .chiavi-grid { grid-template-columns: repeat(2,1fr) !important; }
   .testi-grid { grid-template-columns: repeat(2,1fr) !important; }
   .r-grid { grid-template-columns: repeat(2,1fr) !important; }
@@ -439,9 +439,9 @@ cat > mobile.css << 'CSSEOF'
   .torre-layout { grid-template-columns: 1fr !important; }
   .chiavi-grid { grid-template-columns: 1fr !important; }
   .testi-grid { grid-template-columns: 1fr !important; }
-  .team-founders { grid-template-columns: 1fr 1fr !important; }
-  .team-grid { grid-template-columns: 1fr 1fr !important; }
-  .team-grid-3 { grid-template-columns: 1fr 1fr !important; }
+  .team-founders { grid-template-columns: 1fr !important; }
+  .team-grid { grid-template-columns: 1fr !important; }
+  .team-grid-3 { grid-template-columns: 1fr !important; }
   .page-hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
   .manifesto-inner { grid-template-columns: 1fr !important; gap: 40px !important; }
   .nazionale-card { grid-template-columns: 1fr !important; }
