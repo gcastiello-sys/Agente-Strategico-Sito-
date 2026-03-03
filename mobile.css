@@ -923,3 +923,32 @@
   .pb-title { font-size: 18px !important; }
   .pb-desc { font-size: 13px !important; }
 }
+
+/* ANN BAR + NAVBAR MOBILE */
+@media (max-width: 768px) {
+  .ann-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10000 !important;
+    font-size: 11px !important;
+    padding: 8px 16px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  .navbar {
+    position: fixed !important;
+    top: 52px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+  }
+  body {
+    padding-top: 116px !important;
+  }
+  /* Pagine senza ann-bar: solo navbar */
+  .no-ann body {
+    padding-top: 64px !important;
+  }
+}
