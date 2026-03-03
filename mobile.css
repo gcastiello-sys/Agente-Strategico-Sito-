@@ -858,3 +858,15 @@
   .pc-spec { display: block !important; font-size: 13px !important; }
   .pc-link { font-size: 11px !important; }
 }
+
+/* TESTIMONIANZE 1 COLONNA MOBILE */
+@media (max-width: 768px) {
+  .testi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    background: transparent !important;
+  }
+  .t-card {
+    padding: 28px 20px !important;
+  }
+}
