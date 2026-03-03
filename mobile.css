@@ -1003,3 +1003,223 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ════ COMMUNITY MOBILE COMPLETO ════ */
+@media (max-width: 768px) {
+
+  /* Blocca overflow orizzontale globale */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* ── HERO ── */
+  .hero-inner.container,
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 0 20px !important;
+  }
+  .hero-h1 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.5px !important;
+  }
+  .hero-sub {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+  .hero-ctas {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .hero-ctas a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2px !important;
+  }
+  .hero-stat {
+    padding: 20px 16px !important;
+    text-align: center !important;
+  }
+  .stat-row {
+    padding: 16px !important;
+  }
+
+  /* ── RITMO SECTION ── */
+  .ritmo-section {
+    padding: 56px 0 !important;
+  }
+  .ritmo-head {
+    padding: 0 20px !important;
+    margin-bottom: 32px !important;
+  }
+  .ritmo-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+    line-height: 1.05 !important;
+  }
+  .ritmo-sub {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+  .ritmo-list {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  .ritmo-item {
+    grid-template-columns: 48px 1fr !important;
+    gap: 16px !important;
+    padding: 24px 20px !important;
+  }
+  .r-badge {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 11px !important;
+  }
+  .r-freq {
+    font-size: 8px !important;
+  }
+  .r-title {
+    font-size: 16px !important;
+  }
+  .r-desc {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ── CHIAVI SECTION ── */
+  .chiavi-section {
+    padding: 56px 20px !important;
+  }
+  .chiavi-head {
+    margin-bottom: 32px !important;
+  }
+  .chiavi-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+    line-height: 1.05 !important;
+  }
+  .chiavi-sub {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+  .chiavi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  .c-card {
+    padding: 28px 20px !important;
+  }
+  .c-icon {
+    font-size: 24px !important;
+  }
+  .c-title {
+    font-size: 18px !important;
+  }
+  .c-desc {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ── TESTIMONIANZE ── */
+  .testi {
+    padding: 56px 20px !important;
+  }
+  .testi-head {
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-bottom: 32px !important;
+  }
+  .testi-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+  }
+  .testi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    background: transparent !important;
+  }
+  .t-card {
+    padding: 24px 20px !important;
+  }
+  .t-quote {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* ── TORRE STRATEGICA ── */
+  .torre-section {
+    padding: 56px 20px !important;
+  }
+  .torre-head {
+    margin-bottom: 40px !important;
+  }
+  .torre-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+  }
+  .torre-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    min-height: auto !important;
+  }
+  .torre-building {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .torre-levels {
+    width: 100% !important;
+  }
+  .torre-floor {
+    width: 100% !important;
+  }
+  .torre-floor-inner {
+    padding: 12px 16px !important;
+  }
+  .floor-name {
+    font-size: 15px !important;
+  }
+  .floor-label {
+    font-size: 9px !important;
+  }
+
+  /* ── FOMO SECTION ── */
+  .fomo-section {
+    padding: 56px 20px !important;
+  }
+  .fomo-inner {
+    padding: 0 !important;
+  }
+  .fomo-h2 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.05 !important;
+  }
+  .fomo-copy {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+  .fomo-ctas {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+  .fomo-ctas a {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    clip-path: none !important;
+  }
+  .fomo-badges {
+    gap: 20px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 40px !important;
+  }
+  .fomo-note {
+    font-size: 11px !important;
+  }
+}
