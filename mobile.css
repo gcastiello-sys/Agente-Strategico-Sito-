@@ -425,3 +425,35 @@ cat > mobile.css << 'CSSEOF'
   .r-grid { grid-template-columns: repeat(2,1fr) !important; }
   .torre-wrapper { grid-template-columns: 1fr !important; }
 }
+
+/* GRIGLIE MOBILE FIX COMPLETO */
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .problemi-head { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .p-grid { grid-template-columns: 1fr !important; }
+  .motto-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .eco-grid { grid-template-columns: 1fr !important; }
+  .ritmo-head { grid-template-columns: 1fr !important; gap: 20px !important; margin-bottom: 32px !important; }
+  .ritmo-item { grid-template-columns: 48px 1fr !important; gap: 16px !important; padding: 20px !important; }
+  .torre-wrapper { grid-template-columns: 1fr !important; gap: 32px !important; min-height: auto !important; }
+  .torre-layout { grid-template-columns: 1fr !important; }
+  .chiavi-grid { grid-template-columns: 1fr !important; }
+  .testi-grid { grid-template-columns: 1fr !important; }
+  .team-founders { grid-template-columns: 1fr 1fr !important; }
+  .team-grid { grid-template-columns: 1fr 1fr !important; }
+  .team-grid-3 { grid-template-columns: 1fr 1fr !important; }
+  .page-hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .manifesto-inner { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .nazionale-card { grid-template-columns: 1fr !important; }
+  .naz-photo { height: 240px !important; width: 100% !important; }
+  .corsi-grid { grid-template-columns: 1fr !important; }
+  .r-intro-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .r-grid { grid-template-columns: 1fr !important; }
+  .footer-inner { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .soluzione-head { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .router-grid { grid-template-columns: 1fr !important; }
+  .eventi-grid { grid-template-columns: 1fr !important; }
+  .torre-teaser-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  h1, h2, h3, p, li { word-break: break-word !important; overflow-wrap: break-word !important; }
+  section { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important; }
+}
