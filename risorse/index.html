@@ -61,22 +61,38 @@ footer{background:#060606;padding:60px 32px 36px}
   .footer-inner{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;gap:6px}
 }
+.navbar{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.98);border-bottom:1px solid rgba(201,168,76,0.15);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.btn-luxury{{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 40px;position:relative;overflow:hidden;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}}
+.btn-luxury:hover{{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}}
+.btn-luxury .btn-arrow{{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:14px;transition:transform 0.3s;}}
+.btn-luxury:hover .btn-arrow{{transform:translateX(4px)}}
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
-<nav class="nav">
+<nav class="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">Agente <span>Strategico</span></a>
-    <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
+    <a href="/" class="nav-logo">
+      <img src="/logooro.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
       <li><a href="/community/">Community</a></li>
       <li><a href="/eventi/">Eventi</a></li>
-      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/risorse/" class="active">Risorse</a></li>
       <li><a href="/chi-siamo/">Chi Siamo</a></li>
-      <li><a href="/candidatura/" class="btn-gold">Candidati ora</a></li>
     </ul>
+    <div class="nav-actions">
+      <a href="/candidatura/" class="btn btn-luxury" style="padding:12px 28px;font-size:12px;clip-path:none;">Candidati Ora</a>
+    </div>
   </div>
 </nav>
 
@@ -166,7 +182,7 @@ footer{background:#060606;padding:60px 32px 36px}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Agente Strategico. Tutti i diritti riservati.</span>
+    <span>© 2026 Agente Strategico. Tutti i diritti riservati.</span>
     <span>Privacy Policy · Cookie Policy</span>
   </div>
 </footer>
