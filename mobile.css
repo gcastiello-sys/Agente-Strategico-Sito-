@@ -989,3 +989,17 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+/* COMMUNITY OVERFLOW FIX SAFE */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  .ritmo-list {
+    grid-template-columns: 1fr !important;
+  }
+  .chiavi-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
