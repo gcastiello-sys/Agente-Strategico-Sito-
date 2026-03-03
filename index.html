@@ -231,6 +231,28 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
 .nav-links a:hover{color:var(--gold);}
 .nav-links a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px;}
 .nav-actions{display:flex;gap:12px;align-items:center;}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:200;}
+.hamburger span{display:block;width:22px;height:2px;background:#1A1A1A;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0A;z-index:9998;padding-top:120px;}
+.mobile-menu.open{display:flex;align-items:flex-start;justify-content:center;}
+.mm-inner{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 32px;}
+.mm-links{list-style:none;width:100%;display:flex;flex-direction:column;gap:4px;}
+.mm-links a{display:block;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mm-links a:hover,.mm-links a.active{color:#C9A84C;}
+.mm-cta{display:block;width:100%;text-align:center;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-top:24px;}
+
+@media(max-width:768px){
+  .hamburger{display:flex !important;}
+  .nav-links,.nav-actions{display:none !important;}
+}
+
 </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -260,8 +282,26 @@ footer { background: var(--black); padding: 48px var(--pad); display: flex; alig
     <div class="nav-actions">
       <a href="/candidatura/" class="btn btn-gold" style="padding:12px 24px;font-size:12px;letter-spacing:1.5px;">Candidati Ora →</a>
     </div>
-  </div>
+  
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <ul class="mm-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/">Chi Siamo</a></li>
+    </ul>
+    <a href="/candidatura/" class="mm-cta">Candidati Ora →</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
