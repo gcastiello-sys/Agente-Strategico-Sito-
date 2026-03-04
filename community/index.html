@@ -870,6 +870,11 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
   .hero-inner { display: block !important; }
   .hero-stats { margin-top: 32px !important; }
 
+  /* Stat row: numero + testo in colonna */
+  .stat-row { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; padding: 20px 16px !important; }
+  .stat-num { font-size: 48px !important; min-width: unset !important; }
+  .stat-text strong { font-size: 15px !important; }
+
   /* Problemi head 2 col → 1 col */
   .problemi-head { display: block !important; }
   .problemi-head > * { width: 100% !important; margin-bottom: 24px !important; }
@@ -889,9 +894,7 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
   /* Ritmo head 2 col → 1 col */
   .ritmo-head { display: block !important; }
   .ritmo-head > * { width: 100% !important; margin-bottom: 24px !important; }
-
-  /* Ritmo item */
-  .ritmo-item { grid-template-columns: 48px 1fr !important; gap: 16px !important; padding: 24px 16px !important; }
+  .ritmo-item { grid-template-columns: 48px 1fr !important; gap: 16px !important; padding: 20px 16px !important; }
 
   /* Torre wrapper 2 col → 1 col */
   .torre-wrapper { display: block !important; min-height: auto !important; }
@@ -902,24 +905,31 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
   .chiavi-grid { grid-template-columns: 1fr !important; }
   .c-card { padding: 32px 20px !important; }
 
-  /* Testi grid 3 col → 1 col */
+  /* Testimonianze: testo centrato, 1 col */
   .testi-grid { grid-template-columns: 1fr !important; }
-  .testi-head { flex-direction: column !important; align-items: flex-start !important; }
+  .testi-head { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+  .t-card { padding: 28px 20px !important; }
+  .q-text { font-size: 15px !important; text-align: left !important; }
+  .q-author { flex-direction: row !important; align-items: center !important; }
 
-  /* Team grid */
-  .team-founders { grid-template-columns: 1fr !important; }
-  .team-grid { grid-template-columns: 1fr 1fr !important; }
-
-  /* Video testi grid */
+  /* Video testimonianze 1 col */
   .video-testi-grid { grid-template-columns: 1fr !important; }
 
-  /* Padding sezioni */
-  .hero-section, .problemi, .motto, .ecosistema,
-  .ritmo, .torre, .chiavi, .testi-section,
-  .team-section, .fomo-section {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
+  /* Team: fondatori 1 col, grid 1 col */
+  .team-founders { grid-template-columns: 1fr !important; }
+  .team-grid { grid-template-columns: 1fr 1fr !important; }
+  .coach-info { padding: 16px 20px !important; }
+  .coach-card-founder .coach-name { font-size: 20px !important; }
+
+  /* FOMO section */
+  .fomo-h2 { font-size: clamp(32px,8vw,56px) !important; letter-spacing: -1px !important; }
+  .fomo-copy { font-size: 15px !important; }
+  .fomo-badges { gap: 20px !important; flex-direction: column !important; align-items: center !important; }
+  .fomo-ctas { flex-direction: column !important; align-items: stretch !important; }
+  .fomo-ctas .btn-luxury, .fomo-ctas .btn { width: 100% !important; justify-content: center !important; }
+
+  /* Padding globale sezioni */
+  section, .hero-section { padding-left: 20px !important; padding-right: 20px !important; }
 }
 </style>
 </head>
