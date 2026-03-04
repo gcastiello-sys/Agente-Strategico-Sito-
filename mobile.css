@@ -774,3 +774,49 @@ cat > mobile.css << 'CSSEOF'
   }
 
 }
+
+/* =============================================
+   BUG FIX — Home stats bar + Chi siamo hero
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* BUG 1 — Home stats bar: 4 col → 2x2 centrato */
+  .stats-inner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat-item {
+    text-align: center !important;
+    padding: 24px 16px !important;
+    border-right: 1px solid rgba(255,255,255,0.05) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  }
+  .stat-n {
+    font-size: 40px !important;
+  }
+  .stat-l {
+    font-size: 10px !important;
+  }
+
+  /* BUG 2 — Chi siamo hero: 2 col → 1 col */
+  .page-hero-inner {
+    display: block !important;
+    grid-template-columns: unset !important;
+  }
+  .page-hero-right {
+    margin-top: 32px !important;
+    padding-bottom: 0 !important;
+  }
+  .hero-stats-row {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    padding-top: 24px !important;
+  }
+  .hs-item {
+    flex: 1 1 calc(33% - 20px) !important;
+    text-align: center !important;
+  }
+  .hs-num {
+    font-size: 36px !important;
+  }
+
+}
