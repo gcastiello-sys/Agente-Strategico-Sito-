@@ -123,7 +123,146 @@ body { font-family: var(--font-sans); color: var(--gray-700); background: var(--
 .section-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px; }
 .section-header h2 { font-family:var(--font-serif);font-size:36px;font-weight:600;color:var(--black);line-height:1; }
 .section-header h2 em { font-style:italic;color:var(--gold); }
-.corsi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200); }
+
+  /* CARD TALL — nuovo design */
+  .corso-card-tall {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    color: var(--black);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+  }
+  .corso-card-tall:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+  .cct-photo {
+    position: relative;
+    height: 260px;
+    background-size: cover;
+    background-position: center top;
+    filter: grayscale(0.3);
+    transition: filter 0.3s;
+  }
+  .corso-card-tall:hover .cct-photo { filter: grayscale(0); }
+  .cct-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.7) 100%);
+  }
+  .cct-date-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .cct-body {
+    padding: 28px 28px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cct-meta {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cct-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.1;
+  }
+  .cct-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .cct-bullet {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+  .cct-coach {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .cct-coach-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(0.3);
+    border: 2px solid var(--gold);
+  }
+  .cct-coach-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .cct-coach-role {
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .cct-footer {
+    padding: 20px 28px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .cct-fomo {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cct-price {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cct-price span {
+    font-size: 12px;
+    color: rgba(201,168,76,0.5);
+    font-family: var(--font-sans);
+  }
+  .cct-cta {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    white-space: nowrap;
+  }
+  .corso-card-tall:hover .cct-cta { color: var(--gold); }
+
+  .corsi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200); }
 .corso-card { background:var(--white);padding:36px 28px;display:flex;flex-direction:column;gap:0;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden; }
 .corso-card::after { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s; }
 .corso-card:hover { background:var(--gray-100); }
