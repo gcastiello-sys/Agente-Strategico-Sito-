@@ -183,6 +183,12 @@
       .ev-giorno{padding:28px 20px;}
       footer{padding:40px 20px 24px;}
     }
+
+  .video-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+  .v-card{background:var(--white);overflow:hidden;}
+  .v-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+  .v-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  @media(max-width:768px){.video-testi-grid{grid-template-columns:1fr !important;}}
   </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -443,25 +449,16 @@
 <section class="ev-testi">
   <div class="ev-testi-inner">
     <div class="ev-testi-head">
-      <div class="tag tag-center">CHI HA GIÀ PARTECIPATO</div>
+      <div class="tag tag-center">CHI HA GIA PARTECIPATO</div>
       <h2>Quello che dicono<br><em>gli agenti che erano in aula.</em></h2>
     </div>
-    <div class="ev-testi-grid">
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Vincenzo e Luca sono due livelli diversi. In tre giorni ho capito cosa stava frenando il mio business — e come uscirne.</p>
-        <div class="ev-testi-name">Simone Paradossi</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Il sistema di acquisizione che mi hanno dato ha cambiato il mio lunedì mattina. Non improvviso più — so esattamente cosa fare.</p>
-        <div class="ev-testi-name">Alessio Bellavista</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Tre giorni densi, operativi, concreti. Zero teoria inutile. Tutto applicabile dal giorno dopo. Vale molto di più di quello che ho pagato.</p>
-        <div class="ev-testi-name">Grazia Palagi</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
+    <div class="video-testi-grid">
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u?list=PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/IhQ-TxksTFs" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/wIZlNRJmDgg" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/0Le9lTYp-IM" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/iDgmZJsgONA" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/7QE6lz7imME" allowfullscreen loading="lazy"></iframe></div></div>
     </div>
   </div>
 </section>

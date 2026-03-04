@@ -209,6 +209,12 @@
       .ev-giorno{padding:28px 20px;}
       footer{padding:40px 20px 24px;}
     }
+
+  .video-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+  .v-card{background:var(--white);overflow:hidden;}
+  .v-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+  .v-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  @media(max-width:768px){.video-testi-grid{grid-template-columns:1fr !important;}}
   </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -456,25 +462,16 @@
 <section class="ev-testi">
   <div class="ev-testi-inner">
     <div class="ev-testi-head">
-      <div class="tag tag-center">CHI HA GIÀ PARTECIPATO</div>
+      <div class="tag tag-center">CHI HA GIA PARTECIPATO</div>
       <h2>Quello che dicono<br><em>gli agenti che erano in aula.</em></h2>
     </div>
-    <div class="ev-testi-grid">
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Ho finalmente un sistema che funziona ogni settimana. Non improvviso più — so esattamente cosa fare il lunedì mattina.</p>
-        <div class="ev-testi-name">Simone Paradossi</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Il workshop mi ha dato gli strumenti che cercavo da anni. Il giorno dopo ero già in azione con il nuovo metodo di acquisizione.</p>
-        <div class="ev-testi-name">Alessio Bellavista</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Finalmente capisco i miei numeri. Il file cashflow da solo vale il prezzo del biglietto — adesso so esattamente quanto guadagno ogni mese.</p>
-        <div class="ev-testi-name">Grazia Palagi</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
+    <div class="video-testi-grid">
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u?list=PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/IhQ-TxksTFs" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/wIZlNRJmDgg" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/0Le9lTYp-IM" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/iDgmZJsgONA" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/7QE6lz7imME" allowfullscreen loading="lazy"></iframe></div></div>
     </div>
   </div>
 </section>

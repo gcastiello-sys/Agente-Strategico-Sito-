@@ -202,6 +202,12 @@
       .ev-numeri-inner{grid-template-columns:1fr 1fr;}
       .ev-coach-grid{grid-template-columns:1fr;}
     }
+
+  .video-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);}
+  .v-card{background:var(--white);overflow:hidden;}
+  .v-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+  .v-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  @media(max-width:768px){.video-testi-grid{grid-template-columns:1fr !important;}}
   </style>
   <link rel="stylesheet" href="/mobile.css">
 </head>
@@ -500,25 +506,16 @@
 <section class="ev-testi">
   <div class="ev-testi-inner">
     <div class="ev-testi-head">
-      <div class="tag tag-center">CHI ERA LÀ</div>
-      <h2>Quello che dicono<br><em>quelli che c'erano.</em></h2>
+      <div class="tag tag-center">CHI HA GIA PARTECIPATO</div>
+      <h2>Quello che dicono<br><em>gli agenti che erano in aula.</em></h2>
     </div>
-    <div class="ev-testi-grid">
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Il Summit è un'esperienza diversa da qualsiasi corso. Esci con un piano concreto, relazioni vere e la chiarezza che ti mancava da mesi.</p>
-        <div class="ev-testi-name">Simone Paradossi</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Quattro giorni con i migliori agenti d'Italia. Il networking da solo vale il prezzo del biglietto. Ma i contenuti sono ancora un livello sopra.</p>
-        <div class="ev-testi-name">Alessio Bellavista</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
-      <div class="ev-testi-card">
-        <p class="ev-testi-text">Sono tornata a casa con un piano per i prossimi 12 mesi. Non vago più — so esattamente dove vado e come arrivarci. Impagabile.</p>
-        <div class="ev-testi-name">Erica Centracolo</div>
-        <div class="ev-testi-role">Agente Immobiliare</div>
-      </div>
+    <div class="video-testi-grid">
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u?list=PLEZHElxC2uW1CP83fzdexhOLIfgRxOg9u" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/IhQ-TxksTFs" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/wIZlNRJmDgg" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/0Le9lTYp-IM" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/iDgmZJsgONA" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="v-card"><div class="v-embed"><iframe src="https://www.youtube.com/embed/7QE6lz7imME" allowfullscreen loading="lazy"></iframe></div></div>
     </div>
   </div>
 </section>
