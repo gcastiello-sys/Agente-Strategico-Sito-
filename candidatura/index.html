@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidati — Agente Strategico</title>
+  <meta name="description" content="Candidati per entrare nell'ecosistema Agente Strategico. Accesso su selezione, posti limitati per ciclo. Compila il form e ti contatteremo entro 48 ore.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agentestrategico.it/candidatura/">
+  <meta property="og:title" content="Candidati — Agente Strategico">
+  <meta property="og:description" content="380 agenti hanno smesso di improvvisare. Il prossimo ciclo è aperto — ma i posti sono contati. Candidati ora.">
+  <meta property="og:image" content="https://agentestrategico.it/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:#0A0A0A; --gold:#C9A84C; --gold-light:#E2C46A;
+      --white:#FFFFFF; --gray-100:#F5F5F5; --gray-200:#E5E5E5;
+      --gray-500:#9E9E9E; --gray-700:#424242;
+      --font-serif:'Cormorant Garamond',Georgia,serif;
+      --font-sans:'Inter',system-ui,sans-serif;
+      --pad:clamp(20px,5vw,80px); --max-w:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{font-family:var(--font-sans);background:var(--white);color:var(--black);overflow-x:hidden;}
+
+    /* ANN BAR */
+    .ann-bar{background:var(--gold);color:var(--black);text-align:center;padding:10px 20px;font-size:12px;font-weight:600;letter-spacing:1px;position:fixed;top:0;left:0;right:0;z-index:10000;}
+    .ann-bar a{color:var(--black);text-decoration:underline;}
+
+    /* NAVBAR */
+    .navbar{position:fixed;top:40px;left:0;right:0;z-index:9999;background:#fff;border-bottom:1px solid var(--gray-200);height:68px;display:flex;align-items:center;}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;width:100%;gap:32px;}
+    .nav-logo img{height:52px;display:block;filter:brightness(0) saturate(100%) invert(68%) sepia(52%) saturate(400%) hue-rotate(5deg) brightness(95%) contrast(90%);}
+    .nav-links{list-style:none;display:flex;gap:32px;}
+    .nav-links a{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+    .nav-actions{display:flex;align-items:center;gap:16px;}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:700;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;}
+    .btn-gold{background:var(--gold);color:var(--black);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;}
+    .btn-gold:hover{background:var(--gold-light);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{width:24px;height:2px;background:var(--black);transition:all 0.3s;}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0A;z-index:9998;padding-top:120px;}
+    .mobile-menu.open{display:flex;align-items:flex-start;justify-content:center;}
+    .mm-inner{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 32px;}
+    .mm-links{list-style:none;width:100%;display:flex;flex-direction:column;gap:4px;}
+    .mm-links a{display:block;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+    .mm-links a:hover{color:var(--gold);}
+    .mm-cta{display:block;width:100%;text-align:center;background:var(--gold);color:var(--black);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-top:24px;}
+
+    body{padding-top:108px;}
+
+    /* HERO */
+    .cand-hero{background:var(--black);padding:80px var(--pad) 72px;position:relative;overflow:hidden;text-align:center;}
+    .cand-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;}
+    .cand-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent);}
+    .cand-hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:2;}
+    .tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+    .tag::before,.tag::after{content:'';width:32px;height:1.5px;background:var(--gold);}
+    .cand-h1{font-family:var(--font-serif);font-size:clamp(44px,5vw,76px);font-weight:500;color:var(--white);line-height:0.95;letter-spacing:-2px;margin-bottom:24px;}
+    .cand-h1 em{font-style:italic;color:var(--gold);}
+    .cand-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;max-width:560px;margin:0 auto 40px;}
+    .cand-sub strong{color:rgba(255,255,255,0.85);font-weight:500;}
+
+    /* FOMO BAR */
+    .fomo-bar{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06);}
+    .fomo-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;}
+    .fomo-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px rgba(201,168,76,0.8);}
+
+    /* PROCESSO */
+    .processo{background:var(--white);padding:72px var(--pad);}
+    .processo-inner{max-width:860px;margin:0 auto;}
+    .processo-head{text-align:center;margin-bottom:56px;}
+    .processo-head h2{font-family:var(--font-serif);font-size:clamp(32px,4vw,52px);font-weight:600;color:var(--black);line-height:1.0;margin-top:12px;}
+    .processo-head h2 em{font-style:italic;color:var(--gold);}
+    .processo-head p{font-size:16px;color:var(--gray-500);line-height:1.75;margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto;}
+    .steps{display:flex;flex-direction:column;gap:2px;}
+    .step{display:grid;grid-template-columns:64px 1fr;gap:24px;background:var(--gray-100);padding:32px;align-items:start;}
+    .step-num{font-family:var(--font-serif);font-size:48px;font-weight:400;color:var(--gray-200);line-height:1;}
+    .step-title{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--black);margin-bottom:8px;}
+    .step-desc{font-size:14px;color:var(--gray-500);line-height:1.7;font-weight:300;}
+
+    /* FORM SECTION */
+    .form-section{background:var(--black);padding:80px var(--pad);}
+    .form-section-inner{max-width:760px;margin:0 auto;}
+    .form-head{text-align:center;margin-bottom:48px;}
+    .form-head h2{font-family:var(--font-serif);font-size:clamp(32px,4vw,52px);font-weight:600;color:var(--white);line-height:1.0;margin-top:12px;}
+    .form-head h2 em{font-style:italic;color:var(--gold);}
+    .form-head p{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.75;margin-top:16px;}
+    .form-wrap{background:var(--white);padding:48px;position:relative;}
+    .form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+
+    /* FOOTER */
+    footer{background:var(--black);padding:48px var(--pad) 32px;}
+    .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;flex-direction:column;gap:32px;}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+    .footer-tagline{font-family:var(--font-serif);font-size:15px;color:rgba(255,255,255,0.3);font-style:italic;}
+    .footer-social{display:flex;align-items:center;gap:20px;}
+    .footer-social a{color:rgba(255,255,255,0.4);transition:color 0.2s;display:flex;}
+    .footer-social a:hover{color:var(--gold);}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+    .footer-copy{font-size:12px;color:rgba(255,255,255,0.2);letter-spacing:0.5px;}
+    .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+    .footer-links a{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--gold);}
+
+    @media(max-width:768px){
+      .hamburger{display:flex !important;}
+      .nav-links,.nav-actions{display:none !important;}
+      .cand-hero{padding:56px 20px 48px;}
+      .processo{padding:48px 20px;}
+      .step{grid-template-columns:48px 1fr;gap:16px;padding:24px 20px;}
+      .form-section{padding:56px 20px;}
+      .form-wrap{padding:28px 20px;}
+      .fomo-bar{gap:16px;}
+      footer{padding:40px 20px 24px;}
+      .footer-top{flex-direction:column;align-items:flex-start;}
+      .footer-bottom{flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+  <link rel="stylesheet" href="/mobile.css">
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati. <strong>L'accesso richiede selezione.</strong>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:700;color:#1A1A1A;letter-spacing:0.5px;text-transform:uppercase;"><span style="width:36px;height:36px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/">Chi Siamo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/candidatura/" class="btn btn-gold active">Candidati Ora →</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <ul class="mm-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/">Chi Siamo</a></li>
+    </ul>
+    <a href="/candidatura/" class="mm-cta">Candidati Ora →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="cand-hero">
+  <div class="cand-hero-inner">
+    <div class="tag">ACCESSO SU CANDIDATURA</div>
+    <h1 class="cand-h1">380 agenti hanno smesso<br>di improvvisare.<br><em>Il prossimo ciclo — posti contati.</em></h1>
+    <p class="cand-sub">L'ecosistema Agente Strategico non è aperto a chiunque. <strong>Ogni ciclo accetta un numero limitato di agenti</strong> — perché la qualità dell'ecosistema dipende da chi lo compone. Prima di entrare, parliamo. Valutiamo insieme se questo è il momento giusto.</p>
+    <div class="fomo-bar">
+      <div class="fomo-item"><div class="fomo-dot"></div>Accesso limitato per ciclo</div>
+      <div class="fomo-item"><div class="fomo-dot"></div>Richiede selezione</div>
+      <div class="fomo-item"><div class="fomo-dot"></div>Risposta entro 48 ore</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="processo">
+  <div class="processo-inner">
+    <div class="processo-head">
+      <div class="tag" style="justify-content:center;">COME FUNZIONA</div>
+      <h2>Tre step.<br><em>Nessuna sorpresa.</em></h2>
+      <p>Non è una vendita. È una selezione. Vogliamo capire chi sei, dove vuoi arrivare e se questo è il momento giusto per entrambi.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Compila il form</div>
+          <p class="step-desc">Rispondi a poche domande sulla tua situazione attuale, i tuoi obiettivi e cosa ti ha portato qui. Non ci sono risposte giuste o sbagliate — vogliamo capire dove sei davvero.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Call di valutazione — 30 minuti</div>
+          <p class="step-desc">Il team ti contatta entro 48 ore per una call conoscitiva. Parliamo del tuo percorso, dei tuoi obiettivi e di come l'ecosistema può aiutarti concretamente. Zero pressione commerciale.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Accesso all'ecosistema</div>
+          <p class="step-desc">Se la candidatura viene accettata, entri nel prossimo ciclo disponibile. Hai accesso immediato a tutto l'ecosistema — call, academy, sprint, libreria e community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="form-section-inner">
+    <div class="form-head">
+      <div class="tag" style="justify-content:center;color:var(--gold);">CANDIDATURA</div>
+      <h2>Manda la tua<br><em>candidatura.</em></h2>
+      <p>Compila il form. Ti ricontatteremo entro 48 ore per una call gratuita di 30 minuti.</p>
+    </div>
+    <div class="form-wrap">
+      <iframe src="https://link.msh.it/widget/survey/7ZdpadmNV5l28FCxXEYP" style="border:none;width:100%;min-height:600px;" scrolling="no" id="7ZdpadmNV5l28FCxXEYP" title="survey"></iframe>
+      <script src="https://link.msh.it/js/form_embed.js"></script>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="/logo.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none'">
+        <p class="footer-tagline" style="margin-top:12px;">"Non è un metodo, è un percorso che ti accompagna alla vetta."</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/agentestrategico" target="_blank" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/18Gji6EJse/" target="_blank" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@agente.strategico" target="_blank" aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/agente-strategico-962a19392" target="_blank" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@AgenteStrategico" target="_blank" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Agente Strategico S.R.L. — Via Raffaele Balestra 44, 00152 Roma — P.IVA IT17729691000</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Contatti</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var h=document.getElementById('hamburger');
+  var m=document.getElementById('mobileMenu');
+  if(!h||!m)return;
+  var isOpen=m.classList.contains('open');
+  if(isOpen){m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}
+  else{m.classList.add('open');h.classList.add('open');document.body.style.overflow='hidden';}
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.mm-links a,.mm-cta').forEach(function(a){
+    a.addEventListener('click',function(){
+      var h=document.getElementById('hamburger');
+      var m=document.getElementById('mobileMenu');
+      if(h)h.classList.remove('open');
+      if(m)m.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
+});
+</script>
+</body>
+</html>
