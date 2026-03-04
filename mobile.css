@@ -625,3 +625,66 @@ cat > mobile.css << 'CSSEOF'
     opacity: 0.45 !important;
   }
 }
+
+/* =============================================
+   MOBILE FIX — Pagine Coach
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Hero coach: foto + contenuto in colonna */
+  .coach-hero-inner {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .ch-photo {
+    height: 380px !important;
+    width: 100% !important;
+  }
+  .ch-content {
+    padding: 36px 24px !important;
+  }
+
+  /* Stats coach in riga wrappata */
+  .ch-stats {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+
+  /* Bio sezione: testo + sidebar in colonna */
+  .coach-bio-inner {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .bio-sidebar {
+    width: 100% !important;
+  }
+  .sidebar-cta-card {
+    position: static !important;
+  }
+
+  /* Spec grid 2col → 1col */
+  .bio-spec-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Lavoriamo grid 3col → 1col */
+  .lavoriamo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Testi grid 3col → 1col */
+  .testi-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Altri coach sidebar */
+  .sidebar-altri-coach {
+    width: 100% !important;
+  }
+
+  /* Hamburger coach pages */
+  .hamburger {
+    display: flex !important;
+  }
+
+}
