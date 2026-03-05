@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A che piano sei? — Agente Strategico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#0A0A0A;--gold:#C9A84C;--white:#fff;--font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;--pad:clamp(24px,5vw,80px)}
+    body{background:var(--black);color:var(--white);font-family:var(--font-sans);padding-top:116px}
+    .ann-bar{background:#0A0A0A;color:rgba(255,255,255,0.7);text-align:center;padding:11px 20px;font-size:13px;font-family:var(--font-sans);position:fixed;top:0;left:0;right:0;z-index:10000}
+    .ann-bar strong{color:#fff}
+    .ann-bar a{color:#C9A84C;text-decoration:none;font-weight:600;margin-left:8px}
+    .navbar{position:fixed;top:42px;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.1);padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:72px}
+    .nav-logo img{height:40px}
+    .nav-logo span{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--white);letter-spacing:0.5px}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--white)}
+    .btn-gold{background:var(--gold);color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
+    .btn-gold:hover{background:#E2C46A}
+
+    .quiz-hero{padding:72px var(--pad) 40px;text-align:center;position:relative}
+    .quiz-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
+    .eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.7);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px}
+    .eyebrow::before,.eyebrow::after{content:'';width:32px;height:1px;background:rgba(201,168,76,0.4)}
+    .quiz-hero h1{font-family:var(--font-serif);font-size:clamp(40px,5vw,72px);font-weight:600;line-height:1.05;max-width:700px;margin:0 auto 20px}
+    .quiz-hero h1 em{font-style:italic;color:var(--gold)}
+    .quiz-hero p{font-size:16px;color:rgba(255,255,255,0.45);max-width:480px;margin:0 auto;line-height:1.7}
+
+    .quiz-wrap{max-width:860px;margin:0 auto;padding:0 var(--pad) 80px}
+    .quiz-frame{background:#0f0f0f;border:1px solid rgba(201,168,76,0.1);min-height:600px}
+
+    .tower-legend{display:flex;justify-content:center;gap:32px;padding:40px var(--pad);border-top:1px solid rgba(201,168,76,0.08);flex-wrap:wrap}
+    .tl-item{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase}
+    .tl-dot{width:8px;height:8px;border-radius:50%}
+
+    footer{background:#050505;border-top:1px solid rgba(255,255,255,0.05);padding:40px var(--pad);text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,0.2)}
+
+    @media(max-width:768px){
+      body{padding-top:130px}
+      .navbar{top:58px}
+      .nav-links{display:none}
+      .quiz-hero{padding:48px var(--pad) 24px}
+      .tower-legend{gap:16px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati.
+  <strong>L'accesso richiede selezione.</strong>
+  <a href="/candidatura/">Scopri come candidarti →</a>
+</div>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span style="display:none">Agente <em style="color:var(--gold);font-style:italic">Strategico</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/community/">Community</a></li>
+    <li><a href="/eventi/">Eventi</a></li>
+    <li><a href="/risorse/">Risorse</a></li>
+    <li><a href="/chi-siamo/">Chi Siamo</a></li>
+  </ul>
+  <a href="/candidatura/" class="btn-gold">Candidati ora →</a>
+</nav>
+
+<section class="quiz-hero">
+  <div class="eyebrow">La Torre della Crescita</div>
+  <h1>A che piano<br><em>sei oggi?</em></h1>
+  <p>7 domande per scoprire a quale livello della Torre ti trovi e cosa ti serve per salire al prossimo piano.</p>
+</section>
+
+<div class="quiz-wrap">
+  <div class="quiz-frame">
+    <iframe src="https://link.msh.it/widget/quiz/MjnVbJVp3zAhFYtdQBVx" style="border:none;width:100%;min-height:600px;" scrolling="no" id="MjnVbJVp3zAhFYtdQBVx" title="quiz"></iframe>
+    <script src="https://link.msh.it/js/form_embed.js"></script>
+  </div>
+
+  <div class="tower-legend">
+    <div class="tl-item"><div class="tl-dot" style="background:#e74c3c"></div>Fondamenta · €0–50k</div>
+    <div class="tl-item"><div class="tl-dot" style="background:#f39c12"></div>Primo Piano · €50–150k</div>
+    <div class="tl-item"><div class="tl-dot" style="background:#e67e22"></div>Cuore · €150–300k</div>
+    <div class="tl-item"><div class="tl-dot" style="background:#27ae60"></div>Vetta · €300k+</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Agente Strategico · Non è un metodo, è un percorso che ti accompagna alla vetta.</p>
+</footer>
+
+</body>
+</html>
