@@ -143,10 +143,11 @@ footer{background:#060606;padding:60px 32px 36px}
 .r-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 .r-eyebrow::before,.r-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--gold);opacity:0.5;}
 .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,0.08);}
-.r-card{background:var(--black);padding:36px 28px;display:flex;flex-direction:column;gap:14px;transition:background 0.25s;position:relative;overflow:hidden;}
+.r-card{background:#0d0d0d;padding:36px 28px;display:flex;flex-direction:column;gap:14px;transition:background 0.25s;position:relative;overflow:hidden;border-top:1px solid rgba(201,168,76,0.2);}
 .r-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s;}
 .r-card:hover{background:#111;}
 .r-card:hover::before{opacity:1;}
+.r-card-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:400;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:4px;}
 .r-card-tag{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.6);}
 .r-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white);line-height:1.2;}
 .r-card p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.65;flex:1;}
@@ -267,10 +268,15 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
   </div>
 </div>
 
-<section class="r-hero">
-  <div class="r-eyebrow">Risorse Gratuite</div>
-  <h1>Smetti di improvvisare.<br><em>Inizia con gli strumenti che usano i migliori.</em></h1>
-  <p>Ogni risorsa nasce da un problema reale degli agenti della community. Non teoria scaricata da internet — strumenti testati sul campo, affinati ogni settimana da chi lavora davvero.</p>
+<section class="r-hero" style="position:relative;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+  <div style="position:absolute;inset:0;background-image:url('/557 (2).jpg');background-size:cover;background-position:center;filter:brightness(0.25) grayscale(0.3);z-index:0;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0.85) 100%);z-index:1;"></div>
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,168,76,0.12) 0%,transparent 70%);z-index:2;pointer-events:none;"></div>
+  <div style="position:relative;z-index:3;text-align:center;padding:100px var(--pad) 80px;">
+    <div class="r-eyebrow">Risorse Gratuite</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.06;max-width:760px;margin:0 auto 20px;color:var(--white);">Smetti di improvvisare.<br><em style="font-style:italic;color:var(--gold);">Inizia con gli strumenti che usano i migliori.</em></h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto;line-height:1.7;">Ogni risorsa nasce da un problema reale degli agenti della community. Non teoria scaricata da internet — strumenti testati sul campo, affinati ogni settimana da chi lavora davvero.</p>
+  </div>
 </section>
 
 <section class="r-intro">
@@ -281,10 +287,16 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
     </div>
     <div>
       <p>Il 40% degli agenti italiani lavora ancora a istinto — senza script, senza pipeline strutturata, senza sistema di acquisizione. Queste risorse esistono per colmare quel gap. Gratuitamente.</p>
-      <div class="r-intro-stats">
-        <div><div class="r-stat-num">7</div><div class="r-stat-label">Risorse gratuite</div></div>
-        <div><div class="r-stat-num">380+</div><div class="r-stat-label">Agenti la usano</div></div>
-        <div><div class="r-stat-num">0€</div><div class="r-stat-label">Costo</div></div>
+      <div class="r-intro-stats" style="display:flex;gap:0;margin-top:32px;padding-top:32px;border-top:1px solid rgba(201,168,76,0.15);">
+        <div style="flex:1;padding-right:32px;border-right:1px solid rgba(201,168,76,0.1);">
+          <div class="r-stat-num">7</div><div class="r-stat-label">Risorse gratuite</div>
+        </div>
+        <div style="flex:1;padding:0 32px;border-right:1px solid rgba(201,168,76,0.1);">
+          <div class="r-stat-num">380+</div><div class="r-stat-label">Agenti la usano</div>
+        </div>
+        <div style="flex:1;padding-left:32px;">
+          <div class="r-stat-num">0€</div><div class="r-stat-label">Costo</div>
+        </div>
       </div>
     </div>
   </div>
@@ -297,42 +309,49 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
     </div>
     <div class="r-grid">
       <div class="r-card">
+        <div class="r-card-num">01</div>
         <span class="r-card-tag">AI &amp; Produttività</span>
         <h3>Smetti di perdere ore su annunci e post.<br><em>L'AI li scrive per te.</em></h3>
         <p>100 Prompt AI — pronti per ChatGPT: annunci, follow-up, trattative, social, analisi di mercato. Copia, incolla, converti. Quello che prima ti costava ore, ora ti costa minuti.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">02</div>
         <span class="r-card-tag">Strategia</span>
         <h3>Non sai dove andrai<br><em>a fine anno? Inizia da qui.</em></h3>
         <p>Business Plan Strategico — template per pianificare obiettivi, provvigioni, pipeline e attività mensili. Strutturato, editabile, immediato. Smetti di lavorare senza una direzione.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">03</div>
         <span class="r-card-tag">Finanza</span>
         <h3>Sai davvero quanto guadagni<br><em>ogni mese?</em></h3>
         <p>File Cashflow — tieni sotto controllo entrate, uscite e margini. Il controllo dei numeri è il primo passo verso la libertà finanziaria.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">04</div>
         <span class="r-card-tag">Vendita</span>
         <h3>Non sai cosa dire<br><em>quando il proprietario dice no?</em></h3>
         <p>Script Book — script per acquisizione, obiezioni, mandato, offerta e chiusura. Testati dalla community, affinati nel tempo. Non improvvisare più — sai cosa dire in ogni momento della trattativa.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">05</div>
         <span class="r-card-tag">Social Media</span>
         <h3>I tuoi video non fermano nessuno.<br><em>Questi sì.</em></h3>
         <p>30 Video Ganci Virali — hook pronti da girare. Ottimizzati per Reels e TikTok, progettati per fermare lo scroll e generare incarichi. Smetti di pubblicare nel vuoto.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">06</div>
         <span class="r-card-tag">Content</span>
         <h3>Hai follower<br><em>ma non hai appuntamenti?</em></h3>
         <p>Reel che Convertono — struttura, copy e CTA per creare Reel che generano appuntamenti reali. Perché i like non pagano il mutuo — gli incarichi sì.</p>
         <a href="LINK_GHL" class="r-btn">Scarica gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="r-card">
+        <div class="r-card-num">07</div>
         <span class="r-card-tag">Email Marketing</span>
         <h3>Hai contatti freddi nel CRM.<br><em>Ecco come riattivarli.</em></h3>
         <p>Email Marketing per Agenti — sequenze per nurturare i contatti freddi e riattivare i clienti passati. Il tuo prossimo incarico potrebbe essere già nel tuo database.</p>
@@ -342,11 +361,16 @@ a[href]:not([class]) { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<section class="r-cta">
-  <div class="r-eyebrow">Vuoi andare oltre le risorse?</div>
-  <h2>Le risorse aprono la porta.<br><em>La community ti porta dall'altra parte.</em></h2>
-  <p>Ogni risorsa che hai scaricato è un assaggio di quello che succede dentro ogni settimana. 380 agenti hanno già fatto il passo successivo. Il prossimo ciclo è aperto — ma i posti sono contati.</p>
-  <a href="/candidatura/" class="btn btn-gold" style="padding:16px 40px;font-size:13px;letter-spacing:1.5px;">Candidati ora →</a>
+<section class="r-cta" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:400px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);"></div>
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="r-eyebrow">Vuoi andare oltre le risorse?</div>
+    <h2>Le risorse aprono la porta.<br><em>La community ti porta dall'altra parte.</em></h2>
+    <p>Ogni risorsa che hai scaricato è un assaggio di quello che succede dentro ogni settimana. 380 agenti hanno già fatto il passo successivo. Il prossimo ciclo è aperto — ma i posti sono contati.</p>
+    <a href="/candidatura/" class="btn btn-gold" style="padding:16px 40px;font-size:13px;letter-spacing:1.5px;">Candidati ora →</a>
+    <div style="margin-top:20px;font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:2px;">Accesso su candidatura · Posti limitati per ciclo</div>
+  </div>
 </section>
 
 <footer>
