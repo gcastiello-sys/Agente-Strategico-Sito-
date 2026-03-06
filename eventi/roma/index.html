@@ -573,11 +573,11 @@
 function toggleMenu(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(!h||!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');h.classList.add('open');document.body.style.overflow='hidden';}}
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.mm-links a,.mm-cta').forEach(function(a){a.addEventListener('click',function(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(h)h.classList.remove('open');if(m)m.classList.remove('open');document.body.style.overflow='';});});});
 
-// ── FORM → STRIPE ──
-// Sostituisci con il tuo Payment Link Stripe reale
+// ── FORM → GHL → STRIPE ──
 const STRIPE_URL = 'https://buy.stripe.com/eVq14g5vOayq48M5Rn83C02';
+const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/pTUASORO4j3HNZIumUYR/webhook-trigger/f232d38c-4f1c-4e84-901d-c353e4f816e8';
 
-document.getElementById('registrazioneForm').addEventListener('submit', function(e) {
+document.getElementById('registrazioneForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   var nome = document.getElementById('nome').value.trim();
   var cognome = document.getElementById('cognome').value.trim();
@@ -603,18 +603,39 @@ document.getElementById('registrazioneForm').addEventListener('submit', function
   }
 
   btn.classList.add('loading');
-  lbl.textContent = 'Reindirizzamento in corso...';
+  lbl.textContent = 'Invio dati in corso...';
 
-  // Passa email e reference a Stripe via query params
-  var ref = encodeURIComponent(nome + ' ' + cognome + ' — ' + ruolo);
-  var dest = STRIPE_URL + '?prefilled_email=' + encodeURIComponent(email) + '&client_reference_id=' + ref;
-
-  // Salva dati per pagina di conferma post-pagamento
+  // Manda i dati a GHL prima di Stripe
   try {
-    sessionStorage.setItem('as_iscritto', JSON.stringify({nome:nome, cognome:cognome, email:email, telefono:telefono, ruolo:ruolo}));
-  } catch(err) {}
+    await fetch(GHL_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'checkout.session.completed',
+        data: {
+          object: {
+            customer_details: {
+              email: email,
+              name: nome + ' ' + cognome,
+              phone: telefono
+            },
+            client_reference_id: nome + ' ' + cognome + ' — ' + ruolo,
+            amount_total: 14900,
+            currency: 'eur',
+            payment_status: 'paid'
+          }
+        }
+      })
+    });
+  } catch(err) {
+    console.log('GHL webhook error (non bloccante):', err);
+  }
 
-  setTimeout(function(){ window.location.href = dest; }, 500);
+  lbl.textContent = 'Reindirizzamento al pagamento...';
+
+  var dest = STRIPE_URL + '?prefilled_email=' + encodeURIComponent(email) + '&client_reference_id=' + encodeURIComponent(nome + ' ' + cognome + ' — ' + ruolo);
+
+  setTimeout(function(){ window.location.href = dest; }, 400);
 });
 
 document.querySelectorAll('#registrazioneForm input, #registrazioneForm select').forEach(function(el){
