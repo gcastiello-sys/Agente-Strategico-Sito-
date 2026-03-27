@@ -611,20 +611,12 @@ document.getElementById('registrazioneForm').addEventListener('submit', async fu
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        type: 'checkout.session.completed',
-        data: {
-          object: {
-            customer_details: {
-              email: email,
-              name: nome + ' ' + cognome,
-              phone: telefono
-            },
-            client_reference_id: nome + ' ' + cognome + ' — ' + ruolo,
-            amount_total: 14900,
-            currency: 'eur',
-            payment_status: 'paid'
-          }
-        }
+        email: email,
+        first_name: nome,
+        last_name: cognome,
+        phone: telefono,
+        ruolo: ruolo,
+        source: 'Summit Roma 2026'
       })
     });
   } catch(err) {
