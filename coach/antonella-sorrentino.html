@@ -3,25 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antonella Sorrentino — Agente Strategico</title>
+<title>Antonella Sorrentino — Coach · Agente Strategico</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --black:#0A0A0A;--gray-900:#1A1A1A;--gray-700:#444;--gray-500:#777;
-  --gray-200:#E8E8E8;--gray-100:#F4F4F4;--white:#FFF;
-  --gold:#C9A84C;--gold-light:#E2C46A;
-  --font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;
-  --max-w:1200px;--pad:clamp(24px,5vw,80px);
-}
+:root{--black:#0A0A0A;--gray-900:#1A1A1A;--gray-700:#444;--gray-500:#777;--gray-200:#E8E8E8;--gray-100:#F4F4F4;--white:#FFF;--gold:#C9A84C;--gold-light:#E2C46A;--font-serif:'Cormorant Garamond',serif;--font-sans:'Inter',sans-serif;--max-w:1200px;--pad:clamp(24px,5vw,80px);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);overflow-x:hidden;}
 .tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
 .tag::before{content:'';width:32px;height:1.5px;background:var(--gold);}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;padding:14px 28px;text-transform:uppercase;}
-.btn-gold{background:var(--gold);color:var(--black);}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-gold{background:var(--gold);color:var(--black);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;padding:14px 28px;text-transform:uppercase;}
 .btn-luxury{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);text-decoration:none;background:linear-gradient(135deg,#E2C46A 0%,#C9A84C 40%,#A8872E 100%);padding:18px 44px;position:relative;overflow:hidden;transition:all 0.35s;box-shadow:0 8px 32px rgba(201,168,76,0.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
 .btn-luxury:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(201,168,76,0.4);}
 .btn-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(0,0,0,0.15);border-radius:50%;font-size:13px;transition:transform 0.3s;}
@@ -34,9 +26,21 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .nav-logo img{height:52px;display:block;filter:brightness(0) saturate(100%) invert(68%) sepia(52%) saturate(400%) hue-rotate(5deg) brightness(95%) contrast(90%);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:12px;font-weight:600;color:#1A1A1A;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gold);}
-.nav-links a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-links a.active{border-bottom:2px solid var(--gold);padding-bottom:2px;}
 .nav-actions{display:flex;gap:12px;align-items:center;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:200;}
+.hamburger span{display:block;width:22px;height:2px;background:#1A1A1A;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0A;z-index:9998;padding-top:120px;}
+.mobile-menu.open{display:flex;align-items:flex-start;justify-content:center;}
+.mm-inner{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 32px;}
+.mm-links{list-style:none;width:100%;display:flex;flex-direction:column;gap:4px;}
+.mm-links a{display:block;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#ffffff;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mm-links a:hover,.mm-links a.active{color:#C9A84C;}
+.mm-cta{display:block;width:100%;text-align:center;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-top:24px;}
 .breadcrumb{background:var(--gray-100);border-bottom:1px solid var(--gray-200);padding:14px var(--pad);}
 .breadcrumb-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-500);}
 .breadcrumb a{color:var(--gray-500);text-decoration:none;transition:color 0.2s;}
@@ -46,14 +50,14 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .coach-hero{background:var(--black);position:relative;overflow:hidden;}
 .coach-hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:420px 1fr;min-height:580px;}
 .ch-photo{position:relative;overflow:hidden;}
-.ch-photo-img{position:absolute;inset:0;background-image:url('/antonellasorrentino.jpg');background-size:cover;background-position:center top;filter:brightness(0.75);}
+.ch-photo-img{position:absolute;inset:0;background-image:url('../antonellasorrentinocoach.jpg');background-size:cover;background-position:center top;filter:brightness(0.75);}
 .ch-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,var(--black) 100%);}
 .ch-badge{position:absolute;top:32px;left:32px;background:var(--gold);color:var(--black);font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;}
 .ch-content{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;}
 .ch-role{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:16px;}
 .ch-name{font-family:var(--font-serif);font-size:clamp(48px,5vw,80px);font-weight:600;color:var(--white);line-height:0.9;letter-spacing:-1px;margin-bottom:24px;}
 .ch-name em{font-style:italic;color:var(--gold);}
-.ch-tagline{font-size:18px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.65;max-width:440px;margin-bottom:40px;font-style:italic;font-family:var(--font-serif);}
+.ch-tagline{font-size:18px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.65;max-width:440px;margin-bottom:40px;font-style:italic;font-family:var(--font-serif);}
 .ch-stats{display:flex;gap:40px;padding:28px 0;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:40px;}
 .ch-stat-num{font-family:var(--font-serif);font-size:36px;font-weight:600;color:var(--gold);line-height:1;}
 .ch-stat-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-top:4px;}
@@ -63,6 +67,7 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .bio-title em{font-style:italic;color:var(--gold);}
 .bio-text{font-size:16px;color:var(--gray-500);line-height:1.85;font-weight:300;}
 .bio-text p+p{margin-top:20px;}
+.bio-text strong{color:var(--black);font-weight:600;}
 .bio-specializzazioni{margin-top:52px;}
 .bio-spec-title{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--black);margin-bottom:20px;}
 .bio-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gray-200);}
@@ -70,7 +75,6 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .bs-num{font-family:var(--font-serif);font-size:32px;color:var(--gray-200);line-height:1;margin-bottom:8px;}
 .bs-title{font-size:13px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
 .bs-desc{font-size:12px;color:var(--gray-500);line-height:1.5;font-weight:300;}
-.bio-sidebar{}
 .sidebar-cta-card{background:var(--black);padding:36px;position:sticky;top:90px;}
 .scc-top{height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin-bottom:28px;}
 .scc-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-bottom:12px;}
@@ -79,7 +83,7 @@ body{font-family:var(--font-sans);color:var(--gray-700);background:var(--white);
 .scc-desc{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.65;font-weight:300;margin-bottom:28px;}
 .scc-includes{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
 .scc-include{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.4);}
-.scc-include::before{content:'✓';color:var(--gold);font-weight:700;font-size:12px;flex-shrink:0;}
+.scc-include::before{content:'\2713';color:var(--gold);font-weight:700;font-size:12px;flex-shrink:0;}
 .scc-cta{width:100%;justify-content:center;font-size:12px;padding:16px 20px;}
 .scc-note{font-size:11px;color:rgba(255,255,255,0.18);text-align:center;margin-top:12px;line-height:1.5;}
 .sidebar-altri-coach{margin-top:16px;background:var(--gray-100);padding:24px;}
@@ -121,36 +125,27 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
 .footer-links a{font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:1px;}
-</style>
-<link rel="stylesheet" href="/mobile.css">
-<style>
-@media (max-width: 768px) {
-  .coach-hero-inner { display: block !important; }
-  .ch-photo { width: 100% !important; height: 320px !important; }
-  .ch-content { padding: 32px 20px !important; }
-  .ch-stats { flex-wrap: wrap !important; gap: 16px !important; }
-  .coach-bio-inner { display: block !important; }
-  .bio-main { width: 100% !important; }
-  .bio-sidebar { width: 100% !important; margin-top: 40px !important; }
-  .sidebar-cta-card { position: static !important; }
-  .bio-spec-grid { display: block !important; }
-  .lavoriamo-grid { display: block !important; }
-  .lav-item { width: 100% !important; margin-bottom: 2px !important; }
-  .testi-grid { display: block !important; }
-  .tq { width: 100% !important; margin-bottom: 2px !important; }
-  .hamburger { display: flex !important; }
-  .nav-links, .nav-actions { display: none !important; }
+.footer-social{display:flex;align-items:center;gap:20px;}
+.footer-social a{color:rgba(255,255,255,0.3);transition:color 0.2s;display:flex;}
+.footer-social a:hover{color:var(--gold);}
+@media(max-width:768px){
+  .hamburger{display:flex !important;}
+  .nav-links,.nav-actions{display:none !important;}
+  .coach-hero-inner{display:block !important;}
+  .ch-photo{width:100% !important;height:320px !important;}
+  .ch-content{padding:32px 20px !important;}
+  .ch-stats{flex-wrap:wrap !important;gap:16px !important;}
+  .coach-bio-inner{display:block !important;}
+  .bio-sidebar{width:100% !important;margin-top:40px !important;}
+  .sidebar-cta-card{position:static !important;}
+  .bio-spec-grid{display:block !important;}
+  .lavoriamo-grid{display:block !important;}
+  .testi-grid{display:block !important;}
 }
 </style>
 </head>
 <body>
-
-<div class="ann-bar">
-  Candidature per il nuovo ciclo aperte — posti limitati.
-  <strong>L'accesso richiede selezione.</strong>
-  <a href="/candidatura/">Scopri come candidarti →</a>
-</div>
-
+<div class="ann-bar">Candidature per il nuovo ciclo aperte &mdash; posti limitati. <strong>L'accesso richiede selezione.</strong> <a href="/candidatura/">Scopri come candidarti &rarr;</a></div>
 <nav class="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
@@ -165,115 +160,139 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
       <li><a href="/chi-siamo/" class="active">Chi Siamo</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="/candidatura/" class="btn btn-gold" style="padding:12px 24px;font-size:12px;letter-spacing:1.5px;">Candidati Ora →</a>
+      <a href="/candidatura/" class="btn-gold" style="padding:12px 24px;font-size:12px;letter-spacing:1.5px;">Candidati Ora &rarr;</a>
     </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <ul class="mm-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/" class="active">Chi Siamo</a></li>
+    </ul>
+    <a href="/candidatura/" class="mm-cta">Candidati Ora &rarr;</a>
+  </div>
+</div>
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
-    <a href="/">Home</a>
-    <span class="breadcrumb-sep">/</span>
-    <a href="/chi-siamo/">Chi Siamo</a>
-    <span class="breadcrumb-sep">/</span>
+    <a href="/">Home</a><span class="breadcrumb-sep">/</span>
+    <a href="/chi-siamo/">Chi Siamo</a><span class="breadcrumb-sep">/</span>
     <span class="breadcrumb-current">Antonella Sorrentino</span>
   </div>
 </div>
-
 <div class="coach-hero">
   <div class="coach-hero-inner">
     <div class="ch-photo">
       <div class="ch-photo-img"></div>
       <div class="ch-photo-overlay"></div>
-      <div class="ch-badge">Coach · Formatrice</div>
+      <div class="ch-badge">Coach &amp; Trainer</div>
     </div>
     <div class="ch-content">
-      <div class="ch-role">Coach & Formatrice · Agente Strategico</div>
+      <div class="ch-role">Comunicazione &middot; Crescita Personale &middot; Coaching Professionale</div>
       <h1 class="ch-name">Antonella<br><em>Sorrentino</em></h1>
-      <p class="ch-tagline">"Non basta lavorare di più. Serve lavorare con un metodo che funziona anche quando la motivazione non c'è."</p>
+      <p class="ch-tagline">&ldquo;Molte persone lavorano per ottenere risultati. Poche lavorano per diventare la persona capace di ottenerli.&rdquo;</p>
       <div class="ch-stats">
-        <div class="ch-stat"><div class="ch-stat-num">20+</div><div class="ch-stat-label">Anni nel settore</div></div>
-        <div class="ch-stat"><div class="ch-stat-num">500+</div><div class="ch-stat-label">Agenti formati</div></div>
-        <div class="ch-stat"><div class="ch-stat-num">Italia</div><div class="ch-stat-label">Tour formativi</div></div>
+        <div class="ch-stat">
+          <div class="ch-stat-num">20</div>
+          <div class="ch-stat-label">Anni di esperienza</div>
+        </div>
+        <div class="ch-stat">
+          <div class="ch-stat-num">300+</div>
+          <div class="ch-stat-label">Giornate di aula</div>
+        </div>
+        <div class="ch-stat">
+          <div class="ch-stat-num">18.000+</div>
+          <div class="ch-stat-label">Ore di coaching</div>
+        </div>
       </div>
-      <a href="https://link.msh.it/widget/bookings/calendario-antonella-sorrentin" class="btn-luxury">Prenota la tua call gratuita <span class="btn-arrow">→</span></a>
+      <a href="/candidatura/" class="btn-luxury">Entra nell'ecosistema <span class="btn-arrow">&rarr;</span></a>
     </div>
   </div>
 </div>
-
 <div class="coach-bio">
   <div class="coach-bio-inner">
     <div class="bio-main">
-      <div class="tag">La sua storia</div>
-      <h2 class="bio-title">Vent'anni sul campo.<br>Niente teoria <em>fine a sé stessa.</em></h2>
+      <div class="tag">Il suo approccio</div>
+      <h2 class="bio-title">I risultati arrivano quando<br><em>cresce la persona.</em></h2>
       <div class="bio-text">
-        <p>Antonella Sorrentino ha iniziato nel 2002 aprendo la sua prima agenzia immobiliare. Laurea in Economia e Commercio, ma la vera formazione è arrivata sul campo: centinaia di trattative, decine di collaboratori da assumere e formare, anni a capire cosa funziona davvero e cosa no nel mercato immobiliare italiano.</p>
-        <p>Con oltre 20 anni di esperienza diretta, ha aiutato centinaia di agenti e imprenditori immobiliari a trasformare le proprie carriere. Specializzata nel posizionamento strategico, nello sviluppo del potenziale umano e nella crescita dei team, ha condotto tour formativi in tutta Italia diventando un punto di riferimento nei principali eventi del settore.</p>
-        <p>La sua forza risiede nell'unione tra conoscenza tecnica e capacità relazionale: sa riconoscere il potenziale inespresso e guidare le persone verso la loro piena espressione professionale. È nota per l'approccio diretto e costruttivo — capace di generare risultati concreti senza scorciatoie e senza teorie inutili.</p>
+        <p>Molti professionisti lavorano duramente per ottenere risultati. Studiano tecniche, strategie, strumenti. Eppure si trovano davanti agli stessi ostacoli: obiezioni difficili da gestire, insicurezza nelle conversazioni, difficolta nel guidare davvero i clienti nelle decisioni. Il punto non e solo cosa fai nel tuo lavoro. Il punto e <strong>chi sei mentre lo fai.</strong></p>
+        <p>Da quasi 20 anni Antonella Sorrentino lavora nel mondo della formazione e del coaching, con un focus particolare sul settore immobiliare. Nel corso della sua carriera ha tenuto oltre <strong>300 giornate di aula</strong> e accumulato piu di <strong>18.000 ore di coaching individuale</strong>, accompagnando centinaia di agenti a raggiungere obiettivi che inizialmente sembravano lontani.</p>
+        <p>Il suo lavoro nasce dall'osservazione di cio che realmente fa la differenza tra chi resta fermo e chi cresce. Non si limita a insegnare tecniche: lavora sulla persona che c'e dietro il professionista. Attraverso lo studio della comunicazione, del dialogo interno, dell'autostima e del carisma, accompagna le persone nello sviluppo delle qualita interiori che rendono possibili risultati piu grandi.</p>
+        <p>Nel lavoro immobiliare — come in qualsiasi lavoro basato sulle relazioni — i risultati arrivano quando crescono sicurezza, comunicazione e consapevolezza personale. <strong>Quando cambia il modo in cui pensi, comunichi e ti presenti agli altri, cambiano anche i risultati.</strong></p>
       </div>
-
       <div class="bio-specializzazioni">
         <div class="bio-spec-title">Aree di specializzazione</div>
         <div class="bio-spec-grid">
           <div class="bs-item">
             <div class="bs-num">01</div>
-            <div class="bs-title">Acquisizione strategica</div>
-            <div class="bs-desc">Tecniche avanzate per generare incarichi in modo sistematico, costruire fiducia con i venditori e chiudere con metodo — non con fortuna.</div>
+            <div class="bs-title">Comunicazione consapevole</div>
+            <div class="bs-desc">Guidare le conversazioni con chiarezza e sicurezza, costruendo fiducia reale nelle relazioni con i clienti.</div>
           </div>
           <div class="bs-item">
             <div class="bs-num">02</div>
-            <div class="bs-title">Mindset e produttività</div>
-            <div class="bs-desc">Come allineare la mente alle azioni quotidiane, costruire routine che resistono al caos e smettere di rincorrere tutto senza produrre risultati.</div>
+            <div class="bs-title">Gestione delle obiezioni</div>
+            <div class="bs-desc">Affrontare dubbi e resistenze con professionalita, trasformandoli in momenti di dialogo e comprensione.</div>
           </div>
           <div class="bs-item">
             <div class="bs-num">03</div>
-            <div class="bs-title">Comunicazione e vendita</div>
-            <div class="bs-desc">Gestione delle obiezioni, tecniche di chiusura, comunicazione persuasiva. Strumenti concreti per portare ogni trattativa a una conclusione naturale.</div>
+            <div class="bs-title">Dialogo interno e sicurezza</div>
+            <div class="bs-desc">Il modo in cui parli a te stesso influenza il modo in cui ti presenti agli altri. Autostima, consapevolezza e presenza come leve di crescita.</div>
           </div>
           <div class="bs-item">
             <div class="bs-num">04</div>
-            <div class="bs-title">Crescita del team</div>
-            <div class="bs-desc">Come selezionare, formare e motivare collaboratori. Costruire una struttura che funzioni anche quando non sei presente in ogni trattativa.</div>
+            <div class="bs-title">Carisma e presenza professionale</div>
+            <div class="bs-desc">Sviluppare quella qualita che fa percepire autorita, affidabilita e sicurezza fin dal primo incontro con il cliente.</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">05</div>
+            <div class="bs-title">Personal brand professionale</div>
+            <div class="bs-desc">Costruire un'identita professionale chiara e riconoscibile, capace di comunicare valore e differenziarti nel mercato.</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">06</div>
+            <div class="bs-title">Sistema di lavoro vincente</div>
+            <div class="bs-desc">I risultati non nascono dalla motivazione del momento, ma da un metodo strutturato e da azioni ripetute con costanza.</div>
           </div>
         </div>
       </div>
     </div>
-
     <div class="bio-sidebar">
-      <div class="sidebar-cta-card" id="prenota">
+      <div class="sidebar-cta-card">
         <div class="scc-top"></div>
-        <div class="scc-eyebrow">Call gratuita · 30 minuti</div>
-        <div class="scc-title">Parla con<br><em>Antonella</em></div>
-        <p class="scc-desc">Una call di 30 minuti per capire dove sei, dove vuoi arrivare e se questo è il momento giusto per entrare nell'ecosistema.</p>
+        <div class="scc-eyebrow">Accesso su candidatura</div>
+        <div class="scc-title">Lavora con<br><em>Antonella</em></div>
+        <p class="scc-desc">Entra nell'ecosistema e accedi al coaching di Antonella: comunicazione, sicurezza personale e le competenze relazionali che fanno davvero la differenza.</p>
         <div class="scc-includes">
-          <div class="scc-include">Check-up completo della tua situazione</div>
-          <div class="scc-include">Analisi dei gap prioritari</div>
-          <div class="scc-include">Indicazione del percorso più adatto</div>
-          <div class="scc-include">Zero pressione commerciale</div>
+          <div class="scc-include">Comunicazione e gestione obiezioni</div>
+          <div class="scc-include">Dialogo interno e sicurezza personale</div>
+          <div class="scc-include">Carisma e presenza professionale</div>
+          <div class="scc-include">Community di 380+ agenti selezionati</div>
         </div>
-        <a href="https://link.msh.it/widget/bookings/calendario-antonella-sorrentin" class="btn-luxury scc-cta">Prenota ora <span class="btn-arrow">→</span></a>
-        <div class="scc-note">Gratuita · Senza impegno · 30 minuti</div>
+        <a href="/candidatura/" class="btn-luxury scc-cta">Candidati ora <span class="btn-arrow">&rarr;</span></a>
+        <div class="scc-note">Accesso su selezione &middot; Posti limitati per ciclo</div>
       </div>
-
       <div class="sidebar-altri-coach">
         <div class="sac-title">Altri coach</div>
-        <a href="vincenzo-romano.html" class="sac-item">
-          <div class="sac-photo" style="background-image:url('../../vincenzoromano.jpg')"></div>
-          <div class="sac-info"><div class="sac-name">Vincenzo Romano</div><div class="sac-role">Co-Fondatore</div></div>
+        <a href="/coach/vincenzo-romano/" class="sac-item">
+          <div class="sac-photo" style="background-image:url('/Vincenzoromano.jpg');background-position:center 10%"></div>
+          <div><div class="sac-name">Vincenzo Romano</div><div class="sac-role">Co-Fondatore</div></div>
         </a>
-        <a href="giuseppe-castiello.html" class="sac-item">
-          <div class="sac-photo" style="background-image:url('../../583 (2).jpg');background-position:center 15%"></div>
-          <div class="sac-info"><div class="sac-name">Giuseppe Castiello</div><div class="sac-role">Co-Fondatore</div></div>
+        <a href="/coach/filomena-sibona/" class="sac-item">
+          <div class="sac-photo" style="background-image:url('/filomenasibonacoach.jpg');background-position:center 10%"></div>
+          <div><div class="sac-name">Filomena Sibona</div><div class="sac-role">Listing Expert</div></div>
         </a>
-        <a href="simone-campisano.html" class="sac-item">
-          <div class="sac-photo" style="background:#1a1a1a"></div>
-          <div class="sac-info"><div class="sac-name">Simone Campisano</div><div class="sac-role">Coach</div></div>
+        <a href="/coach/nicola-della-rocca/" class="sac-item">
+          <div class="sac-photo" style="background-image:url('/nicoladellaroccacoach.jpg');background-position:center 10%"></div>
+          <div><div class="sac-name">Nicola Della Rocca</div><div class="sac-role">Marketing Digitale</div></div>
         </a>
       </div>
     </div>
   </div>
 </div>
-
 <section class="lavoriamo">
   <div class="lavoriamo-inner">
     <div class="lavoriamo-head">
@@ -283,23 +302,22 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     <div class="lavoriamo-grid">
       <div class="lav-item">
         <div class="lav-num">01</div>
-        <div class="lav-title">Il tuo sistema di acquisizione</div>
-        <div class="lav-desc">Costruiamo insieme un processo replicabile per generare incarichi con continuità. Non campagne, non fortuna — un sistema che funziona ogni settimana.</div>
+        <div class="lav-title">Comunicazione e relazione</div>
+        <div class="lav-desc">Lavoriamo sul modo in cui ti presenti, ascolti e guidi le conversazioni con i clienti. Sicurezza, chiarezza e presenza in ogni interazione.</div>
       </div>
       <div class="lav-item">
         <div class="lav-num">02</div>
-        <div class="lav-title">Il tuo posizionamento strategico</div>
-        <div class="lav-desc">Come differenziarti nel mercato locale, comunicare il tuo valore in modo chiaro e diventare il riferimento nella tua zona — non uno dei tanti.</div>
+        <div class="lav-title">Gestione delle obiezioni</div>
+        <div class="lav-desc">Costruiamo un metodo per affrontare dubbi e resistenze senza ansia. Ogni obiezione diventa un'opportunita di dialogo e fiducia.</div>
       </div>
       <div class="lav-item">
         <div class="lav-num">03</div>
-        <div class="lav-title">Il tuo piano di crescita</div>
-        <div class="lav-desc">Obiettivi chiari, metriche misurabili, ritmo di lavoro sostenibile. Un piano concreto per i prossimi 90 giorni — non un sogno, una roadmap.</div>
+        <div class="lav-title">Crescita personale applicata</div>
+        <div class="lav-desc">Lavoriamo sul dialogo interno, sull'autostima e sulla consapevolezza. Perche il professionista che vuoi diventare inizia dalla persona che scegli di essere.</div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="coach-testi">
   <div class="coach-testi-inner">
     <div class="testi-head">
@@ -309,42 +327,41 @@ footer{background:var(--black);padding:48px var(--pad);display:flex;align-items:
     <div class="testi-grid">
       <div class="tq">
         <div class="tq-mark">"</div>
-        <p class="tq-text">Antonella ti dice le cose come stanno, senza filtri. All'inizio fa un po' paura, poi capisci che è esattamente quello di cui avevi bisogno per sbloccarti.</p>
-        <div class="tq-author"><strong>Luca M.</strong> · Agente Senior, Napoli</div>
+        <p class="tq-text">Con Antonella ho capito che il mio vero blocco non era la tecnica. Era il modo in cui mi parlavo dentro. Da quando lavoriamo insieme, le mie conversazioni con i clienti sono cambiate radicalmente.</p>
+        <div class="tq-author"><strong>Giulia F.</strong> &middot; Agente Immobiliare, Milano</div>
       </div>
       <div class="tq">
         <div class="tq-mark">"</div>
-        <p class="tq-text">Il bootcamp con Antonella mi ha cambiato il modo di lavorare. Non teoria — strumenti concreti che ho applicato la settimana dopo e che funzionano ancora oggi.</p>
-        <div class="tq-author"><strong>Sara F.</strong> · Team Leader, Roma</div>
+        <p class="tq-text">Le obiezioni mi bloccavano. Antonella mi ha dato un metodo per gestirle con calma e professionalita. Adesso le aspetto, non le temo.</p>
+        <div class="tq-author"><strong>Roberto M.</strong> &middot; Agente Senior, Roma</div>
       </div>
       <div class="tq">
         <div class="tq-mark">"</div>
-        <p class="tq-text">In 20 anni di settore non avevo mai incontrato una formatrice con questa chiarezza. Sa esattamente dove sei bloccato e sa come portarti al livello successivo.</p>
-        <div class="tq-author"><strong>Roberto C.</strong> · Broker, Milano</div>
+        <p class="tq-text">Non immaginavo quanto la sicurezza personale influenzasse i risultati di vendita. Antonella te lo mostra con dati, esempi e un percorso concreto. Niente teorie astratte.</p>
+        <div class="tq-author"><strong>Paola C.</strong> &middot; Team Leader, Napoli</div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="coach-final-cta">
-  <div class="tag" style="justify-content:center;margin-bottom:16px;display:flex">Prenota ora</div>
-  <div class="cfc-title">30 minuti con Antonella.<br><em>Gratuiti.</em></div>
-  <p class="cfc-sub">Una conversazione reale per capire se questo è il momento giusto e quale percorso fa per te. Zero pressione, zero vendita.</p>
-  <a href="https://link.msh.it/widget/bookings/calendario-antonella-sorrentin" class="btn-luxury">Prenota la tua call <span class="btn-arrow">→</span></a>
-  <div class="cta-meta">Gratuita · 30 minuti · Senza impegno</div>
+  <div class="tag" style="justify-content:center;margin-bottom:16px;display:flex">Candidati ora</div>
+  <div class="cfc-title">Diventa la persona<br><em>capace di ottenerli.</em></div>
+  <p class="cfc-sub">Entra nell'ecosistema Agente Strategico e accedi al coaching di Antonella. La crescita professionale inizia sempre dalla persona.</p>
+  <a href="/candidatura/" class="btn-luxury">Manda la tua candidatura <span class="btn-arrow">&rarr;</span></a>
+  <div class="cta-meta">Accesso su selezione &middot; Posti limitati &middot; Ciclo in apertura</div>
 </section>
-
 <footer>
-  <a href="/">
-    <img src="/Logo_02.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span>
-  </a>
-  <div class="footer-links">
-    <a href="#">Privacy</a><a href="#">Cookie</a><a href="#">Contatti</a><a href="#">Sitemap</a>
+  <a href="/"><img src="/logo.png" alt="Agente Strategico" style="height:30px;opacity:0.75;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)"><span style="width:30px;height:30px;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border-radius:3px;">AS</span>Agente Strategico</span></a>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">Cookie</a><a href="#">Contatti</a><a href="#">Sitemap</a></div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/agentestrategico" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.facebook.com/share/18Gji6EJse/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
   </div>
-  <div class="footer-copy">© 2025 Agente Strategico</div>
+  <div class="footer-copy">&copy; 2026 Agente Strategico</div>
 </footer>
-
-<script src="/mobile-nav.js"></script>
+<script>
+function toggleMenu(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(!h||!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');h.classList.add('open');document.body.style.overflow='hidden';}}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.mm-links a,.mm-cta').forEach(function(a){a.addEventListener('click',function(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(h)h.classList.remove('open');if(m)m.classList.remove('open');document.body.style.overflow='';});});});
+</script>
 </body>
 </html>
