@@ -520,6 +520,7 @@
 function toggleMenu(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(!h||!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');h.classList.add('open');document.body.style.overflow='hidden';}}
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.mm-links a,.mm-cta').forEach(function(a){a.addEventListener('click',function(){var h=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');if(h)h.classList.remove('open');if(m)m.classList.remove('open');document.body.style.overflow='';});});});
 </script>
+<script src="/animations.js"></script>
 </body>
 </html>
 HTMLEOFmkdir -p eventi/latina && cat > eventi/latina/index.html << 'HTMLEOF'
