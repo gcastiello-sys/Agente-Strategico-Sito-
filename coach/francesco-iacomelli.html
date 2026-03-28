@@ -1,9 +1,375 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<meta http-equiv="refresh" content="0; url=/chi-siamo/">
-<title>Agente Strategico</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Francesco Iacomelli — Coach Agente Strategico</title>
+<meta name="description" content="Francesco Iacomelli, agente immobiliare a Bologna e coach AS. Autore de La Bibbia dell'Open House, 250+ immobili venduti, 50+ agenti formati.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0A0A0A;--gold:#C9A84C;--gold-light:#E2C46A;--white:#fff;--gray-100:#F5F5F5;--gray-200:#E8E8E8;--gray-500:#9E9E9E;--gray-700:#424242;--max-w:1200px;--pad:clamp(24px,5vw,80px)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--white);font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+.ann-bar{background:#0A0A0A;color:rgba(255,255,255,0.7);text-align:center;padding:11px 20px;font-size:13px;font-family:"Inter",sans-serif;position:fixed;top:0;left:0;right:0;z-index:10000;box-sizing:border-box;}
+.ann-bar strong{color:#fff}.ann-bar a{color:#C9A84C;text-decoration:none;font-weight:600;margin-left:8px}
+.navbar{position:fixed;top:44px;left:0;right:0;z-index:9999;background:#FFFFFF;border-bottom:1px solid #E8E8E8;height:72px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+.nav-logo img{height:52px;display:block;filter:brightness(0) saturate(100%) invert(68%) sepia(52%) saturate(400%) hue-rotate(5deg) brightness(95%) contrast(90%)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;font-weight:600;color:#0A0A0A;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn-gold{background:var(--gold);color:var(--black);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-gold:hover{background:var(--gold-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#1A1A1A}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0A;z-index:9998;padding-top:120px;flex-direction:column;align-items:flex-start;justify-content:center}
+.mm-inner{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 32px}
+.mm-links{list-style:none;width:100%;display:flex;flex-direction:column;gap:4px}
+.mm-links a{display:block;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s}
+.mm-links a:hover,.mm-links a.active{color:#C9A84C}
+.mm-cta{display:block;width:100%;text-align:center;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;text-decoration:none;margin-top:24px}
+
+/* HERO */
+.coach-hero{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:0}
+.coach-hero-bg{position:absolute;inset:0;background:#111;z-index:0}
+.coach-hero-photo{position:absolute;right:0;bottom:0;height:100%;width:45%;object-fit:cover;object-position:top center;z-index:1;filter:grayscale(15%)}
+.coach-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,1) 40%,rgba(10,10,10,0.4) 70%,rgba(10,10,10,0) 100%);z-index:2}
+.coach-hero-content{position:relative;z-index:3;padding:80px var(--pad) 64px;max-width:var(--max-w);margin:0 auto;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.eyebrow::before,.eyebrow::after{content:"";display:block;width:28px;height:1px;background:var(--gold);opacity:.4}
+.coach-hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.0;max-width:600px;margin-bottom:12px}
+.coach-hero h1 em{font-style:italic;color:var(--gold)}
+.coach-role{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.coach-tagline{font-size:18px;color:rgba(255,255,255,0.75);max-width:480px;line-height:1.65;font-style:italic;margin-bottom:36px;font-family:"Cormorant Garamond",serif}
+.coach-stats{display:flex;gap:0;margin-top:8px;padding-top:32px;border-top:1px solid rgba(201,168,76,0.15);max-width:560px}
+.coach-stat{flex:1;padding-right:24px;border-right:1px solid rgba(201,168,76,0.1)}
+.coach-stat:last-child{border-right:none;padding-right:0;padding-left:24px}
+.coach-stat:not(:first-child){padding-left:24px}
+.stat-num{font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:600;color:var(--gold);line-height:1}
+.stat-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px}
+
+/* STORIA */
+.story-section{background:var(--white);padding:96px var(--pad)}
+.story-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+.story-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:block}
+.story-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4vw,52px);font-weight:600;color:var(--black);line-height:1.05}
+.story-section h2 em{font-style:italic;color:var(--gold)}
+.story-blocks{display:flex;flex-direction:column;gap:40px}
+.story-block{}
+.story-block h3{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;color:var(--black);margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.story-block h3::before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);flex-shrink:0}
+.story-block p{font-size:15px;color:var(--gray-700);line-height:1.8}
+
+/* MISSIONE */
+.mission-section{background:#0A0A0A;padding:96px var(--pad);position:relative;overflow:hidden}
+.mission-section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}
+.mission-inner{max-width:860px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.mission-section .eyebrow{justify-content:center;margin-bottom:28px}
+.mission-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4vw,56px);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:28px}
+.mission-section h2 em{font-style:italic;color:var(--gold)}
+.mission-quote{font-family:"Cormorant Garamond",serif;font-size:22px;font-style:italic;color:rgba(255,255,255,0.75);line-height:1.65;padding:32px 40px;border:1px solid rgba(201,168,76,0.2);margin:40px 0;position:relative}
+.mission-quote::before{content:"“";font-size:80px;color:var(--gold);opacity:0.3;position:absolute;top:-20px;left:20px;font-family:"Cormorant Garamond",serif;line-height:1}
+.mission-section p{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.8}
+
+/* LIBRO */
+.book-section{background:var(--gray-100);padding:80px var(--pad)}
+.book-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.book-badge{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;margin-bottom:20px}
+.book-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,3.5vw,48px);font-weight:600;color:var(--black);line-height:1.05;margin-bottom:16px}
+.book-section h2 em{font-style:italic;color:var(--gold)}
+.book-section p{font-size:15px;color:var(--gray-700);line-height:1.8;margin-bottom:20px}
+.book-stats{display:flex;flex-direction:column;gap:16px}
+.book-stat-item{display:flex;align-items:center;gap:16px;padding:16px;background:var(--white);border-left:3px solid var(--gold)}
+.book-stat-item .num{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:600;color:var(--black);min-width:80px}
+.book-stat-item .lbl{font-size:13px;color:var(--gray-700);line-height:1.4}
+.book-visual{background:var(--black);padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:320px}
+.book-title-display{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:12px}
+.book-title-display em{font-style:italic;color:var(--gold)}
+.book-subtitle{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.book-divider{width:40px;height:2px;background:var(--gold);margin:20px auto}
+.book-author{font-size:13px;color:rgba(255,255,255,0.6)}
+
+/* PASSIONI */
+.passioni-section{background:var(--white);padding:80px var(--pad)}
+.passioni-inner{max-width:var(--max-w);margin:0 auto}
+.passioni-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);margin-top:48px}
+.passione-card{background:var(--white);padding:36px 28px}
+.passione-card .icon{font-size:28px;margin-bottom:16px}
+.passione-card h4{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px}
+.passione-card p{font-size:13px;color:var(--gray-700);line-height:1.7}
+
+/* CTA */
+.cta-section{background:var(--black);padding:96px var(--pad);text-align:center;border-top:1px solid rgba(201,168,76,0.12)}
+.cta-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4vw,56px);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:16px}
+.cta-section h2 em{font-style:italic;color:var(--gold)}
+.cta-section p{font-size:16px;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto 36px;line-height:1.7}
+.cta-note{margin-top:16px;font-size:11px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:2px}
+
+footer{background:#060606;padding:60px 32px 36px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.05)}
+.footer-brand{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;margin-bottom:10px}
+.footer-brand span{color:var(--gold)}
+.footer-tagline{font-size:12px;color:var(--gray-500);line-height:1.7;max-width:260px}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-links a{font-size:13px;color:var(--gray-500);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;font-size:11px;color:var(--gray-700)}
+
+@media(max-width:768px){
+  .hamburger{display:flex !important}
+  .nav-links,.nav-actions{display:none !important}
+  .coach-hero-photo{width:100%;height:50%;top:0;bottom:auto;opacity:0.3}
+  .coach-hero-overlay{background:linear-gradient(to bottom,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0.95) 60%)}
+  .coach-hero-content{padding-top:200px}
+  .story-inner,.book-inner{grid-template-columns:1fr !important;gap:40px}
+  .passioni-grid{grid-template-columns:1fr !important}
+  .coach-stats{flex-wrap:wrap;gap:16px}
+  .coach-stat{border-right:none !important;padding:0 !important;flex:0 0 45%}
+  .footer-inner{grid-template-columns:1fr !important;gap:28px}
+  .footer-bottom{flex-direction:column;gap:6px}
+}
+</style>
 </head>
-<body><script src="/animations.js"></script>
+<body style="padding-top:116px">
+
+<div class="ann-bar">
+  Candidature per il nuovo ciclo aperte — posti limitati.
+  <strong>L'accesso richiede selezione.</strong>
+  <a href="/candidatura/">Scopri come candidarti →</a>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="Agente Strategico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:15px;font-weight:700;color:#1A1A1A;letter-spacing:0.5px;text-transform:uppercase"><span style="width:36px;height:36px;background:#C9A84C;color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border-radius:3px">AS</span>Agente Strategico</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/">Chi Siamo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/candidatura/" class="btn-gold">Candidati Ora →</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" style="display:none">
+  <div class="mm-inner">
+    <ul class="mm-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/community/">Community</a></li>
+      <li><a href="/eventi/">Eventi</a></li>
+      <li><a href="/risorse/">Risorse</a></li>
+      <li><a href="/chi-siamo/">Chi Siamo</a></li>
+    </ul>
+    <a href="/candidatura/" class="mm-cta">Candidati Ora →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="coach-hero">
+  <div class="coach-hero-bg"></div>
+  <div class="coach-hero-overlay"></div>
+  <div class="coach-hero-content">
+    <div class="eyebrow">Coach AS</div>
+    <h1>Francesco<br><em>Iacomelli</em></h1>
+    <div class="coach-role">Agente Immobiliare · Bologna · Coach AS</div>
+    <p class="coach-tagline">"Il primo passo non ti porta dove vuoi: ti toglie da dove sei."</p>
+    <div class="coach-stats">
+      <div class="coach-stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Anni di esperienza</div>
+      </div>
+      <div class="coach-stat">
+        <div class="stat-num">250+</div>
+        <div class="stat-label">Immobili venduti</div>
+      </div>
+      <div class="coach-stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Agenti formati</div>
+      </div>
+      <div class="coach-stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Open House gestiti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIA -->
+<section class="story-section">
+  <div class="story-inner">
+    <div>
+      <span class="story-label">La sua storia</span>
+      <h2>Da radici contadine<br>a <em>punto di riferimento</em><br>a Bologna.</h2>
+    </div>
+    <div class="story-blocks">
+      <div class="story-block">
+        <h3>Le origini</h3>
+        <p>Nasce in Toscana, in provincia di Pistoia, nel 1979. Radici contadine: il valore del lavoro, della disciplina e delle cose fatte bene. Nel 2007 entra nel mondo immobiliare cercando una professione che permettesse di crescere come persona, costruire stabilità per la famiglia e lavorare sulle relazioni e sulla fiducia.</p>
+      </div>
+      <div class="story-block">
+        <h3>La lezione dura</h3>
+        <p>Un'esperienza professionale importante non va come sperato. Una collaborazione societaria che si rivela un passaggio duro. Ma formativo: ti costringe a guardarti dentro, capire cosa vuoi e che tipo di professionista vuoi diventare. Da lì porta con sé una lezione semplice: la fiducia non si chiede, si merita. E si protegge con trasparenza, coerenza ed etica.</p>
+      </div>
+      <div class="story-block">
+        <h3>La svolta — Bologna</h3>
+        <p>L'8 gennaio 2015 si trasferisce a Bologna con un'idea chiara: ricostruire tutto su basi nuove. Metodo, formazione, relazioni sane, responsabilità. Bologna diventa un acceleratore di crescita personale e professionale. Quando unisci disciplina e comunicazione efficace, puoi davvero distinguerti in un mercato competitivo.</p>
+      </div>
+      <div class="story-block">
+        <h3>Oggi</h3>
+        <p>Lavora come agente immobiliare residenziale a Bologna e provincia e, parallelamente, come coach in AS. Vede tanti professionisti capaci che si perdono per mancanza di direzione, metodo e mentalità. Il suo obiettivo è aiutare gli agenti a diventare più solidi, più coerenti e più efficaci, senza snaturarsi. Con un linguaggio semplice, concreto e applicabile da subito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSIONE -->
+<section class="mission-section">
+  <div class="mission-inner">
+    <div class="eyebrow">La missione</div>
+    <h2>In questo lavoro si cresce davvero quando smetti di inseguire scorciatoie<br><em>e inizi a costruire fiducia.</em></h2>
+    <div class="mission-quote">
+      Voglio portare metodo e disciplina, ma anche umanità: ascolto, chiarezza, etica. Voglio aiutare gli agenti a diventare punti di riferimento nel loro territorio, riconosciuti per come lavorano e per come fanno sentire le persone: ascoltate, comprese e mai giudicate.
+    </div>
+    <p>Il risultato non è solo vendere di più: è farlo in equilibrio con se stessi e con i propri valori. Questa è la differenza tra un agente che lavora e un agente che lascia il segno.</p>
+  </div>
+</section>
+
+<!-- LIBRO -->
+<section class="book-section">
+  <div class="book-inner">
+    <div>
+      <div class="book-badge">📖 Autore</div>
+      <h2>La Bibbia<br><em>dell'Open House</em></h2>
+      <p>Francesco è autore del libro di riferimento sull'Open House nel mercato immobiliare italiano. Non teoria — metodo applicabile, distillato da oltre 500 eventi gestiti sul campo a Bologna e provincia.</p>
+      <p>Un manuale operativo per chi vuole trasformare ogni Open House in un generatore di contatti qualificati e incarichi concreti.</p>
+    </div>
+    <div>
+      <div class="book-stats">
+        <div class="book-stat-item">
+          <div class="num">500+</div>
+          <div class="lbl">Open House gestiti personalmente in carriera</div>
+        </div>
+        <div class="book-stat-item">
+          <div class="num">250+</div>
+          <div class="lbl">Immobili venduti con metodo strutturato</div>
+        </div>
+        <div class="book-stat-item">
+          <div class="num">50+</div>
+          <div class="lbl">Agenti formati sul metodo Open House</div>
+        </div>
+        <div class="book-stat-item">
+          <div class="num">1</div>
+          <div class="lbl">Libro — il riferimento in Italia sull'Open House immobiliare</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSIONI -->
+<section class="passioni-section">
+  <div class="passioni-inner">
+    <div class="eyebrow" style="justify-content:flex-start">Fuori dal lavoro</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:600;color:var(--black);line-height:1.05;margin-top:8px">Le cose che <em style="font-style:italic;color:var(--gold)">ricaricano davvero.</em></h2>
+    <div class="passioni-grid">
+      <div class="passione-card">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <h4>Famiglia</h4>
+        <p>Sposato con tre figli. I momenti normali sono quelli che contano di più: una cena in compagnia, una passeggiata, una chiacchiera senza fretta. Rallentare il tempo quando si può.</p>
+      </div>
+      <div class="passione-card">
+        <div class="icon">🏔️</div>
+        <h4>Natura e trekking</h4>
+        <p>Condividere la passione per la montagna con i propri figli. Il trekking come metafora del lavoro: un passo alla volta, con metodo, verso la vetta.</p>
+      </div>
+      <div class="passione-card">
+        <div class="icon">🏍️</div>
+        <h4>Motori</h4>
+        <p>La passione per i motori trasmessa ai figli. Un giro fuori porta nel weekend, la strada aperta davanti — un modo per staccare e ricaricarsi davvero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="eyebrow" style="justify-content:center;margin-bottom:20px">Lavora con Francesco</div>
+  <h2>Metodo, disciplina<br><em>e umanità.</em></h2>
+  <p>Francesco affianca gli agenti che vogliono costruire un percorso solido — con etica, chiarezza e risultati concreti. Se sei pronto a smettere di improvvisare e iniziare a costruire fiducia, questo è il posto giusto.</p>
+  <a href="/candidatura/" class="btn-gold" style="padding:16px 40px;font-size:13px;letter-spacing:1.5px">Candidati ora →</a>
+  <div class="cta-note">Accesso su candidatura · Posti limitati per ciclo</div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Agente <span>Strategico</span></div>
+      <p class="footer-tagline">Non è un metodo, è un percorso che ti accompagna alla vetta.</p>
+      <div style="display:flex;gap:20px;align-items:center;margin-top:16px">
+        <a href="https://www.instagram.com/agentestrategico" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);transition:color 0.2s;display:flex" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/share/18Gji6EJse/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);transition:color 0.2s;display:flex" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Naviga</div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/eventi/">Eventi</a></li>
+        <li><a href="/risorse/">Risorse</a></li>
+        <li><a href="/chi-siamo/">Chi Siamo</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contatti</div>
+      <ul class="footer-links">
+        <li><a href="/candidatura/">Candidati ora</a></li>
+        <li><a href="mailto:info@agentestrategico.it">info@agentestrategico.it</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Agente Strategico. Tutti i diritti riservati.</span>
+    <span>Privacy Policy · Cookie Policy</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/393513615008" target="_blank" rel="noopener" style="position:fixed;bottom:24px;right:24px;z-index:9000;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.848L.066 23.54a.75.75 0 00.914.914l5.692-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 01-4.964-1.364l-.355-.211-3.684.948.968-3.58-.231-.368A9.714 9.714 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<script src="/animations.js"></script>
+<script>
+function toggleMenu(){
+  var h=document.getElementById("hamburger");
+  var m=document.getElementById("mobileMenu");
+  if(!h||!m)return;
+  var isOpen=m.style.display==="flex";
+  if(isOpen){m.style.display="none";h.classList.remove("open");document.body.style.overflow=""}
+  else{m.style.display="flex";h.classList.add("open");document.body.style.overflow="hidden"}
+}
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll(".mm-links a,.mm-cta").forEach(function(a){
+    a.addEventListener("click",function(){
+      var h=document.getElementById("hamburger");
+      var m=document.getElementById("mobileMenu");
+      if(h)h.classList.remove("open");
+      if(m)m.style.display="none";
+      document.body.style.overflow="";
+    });
+  });
+});
+</script>
 </body>
 </html>
