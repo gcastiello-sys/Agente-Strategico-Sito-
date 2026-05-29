@@ -17,6 +17,15 @@ Dove c'è un `.md` nel Drive (Colantoni, Càsa) ho i dati completi.
 |---------|------|-------|
 | Colantoni Immobiliare (Ostia) | `colantoni-immobiliare.md` | ✅ completo + checklist validazione |
 | Càsa Immobiliare (Varese) | `casa-immobiliare-varese.md` | ✅ completo (2° pilota) |
+| ME Immobiliare (Lariano/Velletri) | `me-immobiliare.md` | ✅ bozza (da intake reale) |
+| CasaTua Immobiliare (Roma Est) | `casatua-immobiliare.md` | ✅ bozza (angolo venditori) |
+
+## Cartelle Drive create (in "Sistema dominante digitale")
+Sottocartelle per cliente create con successo (ho permessi di scrittura). In ME
+Immobiliare e CasaTua è già caricata la bozza di posizionamento come Google Doc.
+⚠️ Non posso *spostare* i file già esistenti (solo copiare): i materiali grezzi
+(loghi, recensioni, foto) vanno trascinati nelle rispettive sottocartelle —
+oppure dimmi di copiarli.
 
 ## Clienti SPD — quadro completo
 | Cliente | Agenzia | Coach | Dati disponibili | Stato |
