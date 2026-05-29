@@ -5,13 +5,25 @@ Strategico. È divisa in due parti:
 
 ```
 .claude/
+├── context/    ← conoscenza condivisa (chi è Agente Strategico, tono, prodotti)
+│   └── agente-strategico.md
 ├── agents/     ← gli AGENTI: collaboratori autonomi a cui deleghi un compito
-│   ├── revisore-sito.md
-│   └── ottimizza-immagini.md
+│   ├── revisore-sito.md          (sito: qualità, link, SEO, mobile)
+│   ├── ottimizza-immagini.md     (sito: comprime le foto pesanti)
+│   ├── stratega-contenuti.md     (social: piani editoriali, reel, post)
+│   ├── copywriter-brand.md       (testi: email, landing, manifesti)
+│   ├── coach-script-vendita.md   (script telefonici/vendita immobiliare)
+│   ├── architetto-formazione.md  (academy, bootcamp, workshop, moduli)
+│   ├── funnel-lead.md            (lead generation, funnel, email nurturing)
+│   └── analista-strategico.md    (analisi performance + report strategici)
 └── skills/     ← le SKILL: procedure precise che richiami quando servono
     └── nuovo-coach/
         └── SKILL.md
 ```
+
+I primi due agenti lavorano sul **sito**; gli altri sei sono i collaboratori di
+**business** (marketing, vendita, formazione) che leggono la scheda di contesto
+`context/agente-strategico.md` per conoscere brand, tono e prodotti.
 
 ## Differenza in 30 secondi
 
