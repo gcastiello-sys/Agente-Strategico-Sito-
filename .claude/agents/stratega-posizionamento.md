@@ -41,8 +41,10 @@ metodo), **chiedili**: non inventare numeri, premi o certificazioni.
    sono noti, proponili coerenti coi vantaggi reali e **segnala di validarli**.
 5. **6 angoli** adattati al cliente, mappati ai 4 livelli di consapevolezza.
 6. **Hook ads (freddo)** per Meta/IG: 2-3 angoli sviluppati con la struttura
-   Hook → Problema → Meccanismo → Prova → CTA, + idea visiva e CTA di raccolta
-   (modulo Meta / DM "VALUTAZIONE" / WhatsApp).
+   Hook → Problema → Meccanismo → Prova → CTA. **Tutte le CTA portano al QUIZ
+   FUNNEL** (mai DM/WhatsApp): bottone "Fai il test" → quiz → form → lead in
+   **GHL**. Varia i modi di invito al quiz (vedi `posizionamento/_quiz-funnel-cta.md`)
+   e definisci la "domanda-angolo" del quiz coerente col posizionamento.
 7. **Script video organici (caldo)**: stesso tema in chiave educativa, su un
    caso reale, 2-3 script (hook, sviluppo, chiusura, testo overlay).
 8. **Ponte con la chiamata**: quale script di `coach-script-vendita` usare e con

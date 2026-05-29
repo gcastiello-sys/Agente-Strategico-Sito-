@@ -73,6 +73,11 @@ esattamente questo angolo, non riparte da zero.
 Richiamare in **minuti, non ore**. Misura sempre 2 numeri: da dove arriva il
 lead e quanti minuti al primo richiamo.
 
-## Raccogliere lead senza sito (per chi parte da zero)
-Modulo istantaneo Meta · DM ("scrivimi VALUTAZIONE") · WhatsApp · link in bio ·
-modulo Google · chiamata diretta.
+## Raccolta lead: SEMPRE via QUIZ FUNNEL → GHL (standard SPD)
+Ogni CTA porta a un **quiz** (4-6 domande, 60 sec) che qualifica il venditore e
+finisce con un **form contatto** = lead. Tutti i lead sono **collegati a GHL**
+(GoHighLevel) e lavorati dai workflow n8n già attivi ("AS — F1 Scoring AI" e
+"AS — Notifiche Lead Hot"). Niente CTA verso DM/WhatsApp.
+Libreria CTA + struttura quiz + domande-angolo per cliente: vedi
+`posizionamento/_quiz-funnel-cta.md`. Misura: completamento quiz, % contatto,
+costo per lead per angolo, speed-to-lead.
