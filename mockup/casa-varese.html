@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup Landing — Càsa Immobiliare Varese (3 versioni)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#212529;        /* grigio scuro Càsa */
+    --dark2:#15181b;
+    --gold:#D6AD60;        /* oro su fondo scuro */
+    --gold-dark:#B68D40;   /* oro su bianco */
+    --cream:#FAFAF8; --grigio:#F2F1ee; --testo:#26292d; --muted:#6b7178; --white:#fff;
+    --serif:'Cormorant Garamond',serif; --sans:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--testo);background:#e7e6e2;line-height:1.65}
+  .version{max-width:900px;margin:40px auto;background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(33,37,41,.14)}
+  .vlabel{background:var(--dark2);color:var(--gold);font-weight:600;letter-spacing:2px;padding:11px 26px;font-size:12px;text-transform:uppercase}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 30px;border-bottom:1px solid #eee}
+  .logo-ph{border:1.5px dashed var(--gold-dark);color:var(--muted);font-size:11px;padding:9px 14px;border-radius:6px;font-weight:600;letter-spacing:1px}
+  .nav-cta{background:var(--gold-dark);color:#fff;font-weight:600;padding:11px 20px;border-radius:6px;text-decoration:none;font-size:13px;letter-spacing:.5px}
+  .hero{padding:60px 30px;background:linear-gradient(155deg,var(--dark) 0%,var(--dark2) 100%);color:var(--white);text-align:center}
+  .tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,5.2vw,50px);line-height:1.12;margin-bottom:18px;font-weight:600}
+  .hero h1 em{color:var(--gold);font-style:italic}
+  .hero p{font-size:17px;color:#c9cdd2;max-width:600px;margin:0 auto 30px;font-weight:300}
+  .btn-quiz{display:inline-flex;flex-direction:column;align-items:center;gap:3px;background:var(--gold);color:var(--dark2);font-weight:600;font-size:16px;padding:17px 38px;border-radius:8px;text-decoration:none;letter-spacing:.4px;box-shadow:0 12px 34px rgba(214,173,96,.34);transition:.2s}
+  .btn-quiz:hover{transform:translateY(-2px);background:var(--gold-dark);color:#fff}
+  .btn-quiz small{font-weight:400;font-size:12px;opacity:.85;letter-spacing:0}
+  .micro{margin-top:14px;font-size:12px;color:#9aa0a7;letter-spacing:1px}
+  .strip{background:#fbf7ef;border-left:3px solid var(--gold-dark);padding:22px 30px;font-weight:300}
+  .strip b{font-weight:600;color:var(--gold-dark)}
+  .sec{padding:48px 30px}
+  .sec h2{font-family:var(--serif);font-size:30px;color:var(--dark);text-align:center;margin-bottom:8px;font-weight:600}
+  .sec .lead{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 30px;font-weight:300}
+  .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .step{display:flex;gap:14px;background:var(--grigio);border-radius:10px;padding:18px}
+  .step .n{font-family:var(--serif);font-size:28px;color:var(--gold-dark);font-weight:700;line-height:1}
+  .step h3{font-size:15px;color:var(--dark);margin-bottom:3px}
+  .step p{font-size:13.5px;color:var(--muted);font-weight:300}
+  /* team con foto reali */
+  .team{background:var(--dark);color:#fff;padding:46px 30px;text-align:center}
+  .team h2{font-family:var(--serif);color:var(--gold);font-size:28px;margin-bottom:6px}
+  .team .lead{color:#c9cdd2;font-weight:300;margin-bottom:26px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .member img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:1px solid rgba(214,173,96,.35)}
+  .member span{display:block;margin-top:8px;font-size:12px;color:#aeb3b9;letter-spacing:.5px}
+  .final{padding:50px 30px;text-align:center;background:var(--cream)}
+  .final h2{font-family:var(--serif);color:var(--dark);font-size:30px;margin-bottom:18px;font-weight:600}
+  .note{max-width:900px;margin:0 auto;padding:10px 30px;font-size:12px;color:#7b8088}
+  @media(max-width:660px){.steps{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="note">⚙️ MOCKUP per GHL — Càsa Immobiliare (Varese). 3 versioni sotto. Sostituisci <b>INCOLLA_QUI_URL_QUIZ_GHL</b> con l'URL del quiz GHL. Foto del team caricate da Drive (se non si vedono: imposta le immagini su "Chiunque abbia il link").</div>
+
+<!-- ===================== VERSIONE A ===================== -->
+<section class="version">
+  <div class="vlabel">Versione A · Sostenibilità del cambio casa (consigliata)</div>
+  <div class="nav"><div class="logo-ph">← LOGO Càsa Immobiliare</div><a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a></div>
+  <div class="hero">
+    <span class="tag">Càsa Immobiliare · Varese</span>
+    <h1>Prima la <em>sostenibilità</em>.<br>Poi la vendita.</h1>
+    <p>A Varese non ti vendiamo solo la casa: verifichiamo prima che vendere e ricomprare sia davvero sostenibile. Non ti lasciamo in mezzo alla strada.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Il tuo cambio casa è sostenibile?<small>Fai il test · 60 secondi</small></a>
+    <div class="micro">L'AGENZIA CON L'ACCENTO SULLA CÀSA</div>
+  </div>
+  <div class="strip">Tante agenzie pensano solo a <b>piazzare la tua casa</b>. Poi vendi… e scopri che non puoi ricomprare. Noi partiamo dall'operazione completa: vendita, riacquisto, mutuo, tempi.</div>
+  <div class="sec">
+    <h2>Il Metodo Càsa</h2>
+    <p class="lead">Cambio casa sostenibile, con metodo, tutela e serenità.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Check di Sostenibilità</h3><p>Vendita + riacquisto + mutuo + tempi, prima di partire.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Valutazione trasparente</h3><p>Il prezzo reale, per vendere senza svendere.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Open House "Prima Visita"</h3><p>10 giorni, niente appuntamenti singoli, dossier della casa.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Fino al nuovo acquisto</h3><p>Ti accompagniamo nell'intera operazione, non solo nella vendita.</p></div></div>
+    </div>
+  </div>
+  <div class="team">
+    <h2>Il team Càsa Immobiliare</h2>
+    <p class="lead">Persone vere, al tuo fianco a Varese.</p>
+    <div class="grid">
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1Vthz4ltn1tKlGgx2lG6Xn_DBAMZze8o2=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1oT11s448oJUNSQx0GcUJiElHAajxmxhP=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1z9GqzN-nXn_vMlBle_Uf6J2ySTnjS84E=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1s5XGVsnFXQPCoBNQ3QaPUBOCONgvgT-1=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+    </div>
+  </div>
+  <div class="final"><h2>Scopri se il tuo cambio casa è sostenibile</h2><a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Inizia il test<small>5 domande · 60 secondi</small></a></div>
+</section>
+
+<!-- ===================== VERSIONE B ===================== -->
+<section class="version">
+  <div class="vlabel">Versione B · Open House "Prima Visita" (la firma)</div>
+  <div class="nav"><div class="logo-ph">← LOGO Càsa Immobiliare</div><a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a></div>
+  <div class="hero">
+    <span class="tag">Càsa Immobiliare · Varese</span>
+    <h1>A Varese non facciamo<br>visite a caso. Facciamo la <em>Prima Visita</em>.</h1>
+    <p>Per i primi 10 giorni niente appuntamenti singoli: concentriamo l'interesse e valorizziamo la tua casa. Più valore, meno stress.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Scopri come funziona la Prima Visita<small>Fai il test · 60 secondi</small></a>
+    <div class="micro">L'AGENZIA CON L'ACCENTO SULLA CÀSA</div>
+  </div>
+  <div class="strip">Gli appuntamenti sparpagliati <b>svalutano la casa</b> e fanno perdere tempo. La Prima Visita crea attesa e fa percepire il valore reale.</div>
+  <div class="sec">
+    <h2>Perché funziona</h2>
+    <p class="lead">Un metodo, non l'improvvisazione.</p>
+    <div class="steps">
+      <div class="step"><div class="n">✓</div><div><h3>Interesse concentrato</h3><p>Più visitatori nello stesso momento = più valore percepito.</p></div></div>
+      <div class="step"><div class="n">✓</div><div><h3>Dossier della casa</h3><p>Materiale curato consegnato a ogni visitatore.</p></div></div>
+      <div class="step"><div class="n">✓</div><div><h3>Acquirenti prequalificati</h3><p>Solo persone reali e in target a casa tua.</p></div></div>
+      <div class="step"><div class="n">✓</div><div><h3>Foto professionali</h3><p>Schede arredate, immagini che fanno la differenza.</p></div></div>
+    </div>
+  </div>
+  <div class="team">
+    <h2>Il team Càsa Immobiliare</h2>
+    <p class="lead">Chi si occuperà della tua casa.</p>
+    <div class="grid">
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1Vthz4ltn1tKlGgx2lG6Xn_DBAMZze8o2=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1oT11s448oJUNSQx0GcUJiElHAajxmxhP=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1z9GqzN-nXn_vMlBle_Uf6J2ySTnjS84E=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1s5XGVsnFXQPCoBNQ3QaPUBOCONgvgT-1=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+    </div>
+  </div>
+  <div class="final"><h2>Vuoi la Prima Visita per la tua casa?</h2><a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test<small>Scopri se è adatta a te</small></a></div>
+</section>
+
+<!-- ===================== VERSIONE C ===================== -->
+<section class="version">
+  <div class="vlabel">Versione C · Timing PGT 2026</div>
+  <div class="nav"><div class="logo-ph">← LOGO Càsa Immobiliare</div><a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a></div>
+  <div class="hero">
+    <span class="tag">Càsa Immobiliare · Varese</span>
+    <h1>Col nuovo <em>PGT 2026</em><br>cambia il valore della tua casa.</h1>
+    <p>Con la riduzione dei terreni edificabili, il valore dell'esistente a Varese si muove. Scoprilo prima degli altri.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Quanto vale casa tua col nuovo PGT?<small>Fai il test · 60 secondi</small></a>
+    <div class="micro">L'AGENZIA CON L'ACCENTO SULLA CÀSA</div>
+  </div>
+  <div class="strip">Chi aspetta senza informarsi rischia di <b>vendere al prezzo sbagliato</b>. Una valutazione corretta oggi vale più di un rimpianto domani.</div>
+  <div class="sec">
+    <h2>Cosa cambia (e cosa fare)</h2>
+    <p class="lead">Riqualificazione e recupero diventano centrali.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Valutazione aggiornata</h3><p>Il valore reale alla luce del nuovo PGT.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Zone in crescita</h3><p>Casbeno, Masnago, Giubiano, San Carlo, Aguggiari.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Strategia di vendita</h3><p>Il momento e il prezzo giusti per la tua casa.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Metodo Càsa</h3><p>Dalla valutazione al rogito, in serenità.</p></div></div>
+    </div>
+  </div>
+  <div class="team">
+    <h2>Il team Càsa Immobiliare</h2>
+    <p class="lead">A Varese, dalla tua parte.</p>
+    <div class="grid">
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1Vthz4ltn1tKlGgx2lG6Xn_DBAMZze8o2=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1oT11s448oJUNSQx0GcUJiElHAajxmxhP=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1z9GqzN-nXn_vMlBle_Uf6J2ySTnjS84E=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+      <div class="member"><img src="https://lh3.googleusercontent.com/d/1s5XGVsnFXQPCoBNQ3QaPUBOCONgvgT-1=w600" alt="Team Càsa"><span>← nome/ruolo</span></div>
+    </div>
+  </div>
+  <div class="final"><h2>Scopri il valore della tua casa col nuovo PGT</h2><a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Inizia il test<small>5 domande · 60 secondi</small></a></div>
+</section>
+
+<div class="note">Fine mockup. Colori brand: grigio scuro #212529 + oro #D6AD60/#B68D40. Font: Cormorant Garamond (titoli) + Inter. Le 4 foto del team sono caricate dai link Drive forniti.</div>
+
+</body>
+</html>
