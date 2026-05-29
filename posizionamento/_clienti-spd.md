@@ -19,6 +19,13 @@ Dove c'è un `.md` nel Drive (Colantoni, Càsa) ho i dati completi.
 | Càsa Immobiliare (Varese) | `casa-immobiliare-varese.md` | ✅ completo (2° pilota) |
 | ME Immobiliare (Lariano/Velletri) | `me-immobiliare.md` | ✅ bozza (da intake reale) |
 | CasaTua Immobiliare (Roma Est) | `casatua-immobiliare.md` | ✅ bozza (angolo venditori) |
+| Best Immobiliare (Roma Montesacro) | `best-immobiliare-baglioni.md` | ✅ bozza (tono sobrio/dati) |
+| Campisano Estates (Luxury Roma) | `campisano-estates.md` | ✅ bozza (lusso/discrezione) |
+
+**Pendenti con dati**: Giulia Trapella (`materiale Luca.docx`, file grande — da
+leggere) · Filomena Sibona (solo shortcut esterno: serve il materiale in formato
+leggibile). Senza dati: Migliore, Priola, Caricasa, Durante, Russo, Lappo,
+Pellegrini, Capano/ICA, Jeuck (intake da reperire nelle rispettive cartelle).
 
 ## Cartelle Drive create (in "Sistema dominante digitale")
 Sottocartelle per cliente create con successo (ho permessi di scrittura). In ME
