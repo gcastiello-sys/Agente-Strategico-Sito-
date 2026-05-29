@@ -15,11 +15,17 @@ Strategico. È divisa in due parti:
 │   ├── coach-script-vendita.md   (script telefonici/vendita immobiliare)
 │   ├── architetto-formazione.md  (academy, bootcamp, workshop, moduli)
 │   ├── funnel-lead.md            (lead generation, funnel, email nurturing)
-│   └── analista-strategico.md    (analisi performance + report strategici)
+│   ├── analista-strategico.md    (analisi performance + report strategici)
+│   └── stratega-posizionamento.md (posizionamento + angoli clienti Sistema Presenza Dominante)
+├── templates/  ← modelli riutilizzabili
+│   └── scheda-posizionamento.md  (intake per stratega-posizionamento)
 └── skills/     ← le SKILL: procedure precise che richiami quando servono
     └── nuovo-coach/
         └── SKILL.md
 ```
+
+Output operativi: i posizionamenti dei clienti vivono in `posizionamento/`
+(tracker in `posizionamento/_clienti-spd.md`).
 
 I primi due agenti lavorano sul **sito**; gli altri sei sono i collaboratori di
 **business** (marketing, vendita, formazione) che leggono la scheda di contesto
