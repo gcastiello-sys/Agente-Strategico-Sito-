@@ -1,36 +1,54 @@
-# Clienti Sistema Presenza Dominante — tracker posizionamento
+# Clienti Sistema Presenza Dominante — tracker & quadro dati
 
-> Fonte: foglio "VENDITE ROMA APRILE 2026" (Drive). Elenco di chi ha acquistato
-> il **Sistema Presenza Dominante (SPD)**. Stato = avanzamento del pacchetto
-> posizionamento+angoli (questo lavoro). "Mat." = materiale già consegnato dal
-> team secondo il foglio vendite.
+> Fonti: foglio "VENDITE ROMA APRILE 2026" + etichetta Gmail "Sistema dominante
+> digitale" + Drive. Stato = avanzamento del pacchetto posizionamento+angoli.
+> **Dati** = dove si trova l'intake del cliente (per produrre il pacchetto).
 
-| # | Cliente | Agenzia | Città/zona | Coach | Mat. | Posizionamento (qui) |
-|---|---------|---------|-----------|-------|------|----------------------|
-| 1 | Carla Colantoni | Colantoni Immobiliare | Ostia / X Municipio (Roma) | Della Rocca | sì | ✅ PILOTA → `colantoni-immobiliare.md` |
-| 2 | Francesco Migliore | A9 Immobiliare | — | Della Rocca | no | ⬜ da fare |
-| 3 | Daniela Priola | Hub Immobiliare | — | Della Rocca | no | ⬜ da fare |
-| 4 | Caricasa | Elle Erre Immobiliare | — | Sorrentino | no | ⬜ da fare |
-| 5 | Anna Capano | Ica Immobiliare | — | Salomone | sì | ⬜ da fare |
-| 6 | Gabriele Baglioni | Agenzia Best | — | Romano | sì | ⬜ da fare |
-| 7 | Arcieri Francesco | — | — | Castiello | sospeso | ⏸ sospeso |
-| 8 | Alessandra Pellegrini | — | — | Romano | sì | ⬜ da fare |
-| 9 | Marco Cetrancolo | Me Immobiliare | — | Campisano | no | ⬜ da fare |
-| 10 | Natascha Jeuck | iemme immobiliare | — | Campisano | no | ⬜ da fare |
-| 11 | Ciro D'Onofrio | (Professione Casa, Portici NA) | Vesuviano | Castiello | sì | ⬜ da fare |
-| 12 | Achille Di Petrillo | deg immobiliare | — | Sibona | sì | ⬜ da fare |
-| 13 | Claudio Durante | Gruppo Casa | — | (nuovo) | no | ⬜ da fare |
-| 14 | Rosario Russo | — | — | Romano | no | ⬜ da fare |
-| 15 | Cheti Lappo | Lappo Immobiliare | — | Filomena | no | ⬜ da fare |
-| — | Giuseppe Mancusi | — | — | (follow up) | — | ⬜ in follow up |
-| — | Antonello Di Rita | — | — | (follow up) | — | ⬜ in follow up |
+## ⚠️ Nota sui dati (importante)
+Molti clienti hanno inviato il questionario di posizionamento **come allegato
+email** (`.pptx` / `.docx`): da questo ambiente **non posso aprire gli allegati
+Gmail**. Per quei clienti ho solo anagrafica + brand dal corpo email.
+**Per sbloccarli:** copia gli allegati nel **Drive** (cartella sistema dominante)
+oppure incollami il contenuto — poi genero il pacchetto completo.
+Dove c'è un `.md` nel Drive (Colantoni, Càsa) ho i dati completi.
 
-## Come procedere per ciascuno
-1. Compila la **Scheda Posizionamento** (`.claude/templates/scheda-posizionamento.md`)
-   con i dati del cliente (molti hanno già un intake nel Drive).
-2. Lancia l'agente `stratega-posizionamento` → genera `posizionamento/<cliente>.md`.
-3. Passa la parte landing/brand/social al team creativo; passa angoli+ads
-   all'agente e la chiamata a `coach-script-vendita`.
+## Pacchetti già prodotti (questo lavoro)
+| Cliente | File | Stato |
+|---------|------|-------|
+| Colantoni Immobiliare (Ostia) | `colantoni-immobiliare.md` | ✅ completo + checklist validazione |
+| Càsa Immobiliare (Varese) | `casa-immobiliare-varese.md` | ✅ completo (2° pilota) |
 
-> Priorità suggerita: prima i clienti con Mat. = "no" (non hanno ancora ricevuto
-> nulla), perché lì il pacchetto posizionamento sblocca tutto il resto.
+## Clienti SPD — quadro completo
+| Cliente | Agenzia | Coach | Dati disponibili | Stato |
+|---------|---------|-------|------------------|-------|
+| Carla Colantoni | Colantoni Immobiliare (Ostia) | Della Rocca | ✅ Drive .md (completo) | ✅ fatto |
+| Marco Cetrancolo | Me Immobiliare (Lariano RM) | Campisano | 📎 pptx in Gmail + anagrafica | ⬜ serve allegato |
+| Achille Di Petrillo | CasaTua Immobiliare (Roma, z. Cino del Duca) | Sibona | 📎 docx in Gmail + brand (grigio/arancio, FIAIP, Solo Affitti Roma20) | ⬜ serve allegato |
+| Natascha Jeuck | iemme Europa | Campisano | 📎 allegato in Gmail | ⬜ serve allegato |
+| Anna Capano | Ica Immobiliare (Bologna) | Salomone | 📧 materiale in Gmail | ⬜ da estrarre |
+| Gabriele Baglioni | Agenzia Best | Romano | 📧 relazione in Gmail | ⬜ da estrarre |
+| Alessandra Pellegrini | — | Romano | 📧 documentazione in Gmail | ⬜ da estrarre |
+| Francesco Migliore | A9 Immobiliare | Della Rocca | ❔ da reperire | ⬜ dati mancanti |
+| Daniela Priola | Hub Immobiliare | Della Rocca | ❔ da reperire | ⬜ dati mancanti |
+| Caricasa | Elle Erre Immobiliare | Sorrentino | ❔ da reperire | ⬜ dati mancanti |
+| Ciro D'Onofrio | Professione Casa (Portici NA) | Castiello | 📄 sintesi nell'offerta ("certifica prima, vende dopo") | 🟡 dati parziali |
+| Claudio Durante | Gruppo Casa | (nuovo) | ❔ da reperire | ⬜ dati mancanti |
+| Rosario Russo | — | Romano | ❔ da reperire | ⬜ dati mancanti |
+| Cheti Lappo | Lappo Immobiliare | Filomena | ❔ da reperire | ⬜ dati mancanti |
+| Arcieri Francesco | — | Castiello | — (pagamento sospeso) | ⏸ sospeso |
+| Giuseppe Mancusi | — | follow up | ❔ | ⬜ follow up |
+| Antonello Di Rita | — | follow up | 📧 manca materiale foto | ⬜ follow up |
+
+Legenda: ✅ pronto · 🟡 parziale · ⬜ da fare · ⏸ sospeso ·
+📎 allegato Gmail (non apribile da qui) · 📧 testo in Gmail · ❔ dati da reperire.
+
+## Processo per ciascuno
+1. Recupera l'intake (Drive .md / allegato copiato in Drive / testo email).
+2. `stratega-posizionamento` → genera `posizionamento/<cliente>.md`.
+3. Validazione col cliente (checklist 4-5 punti) → "pronto a partire".
+4. Angoli+ads all'agente, landing/brand/social al team, chiamata a
+   `coach-script-vendita`.
+
+> Priorità: chi ha "Mat. = no" nel foglio vendite + chi ha già mandato l'intake
+> (Cetrancolo, Di Petrillo, Jeuck, Capano, Baglioni, Pellegrini) — basta
+> sbloccare gli allegati.

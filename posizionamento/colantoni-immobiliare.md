@@ -119,3 +119,19 @@ Struttura: Hook → Problema → Meccanismo → Prova → CTA.
 - I 4 pilastri esatti del metodo (nome e contenuto).
 - Un caso reale / numero da usare come prova nelle ads.
 - Conferma zone prioritarie e target (cambio casa vs eredità).
+
+## 10. VALIDAZIONE — proposta "4 Pilastri" da confermare con Carla/Luciano
+Proposta pronta: basta una spunta sì/no su ognuno (poi è pubblicabile).
+1. ☐ **Check Documentale Pre-Vendita** — architetto + notaio verificano
+   planimetria, conformità e provenienza *prima* dell'annuncio.
+2. ☐ **Valutazione Reale di Mercato** — prezzo per vendere, non per prendere il
+   mandato (niente sovrastima).
+3. ☐ **Marketing dell'Immobile** — annuncio strutturato, foto, canali
+   (Google/FB/IG) + prequalifica acquirenti.
+4. ☐ **Assistenza fino al Rogito** — gestione trattativa e chiusura "da buon
+   padre di famiglia".
+- ☐ Confermi il claim guida **"Prima i documenti, poi l'annuncio"**?
+- ☐ Mi dai **1 caso reale** (es. "trattativa salvata perché i documenti erano a
+   posto" / "casa ferma altrove venduta in X giorni") da usare come prova ads?
+- ☐ Target prioritario: **cambio casa**, **eredità**, o entrambi?
+> Appena ho queste spunte, Colantoni passa da "pilota" a "pronto a partire".
