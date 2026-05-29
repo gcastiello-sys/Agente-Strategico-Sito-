@@ -5,6 +5,10 @@
 > Ricavato dai materiali aziendali sul Drive (brand book, strategia marketing,
 > listino prodotti, script di vendita, report contenuti). Aggiornalo quando il
 > business cambia.
+>
+> 📎 **Documenti cardine completi**: vedi `materiali/` (brandbook, brand-brief,
+> listino-prodotti, strategia-marketing, libreria-script-vendita). Questa scheda
+> è la sintesi operativa "fonte di verità".
 
 ## Cos'è
 Ecosistema italiano di **formazione e coaching per agenti immobiliari**:
@@ -20,6 +24,24 @@ diretto. Si abbattono le paure dell'agente invece di aggiungere compiti.
 - Ganci vincenti: **"Smetti di…"**, **"Non serve essere…"**, **"Il problema non
   è…"**, "Non vendere", pattern controintuitivi.
 - Niente "trucchi magici": togliere pressione, non aggiungerla.
+
+## Identità di marca (BrandBook / Brand Brief)
+- **Payoff**: "Costruiamo agenti immobiliari forti fuori e dentro."
+- **Posizionamento**: prima piattaforma in Italia che integra metodo scientifico
+  di business + **benessere misurabile** (USP "Benessere scientifico" legato ai KPI).
+- **Promessa doppia**: esterna (fatturato/solidità, 0 → 1M€) + interna (meno
+  ansia/caos, più focus/energia). "Sistema batte caos".
+- **Metodo 6A®** — 6 aree: Benessere · Produttività · Acquisizione · Vendita ·
+  Marketing · Mindset. Ogni area × livello ha obiettivi, skill, KPI, strumenti.
+- **Livelli (grattacielo)**: Fondamenta → Primo Piano → Cuore → Vetta → Skyline.
+- **Lead magnet ammiraglia**: PICASSO (Business Plan in 1 pagina).
+- **Cadenza editoriale**: Mindset Monday + Marketing Friday.
+- **North Star**: % membri che avanzano di 1 livello in 6 mesi.
+- **Palette ufficiale**: Blu `#122836`, Oro `#c8b487`, Borgogna `#4b1230`; font
+  logo **Bianco Serif**, testi **Inter**. (Il sito usa oro `#C9A84C` + Cormorant
+  Garamond: piccola discrepanza da valutare.)
+- **Tono brand**: chiaro, concreto, **non motivazionale astratto**, orientato
+  all'azione e alla misurabilità ("numeri, non complimenti").
 
 ## I 3 pilastri di contenuto
 1. **Demistificazione tecnologica / AI**: l'AI è uno strumento, non serve essere
