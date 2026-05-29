@@ -19,7 +19,12 @@ alternativa, rendi pubbliche le immagini su Drive e segnala i link per inserirle
 nell'HTML.
 
 ## Stato
-- [x] colantoni.html (3 versioni) — modello approvato
-- [ ] casatua.html · me-immobiliare.html · best-baglioni.html ·
-      casa-varese.html · campisano-estates.html
-- [ ] trapella e clienti mancanti (dopo intake)
+- [x] colantoni.html (placeholder)
+- [x] casa-varese.html (foto team reali)
+- [x] casatua.html (logo + foto sede reali)
+- [x] trapella-elle-erre.html (ritratto + logo reali)
+- [x] me-immobiliare.html (logo + 3 recensioni reali; team placeholder)
+- [x] best-baglioni.html (placeholder, tono sobrio)
+- [x] campisano-estates.html (placeholder, luxury)
+
+Foto mancanti → placeholder, da aggiungere quando disponibili.
