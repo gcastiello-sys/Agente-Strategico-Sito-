@@ -68,3 +68,9 @@ Legenda: ✅ pronto · 🟡 parziale · ⬜ da fare · ⏸ sospeso ·
 > Priorità: chi ha "Mat. = no" nel foglio vendite + chi ha già mandato l'intake
 > (Cetrancolo, Di Petrillo, Jeuck, Capano, Baglioni, Pellegrini) — basta
 > sbloccare gli allegati.
+
+## PDF di posizionamento (problema-first) — Fase 1 COMPLETA
+PDF generati per: Colantoni, CasaTua, ME, Càsa Varese, Trapella, Best/Baglioni, Campisano.
+Ognuno = Google Doc "Proposta Posizionamento ..." nella cartella Drive del cliente
+(esportabile in PDF). Struttura PAS: Problema → Agitazione → Punto di svolta → Soluzione/Metodo → Prova → CTA quiz.
+Fase 2 (dopo OK cliente): landing HTML via skill `landing-cliente` o costruzione diretta.
