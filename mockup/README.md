@@ -28,3 +28,14 @@ nell'HTML.
 - [x] campisano-estates.html (placeholder, luxury)
 
 Foto mancanti → placeholder, da aggiungere quando disponibili.
+
+## Landing long-form (singola, stile GHL)
+Oltre ai mockup "3 versioni", per alcuni clienti con posizionamento già deciso
+c'è una **landing singola estesa** (hero problema-first → agitazione → metodo a
+step → garanzia/prove → FAQ → CTA quiz):
+- [x] `mancusi-cerchio-ristretto.html` — Studio Centro Storico / Giuseppe Mancusi
+  (Salerno + Costiera, pregio). Metodo Cerchio Ristretto, 5 fasi. Placeholder
+  logo/foto. Palette blu #143b5c + oro #c19a4e (da allineare al brand).
+- [x] `trapella-elle-erre-landing.html` — Elle Erre / Giulia Trapella. Angolo
+  niche immobili ipotecati/pignoramento. Foto+logo reali da Drive. (Resta anche
+  `trapella-elle-erre.html` con le 3 varianti A/B/C.)

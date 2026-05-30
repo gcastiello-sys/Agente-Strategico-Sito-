@@ -21,6 +21,8 @@ Dove c'è un `.md` nel Drive (Colantoni, Càsa) ho i dati completi.
 | CasaTua Immobiliare (Roma Est) | `casatua-immobiliare.md` | ✅ bozza (angolo venditori) |
 | Best Immobiliare (Roma Montesacro) | `best-immobiliare-baglioni.md` | ✅ bozza (tono sobrio/dati) |
 | Campisano Estates (Luxury Roma) | `campisano-estates.md` | ✅ bozza (lusso/discrezione) |
+| Studio Centro Storico (Salerno+Costiera) | `mancusi-studio-centro-storico.md` | ✅ completo (intake reale) + landing HTML |
+| Elle Erre / Trapella (immobili ipotecati) | `trapella-elle-erre.md` | ✅ bozza + landing HTML long-form |
 
 **Pendenti con dati**: Giulia Trapella (`materiale Luca.docx`, file grande — da
 leggere) · Filomena Sibona (solo shortcut esterno: serve il materiale in formato
@@ -52,7 +54,7 @@ oppure dimmi di copiarli.
 | Rosario Russo | — | Romano | ❔ da reperire | ⬜ dati mancanti |
 | Cheti Lappo | Lappo Immobiliare | Filomena | ❔ da reperire | ⬜ dati mancanti |
 | Arcieri Francesco | — | Castiello | — (pagamento sospeso) | ⏸ sospeso |
-| Giuseppe Mancusi | — | follow up | ❔ | ⬜ follow up |
+| Giuseppe Mancusi | Studio Centro Storico (Salerno) | follow up | ✅ Drive .docx (intake completo: Cerchio Ristretto) | ✅ fatto + landing |
 | Antonello Di Rita | — | follow up | 📧 manca materiale foto | ⬜ follow up |
 
 Legenda: ✅ pronto · 🟡 parziale · ⬜ da fare · ⏸ sospeso ·
