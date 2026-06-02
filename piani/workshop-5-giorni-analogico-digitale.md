@@ -152,6 +152,13 @@ flowchart LR
 
 ## 6. Playbook di vendita — l'offerta €4.000 (12 Masterclass + workshop avvio)
 
+### ⏱️ Aggancio temporale (cruciale)
+Le **12 Masterclass partono mercoledì 18 giugno** (ogni mercoledì 14:30-16:30 →
+30 settembre 2026). Il workshop **15-19 giugno** è quindi la **rampa di lancio
+diretta**: chiudi il workshop e tre giorni dopo (MC1, 18 giu, "Mindset Digitale
+Avanzato" — Giuseppe) si parte. Usa questa contiguità come urgenza **vera**:
+"la macchina la accendiamo mercoledì, non a settembre".
+
 ### Quando lanciarla
 - **Semina dal Giorno 1**: a fine di ogni giornata, 1 frase che anticipa
   ("questo è il primo strato; nelle Masterclass lo costruiamo davvero").
@@ -161,19 +168,50 @@ flowchart LR
 
 ### Il framing che chiude (la frase-chiave)
 > "In 5 giorni ti ho dato la **mappa**: sai *cosa* serve. Ma una mappa non costruisce
-> la macchina. Le **12 Masterclass** + il **workshop di avvio in aula** sono dove
-> la macchina la costruiamo **insieme, pezzo per pezzo**, sul tuo mercato."
+> la macchina. Le **12 Masterclass** sono dove la macchina la costruiamo **insieme,
+> pezzo per pezzo**, sul tuo mercato — a partire da mercoledì."
+>
+> Chiusura forte (ripresa dal deck ufficiale): *"Questo workshop è stata l'apertura
+> del cantiere. Le 12 Masterclass sono il cantiere vero. Cosa vuoi che sia successo
+> tra 12 settimane?"*
 
-### Lo stack del valore (da mostrare a schermo, sommato)
-| Componente | Cosa | Valore percepito |
-|-----------|------|------------------|
-| 12 Masterclass (Zoom, 2h l'una) | Digitale + Analogico, passo-passo | €4.000 |
-| Workshop di avvio (3 gg in aula) | Costruzione guidata del sistema | €1.500+ |
-| Materiali, template, registrazioni | Riusabili | €— |
-| **Investimento oggi** | | **€4.000** |
+### Il programma reale (da `Offerta_12Masterclass_Aula` — usa QUESTI titoli)
+"Le 12 Masterclass — il sistema operativo dell'Agente Strategico Digitale."
+12 settimane, ogni mercoledì 14:30-16:30, live + registrazioni a vita. 4 fasi:
 
-> Il valore dichiarato deve essere **maggiore** del prezzo. Mostra prima la somma,
-> poi il prezzo unico. (Allinea i numeri con l'offerta SPD esistente.)
+| MC | Data | Titolo | Coach | Fase |
+|----|------|--------|-------|------|
+| 1 | 18 giu | Mindset Digitale Avanzato | Giuseppe | 🟦 Fondamenta |
+| 2 | 25 giu | Identità e Posizionamento | Della Rocca | 🟦 Fondamenta |
+| 3 | 2 lug | Acquisizione Sistematica | Campisano | 🟥 Analogico |
+| 4 | 9 lug | Gestione delle Obiezioni | Antonella | 🟥 Analogico |
+| 5 | 16 lug | Gestione Emozioni e Performance | Vincenzo | 🟥 Analogico |
+| 6 | 23 lug | Il Tuo Ecosistema Digitale | Salomone | 🟩 Digitale |
+| 7 | 30 lug | Social Strategico | Salomone | 🟩 Digitale |
+| 8 | 2 set | Lead Generation Online | Giuseppe | 🟩 Digitale |
+| 9 | 9 set | AI per l'Agente Immobiliare | Giuseppe | 🟩 Digitale |
+| 10 | 16 set | Analogico + Digitale Integrati | Vincenzo + Giuseppe | 🟪 Integrazione |
+| 11 | 23 set | Traccia, Misura, Migliora | Antonella | 🟪 Integrazione |
+| 12 | 30 set | La Tua Torre Strategica | Romano + Castiello | 🟪 Integrazione |
+
+> Nota: il workshop dei 5 giorni è il "trailer" di questo percorso — ogni giorno
+> del workshop anticipa una fase delle MC (Fondamenta→G1-2, Analogico→Antonella,
+> Digitale→G2-4, Integrazione→G5).
+
+### I 3 prezzi reali (da mostrare come "facciamo i conti insieme")
+| Opzione | Cosa | Prezzo |
+|---------|------|--------|
+| **1 · Solo 12 Masterclass** ★ consigliata come entry | Programma 12 settimane + registrazioni + workbook + template + gruppo | **€3.999** (unico) o **6× €599** |
+| **2 · Piano Pro** (la "scelta smart") | 12 MC **incluse** + Community 12 mesi + call 2×/sett + Academy/Mastermind + **24 coaching 1-1** | **€799/mese × 12** |
+| **3 · Community Elite** | Tutto il Pro + 40 coaching + Lead Action + Bootcamp/Meet-up + Pit Stop | **€999/mese** |
+
+> Mossa di chiusura del deck esistente: "Con **€200 in più al mese** (Pro) hai
+> TUTTO e le Masterclass **non le paghi a parte**." Mostra prima €3.999, poi il
+> Pro come upgrade ovvio.
+>
+> ⚠️ **Da allineare col DG**: tu parlavi di *"12 MC + workshop 3 gg in aula = €4.000"*;
+> l'offerta ufficiale a Drive è *"12 MC = €3.999"* (con il bootcamp 3 gg come
+> front-end separato). Decidiamo quale dei due è il prodotto del Giorno 5.
 
 ### Struttura del pitch (beat per beat)
 1. **Recap della trasformazione** — "ecco la macchina completa" (mostra il diagramma).
@@ -206,9 +244,10 @@ flowchart LR
 - [ ] **Giuseppe** — validare l'arco e i 2-3 **casi reali** per G5 (interviste/video).
 - [ ] **Antonella** — contenuti dei 4 blocchi analogici (centri d'influenza, obiezioni, liste).
 - [ ] **Vincenzo** — i 3 momenti mindset (G1/G3/G5) + i 2 confronti visivi (pizza, Luna Rossa).
-- [ ] **regista** — recuperare la cartella Drive **Possetto/D'Amore** = scaletta reale 12 MC (serve per il pitch G5).
+- [x] **regista** — scaletta reale 12 MC trovata (`Offerta_12Masterclass_Aula`) e integrata (§6).
 - [ ] **keynote-evento** — trasformare questo piano in **outline slide** (poi Claude Design).
-- [ ] **DG** — decidere prezzo/bonus/scadenza iscrizione dell'offerta €4.000.
+- [ ] **DG** — decidere il prodotto/prezzo del Giorno 5: **12 MC €3.999** (offerta ufficiale)
+      vs **12 MC + workshop 3 gg = €4.000** (come da tuo brief). + bonus/scadenza iscrizione.
 
 ---
 *Prossimo step consigliato: recupero scaletta 12 Masterclass → poi `keynote-evento`
