@@ -199,19 +199,24 @@ Avanzato" — Giuseppe) si parte. Usa questa contiguità come urgenza **vera**:
 > Digitale→G2-4, Integrazione→G5).
 
 ### I 3 prezzi reali (da mostrare come "facciamo i conti insieme")
+**IL PRODOTTO (deciso):** *12 Masterclass + Workshop di 3 giorni dal vivo* per
+**implementare la mappa** ed uscire con **il tuo sistema già mappato**.
+Prezzo: **€3.999** in **pagamento unico** oppure **6 rate da €599**.
+
 | Opzione | Cosa | Prezzo |
 |---------|------|--------|
-| **1 · Solo 12 Masterclass** ★ consigliata come entry | Programma 12 settimane + registrazioni + workbook + template + gruppo | **€3.999** (unico) o **6× €599** |
-| **2 · Piano Pro** (la "scelta smart") | 12 MC **incluse** + Community 12 mesi + call 2×/sett + Academy/Mastermind + **24 coaching 1-1** | **€799/mese × 12** |
+| **1 · 12 Masterclass + Workshop 3 gg dal vivo** ★ | 12 settimane live + **3 giorni in aula di implementazione** + registrazioni + workbook + template + gruppo | **€3.999** unico · o **6× €599** |
+| **2 · Piano Pro** (la "scelta smart") | Tutto il programma **incluso** + Community 12 mesi + call 2×/sett + Academy/Mastermind + **24 coaching 1-1** | **€799/mese × 12** |
 | **3 · Community Elite** | Tutto il Pro + 40 coaching + Lead Action + Bootcamp/Meet-up + Pit Stop | **€999/mese** |
 
-> Mossa di chiusura del deck esistente: "Con **€200 in più al mese** (Pro) hai
-> TUTTO e le Masterclass **non le paghi a parte**." Mostra prima €3.999, poi il
-> Pro come upgrade ovvio.
+> **L'asso del workshop 3 giorni:** non esci con appunti, esci con il sistema
+> **costruito**. È la differenza tra "so cosa fare" e "l'ho già fatto". Mettilo al
+> centro: le 12 MC danno il metodo settimana per settimana, i 3 giorni dal vivo lo
+> **incastrano** sul tuo mercato.
 >
-> ⚠️ **Da allineare col DG**: tu parlavi di *"12 MC + workshop 3 gg in aula = €4.000"*;
-> l'offerta ufficiale a Drive è *"12 MC = €3.999"* (con il bootcamp 3 gg come
-> front-end separato). Decidiamo quale dei due è il prodotto del Giorno 5.
+> Mossa di upgrade (dal deck): "Con **€200 in più al mese** (Piano Pro) hai TUTTO
+> e le Masterclass **non le paghi a parte**." Mostra prima €3.999, poi il Pro come
+> scelta ovvia per chi vuole anche community + coaching.
 
 ### Struttura del pitch (beat per beat)
 1. **Recap della trasformazione** — "ecco la macchina completa" (mostra il diagramma).
@@ -245,9 +250,10 @@ Avanzato" — Giuseppe) si parte. Usa questa contiguità come urgenza **vera**:
 - [ ] **Antonella** — contenuti dei 4 blocchi analogici (centri d'influenza, obiezioni, liste).
 - [ ] **Vincenzo** — i 3 momenti mindset (G1/G3/G5) + i 2 confronti visivi (pizza, Luna Rossa).
 - [x] **regista** — scaletta reale 12 MC trovata (`Offerta_12Masterclass_Aula`) e integrata (§6).
-- [ ] **keynote-evento** — trasformare questo piano in **outline slide** (poi Claude Design).
-- [ ] **DG** — decidere il prodotto/prezzo del Giorno 5: **12 MC €3.999** (offerta ufficiale)
-      vs **12 MC + workshop 3 gg = €4.000** (come da tuo brief). + bonus/scadenza iscrizione.
+- [x] **DG** — prodotto/prezzo G5 deciso: **12 MC + workshop 3 gg dal vivo = €3.999** (unico o 6×599).
+- [ ] **DG** — definire eventuali **bonus** e la **scadenza iscrizione** (scarsità onesta).
+- [ ] **keynote-evento** — trasformare piano + contenuti dettaglio in **outline slide** (poi Claude Design).
+- [ ] **contenuti dettaglio** — vedi `workshop-contenuti-dettaglio.md` (beat per relatore).
 
 ---
 *Prossimo step consigliato: recupero scaletta 12 Masterclass → poi `keynote-evento`
