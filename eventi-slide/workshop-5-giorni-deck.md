@@ -52,13 +52,10 @@ Bullet:
 Visual: 5 caselle che si spuntano → un forziere che si apre
 Relatore: Giuseppe — "Non si compra: si guadagna. Bastano 5 check-in."
 
-> TEMPLATE "FINE GIORNATA" (×5) — inserire una slide di chiusura alla fine di ogni
-> giorno (dopo il "Ponte"), stesso layout:
-> Titolo: Hai sbloccato il Bonus [N]: [nome del kit]
-> Bullet: Posta il compito sul canale WhatsApp · spunti [N]/5 verso la Cassaforte
-> Visual: la scatola [N] che si apre + barra 1/5…5/5
-> Bonus per giorno: G1 Test di Consapevolezza · G2 La Mappa della Macchina ·
-> G3 Kit Contenuti che Vendono · G4 Prompt Pack AI · G5 Script Prima Chiamata + Obiezioni
+> NOTA: le slide "Bonus N sbloccato" sono esplicitate a fine di ogni giorno
+> (SLIDE 25A, 46A, 68A, 84A, 98A), ognuna con barra di avanzamento 1/5…5/5 e il
+> bonus del giorno (G1 Test di Consapevolezza · G2 La Mappa della Macchina ·
+> G3 Kit Contenuti che Vendono · G4 Prompt Pack AI · G5 Script Prima Chiamata + Obiezioni).
 
 **SLIDE 5 — FRASE**
 Titolo: Prima di dirti dove andare, ti mostro dove sei.
@@ -186,6 +183,14 @@ Bullet:
 Visual: foglio compito
 Relatore: Giuseppe
 
+**SLIDE 25A — BONUS 1 SBLOCCATO**
+Titolo: Hai sbloccato il Bonus 1: Test di Consapevolezza Digitale
+Bullet:
+- Posta il compito di oggi sul canale WhatsApp
+- Spunti 1/5 verso La Cassaforte (399 €, in regalo)
+Visual: scatola-regalo 1 che si apre + barra 1/5
+Relatore: Giuseppe — "Una casella spuntata. Ne mancano quattro."
+
 **SLIDE 26 — PONTE**
 Titolo: Oggi ti sei visto. Domani ti do la mappa.
 Visual: mappa piegata che inizia ad aprirsi
@@ -306,6 +311,14 @@ Bullet:
 - 3 centri d'influenza da riattivare
 Visual: foglio compito
 Relatore: Giuseppe
+
+**SLIDE 46A — BONUS 2 SBLOCCATO**
+Titolo: Hai sbloccato il Bonus 2: La Mappa della Macchina
+Bullet:
+- Posta il compito di oggi sul canale WhatsApp
+- Spunti 2/5 verso La Cassaforte (399 €, in regalo)
+Visual: scatola-regalo 2 che si apre + barra 2/5
+Relatore: Giuseppe — "Due su cinque. Stai costruendo."
 
 **SLIDE 47 — PONTE**
 Titolo: Hai la mappa. Domani: cosa pubblicare, esattamente.
@@ -446,6 +459,14 @@ Bullet: 60 secondi, telefono, un solo concetto. Fatto è meglio di perfetto.
 Visual: smartphone con REC
 Relatore: Giuseppe — la prima vittoria vera
 
+**SLIDE 68A — BONUS 3 SBLOCCATO**
+Titolo: Hai sbloccato il Bonus 3: Kit Contenuti che Vendono
+Bullet:
+- Posta il compito di oggi sul canale WhatsApp
+- Spunti 3/5 verso La Cassaforte (399 €, in regalo)
+Visual: scatola-regalo 3 che si apre + barra 3/5
+Relatore: Giuseppe — "Sei a metà strada. Non mollare ora."
+
 **SLIDE 69 — PONTE**
 Titolo: Hai il carburante. Domani: chi lo gestisce per te.
 Visual: ingranaggio + scintilla
@@ -544,6 +565,14 @@ Bullet: Una risposta automatica che qualifica un lead
 Visual: interruttore "ON"
 Relatore: Giuseppe
 
+**SLIDE 84A — BONUS 4 SBLOCCATO**
+Titolo: Hai sbloccato il Bonus 4: Prompt Pack AI
+Bullet:
+- Posta il compito di oggi sul canale WhatsApp
+- Spunti 4/5 verso La Cassaforte (399 €, in regalo)
+Visual: scatola-regalo 4 che si apre + barra 4/5
+Relatore: Giuseppe — "Quattro su cinque. Domani chiudi il set."
+
 **SLIDE 85 — PONTE**
 Titolo: Hai tutti i pezzi. Domani li incastriamo — e ti mostro chi l'ha già fatto.
 Visual: pezzi che si uniscono
@@ -626,6 +655,14 @@ Titolo: Settimana per settimana, esci con qualcosa di fatto
 Bullet: Fondamenta → Analogico → Digitale → Integrazione
 Visual: 4 fasi che salgono come una torre
 Relatore: Giuseppe
+
+**SLIDE 98A — BONUS 5 SBLOCCATO (set completo)**
+Titolo: Hai sbloccato il Bonus 5: Script Prima Chiamata + Obiezioni
+Bullet:
+- Hai completato tutti e 5 i giorni → 5/5
+- La Cassaforte (399 €) è ufficialmente tua, in regalo
+Visual: barra 5/5 piena + forziere aperto, le 5 scatole complete
+Relatore: Giuseppe — "Te la sei guadagnata. E ora ti mostro tutto il resto."
 
 **SLIDE 99 — LO STACK**
 Titolo: Tutto quello che ti porti a casa
