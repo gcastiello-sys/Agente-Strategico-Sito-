@@ -36,6 +36,30 @@ Bullet:
 Visual: freccia prima → dopo
 Relatore: Giuseppe
 
+**SLIDE 4A — COSA SBLOCCHI VENENDO TUTTI E 5 I GIORNI**
+Titolo: Ogni giorno sblocchi un bonus
+Bullet:
+- 5 kit digitali, uno al giorno (resta fino alla fine per averlo)
+- E un premio finale per chi c'è tutti e 5
+Visual: 5 scatole-regalo in fila + una più grande alla fine
+Relatore: Giuseppe — "Non è ascolto: è roba che ti porti a casa ogni giorno."
+
+**SLIDE 4B — COME GUADAGNI LA CASSAFORTE**
+Titolo: La Cassaforte: vale 399 €, te la regalo
+Bullet:
+- Posta il compito del giorno sul nostro canale WhatsApp
+- 5 giorni su 5 → la Cassaforte è tua, in regalo
+Visual: 5 caselle che si spuntano → un forziere che si apre
+Relatore: Giuseppe — "Non si compra: si guadagna. Bastano 5 check-in."
+
+> TEMPLATE "FINE GIORNATA" (×5) — inserire una slide di chiusura alla fine di ogni
+> giorno (dopo il "Ponte"), stesso layout:
+> Titolo: Hai sbloccato il Bonus [N]: [nome del kit]
+> Bullet: Posta il compito sul canale WhatsApp · spunti [N]/5 verso la Cassaforte
+> Visual: la scatola [N] che si apre + barra 1/5…5/5
+> Bonus per giorno: G1 Test di Consapevolezza · G2 La Mappa della Macchina ·
+> G3 Kit Contenuti che Vendono · G4 Prompt Pack AI · G5 Script Prima Chiamata + Obiezioni
+
 **SLIDE 5 — FRASE**
 Titolo: Prima di dirti dove andare, ti mostro dove sei.
 Visual: testo gigante
@@ -608,8 +632,9 @@ Titolo: Tutto quello che ti porti a casa
 Bullet:
 - 12 Masterclass live + registrazioni a vita
 - Workshop 3 giorni dal vivo + workbook, template, gruppo
-Visual: stack impilato
-Relatore: Giuseppe
+- + La Cassaforte (valore 399 €) già sbloccata in questi 5 giorni
+Visual: stack impilato, con la Cassaforte già "spuntata"
+Relatore: Giuseppe — "Una parte del valore l'hai già in mano."
 
 **SLIDE 100 — L'INVESTIMENTO**
 Titolo: 3.999 €
@@ -630,11 +655,14 @@ Bullet: L'aula dal vivo ha una capienza · La prima Masterclass è il 18
 Visual: contatore posti + data 18 cerchiata
 Relatore: Giuseppe — scarsità vera
 
-**SLIDE 103 — BONUS**
+**SLIDE 103 — BONUS FAST-ACTION (per chi si iscrive ora)**
 Titolo: Chi decide oggi parte avanti
-Bullet: [bonus: accesso anticipato ai materiali] · [bonus: 1 sessione di posizionamento]
-Visual: regalo
-Relatore: Giuseppe
+Bullet:
+- 1 sessione di posizionamento sul tuo mercato [bonus: conferma valore]
+- Accesso anticipato ai materiali delle Masterclass
+- [bonus: eventuale 3º bonus a tua scelta]
+Visual: regalo "fast-action" (diverso dalla Cassaforte, che è già loro)
+Relatore: Giuseppe — distinguere: la Cassaforte l'hanno guadagnata venendo; QUESTI bonus sono per chi si iscrive entro la finestra
 
 **SLIDE 104 — LE OBIEZIONI**
 Titolo: "Non ho tempo." "Non sono tecnologico." "Ci penso."

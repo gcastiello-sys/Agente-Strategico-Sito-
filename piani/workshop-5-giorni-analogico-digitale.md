@@ -238,14 +238,33 @@ Prezzo: **€3.999** in **pagamento unico** oppure **6 rate da €599**.
 - *"Ci penso."* → "Giusto. Ma decidi **oggi se vuoi la mappa o la macchina**: la
   finestra d'ingresso si chiude [data]."
 
-### Bonus possibili (leve etiche, da decidere)
-- Accesso anticipato alla "Cassaforte" (€399) incluso.
+### Bonus fast-action (per chi si iscrive nella finestra) — slide 103
 - 1 sessione di posizionamento sul tuo mercato.
-- Garanzia "se segui le 12 e non ottieni X, [rimedio]".
+- Accesso anticipato ai materiali delle Masterclass.
+- (Garanzia "il rischio me lo prendo io" → slide 101, da definire.)
+
+---
+
+## 6bis. Architettura bonus di PRESENZA (per venire ai 5 giorni)
+> Solo digitali, costo ~0. Meccanica: **sblocco giornaliero + super-bonus finale**.
+> Materiali prodotti: `manuale/workshop-5-giorni-workbook.pdf` + `manuale/bonus/g1…g5*.pdf`.
+> Operatività: vedi `piani/todo-veicolazione-laura-gabriele.md`.
+
+- **5 bonus giornalieri** (uno a fine di ogni giorno, consegnati su WhatsApp): G1 Test di
+  Consapevolezza · G2 La Mappa della Macchina · G3 Kit Contenuti che Vendono · G4 Prompt Pack AI
+  · G5 Script Prima Chiamata + Obiezioni.
+- **Super-bonus = "La Cassaforte"** (valore dichiarato **€399**, la **regaliamo**). Si **guadagna**
+  postando il **compito svolto sul canale WhatsApp per tutti e 5 i giorni** (passaporto a 5 caselle
+  nel workbook). Doppia funzione: massimizza la presenza fino al Giorno 5 (la vendita) e qualifica
+  i più ingaggiati. Nello stack del Giorno 5 (slide 99) la Cassaforte risulta "già in mano".
+- **Distinzione netta:** bonus di *presenza* (sopra) ≠ bonus *fast-action d'acquisto* (slide 103).
 
 ---
 
 ## 7. Da preparare prima del 15 (checklist owner)
+- [x] **regista** — workbook + 5 bonus PDF generati (`manuale/`), deck aggiornato (sequenza bonus), to-do Laura/Gabriele.
+- [ ] **Gabriele** — canale WhatsApp + download workbook (vedi to-do).
+- [ ] **Laura** — messaggi bonus/Cassaforte + tracking compiti (vedi to-do).
 - [ ] **Giuseppe** — validare l'arco e i 2-3 **casi reali** per G5 (interviste/video).
 - [ ] **Antonella** — contenuti dei 4 blocchi analogici (centri d'influenza, obiezioni, liste).
 - [ ] **Vincenzo** — i 3 momenti mindset (G1/G3/G5) + i 2 confronti visivi (pizza, Luna Rossa).
