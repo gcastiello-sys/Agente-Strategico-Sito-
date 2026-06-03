@@ -1,427 +1,661 @@
-# Workshop 5 Giorni — DECK per Claude Design
-<!-- Stile: Palette Blu #122836 · Oro #C9A84C · Borgogna #4b1230 · Crema #FAF7F1 ·
-Titoli serif elegante + testo Inter · 16:9 · 1 IDEA PER SLIDE, molto spazio bianco.
-Diagrammi pronti in piani/diagrammi/. Tutto in prima persona: l'autore è l'architetto. -->
+# Workshop 5 Giorni — DECK v2 (corposo, consapevolezza-first)
+<!-- Per Claude Design. Usa il TEMPLATE e i COLORI ISTITUZIONALI già impostati: non
+cambiarli. 16:9 · 1 IDEA PER SLIDE · molto visivo · leggerezza + serietà.
+Tutto in prima persona: l'autore è l'architetto. Zero fonti.
+Note "Relatore:" = speaker notes (mai sulla slide). Slot [prova:…]/[bonus:…] = dati reali da inserire.
+Diagrammi pronti in piani/diagrammi/. Ritmo: alterna slide-concetto (visual grande) e slide-frase (solo titolo su sfondo pieno). -->
 
----
-## GIORNO 1 — Il cambio di paradigma
+# ════════ GIORNO 1 — DOVE SEI DAVVERO (Consapevolezza) ════════
+> Oggi NON do soluzioni. Costruisco lo specchio: faccio sentire dove sono e perché.
 
 **SLIDE 1 — COVER**
 Titolo: Dall'analogico al digitale
 Sottotitolo: 5 giorni per costruire la macchina che ti porta venditori
-Bullet:
-- Il sistema che ho costruito in anni sul campo
-- Giorno 1 di 5
-Visual: cover scura, logo, oro su blu
-Relatore: Giuseppe — apertura, energia alta
+Visual: cover istituzionale, titolo grande, molto spazio
+Relatore: Giuseppe — energia calma, "respira: sono 5 giorni che ti cambiano gli occhiali"
 
-**SLIDE 2 — LA PROMESSA**
-Titolo: Da chi insegue, a chi viene scelto
-Bullet:
-- Oggi: rincorri privati uno a uno
-- Tra 5 giorni: hai la mappa di un sistema che lavora per te
-Visual: freccia prima → dopo
-Relatore: Giuseppe — "Questa è la trasformazione che voglio darti."
+**SLIDE 2 — FRASE D'IMPATTO**
+Titolo: Non ti insegno a postare. Ti cambio gli occhiali.
+Visual: solo testo gigante su sfondo pieno
+Relatore: Giuseppe
 
-**SLIDE 3 — LE 3 REGOLE**
+**SLIDE 3 — LE 3 REGOLE D'AULA**
 Titolo: 3 regole, per 5 giorni
 Bullet:
-- Telefono in silenzio: ogni distrazione è un incarico perso
-- Scrivi tutto: la mente che non scrive dimentica
-- Sii scomodo: se ti sembra tutto noto, non stai ascoltando
-Visual: 3 icone
+- Telefono in silenzio
+- Scrivi tutto
+- Sii scomodo
+Visual: 3 icone pulite
+Relatore: Vincenzo — "Se ti sembra tutto noto, non stai ascoltando."
+
+**SLIDE 4 — LA PROMESSA**
+Titolo: Da chi insegue, a chi viene scelto
+Bullet:
+- Oggi: rincorri i privati uno a uno
+- Tra 5 giorni: hai la mappa di un sistema che lavora per te
+Visual: freccia prima → dopo
+Relatore: Giuseppe
+
+**SLIDE 5 — FRASE**
+Titolo: Prima di dirti dove andare, ti mostro dove sei.
+Visual: testo gigante
+Relatore: Giuseppe — apre la fase consapevolezza
+
+**SLIDE 6 — IL MONDO È CAMBIATO**
+Titolo: Una volta c'era solo la margherita
+Visual: pizza margherita semplice, foto grande
 Relatore: Vincenzo
 
-**SLIDE 4 — IL MONDO È CAMBIATO**
-Titolo: Oggi esiste la pizza da 8.000 euro
-Bullet:
-- Una volta c'era solo la margherita
-- Stessa farina. Valore percepito 100 volte tanto
-Visual: confronto margherita vs pizza gourmet
-Relatore: Vincenzo — "È cambiato il posizionamento, non l'impasto."
+**SLIDE 7 — NUMERO GIGANTE**
+Titolo: 8.000 €
+Sottotitolo: oggi esiste anche questa pizza
+Visual: pizza gourmet di lusso, numero enorme
+Relatore: Vincenzo — "Stessa farina. Valore percepito 100 volte tanto."
 
-**SLIDE 5 — L'EVOLUZIONE NON ASPETTA**
-Titolo: Chi è rimasto allo scafo lento, ha perso
-Bullet:
-- Dieci anni fa le barche galleggiavano
-- Oggi volano sull'acqua
-Visual: confronto scafo tradizionale vs barca a foil
+**SLIDE 8 — FRASE**
+Titolo: È cambiato il racconto. Non l'impasto.
+Visual: testo gigante
 Relatore: Vincenzo
 
-**SLIDE 6 — LA TUA BIFORCAZIONE**
-Titolo: Cartello e passaparola: funzionano. Ma vincono?
-Bullet:
-- Sono la tua "margherita"
-- Nel tuo mercato qualcuno sta già facendo la versione gourmet
-Visual: bivio
-Relatore: Giuseppe — "La fai tu, o il tuo concorrente?"
+**SLIDE 9 — L'EVOLUZIONE**
+Titolo: Dieci anni fa le barche galleggiavano
+Bullet: Oggi volano sull'acqua
+Visual: confronto affiancato scafo lento vs barca a foil
+Relatore: Vincenzo
 
-**SLIDE 7 — LA SCALATA**
-Titolo: Cartello → portali → social → ricerca
-Bullet:
-- Ogni gradino ha cambiato chi vince
-- Oggi vince chi viene trovato da chi cerca
-Visual: scalinata a 4 gradini
+**SLIDE 10 — FRASE**
+Titolo: Stesso mare. Vince chi vola.
+Visual: testo gigante
+Relatore: Vincenzo
+
+**SLIDE 11 — IL TUO BIVIO**
+Titolo: Cartello e passaparola funzionano. Ma vincono?
+Visual: bivio: a sinistra cartello "vendesi", a destra uno smartphone con un volto
+Relatore: Giuseppe — "Nel tuo mercato qualcuno fa già la versione gourmet del tuo lavoro."
+
+**SLIDE 12 — LA SCALA DEL MERCATO**
+Titolo: Cartello → Portali → Social → Ricerca
+Bullet: Ogni gradino ha cambiato chi vince
+Visual: scalinata a 4 gradini, una persona in cima
 Relatore: Giuseppe
 
-**SLIDE 8 — LA DIAGNOSI**
-Titolo: Il 60% è invisibile
-Bullet:
-- 60% degli agenti sotto i 60.000 € l'anno
-- 20% abbandona entro 3 anni
-Visual: numeri GIGANTI (60% / 20%)
-Relatore: Giuseppe — "La causa numero uno: sono invisibili dove il mercato guarda."
-
-**SLIDE 9 — IL FALSO MITO**
-Titolo: "Il digitale non funziona" è una bugia
-Bullet:
-- Non funziona l'organico usato come l'analogico
-- Posti, e non succede niente: perché si ferma quando ti fermi
-Visual: post che svanisce
+**SLIDE 13 — DOVE GUARDANO I VENDITORI**
+Titolo: Il tuo venditore parte da una ricerca
+Bullet: [prova: % di chi cerca casa/agenzia online prima di chiamare]
+Visual: barra di ricerca con "vendere casa a…"
 Relatore: Giuseppe
 
-**SLIDE 10 — FESTA vs BIBLIOTECA**
-Titolo: Instagram è una festa. YouTube è una biblioteca.
-Bullet:
-- Alla festa: se non ci sei, sparisci
-- In biblioteca: i tuoi contenuti restano e ti trovano mentre dormi
-Visual: metafora festa vs biblioteca + diagramma 4-organico-vs-youtube.png
+**SLIDE 14 — DIAGNOSI 1**
+Titolo: 60%
+Sottotitolo: degli agenti guadagna meno di 60.000 € l'anno
+Visual: numero gigante che riempie la slide
 Relatore: Giuseppe
 
-**SLIDE 11 — L'ANALOGICO NON È MORTO**
-Titolo: La chiamata converte. Sempre.
-Bullet:
-- Il rapporto umano trasforma il contatto in incarico
-- Ma da solo è grande quanto la tua agenda
-Visual: telefono + stretta di mano
-Relatore: Antonella — "Il digitale ti fa conoscere da mille. L'analogico ne chiude una."
-
-**SLIDE 12 — L'AHA DEL GIORNO 1**
-Titolo: Non è un problema di marketing
-Sottotitolo: È un problema di sistema
-Visual: diagramma 1-macchina.png
-Relatore: Giuseppe — anticipa dove arriviamo
-
-**SLIDE 13 — IL TUO COMPITO**
-Titolo: Dove sei davvero, oggi?
-Bullet:
-- Dai un voto da 1 a 5 a 8 aree del tuo sistema
-- Domani partiamo dal tuo punteggio
-Visual: scorecard 8 voci
+**SLIDE 15 — DIAGNOSI 2**
+Titolo: 20%
+Sottotitolo: abbandona entro 3 anni
+Visual: numero gigante
 Relatore: Giuseppe
 
-**SLIDE 14 — PONTE (seed offerta)**
-Titolo: Questo è solo il primo strato
-Bullet: Domani: come questa macchina diventa scalabile
-Visual: strati
-Relatore: Giuseppe — "La mappa la disegniamo qui. La macchina la costruiamo dopo."
-
----
-## GIORNO 2 — Il sistema scalabile
-
-**SLIDE 15 — APERTURA G2**
-Titolo: Ieri: il mondo è cambiato
-Bullet: Oggi: come si costruisce un sistema che scala
-Visual: recap 1 riga
+**SLIDE 16 — FRASE**
+Titolo: Non perché lavorano male. Perché sono invisibili.
+Visual: una sagoma trasparente in mezzo a sagome piene
 Relatore: Giuseppe
 
-**SLIDE 16 — IL CAMBIO DI OBIETTIVO**
+**SLIDE 17 — LA SCALA DELLA CONSAPEVOLEZZA**
+Titolo: Dove sei, davvero?
+Bullet:
+- 1. Non sai di avere un problema
+- 2. Senti che qualcosa non gira
+- 3. Sai che serve il digitale
+- 4. Vuoi il metodo giusto
+Visual: scala a 4 pioli, "tu sei qui?"
+Relatore: Vincenzo — momento di onestà
+
+**SLIDE 18 — FRASE**
+Titolo: Il primo passo non è fare di più. È vedere meglio.
+Visual: testo gigante
+Relatore: Vincenzo
+
+**SLIDE 19 — LO SPECCHIO ONESTO**
+Titolo: 8 domande. Voto da 1 a 5.
+Bullet:
+- Brand online · Posizionamento di zona · Presenza social · Contenuti
+- Email · CRM/follow-up · AI · Ecosistema
+Visual: scorecard a 8 righe con caselle
+Relatore: Giuseppe
+
+**SLIDE 20 — FRASE**
+Titolo: Segna il punteggio. Non per giudicarti. Per vederti.
+Visual: testo gigante
+Relatore: Giuseppe
+
+**SLIDE 21 — LE DUE STRADE**
+Titolo: Due agenti, stesso mercato
+Bullet:
+- A sinistra: insegue, convince ogni volta da zero, invisibile a metà mercato
+- A destra: viene cercato, arriva già scelto, i contenuti lavorano H24
+Visual: confronto affiancato netto
+Relatore: Giuseppe
+
+**SLIDE 22 — IL COSTO DI RESTARE FERMI**
+Titolo: Quanto ti costa un incarico perso al mese?
+Bullet: [prova: provvigione media] × 12 = una cifra che fa male
+Visual: numero gigante (perdita annua)
+Relatore: Giuseppe
+
+**SLIDE 23 — LA BUONA NOTIZIA**
+Titolo: Non è talento. È una macchina. E si costruisce.
+Visual: ingranaggi che si montano
+Relatore: Giuseppe — apre la speranza, chiude il giorno della consapevolezza
+
+**SLIDE 24 — TEASER DELLA MACCHINA**
+Titolo: Ecco dove arriviamo
+Visual: diagramma 1-macchina.png (mostrato come "anteprima", anche leggermente in dissolvenza)
+Relatore: Giuseppe — "Domani te la consegno, pezzo per pezzo."
+
+**SLIDE 25 — COMPITO 1**
+Titolo: Il tuo punteggio + una frase
+Bullet:
+- Somma il tuo voto (8 aree)
+- Scrivi: "Tra 90 giorni voglio essere…"
+Visual: foglio compito
+Relatore: Giuseppe
+
+**SLIDE 26 — PONTE**
+Titolo: Oggi ti sei visto. Domani ti do la mappa.
+Visual: mappa piegata che inizia ad aprirsi
+Relatore: Giuseppe — seed leggero del percorso
+
+# ════════ GIORNO 2 — LA MAPPA: LA MACCHINA ════════
+> Oggi consegno il sistema intero e il modo di pensarlo. Inizio a mostrare il "come".
+
+**SLIDE 27 — APERTURA G2**
+Titolo: Ieri: dove sei. Oggi: la mappa.
+Visual: recap 1 riga + scala consapevolezza in piccolo
+Relatore: Giuseppe
+
+**SLIDE 28 — FRASE**
+Titolo: Non hai un problema di marketing. Hai pezzi scollegati.
+Visual: pezzi di puzzle staccati
+Relatore: Giuseppe
+
+**SLIDE 29 — LA MACCHINA**
+Titolo: Il sistema, intero
+Visual: diagramma 1-macchina.png a tutto schermo
+Relatore: Giuseppe — "Due metà di un solo lavoro."
+
+**SLIDE 30 — METÀ 1**
+Titolo: Il digitale fa alzare la mano
+Bullet: Organico, video, ads: portano la persona giusta a farsi avanti
+Visual: tante mani, una si alza illuminata
+Relatore: Giuseppe
+
+**SLIDE 31 — METÀ 2**
+Titolo: L'analogico converte la mano alzata
+Bullet: La chiamata trasforma il contatto in incarico
+Visual: mano alzata → stretta di mano
+Relatore: Antonella
+
+**SLIDE 32 — IL BUCO CHE COSTA**
+Titolo: Minuti, non ore
+Bullet: La probabilità di chiudere crolla col passare dei minuti
+Visual: grafico in discesa ripida
+Relatore: Antonella — speed to lead
+
+**SLIDE 33 — MINDSET**
 Titolo: Smetti di postare per i like
-Bullet:
-- 10.000 like dei colleghi non sono un venditore
-- Conta a chi arrivi, non quanti ti seguono
-Visual: like barrati vs lead
+Visual: cuore/like barrato → bersaglio venditore
 Relatore: Giuseppe
 
-**SLIDE 17 — INEVITABILE**
-Titolo: Non ti serve essere famoso
-Sottotitolo: Ti serve essere inevitabile nel tuo quartiere
-Visual: mappa di zona con un volto al centro
+**SLIDE 34 — FRASE/NUMERO**
+Titolo: 10.000 like dei colleghi = 0 venditori
+Visual: numero gigante con "= 0"
 Relatore: Giuseppe
 
-**SLIDE 18 — DUE LEVE, NON DUE STRADE**
+**SLIDE 35 — DUE LEVE**
 Titolo: Organico e ads non sono alternative
 Bullet:
-- Organico: costruisce autorità
-- Ads: portano volume prevedibile
-- Insieme: il costo per lead scende, la conversione sale
-Visual: due leve che muovono un ingranaggio
+- Organico costruisce autorità
+- Ads portano volume
+Visual: due leve su un ingranaggio
 Relatore: Giuseppe
 
-**SLIDE 19 — ASSET vs EFFIMERO**
-Titolo: Un dipendente costa ogni mese. Un video, una volta.
-Bullet:
-- Il post effimero svanisce in 48 ore
-- Il video-asset lavora per anni
+**SLIDE 36 — FESTA**
+Titolo: Instagram è una festa
+Bullet: Se non ci sei, sparisci
+Visual: festa affollata, luci
+Relatore: Giuseppe
+
+**SLIDE 37 — BIBLIOTECA**
+Titolo: YouTube è una biblioteca
+Bullet: I tuoi contenuti restano e ti trovano mentre dormi
 Visual: diagramma 4-organico-vs-youtube.png
 Relatore: Giuseppe
 
-**SLIDE 20 — IL SISTEMA CHE SCALA**
+**SLIDE 38 — FRASE**
+Titolo: Un dipendente costa ogni mese. Un video, una volta.
+Visual: testo gigante
+Relatore: Giuseppe
+
+**SLIDE 39 — IL MODELLO CHE SCALA**
 Titolo: 60-80 "agenti" che lavorano per te
-Bullet:
-- Non un costo fisso ogni mese
-- Contenuti-asset che non staccano mai
-Visual: 1 persona → moltiplicata in tanti contenuti
-Relatore: Giuseppe — "È così che smetti di dipendere dalle tue ore."
-
-**SLIDE 21 — SPEED TO LEAD**
-Titolo: Minuti, non ore
-Bullet: La probabilità di chiudere crolla col passare dei minuti
-Visual: grafico discesa rapida
+Bullet: Non un costo fisso. Contenuti-asset che non staccano mai.
+Visual: 1 persona → moltiplicata in molti contenuti
 Relatore: Giuseppe
 
-**SLIDE 22 — L'ORGANICO ANALOGICO**
-Titolo: I tuoi primi 10 venditori non sono su Google
-Bullet:
-- Sono nella rubrica di chi già si fida di te
-- Commercialisti, amministratori, ex clienti, attività di zona
-Visual: rete di nodi (centri d'influenza)
+**SLIDE 40 — COME FUNZIONA**
+Titolo: 1 te → tanti contenuti → tanti lead
+Visual: schema a imbuto: volto → griglia di video → lead
+Relatore: Giuseppe
+
+**SLIDE 41 — LA REGOLA OPERATIVA**
+Titolo: Organico ogni giorno. Ads sui contenuti che convertono.
+Visual: calendario + razzo
+Relatore: Giuseppe
+
+**SLIDE 42 — L'ANALOGICO CHE ALIMENTA**
+Titolo: I tuoi centri d'influenza
+Bullet: Commercialisti, amministratori, notai, ex clienti, attività di zona
+Visual: rete di nodi attorno a un volto
 Relatore: Antonella
 
-**SLIDE 23 — NUTRIRE I REFERRAL**
-Titolo: Il referral non si compra. Si coltiva.
-Bullet: Un sistema di contatti regolari, valore, reciprocità
-Visual: pianta che cresce
+**SLIDE 43 — FRASE**
+Titolo: I tuoi primi 10 venditori sono nella tua rubrica
+Visual: testo gigante + icona rubrica
 Relatore: Antonella
 
-**SLIDE 24 — AHA G2 + COMPITO**
-Titolo: YouTube è il dipendente che non smette mai
-Bullet: Compito: scegli 1 formato da presidiare per 90 giorni
-Visual: orologio H24
+**SLIDE 44 — LA MAPPA IN UNA IMMAGINE**
+Titolo: Tienila a mente: questa è la macchina
+Visual: diagramma 1-macchina.png (riepilogo)
 Relatore: Giuseppe
 
-**SLIDE 25 — PONTE (seed)**
-Titolo: Hai la macchina. Domani: cosa metterci dentro
-Visual: scatola che si apre
+**SLIDE 45 — AHA G2**
+Titolo: Il sistema batte il talento
+Visual: testo gigante
 Relatore: Giuseppe
 
----
-## GIORNO 3 — Contenuti che cercano i venditori
+**SLIDE 46 — COMPITO 2**
+Titolo: Scegli i tuoi pezzi
+Bullet:
+- 1 formato da presidiare
+- 3 centri d'influenza da riattivare
+Visual: foglio compito
+Relatore: Giuseppe
 
-**SLIDE 26 — APERTURA G3**
-Titolo: Ieri: il sistema. Oggi: il carburante
+**SLIDE 47 — PONTE**
+Titolo: Hai la mappa. Domani: cosa pubblicare, esattamente.
+Visual: telecamera + idea
+Relatore: Giuseppe
+
+# ════════ GIORNO 3 — I CONTENUTI: ESATTAMENTE COME ════════
+> Oggi è pratico: do la ricetta. Escono sapendo cosa girare e come.
+
+**SLIDE 48 — APERTURA G3**
+Titolo: Ieri la mappa. Oggi il carburante.
 Visual: recap
 Relatore: Giuseppe
 
-**SLIDE 27 — IDENTITÀ PRIMA DELLA TATTICA**
-Titolo: Generico è dimenticabile
-Sottotitolo: Specifico è selezionabile
-Bullet:
-- Visibilità → Credibilità → Autorità
-- L'autorità è quando vengono da te già convinti
-Visual: 3 gradini di autorevolezza
+**SLIDE 49 — FRASE**
+Titolo: Generico è dimenticabile. Specifico è selezionabile.
+Visual: testo gigante
 Relatore: Vincenzo
 
-**SLIDE 28 — IL CONTENUTO CHE ATTRAE VENDITORI**
-Titolo: 4 contenuti che ti portano venditori
+**SLIDE 50 — I 3 LIVELLI**
+Titolo: Visibilità → Credibilità → Autorità
+Bullet: Autorità = vengono da te già convinti
+Visual: 3 gradini che salgono
+Relatore: Vincenzo
+
+**SLIDE 51 — SCEGLI LA NICCHIA**
+Titolo: La formula della tua nicchia
+Bullet: Zona + Tipologia + Cliente ideale
+Visual: tre cerchi che si intersecano
+Relatore: Vincenzo — "La nicchia concentra, non restringe."
+
+**SLIDE 52 — I 4 CONTENUTI**
+Titolo: 4 contenuti che portano venditori
 Bullet:
-- Home tour: "venduta in X giorni, ecco come"
-- Esperto del quartiere · dei servizi · del prezzo
-Visual: 4 riquadri
+- Home tour · Esperto del quartiere · Esperto dei servizi · Esperto del prezzo
+Visual: 4 riquadri con icona
 Relatore: Giuseppe
 
-**SLIDE 29 — LE PAROLE GIUSTE**
-Titolo: Il venditore non cerca "un bravo agente"
-Sottotitolo: Cerca "quanto vale casa mia in via…"
-Bullet: Crea contenuti su quelle parole. Sii tu la risposta.
-Visual: barra di ricerca
+**SLIDE 53 — FORMAT 1**
+Titolo: Home tour: vendi il METODO, non le stanze
+Bullet: "Venduta in X giorni a [zona]: ecco come"
+Visual: casa + percorso/metodo accanto
 Relatore: Giuseppe
 
-**SLIDE 30 — FATTO È MEGLIO DI PERFETTO**
-Titolo: Non ti serve la troupe di Hollywood
+**SLIDE 54 — FORMAT 2**
+Titolo: L'esperto del quartiere
+Bullet: "Quanto vale casa in [via]?" "Cosa fanno i prezzi a [zona]?"
+Visual: mappa di quartiere con spillo
+Relatore: Giuseppe
+
+**SLIDE 55 — FORMAT 3 & 4**
+Titolo: Esperto dei servizi · Esperto del prezzo
 Bullet:
-- Volto, telefono, verità
-- Il contenuto autentico è quello che gira
-Visual: agente che si filma da solo
+- Servizi: scuole, trasporti, vivibilità
+- Prezzo: "I 3 errori che ti fanno svendere"
+Visual: due card affiancate
 Relatore: Giuseppe
 
-**SLIDE 31 — L'EVENTO CHE MOLTIPLICA**
+**SLIDE 56 — LA RICETTA DEL VIDEO**
+Titolo: Esattamente come si fa un video che porta venditori
+Bullet:
+- 1. Hook (3 secondi) · 2. Problema · 3. Metodo · 4. Prova · 5. Una sola CTA
+Visual: timeline a 5 step numerati
+Relatore: Giuseppe — questa è la slide "manuale"
+
+**SLIDE 57 — L'HOOK**
+Titolo: I primi 3 secondi decidono tutto
+Bullet:
+- "Se vuoi vendere casa a [zona], NON fare questo…"
+- "Il prezzo che ti hanno dato è sbagliato. Ecco perché."
+Visual: cronometro su 0:03
+Relatore: Giuseppe
+
+**SLIDE 58 — LA CTA**
+Titolo: Una sola azione, alla fine
+Bullet: "Scrivimi [parola]" / "Scarica la guida" — mai due richieste
+Visual: un solo bottone grande
+Relatore: Giuseppe
+
+**SLIDE 59 — LE PAROLE GIUSTE**
+Titolo: Esattamente come trovi cosa cercano
+Bullet:
+- Scrivi "vendere casa [zona]" nella barra e guarda i suggerimenti
+- Quelle frasi sono i tuoi titoli
+Visual: barra di ricerca con tendina di suggerimenti
+Relatore: Giuseppe
+
+**SLIDE 60 — LE TUE PAROLE**
+Titolo: Esempi per il tuo mercato
+Bullet: "quanto vale casa [zona]" · "agenzia [zona]" · "vendere casa velocemente [città]"
+Visual: nuvola di parole chiave
+Relatore: Giuseppe
+
+**SLIDE 61 — 1 VIDEO → 10 CONTENUTI**
+Titolo: Esattamente come moltiplichi
+Bullet:
+- 1 video lungo → clip brevi, post, caroselli, una mail
+Visual: 1 video al centro → 10 formati intorno
+Relatore: Giuseppe
+
+**SLIDE 62 — FRASE**
+Titolo: Fatto è meglio di perfetto
+Visual: testo gigante
+Relatore: Giuseppe
+
+**SLIDE 63 — IL SETUP MINIMO**
+Titolo: Ti serve meno di quanto pensi
+Bullet: Telefono · luce della finestra · audio vicino · volto, verità
+Visual: smartphone su treppiede semplice
+Relatore: Giuseppe — abbatte "non sono capace"
+
+**SLIDE 64 — LA COSTANZA**
+Titolo: 1 video a settimana batte 10 in un giorno e poi più nulla
+Visual: calendario con 1 segno a settimana
+Relatore: Giuseppe
+
+**SLIDE 65 — L'EVENTO CHE MOLTIPLICA**
 Titolo: Ogni open house è tre cose
-Bullet:
-- Una vendita
-- Un video
-- Una lista di contatti che ti conoscono
+Bullet: Una vendita · un video · una lista
 Visual: 1 evento → 3 output
-Relatore: Antonella — "La maggior parte ne sfrutta una sola."
+Relatore: Antonella
 
-**SLIDE 32 — AHA G3 + COMPITO**
-Titolo: Il contenuto giusto è una calamita
-Bullet: Compito: 3 idee "esperto di…" + 5 parole chiave del tuo mercato
+**SLIDE 66 — COME GENERI LA LISTA**
+Titolo: Esattamente come l'open house ti dà contatti
+Bullet:
+- 1. Inviti la zona · 2. Registri chi entra · 3. Segui chi non ha comprato
+Visual: 3 step con icone
+Relatore: Antonella
+
+**SLIDE 67 — AHA G3**
+Titolo: Il contenuto giusto è una calamita per venditori
 Visual: calamita che attrae case
 Relatore: Giuseppe
 
-**SLIDE 33 — PONTE (seed)**
-Titolo: Hai il carburante. Domani: chi lo gestisce per te
-Visual: ingranaggio + scintilla AI
+**SLIDE 68 — COMPITO 3 (micro-vittoria)**
+Titolo: Gira 1 video raw. Stasera.
+Bullet: 60 secondi, telefono, un solo concetto. Fatto è meglio di perfetto.
+Visual: smartphone con REC
+Relatore: Giuseppe — la prima vittoria vera
+
+**SLIDE 69 — PONTE**
+Titolo: Hai il carburante. Domani: chi lo gestisce per te.
+Visual: ingranaggio + scintilla
 Relatore: Giuseppe
 
----
-## GIORNO 4 — Il modulo AI + l'analogico che converte
+# ════════ GIORNO 4 — AI + CONVERSIONE: ESATTAMENTE COME ════════
+> Oggi: il moltiplicatore (AI) e il modo di chiudere. Pratico.
 
-**SLIDE 34 — APERTURA G4**
-Titolo: Ieri: i contenuti. Oggi: il moltiplicatore
+**SLIDE 70 — APERTURA G4**
+Titolo: Ieri i contenuti. Oggi il moltiplicatore.
 Visual: recap
 Relatore: Giuseppe
 
-**SLIDE 35 — DEMISTIFICAZIONE**
+**SLIDE 71 — FRASE**
 Titolo: Non serve essere un genio della tecnologia
-Bullet: Non è l'AI contro di te. È chi la usa contro chi non la usa.
-Visual: due agenti, uno con "+AI"
+Visual: testo gigante
 Relatore: Giuseppe
 
-**SLIDE 36 — USALA COME UN DIPENDENTE**
-Titolo: Smetti di "chiedere". Inizia a "far fare".
-Bullet:
-- Dall'idea allo script video in minuti
-- 1 video → 10 post
-Visual: AI che produce
+**SLIDE 72 — FRASE**
+Titolo: L'AI non ti sostituisce. Lo fa l'agente che la usa.
+Visual: due sagome, una con "+AI" illuminata
 Relatore: Giuseppe
 
-**SLIDE 37 — AI CHE LAVORA H24**
-Titolo: Risponde, qualifica, prenota
-Bullet:
-- Un assistente che lavora ai tuoi lead 24 ore su 24
-- Tu intervieni solo quando sono pronti
-Visual: chat + calendario
-Relatore: Giuseppe — [demo live: generiamo uno script ora]
+**SLIDE 73 — IL CAMBIO D'USO**
+Titolo: Usala come un dipendente, non come un motore di ricerca
+Visual: AI come collaboratore a una scrivania
+Relatore: Giuseppe
 
-**SLIDE 38 — LA MANO ALZATA SI CONVERTE SUBITO**
-Titolo: Se richiami domani, l'hai già persa
+**SLIDE 74 — ESATTAMENTE: IDEA → SCRIPT**
+Titolo: Dall'idea allo script in un passo
 Bullet:
-- Ogni lead lavorato con una sequenza, non a memoria
-- Le fonti calde (referral, eventi) chiudono di più
-Visual: orologio + lead che si raffredda
+- Le dai argomento + zona + pubblico
+- Ti restituisce hook, struttura, CTA
+Visual: freccia: idea → documento script
+Relatore: Giuseppe — [demo live]
+
+**SLIDE 75 — ESATTAMENTE: 1 → 10**
+Titolo: Un video diventa dieci contenuti
+Bullet: Le passi il testo del video, ti scrive clip, post, caroselli, mail
+Visual: 1 → 10 con l'icona AI al centro
+Relatore: Giuseppe
+
+**SLIDE 76 — L'ECOSISTEMA AI**
+Titolo: Quattro lavori, un assistente
+Bullet: Ricerca · Contenuti · Risposta ai lead · Operatività
+Visual: 4 quadranti attorno a un cervello/AI
+Relatore: Giuseppe
+
+**SLIDE 77 — ESATTAMENTE: RISPOSTA H24**
+Titolo: L'assistente che risponde ai lead di notte
+Bullet:
+- 1. Il lead scrive · 2. L'AI risponde e qualifica · 3. Ti passa solo chi è pronto
+Visual: chat + calendario, orologio su 24
+Relatore: Giuseppe
+
+**SLIDE 78 — SPEED TO LEAD**
+Titolo: La finestra è di minuti
+Bullet: Richiami domani = l'hai già persa
+Visual: grafico discesa + orologio
 Relatore: Antonella
 
-**SLIDE 39 — LE OBIEZIONI SI ABBATTONO COL SISTEMA**
+**SLIDE 79 — ESATTAMENTE: LA PRIMA CHIAMATA**
+Titolo: Lo schema della prima telefonata
+Bullet:
+- 1. Riprendi l'angolo del contenuto · 2. Una domanda che apre · 3. Ascolta
+- 4. Fissa l'appuntamento · 5. Conferma
+Visual: 5 step numerati a telefono
+Relatore: Antonella — slide "manuale"
+
+**SLIDE 80 — LE OBIEZIONI**
 Titolo: "Non mi vincolo." "E se viene un privato?"
-Bullet:
-- Non si discute: si risponde con i punti forti del sistema
-- Incarico a tempo, acquirente pronto, marketing vero
-Visual: scudo
+Bullet: Non si discute: si risponde coi punti forti del sistema
+Visual: scudo con le obiezioni che rimbalzano
 Relatore: Antonella
 
-**SLIDE 40 — AHA G4 + COMPITO**
-Titolo: Il digitale alza la mano, l'analogico la converte
-Sottotitolo: È la stessa macchina
-Visual: diagramma 1-macchina.png (completo)
-Relatore: Giuseppe — Compito: imposta 1 automazione semplice
+**SLIDE 81 — LO SCHEMA ANTI-OBIEZIONE**
+Titolo: 3 mosse per ogni obiezione
+Bullet:
+- 1. Accogli (capisco) · 2. Ribalta (proprio per questo…) · 3. Prova (guarda qui)
+Visual: 3 step
+Relatore: Antonella
 
-**SLIDE 41 — PONTE (seed)**
-Titolo: Hai visto tutti i pezzi. Domani: come si incastrano
+**SLIDE 82 — LE FONTI CALDE**
+Titolo: Referral ed eventi chiudono di più del freddo
+Visual: termometro: freddo → caldo
+Relatore: Antonella
+
+**SLIDE 83 — AHA G4**
+Titolo: Il digitale alza la mano. L'analogico la converte. Stessa macchina.
+Visual: diagramma 1-macchina.png (completo)
+Relatore: Giuseppe
+
+**SLIDE 84 — COMPITO 4 (micro-vittoria)**
+Titolo: Imposta 1 automazione semplice
+Bullet: Una risposta automatica che qualifica un lead
+Visual: interruttore "ON"
+Relatore: Giuseppe
+
+**SLIDE 85 — PONTE**
+Titolo: Hai tutti i pezzi. Domani li incastriamo — e ti mostro chi l'ha già fatto.
 Visual: pezzi che si uniscono
 Relatore: Giuseppe
 
----
-## GIORNO 5 — La macchina completa + il prossimo livello
+# ════════ GIORNO 5 — TUTTO INSIEME + IL PROSSIMO LIVELLO ════════
+> Oggi: integrazione, prove, e l'offerta. La vendita è la conseguenza naturale.
 
-**SLIDE 42 — APERTURA G5**
+**SLIDE 86 — APERTURA G5**
 Titolo: Oggi mettiamo tutto insieme
-Visual: recap dei 4 giorni
+Visual: i 4 giorni in 4 icone → 1
 Relatore: Vincenzo + Giuseppe
 
-**SLIDE 43 — CHI DIVENTERAI**
-Titolo: La differenza è una decisione
-Bullet:
-- Non il talento: la scelta
-- Tra 12 settimane sarai comunque più vecchio. Sarai più avanti?
-Visual: prima/dopo
+**SLIDE 87 — CHI ERI / CHI SEI**
+Titolo: Cinque giorni fa non sapevi di essere invisibile
+Bullet: Ora hai la mappa, la ricetta, il moltiplicatore
+Visual: prima/dopo (sagoma trasparente → piena)
 Relatore: Vincenzo
 
-**SLIDE 44 — LA MACCHINA, COMPLETA**
+**SLIDE 88 — FRASE**
+Titolo: La differenza non è il talento. È una decisione.
+Visual: testo gigante
+Relatore: Vincenzo
+
+**SLIDE 89 — FRASE**
+Titolo: Tra 12 settimane sarai più vecchio. Sarai anche più avanti?
+Visual: testo gigante
+Relatore: Vincenzo
+
+**SLIDE 90 — LA MACCHINA COMPLETA**
 Titolo: Ecco il sistema, intero
 Visual: diagramma 1-macchina.png a tutto schermo
 Relatore: Giuseppe
 
-**SLIDE 45 — IL MURO DELLE PROVE**
+**SLIDE 91 — PROVA 1**
+Titolo: [prova: nome] — [zona]
+Bullet: [prova: risultato reale, es. "venduta in X giorni" / "X lead in un mese"]
+Visual: volto + screenshot risultato
+Relatore: Giuseppe
+
+**SLIDE 92 — PROVA 2**
+Titolo: [prova: nome] — [zona]
+Bullet: [prova: numero reale]
+Visual: volto + screenshot
+Relatore: Giuseppe
+
+**SLIDE 93 — PROVA 3**
+Titolo: [prova: nome] — [zona]
+Bullet: [prova: numero reale]
+Visual: volto + screenshot
+Relatore: Giuseppe
+
+**SLIDE 94 — FRASE**
 Titolo: Non sono fenomeni. Hanno solo acceso prima la macchina.
-Bullet:
-- [prova: caso 1 — nome, zona, numero reale]
-- [prova: caso 2 — venduta in X giorni]
-- [prova: caso 3 — lead/visualizzazioni reali]
-Visual: 3 volti + screenshot risultati
+Visual: testo gigante
 Relatore: Giuseppe
 
-**SLIDE 46 — IL COSTO DI RESTARE FERMI**
-Titolo: Quanto ti costa un incarico perso al mese?
-Bullet:
-- 1 incarico/mese in meno = [prova: € provvigione media] l'anno
-- L'invisibilità ha un prezzo. Più alto del sistema.
-Visual: numero GIGANTE (perdita annua)
+**SLIDE 95 — IL COSTO DELL'INAZIONE**
+Titolo: Restare fermo ha un prezzo
+Bullet: [prova: provvigione media] persa ogni mese
+Visual: numero gigante (perdita annua)
 Relatore: Giuseppe
 
-**SLIDE 47 — LA SVOLTA**
+**SLIDE 96 — LA SVOLTA**
 Titolo: Hai la mappa. Ti manca la macchina.
 Bullet: Una mappa non si costruisce da sola
 Visual: mappa → macchina
 Relatore: Giuseppe
 
-**SLIDE 48 — IL PERCORSO**
+**SLIDE 97 — IL PERCORSO**
 Titolo: 12 Masterclass + 3 giorni dal vivo
 Bullet:
 - 12 settimane, ogni mercoledì, passo per passo
-- 3 giorni in aula dove costruiamo il tuo sistema
-- Esci con la macchina, non con gli appunti
+- 3 giorni in aula dove costruiamo il TUO sistema
 Visual: calendario 12 settimane + aula
 Relatore: Giuseppe
 
-**SLIDE 49 — LO STACK**
+**SLIDE 98 — COSA COSTRUISCI**
+Titolo: Settimana per settimana, esci con qualcosa di fatto
+Bullet: Fondamenta → Analogico → Digitale → Integrazione
+Visual: 4 fasi che salgono come una torre
+Relatore: Giuseppe
+
+**SLIDE 99 — LO STACK**
 Titolo: Tutto quello che ti porti a casa
 Bullet:
 - 12 Masterclass live + registrazioni a vita
 - Workshop 3 giorni dal vivo + workbook, template, gruppo
-Visual: stack di valore impilato
+Visual: stack impilato
 Relatore: Giuseppe
 
-**SLIDE 50 — L'INVESTIMENTO**
+**SLIDE 100 — L'INVESTIMENTO**
 Titolo: 3.999 €
 Sottotitolo: oppure 6 rate da 599 €
-Bullet: Si ripaga al primo incarico in più che chiudi
-Visual: prezzo GIGANTE + rate accanto
+Bullet: Si ripaga al primo incarico in più
+Visual: prezzo gigante + rate accanto
 Relatore: Giuseppe
 
-**SLIDE 51 — LA GARANZIA**
+**SLIDE 101 — LA GARANZIA**
 Titolo: Il rischio me lo prendo io
-Bullet: [prova/decisione: segui le 12 + fai i compiti e se non costruisci il sistema, ti affianco finché non lo fai]
-Visual: sigillo/garanzia
+Bullet: [decisione: segui le 12 + fai i compiti, e se non hai costruito il sistema ti affianco finché non lo fai]
+Visual: sigillo di garanzia
 Relatore: Giuseppe
 
-**SLIDE 52 — SOLO ORA**
+**SLIDE 102 — SOLO ORA**
 Titolo: Posti limitati. Si parte mercoledì.
-Bullet:
-- L'aula dal vivo ha una capienza
-- La prima Masterclass è il 18: la macchina si accende subito
-Visual: contatore posti + data 18
-Relatore: Giuseppe — scarsità vera, niente finte scadenze
+Bullet: L'aula dal vivo ha una capienza · La prima Masterclass è il 18
+Visual: contatore posti + data 18 cerchiata
+Relatore: Giuseppe — scarsità vera
 
-**SLIDE 53 — BONUS PER CHI DECIDE OGGI**
-Titolo: Chi entra ora, parte avanti
-Bullet:
-- [bonus: accesso anticipato ai materiali]
-- [bonus: 1 sessione di posizionamento sul tuo mercato]
+**SLIDE 103 — BONUS**
+Titolo: Chi decide oggi parte avanti
+Bullet: [bonus: accesso anticipato ai materiali] · [bonus: 1 sessione di posizionamento]
 Visual: regalo
 Relatore: Giuseppe
 
-**SLIDE 54 — LE OBIEZIONI**
+**SLIDE 104 — LE OBIEZIONI**
 Titolo: "Non ho tempo." "Non sono tecnologico." "Ci penso."
 Bullet:
-- Il sistema lavora al posto tuo: per questo esiste
+- Il sistema lavora al posto tuo
 - Parte da zero, l'AI fa il lavoro pesante
-- Decidi oggi se vuoi la mappa o la macchina
+- Decidi oggi: la mappa o la macchina?
 Visual: 3 fumetti smontati
 Relatore: Giuseppe
 
-**SLIDE 55 — UNA SOLA AZIONE**
+**SLIDE 105 — UNA SOLA AZIONE**
 Titolo: Il tuo posto, adesso
 Bullet: Un solo passo: iscriviti qui
-Visual: 1 bottone/CTA grande, QR
+Visual: un bottone grande + QR
 Relatore: Giuseppe — CTA unica
 
-**SLIDE 56 — CHIUSURA**
+**SLIDE 106 — CHIUSURA**
 Titolo: Cosa vuoi che sia successo tra 12 settimane?
 Sottotitolo: Questo workshop è l'apertura del cantiere. Le Masterclass sono il cantiere.
-Visual: cantiere → torre
+Visual: cantiere → torre illuminata
 Relatore: Tutti — Q&A + ultima spinta
 
-<!-- FINE DECK · 56 slide. Slot [prova: …] e [bonus: …] da riempire con dati reali
-prima dell'evento. I diagrammi citati sono in piani/diagrammi/. -->
+<!-- FINE DECK v2 · 106 slide. Slot [prova:…]/[bonus:…]/[decisione:…] da riempire con
+dati reali prima dell'evento. Diagrammi in piani/diagrammi/. -->
