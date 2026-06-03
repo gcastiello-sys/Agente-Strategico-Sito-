@@ -650,6 +650,50 @@ Bullet:
 Visual: calendario 12 settimane + aula
 Relatore: Giuseppe
 
+**SLIDE 97A — LE 12 MASTERCLASS · LA MAPPA**
+Titolo: 12 settimane, 4 fasi: il tuo sistema completo
+Bullet:
+- FONDAMENTA → Identità, Mindset Digitale, Emozioni e Performance
+- ACQUISIZIONE → Acquisizione Sistematica, Obiezioni · DIGITALE → Ecosistema, Lead Gen, Social, AI
+- INTEGRAZIONE → Analogico+Digitale, Misura, La Tua Torre
+Visual: 4 blocchi a colonne con i 12 titoli (3+2+4+3), che salgono come una torre
+Relatore: Giuseppe — "Non 12 webinar a caso. Un percorso, in quattro fasi."
+
+**SLIDE 97B — FASE 1 · FONDAMENTA (Identità & Mente)**
+Titolo: Prima di costruire: chi sei e con quale testa
+Bullet:
+- MC1 Identità e Posizionamento — nicchia (zona+tipologia+cliente), il tuo angolo, il messaggio che ti rende sceglibile
+- MC2 Mindset Digitale Avanzato — da "rincorro i clienti" a "costruisco la macchina"; decidere da imprenditore
+- MC3 Emozioni e Performance — gestire ansia e rifiuto, routine e accountability per la costanza
+Visual: 3 card numerate sul blocco "Fondamenta" della torre
+Relatore: Giuseppe
+
+**SLIDE 97C — FASE 2 · ACQUISIZIONE (l'analogico che converte)**
+Titolo: Prendere incarichi, adesso
+Bullet:
+- MC4 Acquisizione Sistematica — dalla notizia all'incarico passo-passo, rete (centri d'influenza/referral/liste), prima chiamata in 5 mosse
+- MC5 Gestione delle Obiezioni — vincolo, provvigione, "ci penso": schema accogli→ribalta→prova; presentazione incarico e ribasso prezzo
+Visual: 2 card numerate sul blocco "Analogico"
+Relatore: Antonella
+
+**SLIDE 97D — FASE 3 · ECOSISTEMA DIGITALE (la macchina che scala)**
+Titolo: La presenza che lavora per te H24
+Bullet:
+- MC6 Il Tuo Ecosistema Digitale — i pezzi (sito, profili, CRM, automazioni) e come si parlano · MC7 Lead Generation Online — contenuti che cercano i venditori, campagne, qualifica
+- MC8 Social Strategico — i 4 format (home tour, esperto quartiere/servizi/prezzo), calendario sostenibile, YouTube biblioteca
+- MC9 AI per l'Agente — l'AI come dipendente (idea→script, 1 video→10), risposta/qualifica lead H24, prompt pronti
+Visual: 4 card numerate sul blocco "Digitale"
+Relatore: Giuseppe
+
+**SLIDE 97E — FASE 4 · INTEGRAZIONE & SCALA**
+Titolo: Metti insieme, misura, sali di livello
+Bullet:
+- MC10 Analogico + Digitale Integrati — il digitale alza la mano, l'analogico converte; il percorso del lead senza dispersione
+- MC11 Traccia, Misura, Migliora — i KPI che contano (fonte lead, velocità, conversione), correggere la rotta, cosa scalare
+- MC12 La Tua Torre Strategica — i 12 mattoni nel tuo piano a 90 giorni e il prossimo livello (Community/Presenza Dominante)
+Visual: 3 card numerate che completano la cima della torre
+Relatore: Giuseppe
+
 **SLIDE 98 — COSA COSTRUISCI**
 Titolo: Settimana per settimana, esci con qualcosa di fatto
 Bullet: Fondamenta → Analogico → Digitale → Integrazione
@@ -674,8 +718,8 @@ Visual: stack impilato, con la Cassaforte già "spuntata"
 Relatore: Giuseppe — "Una parte del valore l'hai già in mano."
 
 **SLIDE 100 — L'INVESTIMENTO**
-Titolo: 3.999 €
-Sottotitolo: oppure 6 rate da 599 €
+Titolo: 3.600 €
+Sottotitolo: oppure 6 rate mensili da 600 €
 Bullet: Si ripaga al primo incarico in più
 Visual: prezzo gigante + rate accanto
 Relatore: Giuseppe
