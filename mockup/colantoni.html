@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup Landing — Colantoni Immobiliare (3 versioni)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blu:#1B3A5B;        /* blu Colantoni */
+    --blu-scuro:#12283f;
+    --giallo:#F2B705;     /* giallo Colantoni */
+    --grigio:#F4F6F9; --testo:#1f2937; --muted:#5b6776; --white:#fff;
+    --sans:'Poppins',sans-serif; --serif:'Lora',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--testo);background:#e9edf2;line-height:1.6}
+  .version{max-width:880px;margin:40px auto;background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(18,40,63,.12)}
+  .vlabel{background:var(--blu-scuro);color:var(--giallo);font-weight:700;letter-spacing:1px;padding:10px 24px;font-size:13px;text-transform:uppercase}
+  /* navbar */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:var(--white);border-bottom:1px solid #eef1f5}
+  .logo-ph{border:2px dashed var(--giallo);color:var(--muted);font-size:11px;padding:10px 16px;border-radius:8px;font-weight:600}
+  .nav-cta{background:var(--giallo);color:var(--blu-scuro);font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px}
+  /* hero */
+  .hero{padding:54px 28px;background:linear-gradient(160deg,var(--blu) 0%,var(--blu-scuro) 100%);color:var(--white);text-align:center}
+  .tag{display:inline-block;background:rgba(242,183,5,.18);color:var(--giallo);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:30px;margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,44px);line-height:1.15;margin-bottom:16px}
+  .hero h1 em{color:var(--giallo);font-style:italic}
+  .hero p{font-size:18px;color:#cdd8e6;max-width:600px;margin:0 auto 28px}
+  .btn-quiz{display:inline-flex;align-items:center;gap:10px;background:var(--giallo);color:var(--blu-scuro);font-weight:800;font-size:17px;padding:18px 36px;border-radius:12px;text-decoration:none;box-shadow:0 10px 30px rgba(242,183,5,.4);transition:.2s}
+  .btn-quiz:hover{transform:translateY(-2px)}
+  .btn-quiz small{display:block;font-weight:500;font-size:12px;opacity:.8}
+  .hero .micro{margin-top:14px;font-size:13px;color:#9fb0c4}
+  /* nemico strip */
+  .strip{background:#fff5f5;border-left:4px solid #e23b3b;padding:22px 28px;margin:0}
+  .strip b{color:#c62828}
+  /* metodo */
+  .sec{padding:44px 28px}
+  .sec h2{font-family:var(--serif);font-size:26px;color:var(--blu);text-align:center;margin-bottom:8px}
+  .sec .lead{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 28px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{background:var(--grigio);border-radius:12px;padding:20px;border-top:3px solid var(--giallo)}
+  .card .n{font-family:var(--serif);font-size:22px;color:var(--giallo);font-weight:700}
+  .card h3{font-size:16px;margin:4px 0 6px;color:var(--blu)}
+  .card p{font-size:14px;color:var(--muted)}
+  /* prova */
+  .prove{background:var(--blu);color:#fff;padding:40px 28px;text-align:center}
+  .prove .nums{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-bottom:24px}
+  .prove .num b{display:block;font-family:var(--serif);font-size:34px;color:var(--giallo)}
+  .prove .num span{font-size:13px;color:#cdd8e6}
+  .rec-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .rec-ph{border:2px dashed rgba(255,255,255,.35);border-radius:10px;padding:24px 10px;font-size:11px;color:#cdd8e6}
+  /* final */
+  .final{padding:46px 28px;text-align:center;background:var(--giallo)}
+  .final h2{font-family:var(--serif);color:var(--blu-scuro);font-size:26px;margin-bottom:18px}
+  .final .btn-quiz{background:var(--blu-scuro);color:#fff;box-shadow:0 10px 30px rgba(18,40,63,.3)}
+  .note{max-width:880px;margin:0 auto;padding:10px 28px;font-size:12px;color:#7b8794}
+  @media(max-width:640px){.cards,.rec-row{grid-template-columns:1fr}.prove .nums{gap:20px}}
+</style>
+</head>
+<body>
+
+<div class="note">⚙️ MOCKUP per GHL — Colantoni Immobiliare (Ostia). 3 versioni sotto. Sostituisci <b>INCOLLA_QUI_URL_QUIZ_GHL</b> con l'URL del quiz GHL. Le foto si caricano in GHL (qui ci sono i segnaposto).</div>
+
+<!-- ===================== VERSIONE A ===================== -->
+<section class="version">
+  <div class="vlabel">Versione A · Sicurezza documentale (consigliata)</div>
+  <div class="nav">
+    <div class="logo-ph">← LOGO Colantoni</div>
+    <a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a>
+  </div>
+  <div class="hero">
+    <span class="tag">Colantoni Immobiliare · Ostia</span>
+    <h1>Prima i documenti.<br><em>Poi l'annuncio.</em></h1>
+    <p>A Ostia tante vendite saltano al rogito per una pratica non a posto. Noi controlliamo prima — così tu vendi senza brutte sorprese.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test: la tua casa è pronta per il rogito? <small>5 domande · 60 secondi</small></a>
+    <div class="micro">Test gratuito e senza impegno</div>
+  </div>
+  <div class="strip">Ti gonfiano il prezzo per prendersi l'incarico e pubblicano l'annuncio <b>senza guardare un solo documento</b>. Lo scopri al rogito, quando la trattativa salta.</div>
+  <div class="sec">
+    <h2>Il Metodo 4 Pilastri</h2>
+    <p class="lead">Vendere casa in sicurezza, a Ostia, dal primo giorno.</p>
+    <div class="cards">
+      <div class="card"><div class="n">01</div><h3>Check Documentale</h3><p>Architetto e notaio verificano planimetria, conformità e provenienza prima dell'annuncio.</p></div>
+      <div class="card"><div class="n">02</div><h3>Valutazione Reale</h3><p>Un prezzo per vendere davvero, non per illuderti e poi farti abbassare.</p></div>
+      <div class="card"><div class="n">03</div><h3>Marketing dell'immobile</h3><p>Annuncio curato, foto, canali giusti e acquirenti prequalificati.</p></div>
+      <div class="card"><div class="n">04</div><h3>Assistenza fino al rogito</h3><p>Ti seguiamo in trattativa e chiusura, da buon padre di famiglia.</p></div>
+    </div>
+  </div>
+  <div class="prove">
+    <div class="nums">
+      <div class="num"><b>[XXX]</b><span>← inserisci n° case vendute</span></div>
+      <div class="num"><b>Ostia</b><span>X Municipio, dal [anno]</span></div>
+    </div>
+    <div class="rec-row">
+      <div class="rec-ph">← Recensione Google 1</div>
+      <div class="rec-ph">← Recensione Google 2</div>
+      <div class="rec-ph">← Foto "I Colantoni"</div>
+    </div>
+  </div>
+  <div class="final">
+    <h2>Scopri se la tua casa è pronta per vendere</h2>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Inizia il test <small>Risposta e stima in 60 secondi</small></a>
+  </div>
+</section>
+
+<!-- ===================== VERSIONE B ===================== -->
+<section class="version">
+  <div class="vlabel">Versione B · La famiglia di Ostia</div>
+  <div class="nav">
+    <div class="logo-ph">← LOGO Colantoni</div>
+    <a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a>
+  </div>
+  <div class="hero">
+    <span class="tag">Colantoni Immobiliare · dal cuore di Ostia</span>
+    <h1>La <em>famiglia</em> che a Ostia<br>vende casa in sicurezza.</h1>
+    <p>Non siamo un'insegna qualunque. Siamo i Colantoni: ci occupiamo della tua casa come se fosse la nostra.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Che tipo di vendita fa per te? <small>Fai il test · 60 secondi</small></a>
+    <div class="micro">Test gratuito e senza impegno</div>
+  </div>
+  <div class="strip">Vendere casa con uno sconosciuto che pensa solo alla provvigione? <b>Con noi tratti con una famiglia</b> che mette i tuoi bisogni prima della casa.</div>
+  <div class="sec">
+    <h2>Perché ci scelgono</h2>
+    <p class="lead">Verità, cura e un metodo in 4 pilastri.</p>
+    <div class="cards">
+      <div class="card"><div class="n">✓</div><h3>Diciamo la verità</h3><p>Anche sul prezzo. Soprattutto sul prezzo.</p></div>
+      <div class="card"><div class="n">✓</div><h3>Documenti a posto</h3><p>Controllati prima, con notaio e geometra.</p></div>
+      <div class="card"><div class="n">✓</div><h3>Sicurezza al rogito</h3><p>Zero sorprese: ci pensiamo noi.</p></div>
+      <div class="card"><div class="n">✓</div><h3>Persone, non pratiche</h3><p>Ti accompagniamo passo passo.</p></div>
+    </div>
+  </div>
+  <div class="prove">
+    <div class="nums"><div class="num"><b>★★★★★</b><span>← recensioni Google</span></div></div>
+    <div class="rec-row"><div class="rec-ph">← Recensione 1</div><div class="rec-ph">← Recensione 2</div><div class="rec-ph">← Foto team</div></div>
+  </div>
+  <div class="final">
+    <h2>Parliamo della tua casa</h2>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test <small>Scopri come venderemmo la tua casa</small></a>
+  </div>
+</section>
+
+<!-- ===================== VERSIONE C ===================== -->
+<section class="version">
+  <div class="vlabel">Versione C · Eredità senza pensieri</div>
+  <div class="nav">
+    <div class="logo-ph">← LOGO Colantoni</div>
+    <a class="nav-cta" href="INCOLLA_QUI_URL_QUIZ_GHL">Fai il test</a>
+  </div>
+  <div class="hero">
+    <span class="tag">Colantoni Immobiliare · Ostia</span>
+    <h1>Hai ereditato una casa a Ostia?<br><em>Te la vendiamo noi.</em></h1>
+    <p>Documenti, successione, burocrazia: ci occupiamo di tutto. Tu pensa solo al risultato.</p>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Test: la casa ereditata è pronta per la vendita? <small>60 secondi</small></a>
+    <div class="micro">Test gratuito e senza impegno</div>
+  </div>
+  <div class="strip">Una casa ereditata ha spesso <b>pratiche, eredi multipli e documenti datati</b>. Da soli è un labirinto. Con noi è un percorso.</div>
+  <div class="sec">
+    <h2>Eredità Chiavi in Mano</h2>
+    <p class="lead">Dalla successione al rogito, senza pensieri.</p>
+    <div class="cards">
+      <div class="card"><div class="n">01</div><h3>Verifica documenti & successione</h3><p>Controlliamo cosa serve e cosa manca.</p></div>
+      <div class="card"><div class="n">02</div><h3>Valutazione reale</h3><p>Il valore corretto per vendere, non per sognare.</p></div>
+      <div class="card"><div class="n">03</div><h3>Gestione tra eredi</h3><p>Mediazione chiara quando i proprietari sono più di uno.</p></div>
+      <div class="card"><div class="n">04</div><h3>Vendita e rogito</h3><p>Marketing dell'immobile e chiusura assistita.</p></div>
+    </div>
+  </div>
+  <div class="prove">
+    <div class="nums"><div class="num"><b>[XXX]</b><span>← case ereditate gestite</span></div></div>
+    <div class="rec-row"><div class="rec-ph">← Recensione eredità</div><div class="rec-ph">← Recensione 2</div><div class="rec-ph">← Foto team</div></div>
+  </div>
+  <div class="final">
+    <h2>Scopri come vendere la casa ereditata</h2>
+    <a class="btn-quiz" href="INCOLLA_QUI_URL_QUIZ_GHL">Inizia il test <small>5 domande · 60 secondi</small></a>
+  </div>
+</section>
+
+<div class="note">Fine mockup. Colori brand: blu #1B3A5B + giallo #F2B705. Font: Lora (titoli) + Poppins (testo) — sostituibili con i font del brand su GHL.</div>
+
+</body>
+</html>
