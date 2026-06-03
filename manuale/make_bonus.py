@@ -11,6 +11,21 @@ CREAM=(0.980,0.969,0.945); INK=(0.12,0.13,0.14); MUTE=(0.42,0.45,0.47)
 LINE=(0.80,0.78,0.74); WHITE=(1,1,1)
 T="tibo"; TI="tiit"; B="helv"; BB="hebo"; MONO="cour"
 
+# ── Campi modulo interattivi (AcroForm) ──
+FID=[0]
+def _fid(pre):
+    FID[0]+=1; return f"{pre}{FID[0]}"
+def add_text(page,rect,size=11,color=INK,multiline=False):
+    w=fitz.Widget(); w.field_name=_fid("f_"); w.field_type=fitz.PDF_WIDGET_TYPE_TEXT
+    w.rect=fitz.Rect(rect); w.text_fontsize=size; w.text_color=color
+    w.fill_color=None; w.border_width=0
+    if multiline: w.field_flags=fitz.PDF_TX_FIELD_IS_MULTILINE
+    page.add_widget(w)
+def add_check(page,rect,border=BLU):
+    w=fitz.Widget(); w.field_name=_fid("c_"); w.field_type=fitz.PDF_WIDGET_TYPE_CHECKBOX
+    w.rect=fitz.Rect(rect); w.border_color=border; w.border_width=1; w.fill_color=WHITE
+    page.add_widget(w)
+
 def wrap(text,font,size,maxw):
     out=[]
     for raw in text.split("\n"):
@@ -68,15 +83,37 @@ class Doc:
             self.p.insert_text((ML+12,yy),ln,fontsize=9,fontname=MONO,color=INK); yy+=13
         self.y+=h+8
     def rating(self,areas):
+        self.need(16)                                  # intestazione colonne 1..5
+        for i in range(5):
+            x=RIGHT-150+i*28; self.p.insert_text((x+4,self.y+10),str(i+1),fontsize=8.5,fontname=BB,color=MUTE)
+        self.y+=16
         for a in areas:
-            self.need(24); self.p.insert_text((ML,self.y+13),a,fontsize=10.5,fontname=B,color=INK)
+            self.need(22); self.p.insert_text((ML,self.y+12),a,fontsize=10.5,fontname=B,color=INK)
             for i in range(5):
-                x=RIGHT-150+i*28
-                self.p.draw_rect(fitz.Rect(x,self.y+1,x+16,self.y+17),color=LINE,width=0.8)
-                self.p.insert_text((x+5,self.y+13),str(i+1),fontsize=8.5,fontname=B,color=MUTE)
-            self.y+=24
+                x=RIGHT-150+i*28; add_check(self.p,(x,self.y,x+14,self.y+14),border=LINE)
+            self.y+=22
         self.y+=6
-    def save(self,name): self.doc.save(os.path.join(OUT,name), deflate=True, garbage=4, clean=True); print("OK",name,self.doc.page_count,"pg")
+    def lines(self,n,gap=22,x=ML,w=None):
+        w=w or (RIGHT-x); self.need(n*gap+4); top=self.y
+        for _ in range(n):
+            self.p.draw_line((x,self.y+12),(x+w,self.y+12),color=LINE,width=0.8); self.y+=gap
+        add_text(self.p,(x,top-4,x+w,self.y-4),size=11,multiline=True); self.y+=6
+    def checkrow(self,label):
+        self.need(22); add_check(self.p,(ML,self.y+1,ML+13,self.y+14))
+        self.p.insert_text((ML+22,self.y+12),label,fontsize=10.5,fontname=B,color=INK); self.y+=22
+    def blank(self,label,suffix="",fw=60,size=11):
+        self.need(28); self.p.insert_text((ML,self.y+13),label,fontsize=size,fontname=BB,color=BLU)
+        lx=ML+fitz.get_text_length(label,fontname=BB,fontsize=size)+8
+        add_text(self.p,(lx,self.y,lx+fw,self.y+18),size=size,color=BLU)
+        if suffix: self.p.insert_text((lx+fw+6,self.y+13),suffix,fontsize=size,fontname=BB,color=BLU)
+        self.y+=30
+    def notes(self,label="Le tue note",n=4):
+        self.h2(label); self.lines(n)
+    def save(self,name):
+        self.doc.need_appearances(True)
+        self.doc.save(os.path.join(OUT,name), deflate=True)
+        nf=sum(len(list(p.widgets())) for p in self.doc)
+        print("OK",name,self.doc.page_count,"pg ·",nf,"campi")
 
 # ───── G1 — Test di Consapevolezza Digitale ─────
 d=Doc("Bonus Giorno 1")
@@ -85,7 +122,7 @@ d.para("Dai un voto da 1 a 5 a ciascuna area. Sii onesto: questo test non serve 
        "serve a darti un punto di partenza misurabile.")
 d.rating(["Brand personale online","Posizionamento di zona","Presenza sui social","Qualità dei contenuti",
           "Email marketing","CRM e follow-up","Uso dell'AI","Ecosistema digitale"])
-d.para("Punteggio totale: _______ / 40",size=11,font=BB,color=BLU)
+d.blank("Punteggio totale:","/ 40")
 d.h2("Dove sei, davvero")
 d.bullets(["8-15 · Inizio percorso: oggi stai regalando incarichi. Parti dalle fondamenta.",
            "16-24 · Potenziale con dispersione: hai pezzi scollegati, ti serve un sistema.",
@@ -93,6 +130,7 @@ d.bullets(["8-15 · Inizio percorso: oggi stai regalando incarichi. Parti dalle 
            "33-40 · Professionista evoluto: ottimizza e scala ciò che funziona."])
 d.para("Qualunque sia il numero, la buona notizia e' la stessa: non e' talento. E' una macchina. E si costruisce.",
        size=10.5,font=TI,color=BORG)
+d.notes("Le mie note + la prima cosa che cambio",3)
 d.save("g1-test-consapevolezza.pdf")
 
 # ───── G2 — La Mappa della Macchina (poster) ─────
@@ -106,6 +144,7 @@ d.bullets(["DIGITALE (fa alzare la mano): YouTube e' la biblioteca che lavora H2
            "LEAD: la persona giusta che si fa avanti.",
            "ANALOGICO (converte): la chiamata in pochi minuti, i referral, gli eventi e le liste.",
            "INCARICO: il risultato. Digitale e analogico sono la stessa macchina."])
+d.notes("Come la applico al mio mercato",3)
 d.save("g2-mappa-macchina.pdf")
 
 # ───── G3 — Kit Contenuti che Vendono ─────
@@ -129,6 +168,12 @@ d.bullets(["Hook (3 sec) -> Problema -> Metodo -> Prova -> una sola CTA",
 d.h2("Keyword Finder")
 d.bullets(["Scrivi 'vendere casa [zona]' nella barra e guarda i suggerimenti.",
            "Quelle frasi diventano i titoli dei tuoi video."])
+d.h2("Compila tu: la tua prossima settimana")
+d.para("Le mie 3 idee video:",size=10,font=BB); d.lines(3)
+d.para("5 parole chiave del mio mercato:",size=10,font=BB); d.lines(2)
+d.para("La mia Ricetta del Video (compila):",size=10,font=BB)
+for s in ["Hook (3 sec):","Problema:","Metodo:","Prova:","Una sola CTA:"]:
+    d.para(s,size=9.5,font=BB,color=BORG,gap=1); d.lines(1)
 d.save("g3-kit-contenuti.pdf")
 
 # ───── G4 — Prompt Pack AI per l'Agente ─────
@@ -154,6 +199,7 @@ d.promptbox("4 · BOZZA VALUTAZIONE / ANNUNCIO",
 d.h2("Schema dell'automazione (3 passi)")
 d.bullets(["Il lead scrive (form, DM, WhatsApp)","L'AI risponde e qualifica H24",
            "Ti passa solo chi e' pronto -> tu richiami in minuti, non ore"])
+d.notes("Il mio prompt personalizzato (scrivilo qui)",4)
 d.save("g4-prompt-pack-ai.pdf")
 
 # ───── G5 — Script Prima Chiamata + Obiezioni ─────
@@ -176,6 +222,9 @@ d.bullets(["'Non mi vincolo' -> incarico a tempo definito: dopo X giorni sei lib
            "'Non firmo niente' -> firmi un metodo, non una gabbia: ecco cosa faccio per te.",
            "'E se viene un privato?' -> proprio per questo seleziono acquirenti gia' pronti.",
            "'La provvigione e' alta' -> e' legata al risultato: vendere al prezzo giusto, prima."])
+d.h2("Scrivi il tuo")
+d.para("La mia apertura (come riprendo il contenuto):",size=10,font=BB); d.lines(2)
+d.para("Le mie risposte alle obiezioni della mia zona:",size=10,font=BB); d.lines(3)
 d.save("g5-script-chiamata-obiezioni.pdf")
 
 print("Tutti i bonus generati in", OUT)

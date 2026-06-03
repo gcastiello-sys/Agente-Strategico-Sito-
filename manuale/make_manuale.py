@@ -17,6 +17,21 @@ T="tibo"; TI="tiit"; B="helv"; BB="hebo"   # serif titoli / sans testo
 
 doc = fitz.open()
 
+# ── Campi modulo interattivi (AcroForm) ──
+FID=[0]
+def _fid(pre):
+    FID[0]+=1; return f"{pre}{FID[0]}"
+def add_text(page,rect,size=11,color=INK,multiline=False):
+    w=fitz.Widget(); w.field_name=_fid("f_"); w.field_type=fitz.PDF_WIDGET_TYPE_TEXT
+    w.rect=fitz.Rect(rect); w.text_fontsize=size; w.text_color=color
+    w.fill_color=None; w.border_width=0
+    if multiline: w.field_flags=fitz.PDF_TX_FIELD_IS_MULTILINE
+    page.add_widget(w)
+def add_check(page,rect,border=BLU):
+    w=fitz.Widget(); w.field_name=_fid("c_"); w.field_type=fitz.PDF_WIDGET_TYPE_CHECKBOX
+    w.rect=fitz.Rect(rect); w.border_color=border; w.border_width=1; w.fill_color=WHITE
+    page.add_widget(w)
+
 def wrap(text, font, size, maxw):
     out=[]
     for raw in text.split("\n"):
@@ -67,9 +82,11 @@ def bullets(pg,items,size=10.5,gap=3):
 
 def lines(pg,n,gap=22,x=ML,w=None):
     w=w or (RIGHT-x)
+    pg=pg.need(n*gap+4)          # blocco intero su una pagina (campo non a cavallo)
+    top=pg.y
     for _ in range(n):
-        pg=pg.need(gap)
         pg.p.draw_line((x,pg.y+12),(x+w,pg.y+12),color=LINE,width=0.8); pg.y+=gap
+    add_text(pg.p, (x, top-4, x+w, pg.y-4), size=11, multiline=True)  # campo testo scrivibile
     pg.y+=4; return pg
 
 def soundbite(pg,text):
@@ -90,7 +107,7 @@ def box(pg,h,label=None):
 
 def checkrow(pg,label,boxed=True):
     pg=pg.need(22)
-    pg.p.draw_rect(fitz.Rect(ML,pg.y+1,ML+13,pg.y+14),color=BLU,fill=None,width=1)
+    add_check(pg.p, (ML,pg.y+1,ML+13,pg.y+14))    # checkbox cliccabile
     pg.p.insert_text((ML+22,pg.y+12),label,fontsize=10.5,fontname=B,color=INK); pg.y+=22; return pg
 
 def header(kicker,title,sub=None):
@@ -112,6 +129,7 @@ c.p.insert_text((ML,380),"Il tuo quaderno di lavoro · 5 giorni",fontsize=15,fon
 c.p.draw_line((ML,430),(RIGHT,430),color=ORO,width=1)
 c.p.insert_text((ML,470),"Nome",fontsize=10,fontname=BB,color=ORO)
 c.p.draw_line((ML,492),(RIGHT-160,492),color=(0.4,0.45,0.5),width=0.8)
+add_text(c.p, (ML,474,RIGHT-160,496), size=14, color=(0.9,0.92,0.95))  # nome digitabile
 c.p.insert_text((ML,540),"Scrivi tutto. La mente che non scrive, dimentica.",fontsize=11,fontname=TI,color=(0.7,0.75,0.8))
 
 # ───────── COME SI USA + PATTO + BONUS ─────────
@@ -139,16 +157,25 @@ p=header("PRIMA DI INIZIARE","Il tuo punto di partenza")
 p=para(p,"Sii onesto. Non per giudicarti: per vederti. Dai un voto da 1 a 5 a ciascuna area.")
 aree=["Brand personale online","Posizionamento di zona","Presenza sui social","Qualità dei contenuti",
       "Email marketing","CRM e follow-up","Uso dell'AI","Ecosistema digitale"]
+p=p.need(16)                              # intestazione colonne 1..5
+for i in range(5):
+    x=RIGHT-150+i*28
+    p.p.insert_text((x+4,p.y+10),str(i+1),fontsize=8.5,fontname=BB,color=MUTE)
+p.y+=16
 for a in aree:
-    p=p.need(24)
-    p.p.insert_text((ML,p.y+13),a,fontsize=10.5,fontname=B,color=INK)
+    p=p.need(22)
+    p.p.insert_text((ML,p.y+12),a,fontsize=10.5,fontname=B,color=INK)
     for i in range(5):
         x=RIGHT-150+i*28
-        p.p.draw_rect(fitz.Rect(x,p.y+1,x+16,p.y+17),color=LINE,width=0.8)
-        p.p.insert_text((x+5,p.y+13),str(i+1),fontsize=8.5,fontname=B,color=MUTE)
-    p.y+=24
-p.y+=6
-p=para(p,"Punteggio totale: _______ / 40",size=11,font=BB,color=BLU)
+        add_check(p.p, (x,p.y,x+14,p.y+14), border=LINE)   # spunta il tuo voto
+    p.y+=22
+p.y+=8
+p=p.need(28)
+p.p.insert_text((ML,p.y+13),"Punteggio totale:",fontsize=11,fontname=BB,color=BLU)
+_lx=ML+fitz.get_text_length("Punteggio totale:",fontname=BB,fontsize=11)+8
+add_text(p.p,(_lx,p.y,_lx+54,p.y+18),size=12,color=BLU)
+p.p.insert_text((_lx+62,p.y+13),"/ 40",fontsize=11,fontname=BB,color=BLU)
+p.y+=30
 p=h2(p,"Dove voglio essere tra 90 giorni")
 p=lines(p,4)
 
@@ -195,7 +222,11 @@ def esercizio(pg,key):
     pg=h2(pg,"Il tuo esercizio")
     if key=="esercizio1":
         pg=para(pg,"Riporta qui il tuo punteggio totale e scrivi la tua frase dei 90 giorni.")
-        pg=para(pg,"Punteggio: _______ / 40",size=11,font=BB,color=BLU)
+        pg=pg.need(28)
+        pg.p.insert_text((ML,pg.y+13),"Punteggio:",fontsize=11,fontname=BB,color=BLU)
+        _lx=ML+fitz.get_text_length("Punteggio:",fontname=BB,fontsize=11)+8
+        add_text(pg.p,(_lx,pg.y,_lx+54,pg.y+18),size=12,color=BLU)
+        pg.p.insert_text((_lx+62,pg.y+13),"/ 40",fontsize=11,fontname=BB,color=BLU); pg.y+=30
         pg=para(pg,"Tra 90 giorni voglio...",size=10,font=BB,color=INK,gap=2); pg=lines(pg,3)
     elif key=="esercizio2":
         pg=para(pg,"Il formato YouTube che presidierò per 90 giorni:",size=10,font=BB); pg=lines(pg,1)
@@ -242,7 +273,8 @@ p=h2(p,"Calendario contenuti — la mia settimana")
 for g in ["Lun","Mar","Mer","Gio","Ven","Sab","Dom"]:
     p=p.need(22)
     p.p.insert_text((ML,p.y+13),g,fontsize=9.5,fontname=BB,color=BLU)
-    p.p.draw_line((ML+40,p.y+13),(RIGHT,p.y+13),color=LINE,width=0.8); p.y+=22
+    p.p.draw_line((ML+40,p.y+13),(RIGHT,p.y+13),color=LINE,width=0.8)
+    add_text(p.p,(ML+44,p.y-2,RIGHT,p.y+15),size=10); p.y+=22
 p.y+=4
 
 p=header("TOOLKIT","Conversione & relazioni")
@@ -269,5 +301,7 @@ p=para(p,"In 5 giorni hai disegnato la mappa: sai cosa serve. Ma una mappa non c
         "vedrai. Per ora, una sola cosa conta: hai già iniziato.")
 p=soundbite(p,"Cosa vuoi che sia successo tra 12 settimane?")
 
-doc.save(os.path.join(OUT,"workshop-5-giorni-workbook.pdf"), deflate=True, garbage=4, clean=True)
-print("OK workbook:", doc.page_count, "pagine")
+doc.need_appearances(True)   # i viewer rigenerano l'aspetto dei campi
+doc.save(os.path.join(OUT,"workshop-5-giorni-workbook.pdf"), deflate=True)
+nfields=sum(len(list(pg.widgets())) for pg in doc)
+print("OK workbook:", doc.page_count, "pagine ·", nfields, "campi editabili")
