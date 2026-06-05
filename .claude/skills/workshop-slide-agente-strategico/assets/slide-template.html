@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Scalata Strategica — Workshop · Agente Strategico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A; --white:#FFFFFF; --gold:#C9A84C; --gold-light:#E2C46A;
+    --font-sans:'Inter',sans-serif; --font-serif:'Cormorant Garamond',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:var(--black);color:var(--white);font-family:var(--font-sans);overflow:hidden}
+  /* ---- Deck ---- */
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:clamp(40px,7vw,110px);opacity:0;transition:opacity .35s ease}
+  .slide.active{display:flex;opacity:1}
+  .kicker{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500}
+  h1{font-family:var(--font-serif);font-weight:600;line-height:1.02;font-size:clamp(2.6rem,6vw,5.2rem)}
+  h2{font-family:var(--font-serif);font-weight:600;line-height:1.05;font-size:clamp(2rem,4.6vw,3.6rem)}
+  .lead{font-size:clamp(1.05rem,1.7vw,1.4rem);color:#cfcfcf;max-width:60ch;margin-top:1.4rem;font-weight:300;line-height:1.5}
+  .gold{color:var(--gold)}
+  .serif{font-family:var(--font-serif)}
+  .num{font-family:var(--font-serif);color:var(--gold);font-size:clamp(3rem,7vw,6rem);line-height:1;font-weight:600}
+  /* ---- Grids & lists ---- */
+  .grid{display:grid;gap:clamp(20px,3vw,40px);margin-top:2.4rem}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{border:1px solid rgba(201,168,76,.28);border-radius:14px;padding:1.6rem 1.5rem;background:rgba(255,255,255,.02)}
+  .card .num{font-size:2.4rem;margin-bottom:.6rem}
+  .card h3{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;margin-bottom:.5rem}
+  .card p{color:#bdbdbd;font-size:.98rem;font-weight:300;line-height:1.45}
+  ul.agenda{list-style:none;margin-top:2rem;max-width:70ch}
+  ul.agenda li{display:flex;gap:1.2rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.08);align-items:baseline}
+  ul.agenda time{color:var(--gold);font-variant-numeric:tabular-nums;font-weight:500;min-width:64px}
+  ul.agenda b{font-weight:500}
+  ul.agenda span{color:#9a9a9a;font-weight:300;display:block;font-size:.92rem;margin-top:.15rem}
+  /* ---- Cover & quote ---- */
+  .cover h1{font-size:clamp(3rem,8vw,6.5rem)}
+  .meta{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2.6rem;font-size:.95rem;color:#bdbdbd}
+  .meta b{display:block;color:var(--white);font-weight:500;margin-top:.2rem;font-size:1.05rem}
+  blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.2;max-width:24ch}
+  blockquote+.cite{margin-top:1.6rem;color:var(--gold);letter-spacing:.05em}
+  .cta{display:inline-block;margin-top:2.4rem;border:1px solid var(--gold);color:var(--gold);
+    padding:.9rem 1.8rem;border-radius:40px;font-weight:500;letter-spacing:.02em;font-size:1.05rem}
+  .stat-row{display:flex;gap:clamp(28px,5vw,72px);margin-top:2.6rem;flex-wrap:wrap}
+  .stat .num{font-size:clamp(2.4rem,5vw,4rem)}
+  .stat small{display:block;color:#9a9a9a;font-size:.85rem;letter-spacing:.05em;margin-top:.3rem;text-transform:uppercase}
+  /* ---- Logo + chrome ---- */
+  .logo{position:fixed;top:28px;left:clamp(40px,7vw,110px);display:flex;align-items:center;gap:.6rem;z-index:10}
+  .logo .mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:7px;display:grid;place-items:center;
+    font-family:var(--font-serif);color:var(--gold);font-weight:600}
+  .logo span{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#cfcfcf}
+  .progress{position:fixed;bottom:0;left:0;height:3px;background:var(--gold);width:0;transition:width .35s ease;z-index:10}
+  .counter{position:fixed;bottom:22px;right:clamp(40px,7vw,110px);font-size:.82rem;color:#8a8a8a;letter-spacing:.1em;z-index:10}
+  .hint{position:fixed;bottom:22px;left:clamp(40px,7vw,110px);font-size:.78rem;color:#5a5a5a;z-index:10}
+  @media(max-width:760px){.grid-3,.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="logo"><div class="mark">AS</div><span>Agente Strategico</span></div>
+
+<div class="deck" id="deck">
+
+  <!-- ============ COVER ============ -->
+  <section class="slide cover active">
+    <div class="kicker">Workshop in Aula · 3 Giorni</div>
+    <h1>La Scalata<br><span class="gold">Strategica</span></h1>
+    <p class="lead">Tutti vogliono vendere. Nessuno ti insegna a trovare gli incarichi.
+      Tre giorni per costruire il sistema che ti tiene il portafoglio sempre pieno.</p>
+    <div class="meta">
+      <div>Coach<b>Vincenzo Romano</b></div>
+      <div>Dove<b>[Città]</b></div>
+      <div>Quando<b>[Date]</b></div>
+      <div>Posti<b>Limitati</b></div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section class="slide">
+    <div class="kicker">Il problema reale</div>
+    <h1>Il mercato è pieno di acquirenti.<br>
+      Allora perché il tuo portafoglio incarichi è <span class="gold">vuoto</span>?</h1>
+    <p class="lead">La domanda di case in Italia non è mai stata così alta. Eppure nel 2025
+      il 40% degli agenti ha visto calare i propri incarichi. Il problema non è il
+      mercato — è il sistema con cui lo lavori.</p>
+  </section>
+
+  <!-- ============ PROBLEMA · GRIGLIA NUMERATA ============ -->
+  <section class="slide">
+    <div class="kicker">Perché succede</div>
+    <h2>Tre verità scomode</h2>
+    <div class="grid grid-3">
+      <div class="card"><div class="num">01</div><h3>Senza incarichi, non esisti</h3>
+        <p>Sei a provvigione. Niente nuovi mandati ogni mese, niente reddito. E ogni mattina improvvisi.</p></div>
+      <div class="card"><div class="num">02</div><h3>I metodi non reggono</h3>
+        <p>Corsi, libri, video: funzionano qualche giorno, poi torni al punto di partenza. Manca il sistema.</p></div>
+      <div class="card"><div class="num">03</div><h3>I migliori lavorano diverso</h3>
+        <p>Non è fortuna. Hanno un sistema d'acquisizione costante e un gruppo che li affianca ogni settimana.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ METODO · TORRE ============ -->
+  <section class="slide">
+    <div class="kicker">Il metodo</div>
+    <h2>La Torre della Crescita</h2>
+    <p class="lead">Cinque piani. Ogni piano ha obiettivi, azioni e metriche. Non si salta — si scala.</p>
+    <ul class="agenda" style="margin-top:1.6rem">
+      <li><time>05</time><div><b>Skyline</b> <span>€800k – €1M+</span></div></li>
+      <li><time>04</time><div><b>Vetta</b> <span>€300k – €800k</span></div></li>
+      <li><time>03</time><div><b>Cuore dell'Edificio</b> <span>€150k – €300k</span></div></li>
+      <li><time>02</time><div><b>Primo Piano</b> <span>€50k – €150k</span></div></li>
+      <li><time>01</time><div><b>Fondamenta</b> <span>€0 – €50k</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ============ PROGRAMMA / AGENDA ============ -->
+  <section class="slide">
+    <div class="kicker">Giorno Uno · Valuta e Posiziona</div>
+    <h2>Dove sei davvero</h2>
+    <ul class="agenda">
+      <li><time>09:00</time><div><b>Audit senza filtri</b><span>La tua posizione attuale: dati, numeri, verità scomoda.</span></div></li>
+      <li><time>11:30</time><div><b>La Torre della Crescita</b><span>A che piano sei? Mappa il livello e i gap prioritari.</span></div></li>
+      <li><time>14:30</time><div><b>Posizionamento nel territorio</b><span>Diventare il punto di riferimento nel tuo mercato locale.</span></div></li>
+      <li><time>17:00</time><div><b>Hot seat e Q&A</b><span>Il tuo caso analizzato dal coach davanti al gruppo.</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ============ PROVE · NUMERI ============ -->
+  <section class="slide">
+    <div class="kicker">Non sei solo</div>
+    <h2>Un ecosistema, non un corso</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="num">380+</div><small>Agenti nell'ecosistema</small></div>
+      <div class="stat"><div class="num">19.000</div><small>Sessioni di coaching</small></div>
+      <div class="stat"><div class="num">12</div><small>Live ogni mese</small></div>
+      <div class="stat"><div class="num">4.9</div><small>Valutazione media</small></div>
+    </div>
+  </section>
+
+  <!-- ============ CITAZIONE COACH ============ -->
+  <section class="slide" style="justify-content:center">
+    <blockquote>"Quello che impari in aula lo applichi il lunedì mattina."</blockquote>
+    <div class="cite">— Il metodo Agente Strategico</div>
+  </section>
+
+  <!-- ============ CTA FINALE ============ -->
+  <section class="slide">
+    <div class="kicker">Il prossimo passo</div>
+    <h1>Esci con un piano <span class="gold">firmato</span>.</h1>
+    <p class="lead">Sprint 90 giorni, accountability settimanale e una community che ti
+      tiene il ritmo. Non è per tutti. È per chi è pronto.</p>
+    <a class="cta" href="#">Iscriviti ora →</a>
+  </section>
+
+</div>
+
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter">01 / 08</div>
+<div class="hint">← → per navigare</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    document.getElementById('progress').style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('counter').textContent=
+      String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  }
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){show(i+1);e.preventDefault();}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){show(i-1);e.preventDefault();}
+    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+  });
+  document.addEventListener('click',e=>{ if(!e.target.closest('a')) show(i+1); });
+  show(0);
+</script>
+</body>
+</html>
